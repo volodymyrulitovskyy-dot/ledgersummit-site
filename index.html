@@ -1,0 +1,1247 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ledger Summit | Bookkeeping Automation for SMB Teams</title>
+  <meta name="description" content="Ledger Summit delivers bookkeeping automation first, then accounting automation and FP&A reporting for SMB teams: ME close, accruals, deferrals, payroll recs, inventory, FA schedules, KPI and cash flow forecasting.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="keywords" content="bookkeeping automation, accounting automation, ME close automation, accruals and deferrals automation, payroll reconciliation automation, inventory reconciliation, fixed asset schedules, FP&A reporting, KPI dashboards, cash flow forecasting">
+  <meta name="theme-color" content="#0a66c2">
+  <meta name="geo.region" content="US">
+  <meta name="geo.placename" content="United States">
+  <link rel="canonical" href="https://ledgersummit.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ledger Summit | Bookkeeping Automation for SMB Teams">
+  <meta property="og:description" content="Bookkeeping automation first, accounting automation second, with stronger FP&A reporting and forecasting outputs.">
+  <meta property="og:url" content="https://ledgersummit.com/">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ledger Summit | Bookkeeping Automation for SMB Teams">
+  <meta name="twitter:description" content="Automate bookkeeping first, then accounting and FP&A workflows for faster close and clearer reporting.">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #4b5563;
+      --line: #dbe4ef;
+      --brand: #0a66c2;
+      --brand-soft: #eaf3ff;
+      --surface: #ffffff;
+      --page: #fcfdff;
+      --max: 1420px;
+      --radius: 14px;
+      --fs-label: 12px;
+      --fs-sm: 14px;
+      --fs-base: 16px;
+      --fs-lead: 18px;
+      --fs-h3: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      font-size: var(--fs-base);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 0%, rgba(10, 102, 194, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, var(--page) 100%);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(96%, var(--max));
+      margin-inline: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 212px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quick-link {
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: var(--fs-sm);
+      font-weight: 800;
+      cursor: pointer;
+      transition: 180ms ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-soft {
+      background: #fff;
+      border-color: var(--line);
+      color: #1f2937;
+    }
+
+    main {
+      padding: 26px 0 80px;
+    }
+
+    .section {
+      padding: 70px 0;
+      border-top: 1px solid rgba(219, 228, 239, 0.75);
+    }
+
+    .section:first-child {
+      border-top: none;
+      padding-top: 34px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5.6vw, 82px);
+      max-width: 22ch;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(27px, 3.9vw, 57px);
+    }
+
+    h2 {
+      font-size: clamp(30px, 4.4vw, 42px);
+      max-width: 18ch;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: var(--fs-h3);
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 84ch;
+      color: var(--muted);
+      font-size: var(--fs-lead);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 12px;
+      border: 1px solid #bcd7f6;
+      background: var(--brand-soft);
+      color: #114a87;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: var(--fs-label);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-bullets {
+      margin: 12px 0 0;
+      padding-left: 22px;
+      max-width: 84ch;
+      color: var(--muted);
+      font-size: var(--fs-base);
+      display: grid;
+      gap: 6px;
+    }
+
+    .hero-bullets li {
+      line-height: 1.5;
+    }
+
+    .chips {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      color: #334155;
+      background: #fff;
+      transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+    }
+
+    .chip:hover,
+    .chip:focus-visible {
+      border-color: #bcd7f6;
+      color: #114a87;
+      background: #f8fbff;
+    }
+
+    .stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .thumb {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+      align-items: start;
+      transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .thumb:hover,
+    .thumb:focus-visible {
+      border-color: #bcd7f6;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .thumb .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      border: 1px solid #bcd7f6;
+    }
+
+    .thumb p {
+      margin: 0;
+      color: var(--muted);
+      font-size: var(--fs-base);
+      line-height: 1.55;
+    }
+
+    .thumb p strong {
+      display: block;
+      color: var(--ink);
+      font-size: var(--fs-h3);
+      line-height: 1.16;
+      margin-bottom: 6px;
+    }
+    .testimonial {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .testimonial img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #c9ddf5;
+    }
+
+    .testimonial blockquote {
+      margin: 0 0 6px;
+      font-size: var(--fs-base);
+      color: #1f2937;
+    }
+
+    .testimonial cite {
+      font-style: normal;
+      color: var(--muted);
+      font-size: var(--fs-label);
+      font-weight: 700;
+    }
+
+    .list {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+    }
+
+    .list li {
+      font-size: var(--fs-base);
+      color: #334155;
+    }
+
+    .list li::before {
+      content: "-> ";
+      color: var(--brand);
+      font-weight: 800;
+    }
+
+    .phase {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 14px;
+    }
+
+    .phase-title {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      align-items: center;
+      justify-content: center;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      border: 1px solid #bcd7f6;
+      margin-bottom: 8px;
+    }
+
+    .video iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      background: #0f172a;
+    }
+
+    .video-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .meta {
+      margin-top: 7px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: var(--fs-label);
+      font-weight: 700;
+      color: #334155;
+      background: #fff;
+    }
+
+    .case {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .case-body {
+      padding: 16px 18px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .case-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: var(--fs-base);
+    }
+
+    .case-media {
+      position: relative;
+      display: block;
+      min-height: 100%;
+      background: #0f172a;
+      border-left: 1px solid var(--line);
+    }
+
+    .case-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.12) 0%, rgba(15, 23, 42, 0.35) 100%);
+      pointer-events: none;
+    }
+
+    .case-play {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #dc2626;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      z-index: 2;
+      transition: transform 180ms ease;
+    }
+
+    .case-media:hover .case-play,
+    .case-media:focus-visible .case-play {
+      transform: scale(1.06);
+    }
+
+    .matrix {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: auto;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 740px;
+    }
+
+    th,
+    td {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      padding: 10px;
+      font-size: var(--fs-sm);
+      color: #1f2937;
+      background: #fff;
+    }
+
+    th { font-family: "Space Grotesk", sans-serif; font-size: var(--fs-sm); }
+    tr:last-child td { border-bottom: none; }
+    th:last-child,
+    td:last-child { border-right: none; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: var(--fs-lead);
+      color: #1f2937;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    details p {
+      margin: 7px 0 0;
+      font-size: var(--fs-base);
+      color: var(--muted);
+    }
+
+    .cta {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta h2 {
+      max-width: 16ch;
+      margin-bottom: 0;
+    }
+
+    .cta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: var(--fs-base);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 30px;
+      color: var(--muted);
+      font-size: var(--fs-sm);
+    }
+
+    .video .lead {
+      font-size: var(--fs-base);
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .foot nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 520ms ease forwards;
+    }
+
+    .fade:nth-child(2n) { animation-delay: 90ms; }
+    .fade:nth-child(3n) { animation-delay: 150ms; }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .brand img { width: 184px; }
+      .quick-link { display: none; }
+      .section { padding: 56px 0; }
+      .video-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 980px) {
+      .case { grid-template-columns: 1fr; }
+      .case-media {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        border-left: none;
+        border-top: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Ledger Summit home">
+        <img src="assets/logo-ledger-summit.svg" alt="Ledger Summit logo">
+      </a>
+      <div class="nav-right">
+        <a class="quick-link" href="#cases">Case studies</a>
+        <a class="quick-link" href="#videos">Videos</a>
+        <a class="btn btn-primary" href="#book">Book a free call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Proven workflows for bookkeeping and accounting automation</span>
+        <h1 class="hero-title">Automate manual bookkeeping and accounting with proven, step-by-step workflows.</h1>
+        <p class="lead">Ledger Summit helps your accounting teams move from manual work to proven automation:</p>
+        <ul class="hero-bullets">
+          <li>Start with day-to-day bookkeeping automation, then expand into accounting workflows and FP&amp;A.</li>
+          <li>Automate ME close, accruals, deferrals, payroll reconciliations, inventory, and fixed-asset schedules.</li>
+          <li>Error-free automation is assured by backing up each workflow automation with an independent, continuous audit of raw source data against accounting data.</li>
+          <li>Deliver clearer KPI reporting and more reliable short-range cash flow forecasting.</li>
+          <li>No transformation theater and no endless roadmaps. We transition one workflow at a time while fully engaging your team in the transition process.</li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#book">Book a free call</a>
+          <a class="btn btn-soft" href="#cases">Read case studies</a>
+        </div>
+        <div class="chips" aria-label="quick highlights">
+          <a class="chip" href="#services">Bookkeeping workflow automation</a>
+          <a class="chip" href="#engagement">Governance and approvals</a>
+          <a class="chip" href="case-study-payroll-reconciliations.html">Payroll reconciliations automation</a>
+          <a class="chip" href="case-study-inventory-reconciliations.html">Inventory reconciliation automation</a>
+          <a class="chip" href="case-study-me-close.html">Accounting close automation</a>
+          <a class="chip" href="#services">FP&amp;A reporting automation</a>
+          <a class="chip" href="#engagement">Parallel posting + reconciliation QC</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Key Wins for Workflow Automation</h2>
+        <div class="thumb-grid">
+          <a class="thumb fade" href="case-study-bookkeeping-workflow-automation.html">
+            <span class="icon">1</span>
+            <p><strong>Bookkeeping workflow automation.</strong> Daily transaction and reconciliation tasks move from manual spreadsheets to structured workflows with clear ownership.</p>
+          </a>
+          <a class="thumb fade" href="case-study-governance-and-approvals.html">
+            <span class="icon">2</span>
+            <p><strong>Governance and approvals.</strong> Every workflow runs two parallel controls: direct posting with required approvals, plus independent source-to-posted reconciliation for audit confidence.</p>
+          </a>
+          <a class="thumb fade" href="case-study-payroll-reconciliations.html">
+            <span class="icon">3</span>
+            <p><strong>Payroll reconciliations automation.</strong> Payroll-to-GL tie-outs run in focused review workflows so mismatches are identified and resolved earlier.</p>
+          </a>
+          <a class="thumb fade" href="case-study-inventory-reconciliations.html">
+            <span class="icon">4</span>
+            <p><strong>Inventory reconciliation automation.</strong> Subledger-to-GL checks and variance routing are automated to reduce manual investigation and late adjustments.</p>
+          </a>
+          <a class="thumb fade" href="case-study-accounting-close-automation.html">
+            <span class="icon">5</span>
+            <p><strong>Accounting close automation.</strong> ME close, accruals, deferrals, and fixed-asset schedules are standardized into consistent, audit-ready workflows.</p>
+          </a>
+          <a class="thumb fade" href="case-study-fpa-reporting-automation.html">
+            <span class="icon">6</span>
+            <p><strong>FP&amp;A reporting automation.</strong> Teams get cleaner reports, stronger KPI visibility, and more reliable short-range cash flow forecasts.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>What small and mid-size clients say after manual work became automated</h2>
+        <div class="stack">
+          <article class="card fade">
+            <div class="testimonial">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=180&q=80" alt="Professional testimonial headshot">
+              <div>
+                <blockquote>"Our bookkeeping used to be fully manual: bank recs in spreadsheets, constant correction entries, and close delays every month. Ledger Summit moved those tasks into automated workflows and added parallel source-to-posted reconciliation checks. Now the process runs smoothly and month-end prep is about 50% faster."</blockquote>
+                <cite>Melissa T., Controller, Multi-entity SMB ($6.8M revenue)</cite>
+              </div>
+            </div>
+          </article>
+          <article class="card fade">
+            <div class="testimonial">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=180&q=80" alt="Professional testimonial headshot">
+              <div>
+                <blockquote>"Our month-end close was slow and stressful with manual accruals, deferrals, and checklist chasing. Ledger Summit converted those steps into structured accounting automations with clear approvals and independent source-to-posted reconciliation checks. Close moved from inconsistent fire drills to a predictable, smooth process."</blockquote>
+                <cite>Danielle K., Owner, SMB Operations Group ($3.2M revenue)</cite>
+              </div>
+            </div>
+          </article>
+          <article class="card fade">
+            <div class="testimonial">
+              <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=180&q=80" alt="Professional testimonial headshot">
+              <div>
+                <blockquote>"FP&amp;A reporting used to rely on manual exports and last-minute spreadsheet cleanup after close. Ledger Summit linked our FP&amp;A reports and KPI tracking to live accounting data and live operating statistics. That removed the lag between accounting close and FP&amp;A reporting and gave leadership live KPI visibility with less rework."</blockquote>
+                <cite>Brian S., Finance Manager, Growth SMB ($9.4M revenue)</cite>
+              </div>
+            </div>
+          </article>
+          <article class="card fade">
+            <div class="testimonial">
+              <img src="https://images.unsplash.com/photo-1580489944761-50c56af578fc?auto=format&fit=crop&w=180&q=80" alt="Professional testimonial headshot">
+              <div>
+                <blockquote>"Cash forecasting was reactive because AR updates and inflow assumptions were spread across files. Ledger Summit automated AR follow-up signals and created a live link between the cash flow report and the underlying accounting data. Leadership now gets a clear weekly forecast with far less manual effort and much less reporting lag."</blockquote>
+                <cite>Priya R., CFO, Mid-size Business ($8.1M revenue)</cite>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Bookkeeping automation first, accounting automation second</h2>
+        <p class="lead">Structured rollout for small and mid-size businesses across industries: stabilize bookkeeping workflows first, then extend to accounting automation and stronger FP&amp;A outputs. In each workflow, two processes run in parallel: automated posting with review/approval, and independent source-to-posted reconciliation to confirm the books match raw source data.</p>
+        <div class="stack">
+          <article class="card fade">
+            <h3>Bookkeeping core automations</h3>
+            <ul class="list">
+              <li>Bank, payroll, and inventory reconciliations</li>
+              <li>Review steps for coding errors and unmatched items</li>
+              <li>Direct transaction posting into the accounting system with required review and approvals</li>
+              <li>Daily transaction quality checks to reduce month-end cleanup</li>
+            </ul>
+          </article>
+          <article class="card fade">
+            <h3>Accounting automation layer</h3>
+            <ul class="list">
+              <li>Month-end close steps with due dates and clear owners</li>
+              <li>Accrual and deferral journal preparation with review and approval</li>
+              <li>Independent source-to-posted reconciliation for vendor bills, warehouse reports, and payroll journals to catch and resolve mistakes before final financials</li>
+              <li>Fixed-asset schedule updates and depreciation posting support</li>
+            </ul>
+          </article>
+          <article class="card fade">
+            <h3>FP&amp;A reporting layer</h3>
+            <ul class="list">
+              <li>Month-end reporting packs for leadership review</li>
+              <li>KPI reports linked to live accounting data and live operating statistics</li>
+              <li>Short-range cash flow reports linked to live accounting data</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="engagement" class="section">
+      <div class="container">
+        <h2>How we transition workflows to automation</h2>
+        <p class="lead">We document current-state SOPs first, then move one workflow at a time from easy/high-time tasks to harder automations, with clear before/after evidence. During implementation, we run two processes in parallel so every transaction is quality-checked and audit-ready before financials are finalized.</p>
+        <div class="stack">
+          <article class="phase fade">
+            <span class="phase-title">01</span>
+            <h3>Understand and document current workflows</h3>
+            <ul class="list">
+              <li>Map owners, handoffs, delay points, and control checkpoints</li>
+              <li>Document existing SOPs in detail for bookkeeping and accounting workflows before any changes are made</li>
+              <li>Measure manual effort and pick easy, time-consuming workflows first</li>
+            </ul>
+          </article>
+          <article class="phase fade">
+            <span class="phase-title">02</span>
+            <h3>Data input review and SQL preparation</h3>
+            <ul class="list">
+              <li>Identify all current documentation and data inputs: third-party portal reports, PDFs, statements, vendor bills, spreadsheets, data feeds, inventory systems, warehouse systems, and related operating workflows</li>
+              <li>Review each source format, update frequency, and owner so the full accounting data picture is clear before automation</li>
+              <li>Create a structured conversion process that maps these inputs into clean SQL tables with clear validation checks and traceable source links for the next stage of accounting workflow automation</li>
+            </ul>
+          </article>
+          <article class="phase fade">
+            <span class="phase-title">03</span>
+            <h3>Transition one workflow at a time</h3>
+            <ul class="list">
+              <li>Automate selected workflows sequentially to reduce manual processing safely</li>
+              <li>Run two parallel controls for each workflow: direct posting with review/approval, and independent reconciliation of source data to posted accounting records</li>
+              <li>Use source-specific reconciliation checks (vendor bills, warehouse reports, payroll journals, and other source records) to confirm accounting reflects raw data</li>
+              <li>Run before/after SOP checks and parallel validation before cutover</li>
+              <li>Apply robust protocols: approvals, retries, exception handling, and audit logs</li>
+            </ul>
+          </article>
+          <article class="phase fade">
+            <span class="phase-title">04</span>
+            <h3>Scale to harder workflows and reporting</h3>
+            <ul class="list">
+              <li>Progress from easy/high-time tasks to complex cross-system automations</li>
+              <li>Publish after-state SOPs with updated owners, controls, and escalation paths</li>
+              <li>Deliver clearer reports, KPI dashboards, and cash flow forecast cadence</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>What you walk away with after the first conversation</h2>
+        <p class="lead">A practical start-here package your team can adopt without disruption.</p>
+        <div class="stack">
+          <article class="card fade">
+            <h3>Workflow map</h3>
+            <p>A clear map of current inputs, handoffs, approvals, and exception points across bookkeeping and accounting.</p>
+          </article>
+          <article class="card fade">
+            <h3>Quick-win shortlist</h3>
+            <p>Prioritized automation opportunities ranked by impact, effort, and implementation friction.</p>
+          </article>
+          <article class="card fade">
+            <h3>Start-here plan</h3>
+            <p>A one-workflow-first implementation sequence with milestones, controls, owners, and success KPIs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>System certificates and platform credentials</h2>
+        <p class="lead">Operators first. Credentials plus lived workflow experience across QBO, Xero, and adjacent systems.</p>
+        <div class="stack">
+          <article class="card fade">
+            <h3>Accounting platform tracks</h3>
+            <ul class="list">
+              <li>QuickBooks Online ProAdvisor certification track</li>
+              <li>Xero Advisor certification track</li>
+              <li>NetSuite and Acumatica workflow implementation experience</li>
+            </ul>
+          </article>
+          <article class="card fade">
+            <h3>Control and governance implementation standards</h3>
+            <ul class="list">
+              <li>Role-based approvals for journals and exceptions</li>
+              <li>Audit log and evidence capture standards</li>
+              <li>SLA monitoring and escalation configuration</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="container">
+        <h2>See it in action: live tools and latest videos</h2>
+        <p class="lead">All embeds are from <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener noreferrer">@LedgerSummit</a> and reflect the latest long uploads verified on February 14, 2026. We keep working tools and workflow examples visible so teams can evaluate real implementation, not slideware.</p>
+        <p style="margin-top:10px;"><a class="btn btn-soft" href="https://ledgersummit.com/tools" target="_blank" rel="noopener noreferrer">Explore live tools</a></p>
+        <div class="stack video-grid">
+          <article class="card video fade">
+            <iframe src="https://www.youtube-nocookie.com/embed/x5VPChZT4VU" title="AI Project Planning App Demo" loading="lazy" allowfullscreen></iframe>
+            <h3>AI Project Planning App Demo: Benchmarks, P&amp;L and Cost Forecasting</h3>
+            <p class="lead">Workflow design for benchmark-driven planning and finance decisions.</p>
+            <div class="meta"><span>Jan 29, 2026</span><span>3:50</span></div>
+          </article>
+          <article class="card video fade">
+            <iframe src="https://www.youtube-nocookie.com/embed/gvF4AZYNakY" title="How Benchmarks Improve Financial Planning" loading="lazy" allowfullscreen></iframe>
+            <h3>How Benchmarks Improve Financial Planning &amp; Project Forecasting</h3>
+            <p class="lead">How benchmark logic improves planning confidence and speed.</p>
+            <div class="meta"><span>Jan 27, 2026</span><span>3:08</span></div>
+          </article>
+          <article class="card video fade">
+            <iframe src="https://www.youtube-nocookie.com/embed/1294wNF72rY" title="Smarter Way to Build Grant and Project Budgets" loading="lazy" allowfullscreen></iframe>
+            <h3>A Smarter Way to Build Grant &amp; Project Budgets Without Heavy IT Systems</h3>
+            <p class="lead">Lightweight budgeting workflow build with AI assistance.</p>
+            <div class="meta"><span>Jan 13, 2026</span><span>3:25</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="section">
+      <div class="container">
+        <h2>Case studies by workflow area</h2>
+        <p class="lead">Seven focused case studies, each covering one accounting process from manual pain points to stable automation outcomes.</p>
+        <div class="stack">
+          <article class="case fade">
+            <div class="case-body">
+              <h3>Shipping Log vs Invoicing Log Reconciliation</h3>
+              <p>How invoice generation was automated from warehouse activity while an independent shipping-to-invoice reconciliation process repeatedly caught shipments that were never invoiced.</p>
+              <ul class="list">
+                <li>Automated invoice posting from approved warehouse shipping events</li>
+                <li>Independent reconciliation between shipping logs and invoicing logs</li>
+                <li>Repeated missed invoices identified and corrected before financials were finalized</li>
+              </ul>
+              <p style="margin-top:10px;"><a class="btn btn-soft" href="case-study-shipping-log-invoicing-reconciliation.html">Read case study</a></p>
+            </div>
+            <a class="case-media" href="https://www.youtube.com/watch?v=x5VPChZT4VU" target="_blank" rel="noopener noreferrer" aria-label="Watch related Ledger Summit video on YouTube">
+              <img src="https://img.youtube.com/vi/x5VPChZT4VU/hqdefault.jpg" alt="YouTube thumbnail for Shipping Log vs Invoicing Log Reconciliation">
+              <span class="case-play" aria-hidden="true">▶</span>
+            </a>
+          </article>
+          <article class="case fade">
+            <div class="case-body">
+              <h3>ME Close Automation</h3>
+              <p>How a manual month-end close was redesigned into a controlled workflow with faster cycle times and fewer last-minute escalations.</p>
+              <ul class="list">
+                <li>Task dependency automation across close owners</li>
+                <li>Exception review steps instead of inbox-driven follow-up</li>
+                <li>Predictable close timeline with audit-ready logs</li>
+              </ul>
+              <p style="margin-top:10px;"><a class="btn btn-soft" href="case-study-me-close.html">Read case study</a></p>
+            </div>
+            <a class="case-media" href="https://www.youtube.com/watch?v=gvF4AZYNakY" target="_blank" rel="noopener noreferrer" aria-label="Watch related Ledger Summit video on YouTube">
+              <img src="https://img.youtube.com/vi/gvF4AZYNakY/hqdefault.jpg" alt="YouTube thumbnail for ME Close Automation">
+              <span class="case-play" aria-hidden="true">▶</span>
+            </a>
+          </article>
+          <article class="case fade">
+            <div class="case-body">
+              <h3>Accruals Automation</h3>
+              <p>How recurring accrual preparation moved from manual spreadsheets to consistent, rule-based accounting workflows.</p>
+              <ul class="list">
+                <li>Template-driven recurring accrual logic</li>
+                <li>Automated supporting-document checks</li>
+                <li>Cleaner approvals before posting</li>
+              </ul>
+              <p style="margin-top:10px;"><a class="btn btn-soft" href="case-study-accruals.html">Read case study</a></p>
+            </div>
+            <a class="case-media" href="https://www.youtube.com/watch?v=1294wNF72rY" target="_blank" rel="noopener noreferrer" aria-label="Watch related Ledger Summit video on YouTube">
+              <img src="https://img.youtube.com/vi/1294wNF72rY/hqdefault.jpg" alt="YouTube thumbnail for Accruals Automation">
+              <span class="case-play" aria-hidden="true">▶</span>
+            </a>
+          </article>
+          <article class="case fade">
+            <div class="case-body">
+              <h3>Deferrals Automation</h3>
+              <p>How deferred revenue and expense schedules were automated to reduce adjustment entries and improve period consistency.</p>
+              <ul class="list">
+                <li>Automated schedule generation and reversal timing</li>
+                <li>Validation checks for term and recognition logic</li>
+                <li>Lower rework during month-end review</li>
+              </ul>
+              <p style="margin-top:10px;"><a class="btn btn-soft" href="case-study-deferrals.html">Read case study</a></p>
+            </div>
+            <a class="case-media" href="https://www.youtube.com/watch?v=x5VPChZT4VU" target="_blank" rel="noopener noreferrer" aria-label="Watch related Ledger Summit video on YouTube">
+              <img src="https://img.youtube.com/vi/x5VPChZT4VU/hqdefault.jpg" alt="YouTube thumbnail for Deferrals Automation">
+              <span class="case-play" aria-hidden="true">▶</span>
+            </a>
+          </article>
+          <article class="case fade">
+            <div class="case-body">
+              <h3>Payroll Reconciliations Automation</h3>
+              <p>How payroll recs moved from error-prone manual tie-outs to standardized review workflows.</p>
+              <ul class="list">
+                <li>Automated payroll-to-GL tie-out checks</li>
+                <li>Faster mismatch identification by account and period</li>
+                <li>Escalation routing with ownership and SLA rules</li>
+              </ul>
+              <p style="margin-top:10px;"><a class="btn btn-soft" href="case-study-payroll-reconciliations.html">Read case study</a></p>
+            </div>
+            <a class="case-media" href="https://www.youtube.com/watch?v=gvF4AZYNakY" target="_blank" rel="noopener noreferrer" aria-label="Watch related Ledger Summit video on YouTube">
+              <img src="https://img.youtube.com/vi/gvF4AZYNakY/hqdefault.jpg" alt="YouTube thumbnail for Payroll Reconciliations Automation">
+              <span class="case-play" aria-hidden="true">▶</span>
+            </a>
+          </article>
+          <article class="case fade">
+            <div class="case-body">
+              <h3>Inventory Reconciliation Automation</h3>
+              <p>How inventory rec workflows were redesigned to reduce shrinkage surprises and eliminate manual roll-forward errors.</p>
+              <ul class="list">
+                <li>Automated subledger-to-GL comparison workflow</li>
+                <li>Variance threshold alerts by item group</li>
+                <li>Faster close adjustments with traceable support</li>
+              </ul>
+              <p style="margin-top:10px;"><a class="btn btn-soft" href="case-study-inventory-reconciliations.html">Read case study</a></p>
+            </div>
+            <a class="case-media" href="https://www.youtube.com/watch?v=1294wNF72rY" target="_blank" rel="noopener noreferrer" aria-label="Watch related Ledger Summit video on YouTube">
+              <img src="https://img.youtube.com/vi/1294wNF72rY/hqdefault.jpg" alt="YouTube thumbnail for Inventory Reconciliation Automation">
+              <span class="case-play" aria-hidden="true">▶</span>
+            </a>
+          </article>
+          <article class="case fade">
+            <div class="case-body">
+              <h3>Fixed-Asset Schedules Automation</h3>
+              <p>How fixed-asset schedules were standardized for cleaner additions, disposals, and depreciation posting support.</p>
+              <ul class="list">
+                <li>Structured asset lifecycle update workflow</li>
+                <li>Automated depreciation run preparation checks</li>
+                <li>Improved audit support for asset movements</li>
+              </ul>
+              <p style="margin-top:10px;"><a class="btn btn-soft" href="case-study-fixed-asset-schedules.html">Read case study</a></p>
+            </div>
+            <a class="case-media" href="https://www.youtube.com/watch?v=x5VPChZT4VU" target="_blank" rel="noopener noreferrer" aria-label="Watch related Ledger Summit video on YouTube">
+              <img src="https://img.youtube.com/vi/x5VPChZT4VU/hqdefault.jpg" alt="YouTube thumbnail for Fixed-Asset Schedules Automation">
+              <span class="case-play" aria-hidden="true">▶</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Positioning snapshot: bookkeeping-first automation</h2>
+        <p class="lead">Our method starts with detailed documentation of current bookkeeping and accounting SOPs, then moves one workflow at a time from simpler high-effort work to harder multi-system work.</p>
+        <div class="matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>Alternative</th>
+                <th>Typical strength</th>
+                <th>Typical gap</th>
+                <th>Ledger Summit advantage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>General workflow platforms</td>
+                <td>Flexible system connections and task automation</td>
+                <td>Often no accounting transition method built on existing SOPs</td>
+                <td>We document current SOPs first, then automate one accounting workflow at a time with two parallel controls: direct posting with approvals and independent source-to-posted reconciliation</td>
+              </tr>
+              <tr>
+                <td>AP-only AI tools</td>
+                <td>Strong invoice automation</td>
+                <td>Limited accounting coverage outside AP</td>
+                <td>Broader bookkeeping and accounting coverage: month-end close, accruals, deferrals, payroll reconciliations, inventory, and fixed-asset schedules</td>
+              </tr>
+              <tr>
+                <td>Document OCR and extraction tools</td>
+                <td>Strong at reading PDFs, images, and reports</td>
+                <td>Usually stops after data extraction</td>
+                <td>We review all current data sources, convert them into validated SQL tables, post through controlled accounting workflows, and independently reconcile source records to posted entries</td>
+              </tr>
+              <tr>
+                <td>Large enterprise close suites</td>
+                <td>Broad module depth and governance</td>
+                <td>Can be heavy for small and mid-size rollout speed</td>
+                <td>Phased rollout with before/after SOP evidence and faster first production result</td>
+              </tr>
+              <tr>
+                <td>FP&amp;A dashboard-only tools</td>
+                <td>Strong charts and KPI display</td>
+                <td>Inputs stay manual if bookkeeping and accounting workflows are not automated</td>
+                <td>FP&amp;A reports, KPI tracking, and cash flow reports are live-linked to accounting data and operating statistics, reducing close-to-report lag</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <h2>FAQ</h2>
+        <p class="lead">Fast answers for finance and accounting buyers.</p>
+        <div class="stack" style="margin-top:14px;">
+          <details class="fade">
+            <summary>What does automation implementation mean here?</summary>
+            <p>It means documenting your current bookkeeping and accounting SOPs, then automating one workflow at a time inside your existing systems. Each workflow includes two parallel controls: direct posting with approvals and independent source-to-posted reconciliation.</p>
+          </details>
+          <details class="fade">
+            <summary>How do you reduce lag between close and FP&amp;A reporting?</summary>
+            <p>We link FP&amp;A reports and KPI tracking to live accounting data and live operating statistics, so reporting updates as source data updates.</p>
+          </details>
+          <details class="fade">
+            <summary>Do we need to replace our accounting systems?</summary>
+            <p>No. We work with your current stack while QBO, Xero, or your ERP remains the system of record.</p>
+          </details>
+          <details class="fade">
+            <summary>Will automation reduce control?</summary>
+            <p>No. We add two parallel controls on every workflow: first, direct posting with required review and approvals; second, independent reconciliation of source data to posted accounting records. This catches and addresses mistakes before final financials.</p>
+          </details>
+          <details class="fade">
+            <summary>How do you quality-check transactions before financials are finalized?</summary>
+            <p>We reconcile source data and posted accounting data at the transaction level. For example, vendor bills, warehouse reports, and payroll journals are matched independently to posted records, so errors are caught, corrected, and fully auditable before reporting is finalized.</p>
+          </details>
+          <details class="fade">
+            <summary>What do we get after the first conversation?</summary>
+            <p>You get a workflow map, a first-wave automation shortlist, and a clear start plan with owners, milestones, and controls.</p>
+          </details>
+          <details class="fade">
+            <summary>How quickly can we launch the first bookkeeping automation?</summary>
+            <p>Most teams launch one production bookkeeping workflow in weeks, then expand into accounting and reporting workflows after the first go-live is stable.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="section">
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to automate one high-friction workflow this month?</h2>
+          <p>Book a free call and leave with a clear pilot scope your team can execute quickly.</p>
+          <p><a class="btn btn-primary" href="mailto:hello@ledgersummit.com?subject=Book%20a%20free%20call">Book a free call</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <p>2026 Ledger Summit. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#engagement">Engagement</a>
+        <a href="#videos">Videos</a>
+        <a href="#cases">Case studies</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ledger Summit",
+    "url": "https://ledgersummit.com/",
+    "logo": "https://ledgersummit.com/assets/logo-ledger-summit.svg",
+    "sameAs": [
+      "https://www.linkedin.com/company/ledger-summit",
+      "https://www.youtube.com/@LedgerSummit"
+    ],
+    "description": "Ledger Summit provides bookkeeping-first automation, accounting automation, and FP&A reporting workflow design for small and mid-size businesses across industries.",
+    "areaServed": "US"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Bookkeeping and Accounting Automation",
+    "serviceType": "AI-assisted bookkeeping automation, accounting automation, and FP&A workflow implementation",
+    "provider": {
+      "@type": "Organization",
+      "name": "Ledger Summit"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://ledgersummit.com/book-a-call"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "VideoObject",
+        "name": "AI Project Planning App Demo: Benchmarks, P&L & Cost Forecasting Made Simple",
+        "uploadDate": "2026-01-29",
+        "duration": "PT3M50S",
+        "embedUrl": "https://www.youtube.com/embed/x5VPChZT4VU",
+        "contentUrl": "https://www.youtube.com/watch?v=x5VPChZT4VU"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "How Benchmarks Improve Financial Planning & Project Forecasting (AI Demo)",
+        "uploadDate": "2026-01-27",
+        "duration": "PT3M8S",
+        "embedUrl": "https://www.youtube.com/embed/gvF4AZYNakY",
+        "contentUrl": "https://www.youtube.com/watch?v=gvF4AZYNakY"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "A Smarter Way to Build Grant & Project Budgets Without Heavy IT Systems",
+        "uploadDate": "2026-01-13",
+        "duration": "PT3M25S",
+        "embedUrl": "https://www.youtube.com/embed/1294wNF72rY",
+        "contentUrl": "https://www.youtube.com/watch?v=1294wNF72rY"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does automation implementation mean here?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It means documenting your current bookkeeping and accounting SOPs, then automating one workflow at a time inside your existing systems. Each workflow includes two parallel controls: direct posting with approvals and independent source-to-posted reconciliation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you reduce lag between close and FP&A reporting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We link FP&A reports and KPI tracking to live accounting data and live operating statistics, so reporting updates as source data updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do we need to replace our accounting systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We work with your current stack while QBO, Xero, or your ERP remains the system of record."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will automation reduce control?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We add two parallel controls on every workflow: first, direct posting with required review and approvals; second, independent reconciliation of source data to posted accounting records. This catches and addresses mistakes before final financials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you quality-check transactions before financials are finalized?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We reconcile source data and posted accounting data at the transaction level. For example, vendor bills, warehouse reports, and payroll journals are matched independently to posted records, so errors are caught, corrected, and fully auditable before reporting is finalized."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do we get after the first conversation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You get a workflow map, a first-wave automation shortlist, and a clear start plan with owners, milestones, and controls."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can we launch the first bookkeeping automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most teams launch one production bookkeeping workflow in weeks, then expand into accounting and reporting workflows after the first go-live is stable."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
