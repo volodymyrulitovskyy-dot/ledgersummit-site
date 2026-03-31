@@ -1,0 +1,67 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/tool-categories",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/tool-categories/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/tool-categories/:category",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/tool-categories/:category/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/tool-categories",
+      "destination": "/tool-categories.html"
+    },
+    {
+      "source": "/tool-categories/",
+      "destination": "/tool-categories.html"
+    },
+    {
+      "source": "/tool-categories/index.html",
+      "destination": "/tool-categories.html"
+    },
+    {
+      "source": "/tool-categories/:category",
+      "destination": "/tool-categories-:category.html"
+    },
+    {
+      "source": "/tool-categories/:category/",
+      "destination": "/tool-categories-:category.html"
+    },
+    {
+      "source": "/tool-categories/:category/index.html",
+      "destination": "/tool-categories-:category.html"
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Effect Demos — LedgerSummit</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #64748b;
+      --brand: #0a66c2;
+      --brand-soft: #eaf3ff;
+      --surface: #ffffff;
+      --page: #f8fafc;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: 'Manrope', sans-serif; background: var(--page); color: var(--ink); }
+    .demo-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0; padding: 16px 32px;
+      display: flex; gap: 24px; align-items: center;
+    }
+    .demo-nav span { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .demo-nav a { font-size: 14px; font-weight: 600; color: var(--brand); text-decoration: none; }
+    .demo-nav a:hover { text-decoration: underline; }
+
+    section {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 80px 32px;
+      position: relative; overflow: hidden;
+    }
+    section h2 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700;
+      margin-bottom: 8px; text-align: center;
+    }
+    section p.desc {
+      color: var(--muted); font-size: 16px; max-width: 520px;
+      text-align: center; margin-bottom: 40px; line-height: 1.6;
+    }
+    .canvas-wrap {
+      width: 100%; max-width: 900px; height: 480px;
+      border-radius: 16px; overflow: hidden;
+      background: #0f172a; position: relative;
+    }
+    .canvas-wrap canvas { display: block; width: 100%; height: 100%; }
+
+    #demo1 { background: linear-gradient(135deg, #f8fafc 0%, #eaf3ff 100%); }
+    #demo2 { background: var(--surface); }
+    #demo3 { background: linear-gradient(135deg, #eaf3ff 0%, #f8fafc 100%); }
+
+    .label {
+      position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,0.9); backdrop-filter: blur(8px);
+      padding: 8px 20px; border-radius: 99px; font-size: 13px;
+      font-weight: 600; color: var(--brand); border: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="demo-nav">
+    <span>3D Demos</span>
+    <a href="#demo1">1. Particle Flow</a>
+    <a href="#demo2">2. Floating Dashboard</a>
+    <a href="#demo3">3. Orbiting Icons</a>
+  </nav>
+
+  <!-- DEMO 1: Particle Data Flow -->
+  <section id="demo1">
+    <h2>Particle Data Flow</h2>
+    <p class="desc">Scattered dots converge from chaos into an organized grid — symbolizing raw data becoming clean financials.</p>
+    <div class="canvas-wrap" id="particles-wrap">
+      <canvas id="particles-canvas"></canvas>
+      <div class="label">Hover to scatter, release to organize</div>
+    </div>
+  </section>
+
+  <!-- DEMO 2: Floating 3D Dashboard -->
+  <section id="demo2">
+    <h2>Floating 3D Dashboard</h2>
+    <p class="desc">A glass panel with abstract chart bars that gently rotates and responds to mouse movement.</p>
+    <div class="canvas-wrap" id="dashboard-wrap">
+      <canvas id="dashboard-canvas"></canvas>
+      <div class="label">Move mouse to tilt the dashboard</div>
+    </div>
+  </section>
+
+  <!-- DEMO 3: Orbiting Icons -->
+  <section id="demo3">
+    <h2>Orbiting Icons</h2>
+    <p class="desc">Glowing spheres orbit a central point — representing the ecosystem of automation workflows.</p>
+    <div class="canvas-wrap" id="orbit-wrap">
+      <canvas id="orbit-canvas"></canvas>
+      <div class="label">Continuous animation with gentle drift</div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+  /* ===== DEMO 1: Particle Data Flow ===== */
+  (function() {
+    const canvas = document.getElementById('particles-canvas');
+    const wrap = document.getElementById('particles-wrap');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
+    camera.position.z = 30;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+    renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x0f172a);
+
+    const COUNT = 600;
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(COUNT * 3);
+    const targets = new Float32Array(COUNT * 3);
+    const colors = new Float32Array(COUNT * 3);
+    const brandCol = new THREE.Color(0x3b82f6);
+    const accentCol = new THREE.Color(0x06b6d4);
+
+    // Grid targets
+    const cols = 30, rows = 20;
+    for (let i = 0; i < COUNT; i++) {
+      const gx = (i % cols) - cols / 2;
+      const gy = Math.floor(i / cols) - rows / 2;
+      targets[i * 3] = gx * 0.8;
+      targets[i * 3 + 1] = gy * 0.8;
+      targets[i * 3 + 2] = 0;
+
+      // Start scattered
+      positions[i * 3] = (Math.random() - 0.5) * 50;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 30;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+
+      const c = Math.random() > 0.5 ? brandCol : accentCol;
+      colors[i * 3] = c.r;
+      colors[i * 3 + 1] = c.g;
+      colors[i * 3 + 2] = c.b;
+    }
+
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const mat = new THREE.PointsMaterial({ size: 0.18, vertexColors: true, transparent: true, opacity: 0.85 });
+    const points = new THREE.Points(geo, mat);
+    scene.add(points);
+
+    let hovered = false;
+    wrap.addEventListener('mouseenter', () => hovered = true);
+    wrap.addEventListener('mouseleave', () => hovered = false);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const pos = geo.attributes.position.array;
+      for (let i = 0; i < COUNT; i++) {
+        const ix = i * 3, iy = i * 3 + 1, iz = i * 3 + 2;
+        if (hovered) {
+          // Scatter
+          pos[ix] += (Math.random() - 0.5) * 0.3;
+          pos[iy] += (Math.random() - 0.5) * 0.3;
+          pos[iz] += (Math.random() - 0.5) * 0.15;
+        } else {
+          // Converge to grid
+          pos[ix] += (targets[ix] - pos[ix]) * 0.03;
+          pos[iy] += (targets[iy] - pos[iy]) * 0.03;
+          pos[iz] += (targets[iz] - pos[iz]) * 0.03;
+        }
+      }
+      geo.attributes.position.needsUpdate = true;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = wrap.clientWidth / wrap.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    });
+  })();
+
+  /* ===== DEMO 2: Floating 3D Dashboard ===== */
+  (function() {
+    const canvas = document.getElementById('dashboard-canvas');
+    const wrap = document.getElementById('dashboard-wrap');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
+    camera.position.set(0, 0, 18);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x0f172a);
+
+    // Ambient + directional light
+    scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+    const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+    dir.position.set(5, 8, 10);
+    scene.add(dir);
+
+    // Glass panel
+    const panelGeo = new THREE.BoxGeometry(12, 7, 0.15);
+    const panelMat = new THREE.MeshPhysicalMaterial({
+      color: 0x1e3a5f, metalness: 0.1, roughness: 0.05,
+      transparent: true, opacity: 0.35, side: THREE.DoubleSide
+    });
+    const panel = new THREE.Mesh(panelGeo, panelMat);
+    scene.add(panel);
+
+    // Panel border
+    const edgesGeo = new THREE.EdgesGeometry(panelGeo);
+    const edgesMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.5 });
+    const edges = new THREE.LineSegments(edgesGeo, edgesMat);
+    panel.add(edges);
+
+    // Chart bars
+    const barGroup = new THREE.Group();
+    const barHeights = [2.5, 3.8, 2.2, 4.5, 3.0, 5.0, 3.5, 4.2, 2.8, 3.6];
+    const barColors = [0x3b82f6, 0x06b6d4, 0x3b82f6, 0x06b6d4, 0x3b82f6, 0x8b5cf6, 0x06b6d4, 0x3b82f6, 0x06b6d4, 0x8b5cf6];
+    barHeights.forEach((h, i) => {
+      const bGeo = new THREE.BoxGeometry(0.6, h, 0.3);
+      const bMat = new THREE.MeshPhysicalMaterial({
+        color: barColors[i], metalness: 0.3, roughness: 0.2,
+        transparent: true, opacity: 0.75, emissive: barColors[i], emissiveIntensity: 0.15
+      });
+      const bar = new THREE.Mesh(bGeo, bMat);
+      bar.position.set(-4 + i * 0.9, -3.5 + h / 2, 0.2);
+      barGroup.add(bar);
+    });
+    panel.add(barGroup);
+
+    // Floating line (like a trend line)
+    const linePts = [];
+    for (let i = 0; i <= 20; i++) {
+      linePts.push(new THREE.Vector3(-5 + i * 0.5, Math.sin(i * 0.5) * 1.2 + 1, 0.3));
+    }
+    const lineGeo = new THREE.BufferGeometry().setFromPoints(linePts);
+    const lineMat = new THREE.LineBasicMaterial({ color: 0x22d3ee, linewidth: 2 });
+    const line = new THREE.Line(lineGeo, lineMat);
+    panel.add(line);
+
+    let mouseX = 0, mouseY = 0;
+    wrap.addEventListener('mousemove', (e) => {
+      const rect = wrap.getBoundingClientRect();
+      mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      mouseY = -((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const t = Date.now() * 0.001;
+      // Gentle idle rotation + mouse tilt
+      panel.rotation.y = Math.sin(t * 0.3) * 0.08 + mouseX * 0.15;
+      panel.rotation.x = Math.sin(t * 0.2) * 0.05 + mouseY * 0.1;
+      panel.position.y = Math.sin(t * 0.5) * 0.3;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = wrap.clientWidth / wrap.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    });
+  })();
+
+  /* ===== DEMO 3: Orbiting Icons ===== */
+  (function() {
+    const canvas = document.getElementById('orbit-canvas');
+    const wrap = document.getElementById('orbit-wrap');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
+    camera.position.set(0, 3, 20);
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x0f172a);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+    const pLight = new THREE.PointLight(0x3b82f6, 2, 50);
+    pLight.position.set(0, 0, 0);
+    scene.add(pLight);
+
+    // Central glow sphere
+    const centerGeo = new THREE.SphereGeometry(1.2, 32, 32);
+    const centerMat = new THREE.MeshPhysicalMaterial({
+      color: 0x0a66c2, emissive: 0x0a66c2, emissiveIntensity: 0.6,
+      metalness: 0.1, roughness: 0.3, transparent: true, opacity: 0.7
+    });
+    const center = new THREE.Mesh(centerGeo, centerMat);
+    scene.add(center);
+
+    // Orbiting spheres
+    const orbiters = [];
+    const orbitData = [
+      { color: 0x3b82f6, radius: 5, speed: 0.4, size: 0.55, y: 0 },
+      { color: 0x06b6d4, radius: 5, speed: 0.4, size: 0.45, y: 0, offset: Math.PI * 0.66 },
+      { color: 0x8b5cf6, radius: 5, speed: 0.4, size: 0.5, y: 0, offset: Math.PI * 1.33 },
+      { color: 0x22d3ee, radius: 7.5, speed: 0.25, size: 0.4, y: 1.5 },
+      { color: 0x6366f1, radius: 7.5, speed: 0.25, size: 0.35, y: 1.5, offset: Math.PI },
+      { color: 0x10b981, radius: 10, speed: 0.15, size: 0.35, y: -1 },
+      { color: 0xf59e0b, radius: 10, speed: 0.15, size: 0.3, y: -1, offset: Math.PI * 0.7 },
+      { color: 0xec4899, radius: 10, speed: 0.15, size: 0.3, y: -1, offset: Math.PI * 1.4 },
+    ];
+
+    orbitData.forEach(d => {
+      const geo = new THREE.SphereGeometry(d.size, 24, 24);
+      const mat = new THREE.MeshPhysicalMaterial({
+        color: d.color, emissive: d.color, emissiveIntensity: 0.4,
+        metalness: 0.2, roughness: 0.3, transparent: true, opacity: 0.85
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      scene.add(mesh);
+      orbiters.push({ mesh, ...d, offset: d.offset || 0 });
+
+      // Orbit ring
+      const ringGeo = new THREE.RingGeometry(d.radius - 0.02, d.radius + 0.02, 128);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: 0x334155, transparent: true, opacity: 0.15, side: THREE.DoubleSide
+      });
+      const ring = new THREE.Mesh(ringGeo, ringMat);
+      ring.rotation.x = Math.PI / 2;
+      ring.position.y = d.y;
+      scene.add(ring);
+    });
+
+    // Connection lines (trails)
+    function animate() {
+      requestAnimationFrame(animate);
+      const t = Date.now() * 0.001;
+
+      // Pulse center
+      center.scale.setScalar(1 + Math.sin(t * 2) * 0.05);
+      pLight.intensity = 2 + Math.sin(t * 3) * 0.5;
+
+      orbiters.forEach(o => {
+        const angle = t * o.speed + o.offset;
+        o.mesh.position.x = Math.cos(angle) * o.radius;
+        o.mesh.position.z = Math.sin(angle) * o.radius;
+        o.mesh.position.y = o.y + Math.sin(t * 0.8 + o.offset) * 0.5;
+      });
+
+      // Gentle camera drift
+      camera.position.x = Math.sin(t * 0.1) * 2;
+      camera.lookAt(0, 0, 0);
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = wrap.clientWidth / wrap.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    });
+  })();
+  </script>
+</body>
+</html>

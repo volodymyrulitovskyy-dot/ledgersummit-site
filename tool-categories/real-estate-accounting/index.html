@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Accounting | Ledger Summit Tool Categories</title>
+  <meta name="description" content="Use these tools for ROI, cash-on-cash return, rental tracking, property depreciation, 1031 planning, mortgage amortization, NOI, and cash flow analysis. Browse 10 tools across 5 sub-categories, each with a short description and direct Ledger Summit link.">
+  <link rel="canonical" href="https://ledgersummit.com/tool-categories/real-estate-accounting/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Real Estate Accounting | Ledger Summit Tool Categories">
+  <meta property="og:description" content="Use these tools for ROI, cash-on-cash return, rental tracking, property depreciation, 1031 planning, mortgage amortization, NOI, and cash flow analysis. Browse 10 tools across 5 sub-categories, each with a short description and direct Ledger Summit link.">
+  <meta property="og:url" content="https://ledgersummit.com/tool-categories/real-estate-accounting/">
+  <meta property="og:image" content="/assets/logo-ledger-summit.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Real Estate Accounting | Ledger Summit Tool Categories">
+  <meta name="twitter:description" content="Use these tools for ROI, cash-on-cash return, rental tracking, property depreciation, 1031 planning, mortgage amortization, NOI, and cash flow analysis. Browse 10 tools across 5 sub-categories, each with a short description and direct Ledger Summit link.">
+  <meta name="twitter:image" content="/assets/logo-ledger-summit.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ls-ink: #0f172a;
+      --ls-muted: #4b5563;
+      --ls-line: #dbe4ef;
+      --ls-panel: #ffffff;
+      --ls-page: #f8fbff;
+      --ls-brand: #0a66c2;
+      --ls-brand-soft: #eaf3ff;
+      --ls-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+      --ls-radius-lg: 24px;
+      --ls-radius-md: 18px;
+      --ls-radius-sm: 14px;
+      --ls-max: 1420px;
+      --ls-rail: 980px;
+      --accent: #0a66c2;
+      --accent-soft: #eaf3ff;
+      --accent-line: #bcd7f6;
+    }
+
+    body.tools-category-page,
+    body.tools-category-hub {
+      margin: 0;
+      color: var(--ls-ink);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(10, 102, 194, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, var(--ls-page) 100%);
+    }
+
+    .tools-category-page *,
+    .tools-category-hub * {
+      box-sizing: border-box;
+    }
+
+    .tools-category-page html,
+    .tools-category-hub html {
+      scroll-behavior: smooth;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      z-index: 120;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--ls-line);
+      color: var(--ls-ink);
+      transform: translateY(-160%);
+      transition: transform 160ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--ls-line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      width: min(96%, var(--ls-max));
+      min-height: 74px;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .nav-logo,
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ls-ink);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo img,
+    .footer-brand img {
+      display: block;
+      height: auto;
+    }
+
+    .nav-logo img {
+      width: 212px;
+    }
+
+    .footer-brand img {
+      width: 176px;
+    }
+
+    .nav-links,
+    .footer-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a,
+    .footer-links a {
+      color: #334155;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover,
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      border: 1px solid var(--ls-line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--ls-ink);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 3px auto;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 160ms ease, opacity 160ms ease;
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
+      width: min(96%, var(--ls-max));
+      margin: 0 auto;
+      padding: 0 0 16px;
+      gap: 10px;
+      border-bottom: 1px solid var(--ls-line);
+    }
+
+    .mobile-nav.is-open {
+      display: grid;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--ls-line);
+      border-radius: 14px;
+      background: #ffffff;
+      color: var(--ls-ink);
+      font-weight: 700;
+    }
+
+    .mobile-nav a.btn-primary {
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .tools-category-page h1,
+    .tools-category-page h2,
+    .tools-category-page h3,
+    .tools-category-hub h1,
+    .tools-category-hub h2,
+    .tools-category-hub h3 {
+      margin: 0;
+      color: var(--ls-ink);
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.06;
+    }
+
+    .tools-category-page p,
+    .tools-category-hub p,
+    .tools-category-page li,
+    .tools-category-hub li {
+      color: var(--ls-muted);
+      line-height: 1.62;
+    }
+
+    .tools-category-page a,
+    .tools-category-hub a {
+      text-decoration: none;
+    }
+
+    .tools-category-page main,
+    .tools-category-hub main {
+      padding: 28px 0 88px;
+    }
+
+    .tools-category-page .container,
+    .tools-category-hub .container {
+      width: min(96%, var(--ls-max));
+      margin-inline: auto;
+    }
+
+    .tools-category-page .tools-hub-hero,
+    .tools-category-hub .tools-hub-hero {
+      margin-bottom: 0;
+      padding: 26px 0 24px;
+    }
+
+    .tools-category-page .tools-hub-hero-grid,
+    .tools-category-hub .tools-hub-hero-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+      align-items: start;
+      max-width: var(--ls-rail);
+      margin-inline: auto;
+    }
+
+    .tools-category-page .tools-hub-copy,
+    .tools-category-page .tools-hub-panel,
+    .tools-category-hub .tools-hub-copy,
+    .tools-category-hub .tools-hub-panel,
+    .tools-category-page .tools-hub-toolbar,
+    .tools-category-hub .tools-hub-toolbar,
+    .tools-category-page .tools-hub-empty,
+    .tools-category-hub .tools-hub-empty,
+    .tools-category-page .ls-subcategory-block,
+    .tools-category-hub .ls-subcategory-block,
+    .tools-category-page .cta-content,
+    .tools-category-hub .cta-content {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--ls-line);
+      border-radius: var(--ls-radius-lg);
+      box-shadow: var(--ls-shadow);
+    }
+
+    .tools-category-page .tools-hub-copy,
+    .tools-category-page .tools-hub-panel,
+    .tools-category-hub .tools-hub-copy,
+    .tools-category-hub .tools-hub-panel {
+      padding: 30px;
+    }
+
+    .tools-category-page .section-label,
+    .tools-category-hub .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 14px;
+      border: 1px solid var(--accent-line);
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .tools-category-page h1,
+    .tools-category-hub h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      max-width: 12ch;
+      margin-bottom: 12px;
+    }
+
+    .tools-category-page h2,
+    .tools-category-hub h2 {
+      font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+      max-width: 18ch;
+    }
+
+    .tools-category-page h3,
+    .tools-category-hub h3 {
+      font-size: 1.32rem;
+    }
+
+    .tools-category-page .tools-hub-copy > p,
+    .tools-category-hub .tools-hub-copy > p {
+      max-width: 68ch;
+      font-size: 1.04rem;
+      margin: 0;
+    }
+
+    .tools-category-page .tools-hub-answer-strip,
+    .tools-category-hub .tools-hub-answer-strip {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 16px 16px 0;
+      background: linear-gradient(90deg, rgba(10, 102, 194, 0.08), rgba(255, 255, 255, 0.9));
+    }
+
+    .tools-category-page .tools-hub-answer-strip strong,
+    .tools-category-hub .tools-hub-answer-strip strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ls-ink);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .tools-category-page .tools-hub-answer-strip span,
+    .tools-category-hub .tools-hub-answer-strip span {
+      display: block;
+      color: var(--ls-muted);
+      font-size: 0.98rem;
+    }
+
+    .tools-category-page .tools-hub-actions,
+    .tools-category-hub .tools-hub-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tools-category-page .btn-primary,
+    .tools-category-page .btn-secondary,
+    .tools-category-hub .btn-primary,
+    .tools-category-hub .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .tools-category-page .btn-primary,
+    .tools-category-hub .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 14px 32px rgba(10, 102, 194, 0.18);
+    }
+
+    .tools-category-page .btn-secondary,
+    .tools-category-hub .btn-secondary {
+      border: 1px solid var(--ls-line);
+      background: #ffffff;
+      color: var(--ls-ink);
+    }
+
+    .tools-category-page .btn-primary:hover,
+    .tools-category-page .btn-secondary:hover,
+    .tools-category-hub .btn-primary:hover,
+    .tools-category-hub .btn-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .tools-category-page .tools-hub-pills,
+    .tools-category-hub .tools-hub-pills,
+    .ls-category-summary,
+    .ls-subcategory-rail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tools-category-page .tools-hub-pill,
+    .tools-category-hub .tools-hub-pill,
+    .ls-category-chip,
+    .ls-subcategory-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.45rem 0.92rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      background: rgba(255, 255, 255, 0.94);
+      color: #1e293b;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .tools-category-page .tools-hub-pill i,
+    .tools-category-hub .tools-hub-pill i {
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .tools-category-page .tools-hub-panel-badge,
+    .tools-category-hub .tools-hub-panel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tools-category-page .tools-hub-panel-badge i,
+    .tools-category-hub .tools-hub-panel-badge i {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .tools-category-page .tools-hub-panel-head,
+    .tools-category-hub .tools-hub-panel-head {
+      margin-top: 14px;
+    }
+
+    .tools-category-page .tools-hub-panel-head h2,
+    .tools-category-hub .tools-hub-panel-head h2 {
+      font-size: clamp(1.45rem, 2.6vw, 2rem);
+      max-width: 15ch;
+    }
+
+    .tools-category-page .tools-hub-panel-head p,
+    .tools-category-hub .tools-hub-panel-head p {
+      margin: 12px 0 0;
+      font-size: 0.98rem;
+    }
+
+    .tools-category-page .tools-hub-metrics,
+    .tools-category-hub .tools-hub-metrics {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+      margin-top: 22px;
+    }
+
+    .tools-category-page .tools-hub-metric,
+    .tools-category-hub .tools-hub-metric {
+      padding: 16px;
+      border-radius: var(--ls-radius-md);
+      background: linear-gradient(180deg, rgba(234, 243, 255, 0.56), rgba(255, 255, 255, 0.92));
+      border: 1px solid rgba(188, 215, 246, 0.88);
+    }
+
+    .tools-category-page .tools-hub-metric strong,
+    .tools-category-hub .tools-hub-metric strong {
+      display: block;
+      color: var(--ls-ink);
+      font-size: 1.4rem;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .tools-category-page .tools-hub-metric span,
+    .tools-category-hub .tools-hub-metric span {
+      color: var(--ls-muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .tools-category-page .tools-hub-links,
+    .tools-category-hub .tools-hub-links {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .tools-category-page .tools-hub-link,
+    .tools-category-hub .tools-hub-link {
+      padding-top: 12px;
+      border-top: 1px solid rgba(219, 228, 239, 0.9);
+      display: grid;
+      gap: 4px;
+    }
+
+    .tools-category-page .tools-hub-link strong,
+    .tools-category-hub .tools-hub-link strong,
+    .tools-category-page .tools-hub-toolbar-meta strong,
+    .tools-category-hub .tools-hub-toolbar-meta strong,
+    .tools-category-page .tools-hub-empty strong,
+    .tools-category-hub .tools-hub-empty strong,
+    .ls-subcategory-head strong {
+      color: var(--ls-ink);
+    }
+
+    .tools-category-page .page-section,
+    .tools-category-hub .page-section,
+    .tools-category-page .cta-section,
+    .tools-category-hub .cta-section {
+      padding: 28px 0 0;
+    }
+
+    .tools-category-page .section-header,
+    .tools-category-hub .section-header {
+      max-width: var(--ls-rail);
+      margin: 0 auto 18px;
+    }
+
+    .tools-category-page .section-header p,
+    .tools-category-hub .section-header p {
+      margin: 10px 0 0;
+      font-size: 1.02rem;
+    }
+
+    .tools-category-page .tools-hub-toolbar,
+    .tools-category-hub .tools-hub-toolbar {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      padding: 20px 22px;
+      max-width: var(--ls-rail);
+      margin-inline: auto;
+      margin-bottom: 18px;
+    }
+
+    .tools-category-page .tools-hub-search-shell,
+    .tools-category-hub .tools-hub-search-shell {
+      display: grid;
+      gap: 10px;
+    }
+
+    .tools-category-page .tools-hub-search-label,
+    .tools-category-hub .tools-hub-search-label {
+      color: var(--ls-ink);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .tools-category-page .tools-hub-search-input,
+    .tools-category-hub .tools-hub-search-input {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      align-items: center;
+      min-height: 54px;
+      padding: 0 16px;
+      border: 1px solid var(--ls-line);
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .tools-category-page .tools-hub-search-input span,
+    .tools-category-hub .tools-hub-search-input span {
+      color: #94a3b8;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .tools-category-page .tools-hub-search-input input,
+    .tools-category-hub .tools-hub-search-input input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      padding: 0;
+      background: transparent;
+      color: var(--ls-ink);
+      font: inherit;
+    }
+
+    .tools-category-page .tools-hub-search-input input::placeholder,
+    .tools-category-hub .tools-hub-search-input input::placeholder {
+      color: #94a3b8;
+    }
+
+    .tools-category-page .tools-hub-search-shell p,
+    .tools-category-hub .tools-hub-search-shell p {
+      margin: 0;
+      font-size: 0.93rem;
+    }
+
+    .tools-category-page .tools-hub-toolbar-meta,
+    .tools-category-hub .tools-hub-toolbar-meta {
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+
+    .tools-category-page .tools-hub-empty,
+    .tools-category-hub .tools-hub-empty {
+      padding: 18px 22px;
+      max-width: var(--ls-rail);
+      margin-inline: auto;
+    }
+
+    .tools-category-page .tools-hub-empty p,
+    .tools-category-hub .tools-hub-empty p {
+      margin: 8px 0 0;
+    }
+
+    .tools-category-page .tools-library-grid,
+    .tools-category-hub .tools-library-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+      max-width: var(--ls-rail);
+    }
+
+    .tools-category-page .tools-library-card,
+    .tools-category-hub .tools-library-card {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      min-height: 100%;
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid var(--ls-line);
+      background: #ffffff;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .tools-category-page .tools-library-card::before,
+    .tools-category-hub .tools-library-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(90deg, var(--accent), rgba(10, 102, 194, 0.3));
+    }
+
+    .tools-category-page .tools-library-card:hover,
+    .tools-category-hub .tools-library-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(10, 102, 194, 0.22);
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.09);
+    }
+
+    .tools-category-page .tools-library-badge,
+    .tools-category-hub .tools-library-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 30px;
+      padding: 0.35rem 0.72rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent-line);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .tools-category-page .tools-library-card h3,
+    .tools-category-hub .tools-library-card h3 {
+      font-size: 1.28rem;
+      max-width: 18ch;
+    }
+
+    .tools-category-page .tools-library-card p,
+    .tools-category-hub .tools-library-card p {
+      margin: 0;
+      font-size: 0.97rem;
+    }
+
+    .tools-category-page .tools-library-tags,
+    .tools-category-hub .tools-library-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tools-category-page .tools-library-tags span,
+    .tools-category-hub .tools-library-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid rgba(219, 228, 239, 0.95);
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .tools-category-page .tools-library-link,
+    .tools-category-hub .tools-library-link {
+      margin-top: auto;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.94rem;
+    }
+
+    .ls-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.1rem;
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .ls-back-link:hover,
+    .ls-subcategory-chip:hover {
+      text-decoration: underline;
+    }
+
+    .ls-subcategory-block {
+      margin-top: 24px;
+      padding: 24px;
+      scroll-margin-top: 7rem;
+    }
+
+    .ls-subcategory-block:first-child {
+      margin-top: 0;
+    }
+
+    .ls-subcategory-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .ls-subcategory-head p {
+      margin: 10px 0 0;
+      max-width: 56ch;
+    }
+
+    .ls-count-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent-line);
+      font-size: 0.88rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tools-category-page .cta-content,
+    .tools-category-hub .cta-content {
+      display: grid;
+      gap: 14px;
+      padding: 28px 30px;
+      max-width: var(--ls-rail);
+      margin-top: 24px;
+      margin-inline: auto;
+      text-align: left;
+    }
+
+    .ls-subcategory-rail,
+    .ls-category-shell,
+    .ls-category-summary {
+      max-width: var(--ls-rail);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tools-category-page .cta-content h2,
+    .tools-category-hub .cta-content h2 {
+      max-width: 16ch;
+    }
+
+    .tools-category-page .cta-content p,
+    .tools-category-hub .cta-content p {
+      margin: 0;
+      max-width: 72ch;
+    }
+
+    .footer {
+      margin-top: 36px;
+      border-top: 1px solid var(--ls-line);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .footer .container {
+      padding: 22px 0 30px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+      margin-top: 14px;
+      color: var(--ls-muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .scroll-top-btn {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+      transform: translateY(10px);
+    }
+
+    .scroll-top-btn.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .ls-hidden {
+      display: none !important;
+    }
+
+    .tools-hub-empty.ls-visible {
+      display: block !important;
+    }
+
+    #category-grid,
+    #category-tools {
+      scroll-margin-top: 7rem;
+    }
+
+    .is-blue { --accent: #0a66c2; --accent-soft: #eaf3ff; --accent-line: #bcd7f6; }
+    .is-gold { --accent: #a16207; --accent-soft: #fff7db; --accent-line: #f2d388; }
+    .is-coral { --accent: #c2410c; --accent-soft: #fff0e7; --accent-line: #fdba8c; }
+    .is-slate { --accent: #475569; --accent-soft: #f1f5f9; --accent-line: #cbd5e1; }
+    .is-emerald { --accent: #047857; --accent-soft: #e9fbf4; --accent-line: #9adfc5; }
+    .is-indigo { --accent: #4338ca; --accent-soft: #eef1ff; --accent-line: #c7d2fe; }
+    .is-terra { --accent: #9a3412; --accent-soft: #fff3ee; --accent-line: #fdba8c; }
+    .is-teal { --accent: #0f766e; --accent-soft: #ebfffb; --accent-line: #99f6e4; }
+    .is-navy { --accent: #1d4ed8; --accent-soft: #eff6ff; --accent-line: #bfdbfe; }
+    .is-amber { --accent: #b45309; --accent-soft: #fff7ed; --accent-line: #fcd7aa; }
+    .is-sky { --accent: #0369a1; --accent-soft: #eff8ff; --accent-line: #bae6fd; }
+    .is-violet { --accent: #6d28d9; --accent-soft: #f5f3ff; --accent-line: #ddd6fe; }
+    .is-rose { --accent: #be123c; --accent-soft: #fff1f5; --accent-line: #fecdd3; }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: inline-flex;
+      }
+
+      .tools-category-page .tools-hub-hero-grid,
+      .tools-category-hub .tools-hub-hero-grid,
+      .tools-category-page .tools-hub-toolbar,
+      .tools-category-hub .tools-hub-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-category-page .tools-hub-toolbar-meta,
+      .tools-category-hub .tools-hub-toolbar-meta {
+        white-space: normal;
+      }
+
+      .ls-subcategory-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .tools-category-page main,
+      .tools-category-hub main {
+        padding: 16px 0 72px;
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .nav-logo img {
+        width: 172px;
+      }
+
+      .tools-category-page .tools-hub-copy,
+      .tools-category-page .tools-hub-panel,
+      .tools-category-hub .tools-hub-copy,
+      .tools-category-hub .tools-hub-panel,
+      .tools-category-page .tools-hub-toolbar,
+      .tools-category-hub .tools-hub-toolbar,
+      .tools-category-page .ls-subcategory-block,
+      .tools-category-hub .ls-subcategory-block,
+      .tools-category-page .cta-content,
+      .tools-category-hub .cta-content {
+        padding: 22px 18px;
+        border-radius: 20px;
+      }
+
+      .tools-category-page .tools-hub-metrics,
+      .tools-category-hub .tools-hub-metrics,
+      .tools-category-page .tools-library-grid,
+      .tools-category-hub .tools-library-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-category-page h1,
+      .tools-category-hub h1 {
+        max-width: 11ch;
+      }
+
+      .footer-inner,
+      .footer-links {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .scroll-top-btn {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Real Estate Accounting",
+  "description": "Use these tools for ROI, cash-on-cash return, rental tracking, property depreciation, 1031 planning, mortgage amortization, NOI, and cash flow analysis. Browse 10 tools across 5 sub-categories, each with a short description and direct Ledger Summit link.",
+  "url": "https://ledgersummit.com/tool-categories/real-estate-accounting/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tool Categories",
+      "item": "https://ledgersummit.com/tool-categories/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Real Estate Accounting",
+      "item": "https://ledgersummit.com/tool-categories/real-estate-accounting/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="tools-hub-page tools-category-page is-slate">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="https://ledgersummit.com/" class="nav-logo">
+        <img src="/assets/logo-ledger-summit.svg" alt="Ledger Summit logo" width="212" height="36">
+      </a>
+      <ul class="nav-links">
+        <li><a href="https://ledgersummit.com/services/">Services</a></li>
+        <li><a href="https://ledgersummit.com/tools/">Tools</a></li>
+        <li><a href="https://ledgersummit.com/blog/">Blog</a></li>
+        <li><a href="https://ledgersummit.com/about/">About</a></li>
+        <li><a href="https://ledgersummit.com/contact/">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="https://ledgersummit.com/services/" onclick="closeMobileNav()">Services</a>
+    <a href="https://ledgersummit.com/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="https://ledgersummit.com/blog/" onclick="closeMobileNav()">Blog</a>
+    <a href="https://ledgersummit.com/about/" onclick="closeMobileNav()">About</a>
+    <a href="https://ledgersummit.com/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="https://ledgersummit.com/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  </div>
+  <main id="main">
+    <section class="tools-hub-hero">
+        <div class="container">
+          <a class="ls-back-link" href="/tool-categories/">&larr; Back to all tool categories</a>
+          <div class="tools-hub-hero-grid" style="margin-top:1.4rem;">
+            <div class="tools-hub-copy reveal">
+              <span class="section-label">Real Estate Accounting</span>
+              <h1>Real estate accounting and property analysis tools</h1>
+              <p>The real estate set keeps property-level income, return, financing, and tax questions together so investors and accountants can find the right page quickly.</p>
+              <div class="tools-hub-answer-strip">
+                <strong>Direct answer</strong>
+                <span>Use these tools for ROI, cash-on-cash return, rental tracking, property depreciation, 1031 planning, mortgage amortization, NOI, and cash flow analysis.</span>
+              </div>
+              <div class="tools-hub-actions">
+                <a href="#category-tools" class="btn-primary btn-glow">Browse 10 tools</a>
+                <a href="https://ledgersummit.com/book-a-call/" class="btn-secondary">Need a custom version?</a>
+              </div>
+              <div class="tools-hub-pills">
+                <span class="tools-hub-pill"><i></i>10 tools</span>
+                <span class="tools-hub-pill"><i></i>5 sub-categories</span>
+                <span class="tools-hub-pill"><i></i>Direct links to live tool pages</span>
+              </div>
+            </div>
+            <aside class="tools-hub-panel reveal-right">
+              <span class="tools-hub-panel-badge"><i></i>Focused browse</span>
+              <div class="tools-hub-panel-head">
+                <h2>Stay inside one workflow instead of scanning the whole library.</h2>
+                <p>Everything below is grouped by sub-category so users can move from a workflow concept to the exact tool page in fewer clicks.</p>
+              </div>
+              <div class="tools-hub-metrics">
+                <div class="tools-hub-metric">
+                  <strong>10</strong>
+                  <span>linked tools in this category</span>
+                </div>
+                <div class="tools-hub-metric">
+                  <strong>5</strong>
+                  <span>sub-categories to keep the browse path organized</span>
+                </div>
+                <div class="tools-hub-metric">
+                  <strong>Short</strong>
+                  <span>brief descriptions on every tool card before the click</span>
+                </div>
+                <div class="tools-hub-metric">
+                  <strong>Same UI</strong>
+                  <span>shared Ledger Summit layout, cards, nav, footer, and CTA</span>
+                </div>
+              </div>
+              <div class="tools-hub-links">
+                <div class="tools-hub-link"><strong>Grouped by sub-category</strong><span>Users can jump into the exact workflow slice they recognize.</span></div>
+                <div class="tools-hub-link"><strong>Direct tool access</strong><span>Every card opens the live Ledger Summit tool page immediately.</span></div>
+                <div class="tools-hub-link"><strong>Consistent browse pattern</strong><span>Hero, card layout, search shell, and CTA rhythm match the rest of the tools library.</span></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section bg-light" id="category-tools">
+        <div class="container">
+          <div class="section-header" style="margin-top:0;">
+            <span class="section-label">Category Tools</span>
+            <h2>Real Estate Accounting</h2>
+            <p>Use these tools for ROI, cash-on-cash return, rental tracking, property depreciation, 1031 planning, mortgage amortization, NOI, and cash flow analysis.</p>
+          </div>
+
+          <div class="ls-subcategory-rail">
+            <a class="ls-subcategory-chip" href="#investment-analysis">Investment Analysis (5)</a><a class="ls-subcategory-chip" href="#rental-income">Rental Income (1)</a><a class="ls-subcategory-chip" href="#depreciation">Depreciation (1)</a><a class="ls-subcategory-chip" href="#tax">Tax (2)</a><a class="ls-subcategory-chip" href="#financing">Financing (1)</a>
+          </div>
+
+          <div class="tools-hub-toolbar reveal">
+            <div class="tools-hub-search-shell">
+              <label class="tools-hub-search-label" for="toolSearch-real-estate-accounting">Search inside this category</label>
+              <div class="tools-hub-search-input">
+                <span aria-hidden="true">/</span>
+                <input id="toolSearch-real-estate-accounting" type="search" name="tool-search-real-estate-accounting" autocomplete="off" spellcheck="false" placeholder="Search by tool name, sub-category, or use case..." data-tool-search>
+              </div>
+              <p>Search by tool name, sub-category, or use case to narrow this workflow quickly.</p>
+            </div>
+            <div class="tools-hub-toolbar-meta">
+              <strong data-tool-status>Showing all 10 tools in this category.</strong>
+            </div>
+          </div>
+
+          <div class="tools-hub-empty ls-hidden" data-tool-empty>
+            <strong>No matching tools in this category</strong>
+            <p>Try a broader term from the tool name or sub-category.</p>
+          </div>
+
+          <div class="ls-category-shell">
+            
+      <section class="ls-subcategory-block" id="investment-analysis" data-subcategory-group>
+        <div class="ls-subcategory-head">
+          <div>
+            <span class="section-label">Real Estate Accounting</span>
+            <h2>Investment Analysis</h2>
+            <p>Investment Analysis tools inside real estate accounting.</p>
+          </div>
+          <span class="ls-count-pill">5 tools</span>
+        </div>
+        <div class="tools-library-grid">
+          
+          <a
+            href="https://ledgersummit.com/tools/real-estate-roi-calculator/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Real Estate ROI Calculator Investment Analysis Real Estate Accounting Calculate real estate roi using your own assumptions and inputs."
+          >
+            <span class="tools-library-badge">Investment Analysis</span>
+            <h3>Real Estate ROI Calculator</h3>
+            <p>Calculate real estate roi using your own assumptions and inputs.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+
+          <a
+            href="https://ledgersummit.com/tools/cash-on-cash-return-calculator/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Cash-on-Cash Return Calculator Investment Analysis Real Estate Accounting Calculate cash-on-cash return using your own assumptions and inputs."
+          >
+            <span class="tools-library-badge">Investment Analysis</span>
+            <h3>Cash-on-Cash Return Calculator</h3>
+            <p>Calculate cash-on-cash return using your own assumptions and inputs.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+
+          <a
+            href="https://ledgersummit.com/tools/gross-rent-multiplier-calculator/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Gross Rent Multiplier Calculator Investment Analysis Real Estate Accounting Calculate gross rent multiplier using your own assumptions and inputs."
+          >
+            <span class="tools-library-badge">Investment Analysis</span>
+            <h3>Gross Rent Multiplier Calculator</h3>
+            <p>Calculate gross rent multiplier using your own assumptions and inputs.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+
+          <a
+            href="https://ledgersummit.com/tools/noi-calculator/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Net Operating Income (NOI) Calculator Investment Analysis Real Estate Accounting Calculate net operating income (noi) using your own assumptions and inputs."
+          >
+            <span class="tools-library-badge">Investment Analysis</span>
+            <h3>Net Operating Income (NOI) Calculator</h3>
+            <p>Calculate net operating income (noi) using your own assumptions and inputs.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+
+          <a
+            href="https://ledgersummit.com/tools/property-cash-flow-analyzer/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Property Cash Flow Analyzer Investment Analysis Real Estate Accounting Analyze property cash flow with a faster browser-based review."
+          >
+            <span class="tools-library-badge">Investment Analysis</span>
+            <h3>Property Cash Flow Analyzer</h3>
+            <p>Analyze property cash flow with a faster browser-based review.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+        </div>
+      </section>
+      
+
+      <section class="ls-subcategory-block" id="rental-income" data-subcategory-group>
+        <div class="ls-subcategory-head">
+          <div>
+            <span class="section-label">Real Estate Accounting</span>
+            <h2>Rental Income</h2>
+            <p>Rental Income tools inside real estate accounting.</p>
+          </div>
+          <span class="ls-count-pill">1 tools</span>
+        </div>
+        <div class="tools-library-grid">
+          
+          <a
+            href="https://ledgersummit.com/tools/rental-property-income-expense-tracker/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Rental Property Income &amp; Expense Tracker Rental Income Real Estate Accounting Track rental property income &amp; expense over time in one focused workspace."
+          >
+            <span class="tools-library-badge">Rental Income</span>
+            <h3>Rental Property Income &amp; Expense Tracker</h3>
+            <p>Track rental property income &amp; expense over time in one focused workspace.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+        </div>
+      </section>
+      
+
+      <section class="ls-subcategory-block" id="depreciation" data-subcategory-group>
+        <div class="ls-subcategory-head">
+          <div>
+            <span class="section-label">Real Estate Accounting</span>
+            <h2>Depreciation</h2>
+            <p>Depreciation tools inside real estate accounting.</p>
+          </div>
+          <span class="ls-count-pill">1 tools</span>
+        </div>
+        <div class="tools-library-grid">
+          
+          <a
+            href="https://ledgersummit.com/tools/rental-property-depreciation-schedule/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Rental Property Depreciation Schedule Depreciation Real Estate Accounting Build a rental property depreciation schedule with cleaner period-by-period visibility."
+          >
+            <span class="tools-library-badge">Depreciation</span>
+            <h3>Rental Property Depreciation Schedule</h3>
+            <p>Build a rental property depreciation schedule with cleaner period-by-period visibility.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+        </div>
+      </section>
+      
+
+      <section class="ls-subcategory-block" id="tax" data-subcategory-group>
+        <div class="ls-subcategory-head">
+          <div>
+            <span class="section-label">Real Estate Accounting</span>
+            <h2>Tax</h2>
+            <p>Tax tools inside real estate accounting.</p>
+          </div>
+          <span class="ls-count-pill">2 tools</span>
+        </div>
+        <div class="tools-library-grid">
+          
+          <a
+            href="https://ledgersummit.com/tools/1031-exchange-boot-calculator/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="1031 Exchange Boot Calculator Tax Real Estate Accounting Calculate 1031 exchange boot using your own assumptions and inputs."
+          >
+            <span class="tools-library-badge">Tax</span>
+            <h3>1031 Exchange Boot Calculator</h3>
+            <p>Calculate 1031 exchange boot using your own assumptions and inputs.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+
+          <a
+            href="https://ledgersummit.com/tools/real-estate-passive-loss-tracker/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Real Estate Passive Loss Tracker Tax Real Estate Accounting Track real estate passive loss over time in one focused workspace."
+          >
+            <span class="tools-library-badge">Tax</span>
+            <h3>Real Estate Passive Loss Tracker</h3>
+            <p>Track real estate passive loss over time in one focused workspace.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+        </div>
+      </section>
+      
+
+      <section class="ls-subcategory-block" id="financing" data-subcategory-group>
+        <div class="ls-subcategory-head">
+          <div>
+            <span class="section-label">Real Estate Accounting</span>
+            <h2>Financing</h2>
+            <p>Financing tools inside real estate accounting.</p>
+          </div>
+          <span class="ls-count-pill">1 tools</span>
+        </div>
+        <div class="tools-library-grid">
+          
+          <a
+            href="https://ledgersummit.com/tools/mortgage-amortization-table/"
+            class="tools-library-card is-slate reveal"
+            data-tool-card
+            data-search="Mortgage Amortization Table Generator Financing Real Estate Accounting Generate mortgage amortization table from guided inputs."
+          >
+            <span class="tools-library-badge">Financing</span>
+            <h3>Mortgage Amortization Table Generator</h3>
+            <p>Generate mortgage amortization table from guided inputs.</p>
+            <span class="tools-library-link">Open the tool &rarr;</span>
+          </a>
+          
+        </div>
+      </section>
+      
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Need this workflow turned into a custom internal tool?</h2>
+            <p>Ledger Summit can take the public calculator or checker and shape it into a deeper internal workflow with your logic, approvals, exports, and operating rules.</p>
+            <a href="https://ledgersummit.com/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+          </div>
+        </div>
+      </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="https://ledgersummit.com/" class="footer-brand">
+          <img src="/assets/logo-ledger-summit.svg" alt="Ledger Summit" width="176" height="30">
+        </a>
+        <ul class="footer-links">
+          <li><a href="https://ledgersummit.com/services/">Services</a></li>
+          <li><a href="https://ledgersummit.com/tools/">Tools</a></li>
+          <li><a href="https://ledgersummit.com/blog/">Blog</a></li>
+          <li><a href="https://ledgersummit.com/about/">About</a></li>
+          <li><a href="https://ledgersummit.com/contact/">Contact</a></li>
+          <li><a href="https://ledgersummit.com/book-a-call/">Book a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+  <script>
+    (() => {
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      const closeMobileNav = () => {
+        if (!hamburger || !mobileNav) return;
+        hamburger.setAttribute("aria-expanded", "false");
+        mobileNav.classList.remove("is-open");
+        mobileNav.setAttribute("aria-hidden", "true");
+      };
+
+      const openMobileNav = () => {
+        if (!hamburger || !mobileNav) return;
+        hamburger.setAttribute("aria-expanded", "true");
+        mobileNav.classList.add("is-open");
+        mobileNav.setAttribute("aria-hidden", "false");
+      };
+
+      window.closeMobileNav = closeMobileNav;
+
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener("click", () => {
+          const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+          if (isOpen) {
+            closeMobileNav();
+          } else {
+            openMobileNav();
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 980) closeMobileNav();
+        });
+      }
+
+      if (scrollTopBtn) {
+        const updateScrollTop = () => {
+          scrollTopBtn.classList.toggle("is-visible", window.scrollY > 260);
+        };
+
+        scrollTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        window.addEventListener("scroll", updateScrollTop, { passive: true });
+        updateScrollTop();
+      }
+    })();
+  </script>
+  <script>
+    (() => {
+      const input = document.querySelector("[data-tool-search]");
+      const cards = [...document.querySelectorAll("[data-tool-card]")];
+      const groups = [...document.querySelectorAll("[data-subcategory-group]")];
+      const empty = document.querySelector("[data-tool-empty]");
+      const status = document.querySelector("[data-tool-status]");
+      if (!input || !cards.length || !groups.length || !empty || !status) return;
+
+      const update = () => {
+        const term = input.value.trim().toLowerCase();
+        let visibleCards = 0;
+
+        for (const card of cards) {
+          const haystack = (card.getAttribute("data-search") || "").toLowerCase();
+          const match = !term || haystack.includes(term);
+          card.classList.toggle("ls-hidden", !match);
+          if (match) visibleCards += 1;
+        }
+
+        for (const group of groups) {
+          const hasVisible = !!group.querySelector("[data-tool-card]:not(.ls-hidden)");
+          group.classList.toggle("ls-hidden", !hasVisible);
+        }
+
+        empty.classList.toggle("ls-hidden", visibleCards !== 0);
+        status.textContent = term
+          ? "Showing " + visibleCards + " matching tools."
+          : "Showing all " + 10 + " tools in this category.";
+      };
+
+      input.addEventListener("input", update);
+      update();
+    })();
+  </script>
+</body>
+</html>
+
