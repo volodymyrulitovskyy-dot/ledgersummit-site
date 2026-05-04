@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Entity Intercompany Elimination Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit automated intercompany matching, FX, and eliminations for a 7-entity, 3-currency holdco — and cut consolidation from 9 days to 5.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-multi-entity-intercompany.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Multi-Entity Intercompany Elimination Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit automated intercompany matching, FX, and eliminations for a 7-entity, 3-currency holdco — and cut consolidation from 9 days to 5.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-multi-entity-intercompany.html">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Multi-Entity Intercompany Elimination Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit automated intercompany matching, FX, and eliminations for a 7-entity, 3-currency holdco — and cut consolidation from 9 days to 5.">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Multi-Entity Intercompany Elimination Case Study", "description": "See how Ledger Summit automated intercompany matching, FX, and eliminations for a 7-entity, 3-currency holdco — and cut consolidation from 9 days to 5.", "author": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "publisher": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "datePublished": "2026-05-04", "dateModified": "2026-05-04", "url": "https://ledgersummit.com/case-study-multi-entity-intercompany.html"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is this different from NetSuite's native intercompany?", "acceptedAnswer": {"@type": "Answer", "text": "NetSuite's native intercompany handles posting and basic elimination, but it doesn't auto-match across currencies, generate evidence packs, or handle exception workflow at scale. We layered on top of NetSuite, not in place of it."}}, {"@type": "Question", "name": "Could you do this in QuickBooks or Sage Intacct?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we've done similar implementations on Sage Intacct (which has stronger native consolidation than NetSuite) and on QuickBooks for smaller multi-entity teams (typically 2–4 entities). The matching engine is system-agnostic."}}, {"@type": "Question", "name": "What was the auditor's reaction?", "acceptedAnswer": {"@type": "Answer", "text": "Positive. The evidence pack walked them through every elimination with timestamped logs, reviewer sign-off, and source data attached. Year-end audit fieldwork dropped 2 days vs. the prior cycle."}}]}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="container site-nav">
+      <a class="site-brand" href="index.html" aria-label="Ledger Summit home">
+        <img src="assets/logo-ledger-summit.svg" alt="Ledger Summit">
+      </a>
+      <nav class="site-nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#services">Services</a>
+        <a class="nav-link" href="index.html#engagement">Engagement</a>
+        <a class="nav-link" href="index.html#cases">Case studies</a>
+        <a class="btn btn-soft" href="tool-ai-readiness-scorecard.html">AI Readiness Scorecard</a>
+        <a class="btn btn-primary" href="index.html#book">Book a free call</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">Multi-entity case study</span>
+              <h1>Multi-Entity Intercompany Elimination Case Study</h1>
+            </div>
+            <p class="lead">A 7-entity multi-currency consolidation moved from manual intercompany matching and FX adjustments to an automated elimination workflow with timestamped audit trail.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on a $140M revenue holdco with 7 operating entities across 3 currencies, NetSuite GL, 9-person accounting team.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#measured-results">See measured results</a>
+              <a class="btn btn-soft" href="index.html#book">Talk through your workflow</a>
+            </div>
+            <div class="jump-links">
+              <a class="jump-link" href="#before-automation">Before automation</a>
+              <a class="jump-link" href="#what-ledger-summit-implemented">What Ledger Summit implemented</a>
+              <a class="jump-link" href="#implementation-timeline">Implementation timeline</a>
+              <a class="jump-link" href="#measured-results">Measured results</a>
+              <a class="jump-link" href="#controls-and-data-handling">Controls and audit-ready evidence</a>
+              <a class="jump-link" href="#why-we-built-it-this-way">Why we built it this way (vs. BlackLine)</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">This case study follows the Ledger Summit transition model: document the current SOP, automate one workflow at a time, and keep independent controls around what gets posted.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>9 → 5 days</strong><span>Consolidation cycle</span></article>
+              <article class="metric-card"><strong>100%</strong><span>Intercompany matched at sign-off</span></article>
+              <article class="metric-card"><strong>84% less</strong><span>Manual FX/elim work</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Case study breakdown</span>
+          <h2>How the workflow changed from manual effort to controlled automation</h2>
+          <p>Pages here follow the Ledger Summit story structure: context first, implementation detail second, measured results third, and controls throughout.</p>
+        </div>
+        <div class="story-grid">
+        <article class="story-card" id="before-automation">
+          <h2>Before automation</h2>
+          <p>Intercompany matching ran on a spreadsheet maintained by two senior accountants. FX revaluation was a separate process, often done after consolidation drafts had already been shared. Auditors flagged 12 unmatched items at year-end the prior cycle.</p><ul><li>Manual intercompany matching across 7 entities, 3 currencies</li><li>FX revaluation on a separate spreadsheet, not tied to source</li><li>Eliminations posted as JEs without independent review</li><li>Consolidation drafts revised 3–5 times per close</li></ul>
+        </article>
+        <article class="story-card" id="what-ledger-summit-implemented">
+          <h2>What Ledger Summit implemented</h2>
+          <p>We replaced the spreadsheet workflow with an intercompany matching engine that pulled directly from NetSuite, applied entity- and currency-aware matching rules, generated elimination entries, and produced an audit-ready evidence pack.</p><ul><li>Automated intercompany matching across 7 entities and 3 currencies</li><li>Rule-based elimination JE generation with reviewer routing</li><li>FX revaluation tied to source GL with per-entity reconciliation</li><li>Exception queue for unmatched items with SLA</li><li>Consolidation pack with elimination trace and reviewer sign-off</li></ul>
+        </article>
+        <article class="story-card story-wide" id="implementation-timeline">
+          <h2>Implementation timeline</h2>
+          <ul><li>Week 1: Mapped intercompany matrix, identified known mismatch sources</li><li>Week 2–3: Built matching rules, FX integration, elimination JE templates</li><li>Week 4: Parallel run alongside legacy spreadsheet workflow</li><li>Week 5: Full cutover; close cycle 1 ran on the new system</li><li>Week 6–8: Hypercare and rule refinement</li></ul>
+        </article>
+        <article class="story-card story-wide story-results" id="measured-results">
+          <h2>Measured results</h2>
+          <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Consolidation cycle time</td><td>9 business days</td><td>5 business days</td></tr><tr><td>Intercompany unmatched at sign-off</td><td>12 avg</td><td>0–1 avg</td></tr><tr><td>Manual elimination/FX hours per close</td><td>32 hours</td><td>5 hours</td></tr><tr><td>Year-end audit findings (intercompany)</td><td>3</td><td>0</td></tr></tbody></table></div>
+        </article>
+        <article class="story-card" id="controls-and-data-handling">
+          <h2>Controls and audit-ready evidence</h2>
+          <ul><li>Matching engine outputs immutable trace per cycle</li><li>Elimination JEs require independent reviewer sign-off</li><li>FX revaluation tied to source GL with per-entity reconciliation</li><li>Exception queue auto-escalates after 24 hours</li><li>Audit walk-through ready: matching rules, evidence pack, reviewer log</li></ul>
+        </article>
+        <article class="story-card" id="why-we-built-it-this-way">
+          <h2>Why we built it this way (vs. BlackLine)</h2>
+          <p>This client evaluated BlackLine for the same problem and concluded the price/implementation timeline didn't fit a $140M holdco. The Ledger Summit approach delivered the same intercompany matching outcomes (and the same audit-ready evidence) on top of NetSuite, in 8 weeks instead of 6 months, at roughly 30% of the all-in BlackLine cost. It scales further too — we have a path to BlackLine if their structure changes materially.</p>
+        </article>
+        <article class="story-card story-wide" id="faq">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-list"><details><summary><strong>How is this different from NetSuite&#x27;s native intercompany?</strong></summary><p>NetSuite&#x27;s native intercompany handles posting and basic elimination, but it doesn&#x27;t auto-match across currencies, generate evidence packs, or handle exception workflow at scale. We layered on top of NetSuite, not in place of it.</p></details><details><summary><strong>Could you do this in QuickBooks or Sage Intacct?</strong></summary><p>Yes — we&#x27;ve done similar implementations on Sage Intacct (which has stronger native consolidation than NetSuite) and on QuickBooks for smaller multi-entity teams (typically 2–4 entities). The matching engine is system-agnostic.</p></details><details><summary><strong>What was the auditor&#x27;s reaction?</strong></summary><p>Positive. The evidence pack walked them through every elimination with timestamped logs, reviewer sign-off, and source data attached. Year-end audit fieldwork dropped 2 days vs. the prior cycle.</p></details></div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>Multi-entity consolidation eating your close?</h2>
+            <p>A 30-minute call maps your intercompany matrix and tells you whether matching automation is worth doing.</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p>2026 Ledger Summit. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#engagement">Engagement</a>
+        <a href="index.html#cases">Case studies</a>
+        <a href="tool-ai-readiness-scorecard.html">AI Readiness</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

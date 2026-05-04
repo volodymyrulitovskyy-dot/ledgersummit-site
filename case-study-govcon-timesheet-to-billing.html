@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GovCon DCAA Timesheet-to-Billing Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit automated timesheet-to-billing, indirect rate calculation, and DCAA audit packs for an $80M federal services contractor.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-govcon-timesheet-to-billing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GovCon DCAA Timesheet-to-Billing Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit automated timesheet-to-billing, indirect rate calculation, and DCAA audit packs for an $80M federal services contractor.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-govcon-timesheet-to-billing.html">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GovCon DCAA Timesheet-to-Billing Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit automated timesheet-to-billing, indirect rate calculation, and DCAA audit packs for an $80M federal services contractor.">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "GovCon DCAA-Compliant Timesheet-to-Billing Case Study", "description": "See how Ledger Summit automated timesheet-to-billing, indirect rate calculation, and DCAA audit packs for an $80M federal services contractor.", "author": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "publisher": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "datePublished": "2026-05-04", "dateModified": "2026-05-04", "url": "https://ledgersummit.com/case-study-govcon-timesheet-to-billing.html"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does this work with Unanet too, not just Costpoint?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The workflow is system-agnostic; we've implemented similar setups on Unanet GovCon. Project structures and indirect rate setup look different, but the labor distribution → indirect rate → billing → audit pack flow is the same."}}, {"@type": "Question", "name": "How does the DCAA pack differ from what Costpoint already produces?", "acceptedAnswer": {"@type": "Answer", "text": "Costpoint has the data; the audit pack is what assembles it into a single, walkable narrative per cycle (with timestamped logs, reviewer sign-off, and exception trail). Most DCAA pulls request exactly this — and historically it took 8+ staff days to assemble. Now it's already assembled."}}, {"@type": "Question", "name": "What about cybersecurity / CMMC implications?", "acceptedAnswer": {"@type": "Answer", "text": "We work within your existing CMMC and security boundary. Tool Box AI deploys inside your environment for clients with this requirement; data doesn't leave your tenant."}}]}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="container site-nav">
+      <a class="site-brand" href="index.html" aria-label="Ledger Summit home">
+        <img src="assets/logo-ledger-summit.svg" alt="Ledger Summit">
+      </a>
+      <nav class="site-nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#services">Services</a>
+        <a class="nav-link" href="index.html#engagement">Engagement</a>
+        <a class="nav-link" href="index.html#cases">Case studies</a>
+        <a class="btn btn-soft" href="tool-ai-readiness-scorecard.html">AI Readiness Scorecard</a>
+        <a class="btn btn-primary" href="index.html#book">Book a free call</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">Government contractor case study</span>
+              <h1>GovCon DCAA-Compliant Timesheet-to-Billing Case Study</h1>
+            </div>
+            <p class="lead">A federal services contractor moved labor distribution, indirect rate calculation, and project billing into an automated, DCAA-ready workflow with audit pack output every cycle.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on an $80M federal services contractor with 280 staff, 90 active project codes, Costpoint GL, 5-person accounting team.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#measured-results">See measured results</a>
+              <a class="btn btn-soft" href="index.html#book">Talk through your workflow</a>
+            </div>
+            <div class="jump-links">
+              <a class="jump-link" href="#before-automation">Before automation</a>
+              <a class="jump-link" href="#what-ledger-summit-implemented">What Ledger Summit implemented</a>
+              <a class="jump-link" href="#implementation-timeline">Implementation timeline</a>
+              <a class="jump-link" href="#measured-results">Measured results</a>
+              <a class="jump-link" href="#controls-and-data-handling">Controls and DCAA-ready evidence</a>
+              <a class="jump-link" href="#why-this-matters-for-govcon">Why this matters for GovCon specifically</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">This case study follows the Ledger Summit transition model: document the current SOP, automate one workflow at a time, and keep independent controls around what gets posted.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>3 → 1 day</strong><span>Timesheet-to-billing cycle</span></article>
+              <article class="metric-card"><strong>DCAA-ready</strong><span>Audit pack each cycle</span></article>
+              <article class="metric-card"><strong>Zero</strong><span>Unallowable cost findings</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Case study breakdown</span>
+          <h2>How the workflow changed from manual effort to controlled automation</h2>
+          <p>Pages here follow the Ledger Summit story structure: context first, implementation detail second, measured results third, and controls throughout.</p>
+        </div>
+        <div class="story-grid">
+        <article class="story-card" id="before-automation">
+          <h2>Before automation</h2>
+          <p>Timesheet review, labor distribution, indirect rate calculation, and project billing were spread across 4 systems and 6 spreadsheets. The 3-day cycle from timesheet close to billing meant cash collection ran ~5 days slower than it had to. DCAA audit support pulled 8–10 staff days per cycle.</p><ul><li>Timesheet review across multiple supervisors with no exception queue</li><li>Labor distribution spreadsheet recalculated per cycle</li><li>Indirect rate variances tracked manually</li><li>Project billing assembled per project per cycle</li><li>DCAA audit pulls required reconstructing evidence each time</li></ul>
+        </article>
+        <article class="story-card" id="what-ledger-summit-implemented">
+          <h2>What Ledger Summit implemented</h2>
+          <p>An automated timesheet-to-billing workflow built on top of Costpoint, with labor distribution, indirect rate calculation, and per-cycle audit pack output. Tool Box AI handled the workflow and exception routing; the controller kept review and sign-off.</p><ul><li>Timesheet review with exception queue and supervisor escalation</li><li>Automated labor distribution by project and indirect pool</li><li>Indirect rate calculation with variance flagging</li><li>Project-level billing assembly (T&amp;M, FFP, cost-plus)</li><li>Per-cycle DCAA audit pack: timesheets, rates, billing, evidence</li><li>Unallowable cost screening at timesheet entry</li></ul>
+        </article>
+        <article class="story-card story-wide" id="implementation-timeline">
+          <h2>Implementation timeline</h2>
+          <ul><li>Week 1: Mapped current workflow, indirect rate structure, exception types</li><li>Week 2–3: Built timesheet workflow, labor distribution rules, billing assembly</li><li>Week 4: Indirect rate calculation, variance flagging, audit pack template</li><li>Week 5: Parallel run alongside legacy workflow</li><li>Week 6: Cutover; first cycle on the new workflow</li><li>Week 7–8: Hypercare, rule refinement, DCAA walk-through prep</li></ul>
+        </article>
+        <article class="story-card story-wide story-results" id="measured-results">
+          <h2>Measured results</h2>
+          <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Timesheet-to-billing cycle</td><td>3 business days</td><td>1 business day</td></tr><tr><td>Manual labor distribution time</td><td>14 hours per cycle</td><td>2 hours per cycle</td></tr><tr><td>Indirect rate variance investigation time</td><td>6 hours per cycle</td><td>1 hour per cycle</td></tr><tr><td>DCAA audit support pulls</td><td>8–10 staff days</td><td>1 staff day (audit pack already assembled)</td></tr><tr><td>Unallowable cost findings</td><td>5 per year (avg)</td><td>0 in first cycle post-rollout</td></tr></tbody></table></div>
+        </article>
+        <article class="story-card" id="controls-and-data-handling">
+          <h2>Controls and DCAA-ready evidence</h2>
+          <ul><li>Timesheet entry with unallowable cost screening at point of entry</li><li>Labor distribution rules versioned with approval trail</li><li>Indirect rate calculation with monthly variance flagging vs. provisional rates</li><li>Project billing tied to source timesheets and approved rates</li><li>Per-cycle DCAA audit pack: timesheets, rate calc, billing, evidence</li><li>Independent reviewer sign-off on indirect rate variances &gt;5%</li></ul>
+        </article>
+        <article class="story-card" id="why-this-matters-for-govcon">
+          <h2>Why this matters for GovCon specifically</h2>
+          <p>GovCon accounting has a higher evidence bar than most industries: DCAA can pull audit support on short notice, indirect rates need defensible computation, and unallowable costs have to be screened before they hit a billable project. Most automation work in this space stays in the Deltek ecosystem — we layer on top of Costpoint or Unanet, keeping the GL where it already is, and add the workflow + evidence layer.</p>
+        </article>
+        <article class="story-card story-wide" id="faq">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-list"><details><summary><strong>Does this work with Unanet too, not just Costpoint?</strong></summary><p>Yes. The workflow is system-agnostic; we&#x27;ve implemented similar setups on Unanet GovCon. Project structures and indirect rate setup look different, but the labor distribution → indirect rate → billing → audit pack flow is the same.</p></details><details><summary><strong>How does the DCAA pack differ from what Costpoint already produces?</strong></summary><p>Costpoint has the data; the audit pack is what assembles it into a single, walkable narrative per cycle (with timestamped logs, reviewer sign-off, and exception trail). Most DCAA pulls request exactly this — and historically it took 8+ staff days to assemble. Now it&#x27;s already assembled.</p></details><details><summary><strong>What about cybersecurity / CMMC implications?</strong></summary><p>We work within your existing CMMC and security boundary. Tool Box AI deploys inside your environment for clients with this requirement; data doesn&#x27;t leave your tenant.</p></details></div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>GovCon close eating your team? DCAA pulling for audit support?</h2>
+            <p>A 30-minute call maps your timesheet-to-billing workflow and tells you what&#x27;s automatable on top of Costpoint or Unanet.</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p>2026 Ledger Summit. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#engagement">Engagement</a>
+        <a href="index.html#cases">Case studies</a>
+        <a href="tool-ai-readiness-scorecard.html">AI Readiness</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

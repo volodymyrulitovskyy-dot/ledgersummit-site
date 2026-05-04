@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS Revenue Recognition Automation Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-saas-revenue-recognition.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SaaS Revenue Recognition Automation Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-saas-revenue-recognition.html">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SaaS Revenue Recognition Automation Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "SaaS Revenue Recognition Automation (ASC 606) Case Study", "description": "See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.", "author": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "publisher": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "datePublished": "2026-05-04", "dateModified": "2026-05-04", "url": "https://ledgersummit.com/case-study-saas-revenue-recognition.html"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Did you migrate to a rev-rec product like RightRev or Zenskar?", "acceptedAnswer": {"@type": "Answer", "text": "No. We built the engine on top of the existing NetSuite + Salesforce + Stripe stack. The client evaluated RightRev and Zenskar; for this scale ($50M ARR, vertical SaaS) the build-and-integrate path delivered faster and cost less. Above ~$200M ARR or with very complex commerce, a dedicated product often makes sense."}}, {"@type": "Question", "name": "How did the auditor react?", "acceptedAnswer": {"@type": "Answer", "text": "Positive. The evidence pack walked them through every contract with allocations, JEs, and reviewer sign-off. They asked for 4 sample contracts, all passed without follow-up requests. Audit fieldwork dropped 1.5 days for the rev-rec area."}}, {"@type": "Question", "name": "How do you handle complex contract modifications?", "acceptedAnswer": {"@type": "Answer", "text": "Modification logic is documented (prospective vs. cumulative catch-up, blended pricing, separate contracts) with worked examples in the controls package. The system flags modifications that require judgment; a reviewer signs off before posting."}}]}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="container site-nav">
+      <a class="site-brand" href="index.html" aria-label="Ledger Summit home">
+        <img src="assets/logo-ledger-summit.svg" alt="Ledger Summit">
+      </a>
+      <nav class="site-nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#services">Services</a>
+        <a class="nav-link" href="index.html#engagement">Engagement</a>
+        <a class="nav-link" href="index.html#cases">Case studies</a>
+        <a class="btn btn-soft" href="tool-ai-readiness-scorecard.html">AI Readiness Scorecard</a>
+        <a class="btn btn-primary" href="index.html#book">Book a free call</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">SaaS revenue recognition case study</span>
+              <h1>SaaS Revenue Recognition Automation (ASC 606) Case Study</h1>
+            </div>
+            <p class="lead">A $50M ARR SaaS company moved from a contract-by-contract spreadsheet for ASC 606 to an automated revenue recognition workflow with deferred revenue waterfalls, contract modifications, and audit-ready evidence.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on a vertical SaaS company at $50M ARR with usage-based revenue, multi-year contracts, and frequent contract modifications. NetSuite GL, 6-person finance team.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#measured-results">See measured results</a>
+              <a class="btn btn-soft" href="index.html#book">Talk through your workflow</a>
+            </div>
+            <div class="jump-links">
+              <a class="jump-link" href="#before-automation">Before automation</a>
+              <a class="jump-link" href="#what-ledger-summit-implemented">What Ledger Summit implemented</a>
+              <a class="jump-link" href="#implementation-timeline">Implementation timeline</a>
+              <a class="jump-link" href="#measured-results">Measured results</a>
+              <a class="jump-link" href="#controls-and-data-handling">Controls and audit-ready evidence</a>
+              <a class="jump-link" href="#policy-decisions">Notable policy decisions</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">This case study follows the Ledger Summit transition model: document the current SOP, automate one workflow at a time, and keep independent controls around what gets posted.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>11 → 5 days</strong><span>Revenue close cycle</span></article>
+              <article class="metric-card"><strong>100%</strong><span>Contracts auto-recognized</span></article>
+              <article class="metric-card"><strong>Audit-ready</strong><span>Per-contract evidence pack</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Case study breakdown</span>
+          <h2>How the workflow changed from manual effort to controlled automation</h2>
+          <p>Pages here follow the Ledger Summit story structure: context first, implementation detail second, measured results third, and controls throughout.</p>
+        </div>
+        <div class="story-grid">
+        <article class="story-card" id="before-automation">
+          <h2>Before automation</h2>
+          <p>Revenue recognition lived in two spreadsheets: one for committed ARR and one for usage. Contract modifications required manual recalculation of cumulative catch-up. The auditor flagged 7 modifications the prior year that had been computed inconsistently.</p><ul><li>Manual ASC 606 revenue schedule per contract, in spreadsheets</li><li>Usage-based revenue posted from billing system separately</li><li>Contract modifications recalculated by hand</li><li>Deferred revenue waterfall built from spreadsheets at quarter-end</li><li>Auditor findings on modification cumulative-catch-up calculations</li></ul>
+        </article>
+        <article class="story-card" id="what-ledger-summit-implemented">
+          <h2>What Ledger Summit implemented</h2>
+          <p>We built a contract-aware revenue engine that pulls from the CRM and billing system, applies ASC 606 logic, generates revenue recognition JEs, and produces a per-contract evidence pack. Contract modifications run through documented logic with reviewer sign-off.</p><ul><li>Contract-level rev-rec engine integrated with Salesforce and Stripe</li><li>ASC 606 logic: performance obligations, transaction price, allocation, recognition</li><li>Contract modification handling: prospective vs. cumulative catch-up, with reviewer sign-off</li><li>Usage-based revenue tied to source data with reconciliation</li><li>Deferred revenue waterfall auto-generated each close</li><li>Per-contract evidence pack: contract data, allocations, JE trace, reviewer log</li></ul>
+        </article>
+        <article class="story-card story-wide" id="implementation-timeline">
+          <h2>Implementation timeline</h2>
+          <ul><li>Week 1–2: Contract inventory, performance obligation analysis, policy memo refresh</li><li>Week 3–5: Built rev-rec engine, integrations, modification logic</li><li>Week 6: Parallel run for one full month</li><li>Week 7: Full cutover; first close on the new system</li><li>Week 8–10: Hypercare, rule refinement, auditor walk-through prep</li></ul>
+        </article>
+        <article class="story-card story-wide story-results" id="measured-results">
+          <h2>Measured results</h2>
+          <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>Revenue close cycle</td><td>11 business days</td><td>5 business days</td></tr><tr><td>Contracts auto-recognized</td><td>~60% (rest manual)</td><td>100%</td></tr><tr><td>Modification recalculation time</td><td>4–8 hours per contract</td><td>15 minutes per contract (automated)</td></tr><tr><td>Auditor findings (rev-rec)</td><td>7</td><td>0</td></tr></tbody></table></div>
+        </article>
+        <article class="story-card" id="controls-and-data-handling">
+          <h2>Controls and audit-ready evidence</h2>
+          <ul><li>Per-contract trace from contract data → allocation → JE → revenue schedule</li><li>Modification logic documented with worked examples; reviewer sign-off required</li><li>Usage data reconciled to source billing system each close</li><li>Deferred revenue waterfall ties to GL roll-forward</li><li>ASC 606 policy memo refreshed; auditor walk-through script prepared</li></ul>
+        </article>
+        <article class="story-card" id="policy-decisions">
+          <h2>Notable policy decisions</h2>
+          <ul><li>Termination-for-convenience: treated as a single performance obligation period; documented and accepted by auditor</li><li>Material rights (renewal options): assessed; concluded immaterial; documented</li><li>Standalone selling price: re-estimated annually; documented methodology</li><li>Variable consideration (usage): expected-value method; constrained where not estimable</li></ul>
+        </article>
+        <article class="story-card story-wide" id="faq">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-list"><details><summary><strong>Did you migrate to a rev-rec product like RightRev or Zenskar?</strong></summary><p>No. We built the engine on top of the existing NetSuite + Salesforce + Stripe stack. The client evaluated RightRev and Zenskar; for this scale ($50M ARR, vertical SaaS) the build-and-integrate path delivered faster and cost less. Above ~$200M ARR or with very complex commerce, a dedicated product often makes sense.</p></details><details><summary><strong>How did the auditor react?</strong></summary><p>Positive. The evidence pack walked them through every contract with allocations, JEs, and reviewer sign-off. They asked for 4 sample contracts, all passed without follow-up requests. Audit fieldwork dropped 1.5 days for the rev-rec area.</p></details><details><summary><strong>How do you handle complex contract modifications?</strong></summary><p>Modification logic is documented (prospective vs. cumulative catch-up, blended pricing, separate contracts) with worked examples in the controls package. The system flags modifications that require judgment; a reviewer signs off before posting.</p></details></div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>ASC 606 stuck in spreadsheets?</h2>
+            <p>A 30-minute call maps your contract complexity and tells you whether automation is the right next step.</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p>2026 Ledger Summit. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#engagement">Engagement</a>
+        <a href="index.html#cases">Case studies</a>
+        <a href="tool-ai-readiness-scorecard.html">AI Readiness</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
