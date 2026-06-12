@@ -10,11 +10,16 @@
   <meta property="og:title" content="Tool Categories | Ledger Summit">
   <meta property="og:description" content="Browse 20 Ledger Summit tool categories in a cleaner category-first catalogue. Each category opens its own page with individual tools, brief descriptions, and direct links.">
   <meta property="og:url" content="https://ledgersummit.com/tool-categories/">
-  <meta property="og:image" content="/assets/logo-ledger-summit.svg">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ledger Summit accounting and finance tools">
+  <meta property="og:site_name" content="Ledger Summit">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tool Categories | Ledger Summit">
   <meta name="twitter:description" content="Browse 20 Ledger Summit tool categories in a cleaner category-first catalogue. Each category opens its own page with individual tools, brief descriptions, and direct links.">
-  <meta name="twitter:image" content="/assets/logo-ledger-summit.svg">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.png">
+  <meta name="twitter:image:alt" content="Ledger Summit accounting and finance tools">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -971,6 +976,34 @@
         bottom: 16px;
       }
     }
+    .tools-breadcrumbs {
+      width: min(96%, var(--ls-max));
+      margin: 22px auto 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: #64748b;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .tools-breadcrumbs a {
+      color: #0a66c2;
+    }
+
+    .tools-breadcrumbs [aria-current="page"] {
+      color: #334155;
+    }
+
+    .tools-hub-hero-grid-spaced {
+      margin-top: 1.4rem;
+    }
+
+    .section-header-flush {
+      margin-top: 0;
+    }
+
   </style>
   <script type="application/ld+json">
 {
@@ -1004,41 +1037,46 @@
         <img src="/assets/logo-ledger-summit.svg" alt="Ledger Summit logo" width="212" height="36">
       </a>
       <ul class="nav-links">
-        <li><a href="https://ledgersummit.com/services/">Services</a></li>
-        <li><a href="https://ledgersummit.com/tools/">Tools</a></li>
-        <li><a href="https://ledgersummit.com/blog/">Blog</a></li>
-        <li><a href="https://ledgersummit.com/about/">About</a></li>
-        <li><a href="https://ledgersummit.com/contact/">Contact</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/tool-categories/">Tools</a></li>
+        <li><a href="/#resources">Blog</a></li>
+        <li><a href="/#team">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-    <a href="https://ledgersummit.com/services/" onclick="closeMobileNav()">Services</a>
-    <a href="https://ledgersummit.com/tools/" onclick="closeMobileNav()">Tools</a>
-    <a href="https://ledgersummit.com/blog/" onclick="closeMobileNav()">Blog</a>
-    <a href="https://ledgersummit.com/about/" onclick="closeMobileNav()">About</a>
-    <a href="https://ledgersummit.com/contact/" onclick="closeMobileNav()">Contact</a>
-    <a href="https://ledgersummit.com/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  <div class="mobile-nav" id="mobileNav" inert>
+    <a href="/services" onclick="closeMobileNav()">Services</a>
+    <a href="/tool-categories/" onclick="closeMobileNav()">Tools</a>
+    <a href="/#resources" onclick="closeMobileNav()">Blog</a>
+    <a href="/#team" onclick="closeMobileNav()">About</a>
+    <a href="/#contact" onclick="closeMobileNav()">Contact</a>
+    <a href="/#contact" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
   </div>
   <main id="main">
+    <nav class="tools-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Tool Categories</span>
+    </nav>
     <section class="tools-hub-hero">
         <div class="container">
           <div class="tools-hub-hero-grid">
             <div class="tools-hub-copy reveal">
               <span class="section-label">Category-First Catalogue</span>
               <h1>Browse Ledger Summit tools by category.</h1>
-              <p>This route keeps the existing <a href="https://ledgersummit.com/tools/">tools hub</a> untouched and gives users a cleaner starting point: choose a workflow category first, then open a focused page with individual tools and short descriptions.</p>
+              <p>This route keeps the existing <a href="/tool-categories/">tools hub</a> untouched and gives users a cleaner starting point: choose a workflow category first, then open a focused page with individual tools and short descriptions.</p>
               <div class="tools-hub-answer-strip">
                 <strong>Direct answer</strong>
                 <span>Choose the workflow first. Each category page then lists only the tools in that category, which makes the path shorter, clearer, and easier to scan.</span>
               </div>
               <div class="tools-hub-actions">
                 <a href="#category-grid" class="btn-primary btn-glow">Browse categories</a>
-                <a href="https://ledgersummit.com/tools/" class="btn-secondary">Keep existing tools hub</a>
+                <a href="/tool-categories/" class="btn-secondary">Keep existing tools hub</a>
               </div>
               <div class="tools-hub-pills">
                 <span class="tools-hub-pill"><i></i>200 tools mapped</span>
@@ -1077,7 +1115,7 @@
 
       <section class="page-section bg-light" id="category-grid">
         <div class="container">
-          <div class="section-header" style="margin-top:0;">
+          <div class="section-header section-header-flush">
             <span class="section-label">All Categories</span>
             <h2>Choose the workflow first</h2>
             <p>The category grid below lists only top-level categories. Open one to see the tools in that workflow, grouped by sub-category and linked individually.</p>
@@ -1103,7 +1141,7 @@
           </div>
 
           <div class="tools-library-grid" style="margin-top:1.6rem;">
-            
+
       <a
         href="/tool-categories/gl-journal-entry-tools/"
         class="tools-library-card is-blue reveal"
@@ -1118,7 +1156,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/quickbooks-qbo-tools/"
@@ -1134,7 +1172,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/roll-forward-schedules/"
@@ -1150,7 +1188,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/personal-finance-calculators/"
@@ -1166,7 +1204,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/business-finance-fpa-tools/"
@@ -1182,7 +1220,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/depreciation-asset-tools/"
@@ -1198,7 +1236,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/reconciliation-audit-tools/"
@@ -1214,7 +1252,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/investment-valuation-tools/"
@@ -1230,7 +1268,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/tax-payroll-calculators/"
@@ -1246,7 +1284,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/converters-reference-tools/"
@@ -1262,7 +1300,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/nonprofit-fund-accounting/"
@@ -1278,7 +1316,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/construction-job-costing/"
@@ -1294,7 +1332,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/real-estate-accounting/"
@@ -1310,7 +1348,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/healthcare-medical-practice/"
@@ -1326,7 +1364,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/payroll-hr-finance/"
@@ -1342,7 +1380,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/international-multi-currency/"
@@ -1358,7 +1396,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/financial-statement-analysis/"
@@ -1374,7 +1412,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/lease-debt-accounting-asc-842/"
@@ -1390,7 +1428,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/startup-venture-finance/"
@@ -1406,7 +1444,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
 
       <a
         href="/tool-categories/audit-compliance-controls/"
@@ -1422,7 +1460,7 @@
         </div>
         <span class="tools-library-link">Open category page &rarr;</span>
       </a>
-      
+
           </div>
         </div>
       </section>
@@ -1432,7 +1470,7 @@
           <div class="cta-content">
             <h2>Need a library shaped around your own workflow?</h2>
             <p>Ledger Summit can keep the public catalogue lightweight while shaping internal tools, approvals, and review logic around the way your team actually closes the books.</p>
-            <a href="https://ledgersummit.com/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+            <a href="/#contact" class="btn-primary btn-glow">Book a free call</a>
           </div>
         </div>
       </section>
@@ -1444,21 +1482,21 @@
           <img src="/assets/logo-ledger-summit.svg" alt="Ledger Summit" width="176" height="30">
         </a>
         <ul class="footer-links">
-          <li><a href="https://ledgersummit.com/services/">Services</a></li>
-          <li><a href="https://ledgersummit.com/tools/">Tools</a></li>
-          <li><a href="https://ledgersummit.com/blog/">Blog</a></li>
-          <li><a href="https://ledgersummit.com/about/">About</a></li>
-          <li><a href="https://ledgersummit.com/contact/">Contact</a></li>
-          <li><a href="https://ledgersummit.com/book-a-call/">Book a Call</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/tool-categories/">Tools</a></li>
+          <li><a href="/#resources">Blog</a></li>
+          <li><a href="/#team">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/#contact">Book a Call</a></li>
         </ul>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p>
+        <p>&copy; <span data-current-year>2026</span> Ledger Summit. AI-powered accounting and finance automation.</p>
       </div>
     </div>
   </footer>
 
-  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+  <button type="button" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
@@ -1473,14 +1511,14 @@
         if (!hamburger || !mobileNav) return;
         hamburger.setAttribute("aria-expanded", "false");
         mobileNav.classList.remove("is-open");
-        mobileNav.setAttribute("aria-hidden", "true");
+        mobileNav.setAttribute("inert", "");
       };
 
       const openMobileNav = () => {
         if (!hamburger || !mobileNav) return;
         hamburger.setAttribute("aria-expanded", "true");
         mobileNav.classList.add("is-open");
-        mobileNav.setAttribute("aria-hidden", "false");
+        mobileNav.removeAttribute("inert");
       };
 
       window.closeMobileNav = closeMobileNav;
@@ -1542,6 +1580,9 @@
       input.addEventListener("input", update);
       update();
     })();
+  </script>
+  <script>
+    document.querySelectorAll('[data-current-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
   </script>
 </body>
 </html>

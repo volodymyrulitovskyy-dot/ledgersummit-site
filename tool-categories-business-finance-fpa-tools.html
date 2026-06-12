@@ -10,11 +10,16 @@
   <meta property="og:title" content="Business Finance &amp; FP&amp;A Tools | Ledger Summit Tool Categories">
   <meta property="og:description" content="Use these tools for cost analysis, profitability, liquidity, forecasting, startup runway, budgeting, and SaaS metrics. Browse 12 tools across 8 sub-categories, each with a short description and direct Ledger Summit link.">
   <meta property="og:url" content="https://ledgersummit.com/tool-categories/business-finance-fpa-tools/">
-  <meta property="og:image" content="/assets/logo-ledger-summit.svg">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ledger Summit accounting and finance tools">
+  <meta property="og:site_name" content="Ledger Summit">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Business Finance &amp; FP&amp;A Tools | Ledger Summit Tool Categories">
   <meta name="twitter:description" content="Use these tools for cost analysis, profitability, liquidity, forecasting, startup runway, budgeting, and SaaS metrics. Browse 12 tools across 8 sub-categories, each with a short description and direct Ledger Summit link.">
-  <meta name="twitter:image" content="/assets/logo-ledger-summit.svg">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.png">
+  <meta name="twitter:image:alt" content="Ledger Summit accounting and finance tools">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -971,6 +976,34 @@
         bottom: 16px;
       }
     }
+    .tools-breadcrumbs {
+      width: min(96%, var(--ls-max));
+      margin: 22px auto 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: #64748b;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .tools-breadcrumbs a {
+      color: #0a66c2;
+    }
+
+    .tools-breadcrumbs [aria-current="page"] {
+      color: #334155;
+    }
+
+    .tools-hub-hero-grid-spaced {
+      margin-top: 1.4rem;
+    }
+
+    .section-header-flush {
+      margin-top: 0;
+    }
+
   </style>
   <script type="application/ld+json">
 {
@@ -1010,31 +1043,38 @@
         <img src="/assets/logo-ledger-summit.svg" alt="Ledger Summit logo" width="212" height="36">
       </a>
       <ul class="nav-links">
-        <li><a href="https://ledgersummit.com/services/">Services</a></li>
-        <li><a href="https://ledgersummit.com/tools/">Tools</a></li>
-        <li><a href="https://ledgersummit.com/blog/">Blog</a></li>
-        <li><a href="https://ledgersummit.com/about/">About</a></li>
-        <li><a href="https://ledgersummit.com/contact/">Contact</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/tool-categories/">Tools</a></li>
+        <li><a href="/#resources">Blog</a></li>
+        <li><a href="/#team">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-    <a href="https://ledgersummit.com/services/" onclick="closeMobileNav()">Services</a>
-    <a href="https://ledgersummit.com/tools/" onclick="closeMobileNav()">Tools</a>
-    <a href="https://ledgersummit.com/blog/" onclick="closeMobileNav()">Blog</a>
-    <a href="https://ledgersummit.com/about/" onclick="closeMobileNav()">About</a>
-    <a href="https://ledgersummit.com/contact/" onclick="closeMobileNav()">Contact</a>
-    <a href="https://ledgersummit.com/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  <div class="mobile-nav" id="mobileNav" inert>
+    <a href="/services" onclick="closeMobileNav()">Services</a>
+    <a href="/tool-categories/" onclick="closeMobileNav()">Tools</a>
+    <a href="/#resources" onclick="closeMobileNav()">Blog</a>
+    <a href="/#team" onclick="closeMobileNav()">About</a>
+    <a href="/#contact" onclick="closeMobileNav()">Contact</a>
+    <a href="/#contact" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
   </div>
   <main id="main">
+    <nav class="tools-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/tool-categories/">Tool Categories</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Business finance and FP&amp;amp;A tools for margins, cash, and forecasting</span>
+    </nav>
     <section class="tools-hub-hero">
         <div class="container">
           <a class="ls-back-link" href="/tool-categories/">&larr; Back to all tool categories</a>
-          <div class="tools-hub-hero-grid" style="margin-top:1.4rem;">
+          <div class="tools-hub-hero-grid tools-hub-hero-grid-spaced">
             <div class="tools-hub-copy reveal">
               <span class="section-label">Business Finance &amp; FP&amp;A</span>
               <h1>Business finance and FP&amp;A tools for margins, cash, and forecasting</h1>
@@ -1045,7 +1085,7 @@
               </div>
               <div class="tools-hub-actions">
                 <a href="#category-tools" class="btn-primary btn-glow">Browse 12 tools</a>
-                <a href="https://ledgersummit.com/book-a-call/" class="btn-secondary">Need a custom version?</a>
+                <a href="/#contact" class="btn-secondary">Need a custom version?</a>
               </div>
               <div class="tools-hub-pills">
                 <span class="tools-hub-pill"><i></i>12 tools</span>
@@ -1089,7 +1129,7 @@
 
       <section class="page-section bg-light" id="category-tools">
         <div class="container">
-          <div class="section-header" style="margin-top:0;">
+          <div class="section-header section-header-flush">
             <span class="section-label">Category Tools</span>
             <h2>Business Finance &amp; FP&amp;A Tools</h2>
             <p>Use these tools for cost analysis, profitability, liquidity, forecasting, startup runway, budgeting, and SaaS metrics.</p>
@@ -1119,7 +1159,7 @@
           </div>
 
           <div class="ls-category-shell">
-            
+
       <section class="ls-subcategory-block" id="cost-analysis" data-subcategory-group>
         <div class="ls-subcategory-head">
           <div>
@@ -1130,7 +1170,7 @@
           <span class="ls-count-pill">3 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/break-even-analysis-calculator/"
             class="tools-library-card is-emerald reveal"
@@ -1142,7 +1182,7 @@
             <p>Calculate break-even analysis using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
 
           <a
             href="https://ledgersummit.com/tools/operating-leverage-calculator/"
@@ -1155,7 +1195,7 @@
             <p>Calculate operating leverage using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
 
           <a
             href="https://ledgersummit.com/tools/overhead-allocation-calculator/"
@@ -1168,10 +1208,10 @@
             <p>Calculate overhead allocation using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
 
       <section class="ls-subcategory-block" id="profitability" data-subcategory-group>
         <div class="ls-subcategory-head">
@@ -1183,7 +1223,7 @@
           <span class="ls-count-pill">2 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/gross-margin-analyzer/"
             class="tools-library-card is-emerald reveal"
@@ -1195,7 +1235,7 @@
             <p>Analyze gross margin with a faster browser-based review.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
 
           <a
             href="https://ledgersummit.com/tools/ebitda-calculator/"
@@ -1208,10 +1248,10 @@
             <p>Calculate ebitda using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
 
       <section class="ls-subcategory-block" id="liquidity" data-subcategory-group>
         <div class="ls-subcategory-head">
@@ -1223,7 +1263,7 @@
           <span class="ls-count-pill">1 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/working-capital-ratio-calculator/"
             class="tools-library-card is-emerald reveal"
@@ -1235,10 +1275,10 @@
             <p>Calculate working capital ratio using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
 
       <section class="ls-subcategory-block" id="efficiency" data-subcategory-group>
         <div class="ls-subcategory-head">
@@ -1250,7 +1290,7 @@
           <span class="ls-count-pill">1 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/cash-conversion-cycle-calculator/"
             class="tools-library-card is-emerald reveal"
@@ -1262,10 +1302,10 @@
             <p>Calculate cash conversion cycle using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
 
       <section class="ls-subcategory-block" id="forecasting" data-subcategory-group>
         <div class="ls-subcategory-head">
@@ -1277,7 +1317,7 @@
           <span class="ls-count-pill">1 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/revenue-run-rate-calculator/"
             class="tools-library-card is-emerald reveal"
@@ -1289,10 +1329,10 @@
             <p>Calculate revenue run rate using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
 
       <section class="ls-subcategory-block" id="startup-finance" data-subcategory-group>
         <div class="ls-subcategory-head">
@@ -1304,7 +1344,7 @@
           <span class="ls-count-pill">1 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/burn-rate-runway-calculator/"
             class="tools-library-card is-emerald reveal"
@@ -1316,10 +1356,10 @@
             <p>Calculate burn rate &amp; runway using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
 
       <section class="ls-subcategory-block" id="budgeting" data-subcategory-group>
         <div class="ls-subcategory-head">
@@ -1331,7 +1371,7 @@
           <span class="ls-count-pill">1 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/budget-vs-actual-variance-analyzer/"
             class="tools-library-card is-emerald reveal"
@@ -1343,10 +1383,10 @@
             <p>Analyze budget vs actual variance with a faster browser-based review.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
 
       <section class="ls-subcategory-block" id="saas-metrics" data-subcategory-group>
         <div class="ls-subcategory-head">
@@ -1358,7 +1398,7 @@
           <span class="ls-count-pill">2 tools</span>
         </div>
         <div class="tools-library-grid">
-          
+
           <a
             href="https://ledgersummit.com/tools/saas-metrics-calculator/"
             class="tools-library-card is-emerald reveal"
@@ -1370,7 +1410,7 @@
             <p>Calculate saas metrics using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
 
           <a
             href="https://ledgersummit.com/tools/unit-economics-calculator/"
@@ -1383,10 +1423,10 @@
             <p>Calculate unit economics using your own assumptions and inputs.</p>
             <span class="tools-library-link">Open the tool &rarr;</span>
           </a>
-          
+
         </div>
       </section>
-      
+
           </div>
         </div>
       </section>
@@ -1396,7 +1436,7 @@
           <div class="cta-content">
             <h2>Need this workflow turned into a custom internal tool?</h2>
             <p>Ledger Summit can take the public calculator or checker and shape it into a deeper internal workflow with your logic, approvals, exports, and operating rules.</p>
-            <a href="https://ledgersummit.com/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+            <a href="/#contact" class="btn-primary btn-glow">Book a free call</a>
           </div>
         </div>
       </section>
@@ -1408,21 +1448,21 @@
           <img src="/assets/logo-ledger-summit.svg" alt="Ledger Summit" width="176" height="30">
         </a>
         <ul class="footer-links">
-          <li><a href="https://ledgersummit.com/services/">Services</a></li>
-          <li><a href="https://ledgersummit.com/tools/">Tools</a></li>
-          <li><a href="https://ledgersummit.com/blog/">Blog</a></li>
-          <li><a href="https://ledgersummit.com/about/">About</a></li>
-          <li><a href="https://ledgersummit.com/contact/">Contact</a></li>
-          <li><a href="https://ledgersummit.com/book-a-call/">Book a Call</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/tool-categories/">Tools</a></li>
+          <li><a href="/#resources">Blog</a></li>
+          <li><a href="/#team">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/#contact">Book a Call</a></li>
         </ul>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p>
+        <p>&copy; <span data-current-year>2026</span> Ledger Summit. AI-powered accounting and finance automation.</p>
       </div>
     </div>
   </footer>
 
-  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+  <button type="button" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
@@ -1437,14 +1477,14 @@
         if (!hamburger || !mobileNav) return;
         hamburger.setAttribute("aria-expanded", "false");
         mobileNav.classList.remove("is-open");
-        mobileNav.setAttribute("aria-hidden", "true");
+        mobileNav.setAttribute("inert", "");
       };
 
       const openMobileNav = () => {
         if (!hamburger || !mobileNav) return;
         hamburger.setAttribute("aria-expanded", "true");
         mobileNav.classList.add("is-open");
-        mobileNav.setAttribute("aria-hidden", "false");
+        mobileNav.removeAttribute("inert");
       };
 
       window.closeMobileNav = closeMobileNav;
@@ -1512,6 +1552,9 @@
       input.addEventListener("input", update);
       update();
     })();
+  </script>
+  <script>
+    document.querySelectorAll('[data-current-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
   </script>
 </body>
 </html>

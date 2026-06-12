@@ -1,0 +1,7 @@
+.git
+.agents
+.claude
+.playwright-cli
+plugins
+test-results
+node_modules

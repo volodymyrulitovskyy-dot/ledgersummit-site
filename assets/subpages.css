@@ -141,6 +141,21 @@ img {
   padding: 28px 0 88px;
 }
 
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.breadcrumbs a {
+  color: var(--brand-deep);
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
