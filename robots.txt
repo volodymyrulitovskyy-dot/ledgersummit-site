@@ -1,5 +1,5 @@
 # Ledger Summit — robots.txt
-# Full allow for crawlers. WordPress admin paths are excluded via the host config.
+# Full allow for crawlers. Static site served by Vercel.
 
 User-agent: *
 Allow: /
