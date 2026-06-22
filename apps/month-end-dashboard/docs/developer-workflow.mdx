@@ -1,0 +1,421 @@
+{/* 
+  Developer Workflow – Month-End Dashboard 3
+  Last updated: 2026-03-22
+*/}
+
+# Month-End Dashboard 3 — Developer Workflow
+
+> **Tech stack at a glance**  
+> Next.js 16 (App Router) · React 19 · TypeScript · Supabase Auth · Prisma · PostgreSQL · Tailwind CSS 4 · Zod · Recharts · React Flow · xlsx
+
+---
+
+## Prerequisites
+
+| Tool       | Version | Notes |
+|------------|---------|-------|
+| Node.js    | 20 +    | LTS recommended |
+| npm        | 10 +    | Ships with Node 20 |
+| Supabase   | —       | Existing project; same DB as `month-end-dashboard` / `month-end-dashboard-2` |
+| PostgreSQL | 15 +    | Managed by Supabase (no local install required) |
+
+---
+
+## 1 — Clone & Install
+
+```bash
+git clone <repo-url> month-end-dashboard-3
+cd month-end-dashboard-3
+npm install
+```
+
+---
+
+## 2 — Environment Variables
+
+### Quick path (recommended)
+
+If you have access to the sibling `month-end-dashboard-2` repo, run the helper script:
+
+```bash
+./scripts/copy-env.sh ../month-end-dashboard-2/.env.local
+```
+
+### Manual path
+
+```bash
+cp .env.example .env
+```
+
+Then fill in your values:
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `DATABASE_URL` | ✅ | Supabase Postgres connection string. **Do NOT append `?schema=med3`** — Prisma handles schema isolation via `@@schema("med3")` in the schema file. |
+| `NEXT_PUBLIC_SUPABASE_URL` | ✅ | Your Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | ✅ | Supabase anonymous/public key |
+| `SUPABASE_SERVICE_ROLE_KEY` | optional | Service role key (server-side admin ops) |
+| `NEXT_PUBLIC_APP_URL` | optional | Defaults to `http://localhost:3015` |
+| `ADMIN_EMAIL` | optional | Email address that is auto-promoted to admin on first login |
+
+### QuickBooks Online (optional)
+
+| Variable | Description |
+|----------|-------------|
+| `QBO_CLIENT_ID` | Intuit OAuth app client ID |
+| `QBO_CLIENT_SECRET` | Intuit OAuth app client secret |
+| `QBO_REDIRECT_URI` | OAuth callback — default `http://localhost:3015/api/qbo/callback` |
+| `QBO_ENV` | `sandbox` or `production` |
+
+You can copy QBO vars from the sibling project automatically:
+
+```bash
+./scripts/copy-qbo-env.sh ../month-end-dashboard-2 .env.local
+```
+
+<Callout type="warning">
+  **Never commit `.env` files.** They are git-ignored. Only `.env.example` is tracked.
+</Callout>
+
+---
+
+## 3 — Database Setup
+
+### 3.1 — Create schemas in Supabase
+
+Before any Prisma commands, run the schema-creation SQL in the **Supabase SQL Editor**:
+
+```sql
+-- Located at: scripts/create_schemas.sql
+-- Creates med3 and med3_shadow schemas and grants permissions
+```
+
+Then expose the schema:
+
+1. Go to **Settings → API** in the Supabase dashboard.
+2. Under **Exposed schemas**, add `med3` to the list.
+
+### 3.2 — Run Prisma migrations
+
+**First-time setup:**
+
+```bash
+npx prisma migrate dev --name init
+```
+
+If the shadow-database step fails (common with hosted Supabase):
+
+```bash
+npx prisma migrate dev --create-only --name init
+npx prisma migrate deploy
+npx prisma generate
+```
+
+**Subsequent deploys (migrations already exist):**
+
+```bash
+npx prisma migrate deploy
+npx prisma generate
+```
+
+### 3.3 — Additional feature tables
+
+Run these SQL files in the **Supabase SQL Editor** to unlock all features.  
+All scripts are idempotent (`IF NOT EXISTS`), safe to re-run.
+
+| SQL file | Feature it enables |
+|----------|--------------------|
+| `sql/close_tasks.sql` | Close checklist |
+| `sql/patch_close_tasks_range.sql` | Date-range columns on close tasks |
+| `sql/tb.sql` | Trial balance import (`tb_snapshots`, `tb_lines`) |
+| `sql/rules_and_exceptions.sql` | Validation rules & exceptions |
+| `sql/bs_snapshots.sql` | Balance sheet snapshots |
+| `sql/project_pnl.sql` | Project P&L tracking |
+| `sql/controller_modules.sql` | Controller modules |
+| `sql/qbo_connections.sql` | QuickBooks Online OAuth tokens |
+
+After each SQL run:
+
+```bash
+npx prisma generate
+```
+
+### 3.4 — Verify
+
+```sql
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_schema = 'med3'
+ORDER BY table_name;
+```
+
+---
+
+## 4 — Run the Dev Server
+
+```bash
+npm run dev
+```
+
+The app starts on **[http://localhost:3015](http://localhost:3015)**.
+
+| npm script | Purpose |
+|------------|---------|
+| `npm run dev` | Dev server (port 3015) |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | ESLint |
+| `npm run db:generate` | `prisma generate` |
+| `npm run db:migrate` | `prisma migrate dev` |
+| `npm run db:studio` | Prisma Studio (visual DB browser) |
+
+---
+
+## 5 — Project Architecture
+
+### Directory layout
+
+```
+month-end-dashboard-3/
+├── prisma/
+│   └── schema.prisma          # All models use @@schema("med3")
+├── scripts/                   # Helper scripts + SQL schema creation
+├── sql/                       # Idempotent SQL patches for feature tables
+├── src/
+│   ├── app/
+│   │   ├── (app)/             # 🔒 Protected routes (require auth)
+│   │   │   ├── admin/         #    User & role management (admin only)
+│   │   │   ├── calendar/      #    Calendar view
+│   │   │   ├── checklist/     #    Close checklist
+│   │   │   ├── close/         #    Close dashboard & workflow
+│   │   │   ├── org/           #    Organization selector
+│   │   │   ├── projects/      #    Project P&L tracking
+│   │   │   ├── reconciliations/ #  Pairwise reconciliation
+│   │   │   ├── reports/       #    Financial reports
+│   │   │   ├── rules/         #    Rule engine admin
+│   │   │   ├── schedules/     #    GL schedules
+│   │   │   └── variance/      #    Variance analysis
+│   │   ├── (public)/          # 🌐 Public routes
+│   │   │   └── auth/          #    Login / Signup
+│   │   ├── api/               # API routes (REST)
+│   │   │   ├── auth/          #    Auth endpoints
+│   │   │   ├── close/         #    Close actions
+│   │   │   ├── exceptions/    #    Exception CRUD + export
+│   │   │   ├── health/        #    Health check
+│   │   │   ├── qbo/           #    QuickBooks Online OAuth + sync
+│   │   │   ├── reconciliations/ #  Reconciliation endpoints
+│   │   │   ├── reports/       #    Report generation
+│   │   │   ├── rules/         #    Rule CRUD
+│   │   │   ├── schedules/     #    Schedule endpoints
+│   │   │   ├── trial-balance/ #    TB import & query
+│   │   │   └── variance/      #    Variance endpoints
+│   │   └── access-denied/     # Unauthorized redirect target
+│   ├── components/            # Shared React components
+│   │   ├── ui/                #    Base UI components
+│   │   ├── close/             #    Close-specific components
+│   │   └── reports/           #    Report components
+│   ├── lib/                   # Business logic & utilities
+│   │   ├── auth/              #    Auth guards (requireUser)
+│   │   ├── db/                #    Prisma client singleton
+│   │   ├── supabase/          #    Supabase client (server + browser)
+│   │   ├── rules/             #    Rule engine types & logic
+│   │   ├── tb/                #    Trial balance utilities
+│   │   ├── qbo/               #    QuickBooks helpers
+│   │   ├── reports/           #    Report generation logic
+│   │   ├── projects/          #    Project P&L logic
+│   │   └── dates/             #    Date utilities
+│   └── middleware.ts          # Auth middleware (route protection)
+└── .env.example               # Template for environment variables
+```
+
+### Key patterns
+
+- **App Router** — All routing via `src/app/`. Route groups `(app)` (protected) and `(public)` control auth boundaries.
+- **Server Actions** — Heavy use of Next.js server actions (`"use server"`) for data mutations.  
+  Look for `actions.ts` files inside each feature folder.
+- **Prisma multi-schema** — All models live in the `med3` Postgres schema, declared via `@@schema("med3")` in `schema.prisma`.
+- **Supabase Auth** — Email/password authentication. Middleware redirects unauthenticated users to `/auth/login`.
+- **RBAC** — Two roles: `admin` and `user`. Screen access is enforced server-side. Admin manages users at `/admin/users`.
+- **React Compiler** — Enabled in `next.config.ts` (`reactCompiler: true`).
+
+---
+
+## 6 — Authentication & Authorization
+
+### Auth flow
+
+1. User hits any `(app)` route → `middleware.ts` checks Supabase session.
+2. No session → redirect to `/auth/login`.
+3. After login → `requireUser()` in server components fetches user + role + allowed screens.
+4. Unauthorized screen access → redirect to `/access-denied`.
+
+### Roles
+
+| Role | Access |
+|------|--------|
+| `user` | Home, Checklist, Calendar (default for new signups) |
+| `admin` | All screens + Admin panel (`/admin/users`) |
+
+### Smoke checks
+
+- **User** logs in → sees only Home / Checklist / Calendar in nav.
+- **User** blocked from `/rules` or `/admin/users` → redirects to access denied.
+- **Admin** can access `/rules` and `/admin/users`.
+- **Exceptions** are scoped: user sees own (`owner_user_id`), admin sees all.
+
+---
+
+## 7 — Database Schema (Prisma)
+
+All tables are in the `med3` Postgres schema. Key models:
+
+| Model | Purpose |
+|-------|---------|
+| `users` | User accounts (linked to Supabase auth UID) |
+| `orgs` | Organizations |
+| `org_members` | User ↔ Org membership + role |
+| `periods` | Month-end periods per org |
+| `close_tasks` | Close checklist items (scoped by date range) |
+| `tb_snapshots` | Trial balance snapshots (per org + date range) |
+| `tb_lines` | Individual account balances within a TB snapshot |
+| `rules` | Validation rules for automated exception detection |
+| `exceptions` | Exceptions generated by rule evaluation |
+| `qbo_connections` | QuickBooks OAuth tokens |
+
+Full schema: [`prisma/schema.prisma`](./prisma/schema.prisma)
+
+---
+
+## 8 — Common Development Tasks
+
+### Add a new Prisma model
+
+```bash
+# 1. Edit prisma/schema.prisma (remember @@schema("med3"))
+# 2. Create migration
+npx prisma migrate dev --name add_my_table
+
+# 3. Regenerate client
+npx prisma generate
+```
+
+### Browse the database visually
+
+```bash
+npm run db:studio
+```
+
+Opens **Prisma Studio** at `http://localhost:5555`.
+
+### Seed data
+
+```bash
+# Close tasks
+npx tsx scripts/seed-close-tasks.ts
+
+# Trial balance
+npx tsx scripts/seed-trial-balance.ts
+```
+
+### Add a new protected page
+
+1. Create a folder under `src/app/(app)/your-feature/`.
+2. Add `page.tsx` with `requireUser()` at the top.
+3. Add the route to the nav in `src/app/(app)/AppNav.tsx`.
+4. Update RBAC allowed-screens if needed (admin panel manages this).
+
+### Add a new API route
+
+1. Create `src/app/api/your-endpoint/route.ts`.
+2. Export named functions: `GET`, `POST`, `PUT`, `DELETE`, etc.
+3. Use `requireUser()` for auth-gated endpoints.
+
+---
+
+## 9 — Helper Scripts
+
+| Script | Usage |
+|--------|-------|
+| `./scripts/copy-env.sh <source>` | Copies env vars from a sibling project |
+| `./scripts/copy-qbo-env.sh <project-dir> <env-file>` | Copies QBO-specific env vars |
+| `./scripts/create_schemas.sql` | Creates `med3` + `med3_shadow` schemas in Supabase |
+| `./scripts/seed-close-tasks.ts` | Seeds close task data |
+| `./scripts/seed-trial-balance.ts` | Seeds trial balance data |
+| `./scripts/cleanup-bad-bs-snapshot.ts` | Cleans up malformed BS snapshots |
+| `./start.sh` | Quick-start: installs deps if missing, starts dev server |
+
+---
+
+## 10 — Troubleshooting
+
+### Prisma migration fails with permission errors
+
+Ensure you've run `scripts/create_schemas.sql` in Supabase SQL Editor first. The `med3` and `med3_shadow` schemas must exist with proper grants.
+
+### Shadow database errors
+
+Use the two-step migration approach:
+
+```bash
+npx prisma migrate dev --create-only --name my_migration
+npx prisma migrate deploy
+npx prisma generate
+```
+
+### `Decimal` / `toFixed` errors in client components
+
+Prisma returns `Decimal` objects. Convert to plain numbers **before** passing props to client components:
+
+```typescript
+const value = Number(prismaRow.amount);
+```
+
+### Tables not visible via Supabase client
+
+Make sure `med3` is listed under **Settings → API → Exposed schemas** in your Supabase dashboard.
+
+### Port conflicts
+
+The dev server runs on port **3015** (configured in `package.json` → `"dev": "next dev -p 3015"`).  
+Change the port there if needed.
+
+---
+
+## 11 — Deployment Checklist
+
+1. Ensure all env vars are set in your hosting platform.
+2. Run database migrations:
+   ```bash
+   npx prisma migrate deploy
+   npx prisma generate
+   ```
+3. Build the app:
+   ```bash
+   npm run build
+   ```
+4. Start the production server:
+   ```bash
+   npm run start
+   ```
+
+<Callout type="info">
+  `next.config.ts` currently has `typescript.ignoreBuildErrors: true`. 
+  Consider removing this once all type errors are resolved for stricter builds.
+</Callout>
+
+---
+
+## Quick Reference Card
+
+```
+Clone       → git clone <url> && cd month-end-dashboard-3
+Install     → npm install
+Env setup   → cp .env.example .env  (fill values)
+DB schemas  → Run scripts/create_schemas.sql in Supabase SQL Editor
+Migrate     → npx prisma migrate dev --name init
+Feature SQL → Run sql/*.sql files in Supabase SQL Editor
+Dev server  → npm run dev            → http://localhost:3015
+DB browser  → npm run db:studio      → http://localhost:5555
+Build       → npm run build
+Lint        → npm run lint
+```

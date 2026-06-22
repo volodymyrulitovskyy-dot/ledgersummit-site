@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Consolidated P&L Scenarios App | Ledger Summit</title>
+  <meta name="description" content="Build consolidated P&L scenarios and add-backs across entities, with what-if planning, indirect costs, and EAC roll-up. Free in-browser app from Ledger Summit.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/apps/consolidated-pnl/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ledger Summit">
+  <meta property="og:title" content="Consolidated P&L Scenarios App | Ledger Summit">
+  <meta property="og:description" content="Build consolidated P&L scenarios and add-backs across entities, with what-if planning, indirect costs, and EAC roll-up. Free in-browser app from Ledger Summit.">
+  <meta property="og:url" content="https://ledgersummit.com/apps/consolidated-pnl/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta property="og:image:alt" content="Ledger Summit — Consolidated P&L / Scenarios">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Consolidated P&L Scenarios App | Ledger Summit">
+  <meta name="twitter:description" content="Build consolidated P&L scenarios and add-backs across entities, with what-if planning, indirect costs, and EAC roll-up. Free in-browser app from Ledger Summit.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Structured data: SoftwareApplication + BreadcrumbList -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Consolidated P&L Scenarios App","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://ledgersummit.com/apps/consolidated-pnl/","description":"Build consolidated P&L scenarios and add-backs across entities, with what-if planning, indirect costs, and EAC roll-up. Free in-browser app from Ledger Summit.","publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ledgersummit.com/"},{"@type":"ListItem","position":2,"name":"Apps","item":"https://ledgersummit.com/apps/"},{"@type":"ListItem","position":3,"name":"Consolidated P&L Scenarios App","item":"https://ledgersummit.com/apps/consolidated-pnl/"}]}]}</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-slate-100 min-h-screen">
+  <!-- Top bar -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <h1 class="text-lg font-semibold text-slate-800">Consolidated P&L / Scenarios</h1>
+      <div class="flex gap-3 items-center">
+        <input id="monthPicker" type="month" class="border rounded-md px-2 py-1 text-sm" />
+        <span id="status" class="text-xs text-slate-500"></span>
+      </div>
+    </div>
+    <!-- Tabs -->
+    <nav class="bg-slate-50 border-t">
+      <div class="max-w-6xl mx-auto px-4 flex gap-4 text-sm">
+        <a href="./index.html" class="py-2 inline-block" id="tab-consol-pl">Consolidated P&L</a>
+        <a href="./index.html" class="py-2 inline-block" id="tab-scenarios">Scenarios / What-ifs</a>
+        <a href="./index.html" class="py-2 inline-block" id="tab-indirect">Indirect</a>
+        <a href="./index.html" class="py-2 inline-block" id="tab-addbacks">Add-backs</a>
+        <a href="./index.html" class="py-2 inline-block" id="tab-EAC Summary">EAC Summary</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- View -->
+  <main class="max-w-6xl mx-auto px-4 py-5">
+    <div id="view"></div>
+  </main>
+
+  <!-- Put this BEFORE your main app scripts -->
+  <script src="./js/shims/fetch-indirect.js"></script>
+  
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

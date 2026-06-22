@@ -1,0 +1,477 @@
+    /* Upload & paste area */
+    .ice-dropzone {
+      display: block;
+      border: 2px dashed var(--ls-accent-soft, rgba(255, 190, 142, 0.3));
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      background: rgba(255, 255, 255, 0.025);
+      margin-bottom: 0.75rem;
+    }
+
+    .ice-dropzone:hover,
+    .ice-dropzone:focus-within {
+      border-color: var(--ls-accent, #ffbe8e);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .ice-dropzone input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .ice-dropzone strong {
+      display: block;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+
+    .ice-dropzone span {
+      display: block;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.45;
+    }
+
+    .ice-split {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+    }
+
+    .ice-split::before,
+    .ice-split::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .ice-split span {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .ice-paste-wrap textarea {
+      width: 100%;
+      min-height: 90px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: #fff;
+      padding: 0.85rem 1rem;
+      font-family: inherit;
+      font-size: 0.88rem;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+
+    .ice-paste-wrap textarea::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Action buttons */
+    .ice-action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .ice-btn {
+      padding: 0.6rem 1.25rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.12s;
+    }
+
+    .ice-btn:active {
+      transform: scale(0.97);
+    }
+
+    .ice-btn-primary {
+      background: var(--ls-highlight, #ff7d71);
+      color: #fff;
+    }
+
+    .ice-btn-primary:hover {
+      background: var(--ls-accent, #ffbe8e);
+      color: #111;
+    }
+
+    .ice-btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .ice-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .ice-btn-tertiary {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .ice-btn-tertiary:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .ice-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* Status */
+    .ice-status {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      padding: 0.5rem 0;
+      min-height: 1.5em;
+    }
+
+    .ice-status.muted {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .ice-status.success {
+      color: var(--ls-highlight, #ff7d71);
+    }
+
+    .ice-status.error {
+      color: #ff6b6b;
+    }
+
+    /* Meta chips */
+    .ice-setup-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .ice-meta-chip {
+      font-size: 0.78rem;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 6px;
+      padding: 0.3rem 0.6rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .ice-meta-chip strong {
+      color: var(--ls-accent, #ffbe8e);
+      margin-right: 0.25rem;
+    }
+
+    /* Mapping grid */
+    .ice-mapping-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .ice-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0.3rem;
+    }
+
+    .ice-field select {
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.84rem;
+      font-family: inherit;
+    }
+
+    .ice-field small {
+      display: block;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 0.2rem;
+    }
+
+    /* Two-panel layout */
+    .ice-lab-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 920px) {
+      .ice-lab-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ice-panel {
+      background: var(--ls-panel-bg, rgba(33, 12, 10, 0.5));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .ice-panel-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .ice-panel-title h3 {
+      font-size: 1.05rem;
+      color: #fff;
+      margin: 0;
+    }
+
+    .ice-panel-title span {
+      font-size: 0.78rem;
+      color: var(--ls-accent, #ffbe8e);
+      opacity: 0.7;
+    }
+
+    /* Empty state */
+    .ice-empty-state h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.6rem;
+    }
+
+    .ice-empty-state > p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    .ice-empty-list {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .ice-empty-item {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+    }
+
+    .ice-empty-item strong {
+      display: block;
+      font-size: 0.88rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .ice-empty-item span {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Summary cards */
+    .ice-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .ice-summary-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .ice-summary-card strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--ls-accent, #ffbe8e);
+      margin-bottom: 0.2rem;
+    }
+
+    .ice-summary-card span {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.4;
+    }
+
+    .ice-summary-card .ice-meter {
+      margin-top: 0.5rem;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ice-summary-card .ice-meter span {
+      display: block;
+      height: 100%;
+      background: var(--ls-highlight, #ff7d71);
+      border-radius: 2px;
+    }
+
+    /* Result cards */
+    .ice-result-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .ice-card-head {
+      margin-bottom: 1rem;
+    }
+
+    .ice-card-head h3 {
+      font-size: 1.05rem;
+      color: #fff;
+      margin: 0 0 0.25rem;
+    }
+
+    .ice-card-head p {
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+    }
+
+    /* Tables */
+    .ice-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ice-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+    }
+
+    .ice-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .ice-table td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.8);
+      vertical-align: top;
+    }
+
+    .ice-table tbody tr:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .ice-table td strong {
+      display: block;
+      color: #fff;
+    }
+
+    .ice-table td span {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Exception tags */
+    .ice-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      margin: 0.1rem 0.15rem;
+      white-space: nowrap;
+    }
+
+    .ice-tag-unbalanced {
+      background: rgba(255, 107, 107, 0.18);
+      color: #ff9b9b;
+    }
+
+    .ice-tag-unmatched {
+      background: rgba(255, 200, 60, 0.18);
+      color: #ffd966;
+    }
+
+    .ice-tag-missing {
+      background: rgba(180, 130, 255, 0.18);
+      color: #c9a8ff;
+    }
+
+    .ice-tag-ok {
+      background: rgba(60, 220, 140, 0.15);
+      color: #6ae8a8;
+    }
+
+    /* Pair summary grid */
+    .ice-pair-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ice-pair-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .ice-pair-card h4 {
+      font-size: 0.92rem;
+      color: #fff;
+      margin: 0 0 0.35rem;
+    }
+
+    .ice-pair-card p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0 0 0.5rem;
+    }
+
+    .ice-pair-stats {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .ice-pair-stat {
+      text-align: center;
+    }
+
+    .ice-pair-stat strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--ls-accent, #ffbe8e);
+    }
+
+    .ice-pair-stat span {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.4);
+    }

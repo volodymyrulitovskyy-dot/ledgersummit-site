@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GL to Trial Balance Reconciler | Ledger Summit</title>
+  <meta name="description" content="Reconcile GL detail to a trial balance in your browser. Upload a GL export and trial balance, map the columns, and surface the accounts that don't tie.">
+  <link rel="canonical" href="https://ledgersummit.com/tools/gl-to-trial-balance-reconciler/">
+  <meta property="og:title" content="GL to Trial Balance Reconciler | Ledger Summit">
+  <meta property="og:description" content="Reconcile GL detail to a trial balance in your browser. Upload a GL export and trial balance, map the columns, and surface the accounts that don't tie.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgersummit.com/tools/gl-to-trial-balance-reconciler/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GL to Trial Balance Reconciler | Ledger Summit">
+  <meta name="twitter:description" content="Reconcile GL detail to a trial balance in your browser. Upload a GL export and trial balance, map the columns, and surface the accounts that don't tie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=20260311">
+  <link rel="stylesheet" href="/css/pages.css?v=20260311">
+  <link rel="stylesheet" href="/css/tool-pages.css?v=20260419b">
+  <link rel="stylesheet" href="/css/gl-to-trial-balance-reconciler.css?v=20260311">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ledger Summit GL to Trial Balance Reconciler","applicationCategory":"BusinessApplication","operatingSystem":"Web Browser","isAccessibleForFree":true,"description":"Reconcile GL detail to a trial balance in your browser. Upload a GL export and trial balance, map the columns, and surface the accounts that don't tie.","url":"https://ledgersummit.com/tools/gl-to-trial-balance-reconciler/","publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a GL to trial balance reconciler do?","acceptedAnswer":{"@type":"Answer","text":"It sums the GL detail by account and compares each total to the corresponding trial balance line to surface accounts that do not tie."}},{"@type":"Question","name":"Who is this reconciler built for?","acceptedAnswer":{"@type":"Answer","text":"Controllers, staff accountants, and close reviewers who need to verify that the GL detail supports the trial balance before sign-off."}},{"@type":"Question","name":"What file formats does this tool accept?","acceptedAnswer":{"@type":"Answer","text":"CSV, TSV, and tab-delimited text files exported from any ERP or accounting system."}},{"@type":"Question","name":"Does this tool upload my data anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Both files are parsed and compared entirely in your browser. Nothing leaves your machine."}},{"@type":"Question","name":"What kinds of differences does the tool flag?","acceptedAnswer":{"@type":"Answer","text":"Accounts in the GL but not on the TB, accounts on the TB but not in the GL, and any account where the GL total and TB balance do not match."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://ledgersummit.com/tools/"},{"@type":"ListItem","position":2,"name":"GL to Trial Balance Reconciler","item":"https://ledgersummit.com/tools/gl-to-trial-balance-reconciler/"}]}</script>
+</head>
+<body class="tool-page ls-theme-terra">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation"><div class="nav-inner"><a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></nav><div class="mobile-nav" id="mobileNav" aria-hidden="true"><a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a></div>
+
+  <main id="main">
+
+<section class="ls-tool-hero"><div class="container"><div class="ls-tool-hero-grid"><div class="ls-tool-hero-copy reveal"><span class="section-label">Reconciliation</span><h1>GL to trial balance reconciler for cleaner close review.</h1><p>Reconcile GL detail to a trial balance in your browser. Upload a GL export and trial balance, map the columns, and surface the accounts that don't tie.</p><div class="ls-tool-answer-strip"><strong>Direct answer</strong><span>A GL-to-TB reconciler sums detailed GL transactions by account and compares each total to the trial balance line, flagging accounts that do not tie so the close review focuses on real differences.</span></div><div class="ls-tool-hero-actions"><a href="#tool" class="btn-primary btn-glow">Open the tool</a><a href="/book-a-call/" class="btn-secondary">Need a custom version?</a></div><div class="ls-tool-hero-pills"><span class="ls-tool-hero-pill"><i></i>Browser-first workflow</span><span class="ls-tool-hero-pill"><i></i>Functional tool on top</span><span class="ls-tool-hero-pill"><i></i>Export-ready output</span></div></div><aside class="ls-tool-hero-panel reveal-right"><span class="ls-tool-panel-badge"><i></i>Operator-first</span><div class="ls-tool-panel-head"><h2>Why this page exists</h2><p>The page is built to solve the immediate task before the user has to move into a larger workflow or custom process.</p></div><div class="ls-tool-preview-list"><div class="ls-tool-preview-item"><strong>Balance differences</strong><span>See which accounts have a GL total that does not match the trial balance.</span></div><div class="ls-tool-preview-item"><strong>Missing accounts</strong><span>Surface accounts that appear in one file but not the other.</span></div><div class="ls-tool-preview-item"><strong>Clean tie-out</strong><span>Confirm the accounts that match so the reviewer can focus on exceptions.</span></div></div></aside></div></div></section>
+
+<section class="ls-tool-section" id="tool"><div class="container"><div class="gltb-shell" id="gltb-app">
+  <div class="gltb-tool-grid ls-tool-layout-stack"><section class="gltb-shell" style="box-shadow:none;border:1px solid rgba(10,22,40,.08)">
+      <div class="gltb-shell-title"><h3>1. Load both files</h3><span>Dual input</span></div>
+      <p class="gltb-note" style="margin-top:0;margin-bottom:.75rem">Upload a GL detail export and a trial balance export. The tool sums GL lines by account and compares to TB balances.</p>
+
+      <div class="gltb-dataset-grid">
+        <!-- GL Detail -->
+        <div class="gltb-shell" data-dataset="gl" style="box-shadow:none">
+          <div class="gltb-shell-title"><h3>GL detail export</h3><span>Detail side</span></div>
+          <label class="gltb-dropzone">
+            <input data-role="file-input" type="file" accept=".csv,.txt,.tsv" aria-label="Upload GL detail file">
+            <strong>Upload the GL detail export</strong>
+            <span>CSV or TSV with account codes, account names, and amounts (signed or debit/credit).</span>
+          </label>
+          <div class="gltb-split"><span>or</span></div>
+          <div class="gltb-paste"><textarea data-role="paste-input" placeholder="Paste GL detail CSV rows here."></textarea></div>
+          <div class="gltb-actions">
+            <button type="button" class="gltb-btn gltb-btn-primary" data-role="paste-button">Use pasted data</button>
+            <button type="button" class="gltb-btn gltb-btn-secondary" data-role="sample-button">Try sample</button>
+            <button type="button" class="gltb-btn gltb-btn-tertiary" data-role="reset-button">Reset</button>
+          </div>
+          <div class="gltb-status" data-role="status" role="status" aria-live="polite"></div>
+          <div class="gltb-mapping" data-role="mapping-section" style="display:none">
+            <div class="gltb-shell-title"><h3>Column mapping</h3><span>Smart mapping</span></div>
+            <div class="gltb-mapping-grid" data-role="mapping-grid"></div>
+          </div>
+        </div>
+
+        <!-- Trial Balance -->
+        <div class="gltb-shell" data-dataset="tb" style="box-shadow:none">
+          <div class="gltb-shell-title"><h3>Trial balance export</h3><span>TB side</span></div>
+          <label class="gltb-dropzone">
+            <input data-role="file-input" type="file" accept=".csv,.txt,.tsv" aria-label="Upload trial balance file">
+            <strong>Upload the trial balance export</strong>
+            <span>CSV or TSV with account codes, account names, and balance (signed or debit/credit).</span>
+          </label>
+          <div class="gltb-split"><span>or</span></div>
+          <div class="gltb-paste"><textarea data-role="paste-input" placeholder="Paste trial balance CSV rows here."></textarea></div>
+          <div class="gltb-actions">
+            <button type="button" class="gltb-btn gltb-btn-primary" data-role="paste-button">Use pasted data</button>
+            <button type="button" class="gltb-btn gltb-btn-secondary" data-role="sample-button">Try sample</button>
+            <button type="button" class="gltb-btn gltb-btn-tertiary" data-role="reset-button">Reset</button>
+          </div>
+          <div class="gltb-status" data-role="status" role="status" aria-live="polite"></div>
+          <div class="gltb-mapping" data-role="mapping-section" style="display:none">
+            <div class="gltb-shell-title"><h3>Column mapping</h3><span>Smart mapping</span></div>
+            <div class="gltb-mapping-grid" data-role="mapping-grid"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gltb-analyze-row">
+        <button type="button" class="gltb-btn gltb-btn-primary" id="gltb-analyze" disabled>Run reconciliation</button>
+        <button type="button" class="gltb-btn gltb-btn-secondary" id="gltb-export" disabled>Export reconciliation CSV</button>
+        <button type="button" class="gltb-btn gltb-btn-secondary" id="gltb-sample-both">Load sample data</button>
+        <button type="button" class="gltb-btn gltb-btn-tertiary" id="gltb-reset-all">Reset all</button>
+      </div>
+      <div class="gltb-note">The best results come from GL and TB exports that share the same account code format and cover the same period.</div>
+    </section><div class="ls-tool-head ls-tool-head-inline"><div><span class="section-label">Live Tool</span><h2>GL-to-TB comparison in the browser</h2><p>Load both files, confirm the column mapping, and review the reconciliation before the guide below.</p></div></div><section class="gltb-shell" style="box-shadow:none;border:1px solid rgba(10,22,40,.08)">
+      <div class="gltb-empty-state" id="gltb-empty">
+        <h3>What this GL-to-TB reconciler is built to solve</h3>
+        <p>The pain point is not building a pivot table. The pain point is isolating exactly which accounts do not tie between the GL detail and the trial balance.</p>
+        <div class="gltb-empty-list">
+          <div class="gltb-empty-item"><strong>Balance differences</strong><span>See which accounts have a GL total that does not match the TB balance.</span></div>
+          <div class="gltb-empty-item"><strong>GL-only accounts</strong><span>Find accounts with GL activity that are missing from the trial balance entirely.</span></div>
+          <div class="gltb-empty-item"><strong>TB-only accounts</strong><span>Surface accounts on the TB with no supporting GL detail.</span></div>
+        </div>
+      </div>
+      <div class="gltb-results" id="gltb-results">
+        <div class="gltb-summary-grid" id="gltb-summary"></div>
+        <div class="gltb-result-card">
+          <h3>Reconciliation detail</h3>
+          <p>Each account compared between GL total and TB balance.</p>
+          <div class="gltb-filter-row">
+            <button type="button" class="gltb-filter-btn active" data-filter="all">All accounts</button>
+            <button type="button" class="gltb-filter-btn" data-filter="exceptions">Exceptions only</button>
+          </div>
+          <div class="gltb-table-wrap" id="gltb-table-wrap"></div>
+        </div>
+      </div>
+    </section></div>
+
+</div></div></section>
+
+<section class="ls-tool-feature-band"><div class="container"><div class="ls-tool-feature-grid"><article class="ls-tool-feature-card reveal"><strong>Dual-file reconciliation</strong><p>Load the GL detail and the trial balance separately so the comparison starts from real exported data on both sides.</p></article><article class="ls-tool-feature-card reveal"><strong>Smart column mapping</strong><p>Headers are auto-matched to account codes, names, and amounts so the user can start reconciling immediately.</p></article><article class="ls-tool-feature-card reveal"><strong>Exception-first review</strong><p>Matched accounts are confirmed quietly while differences, GL-only, and TB-only items are flagged for follow-up.</p></article><article class="ls-tool-feature-card reveal"><strong>Browser-only workflow</strong><p>Both files stay in the browser. Nothing is uploaded, so the tool is usable immediately without a platform rollout.</p></article></div></div></section>
+
+<section class="page-section ls-tool-guide-section" id="guide"><div class="container"><div class="section-header"><span class="section-label">Guide Below The Tool</span><h2>How to use the GL to trial balance reconciler well</h2><p>Written for searchers, answer engines, and finance teams that need the answer first and context second.</p></div><div class="ls-tool-answer-grid"><article class="ls-tool-answer-card reveal"><strong>What it is</strong><p>A GL-to-TB reconciler sums the detail transactions in a general ledger export by account and compares each total to the corresponding trial balance line, flagging differences, missing accounts, and clean tie-outs.</p></article><article class="ls-tool-answer-card reveal"><strong>Who it is for</strong><p>Staff accountants, controllers, and close reviewers who need to verify that the GL detail supports the trial balance before the books are signed off.</p></article><article class="ls-tool-answer-card reveal"><strong>What matters most</strong><p>Consistent account codes across both files, a complete GL export covering the full period, and a TB that reflects ending balances for the same period.</p></article></div><div class="ls-tool-guide-copy"><span class="section-label">Workflow</span><h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Four practical steps</h2><p>Use the tool as a first-pass answer layer before you move into a larger workpaper or review memo.</p></div><div class="ls-tool-steps-grid"><article class="ls-tool-step-card reveal"><div class="ls-tool-step-number">1</div><strong>Export both files from the same period.</strong><p>Pull the GL detail and the trial balance from the same accounting period so the comparison is apples-to-apples.</p></article><article class="ls-tool-step-card reveal"><div class="ls-tool-step-number">2</div><strong>Load and map both files.</strong><p>Upload or paste both exports, then confirm or adjust the auto-mapped columns for account code, name, and amounts.</p></article><article class="ls-tool-step-card reveal"><div class="ls-tool-step-number">3</div><strong>Review the exception queue first.</strong><p>Focus on the accounts flagged as differences, GL-only, or TB-only before reviewing the clean matches.</p></article><article class="ls-tool-step-card reveal"><div class="ls-tool-step-number">4</div><strong>Export the reconciliation for the close file.</strong><p>Download the comparison as a CSV to attach to the close binder or share with the reviewer.</p></article></div><div class="ls-tool-guide-copy"><span class="section-label">Review Checklist</span><h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">What reviewers usually validate first</h2><p>These are the areas reviewers usually check first once the initial result is visible.</p></div><div class="ls-tool-checklist-grid"><article class="ls-tool-check-card reveal"><strong>Period alignment</strong><p>Confirm the GL detail and TB cover exactly the same accounting period with no partial-month data.</p></article><article class="ls-tool-check-card reveal"><strong>Account code consistency</strong><p>Mismatched account numbering between systems is the most common source of false exceptions.</p></article><article class="ls-tool-check-card reveal"><strong>Sign conventions</strong><p>Verify whether credits appear as negative values or in a separate column and that the mapping reflects this.</p></article><article class="ls-tool-check-card reveal"><strong>Material differences first</strong><p>Investigate the largest dollar differences before spending time on immaterial rounding items.</p></article><article class="ls-tool-check-card reveal"><strong>Missing accounts</strong><p>Accounts that appear in only one file often indicate incomplete exports or chart-of-accounts changes.</p></article><article class="ls-tool-check-card reveal"><strong>Workflow next step</strong><p>After the reconciler confirms the tie-out, decide whether adjusting entries, reclass entries, or reviewer notes are needed.</p></article></div><div class="ls-tool-gap-grid"><article class="ls-tool-gap-card reveal"><strong>Tool first</strong><p>The functional interface stays above the guide so users solve the immediate task before they read.</p></article><article class="ls-tool-gap-card reveal"><strong>Interpretation included</strong><p>The page explains the result instead of dumping raw rows or one isolated metric.</p></article><article class="ls-tool-gap-card reveal"><strong>Useful before a custom build</strong><p>Ledger Summit can extend this into a richer internal workflow later, but the browser tool is already usable now.</p></article></div></div></section>
+
+<section class="page-section ls-tool-faq" id="faq"><div class="container"><div class="section-header"><span class="section-label">FAQ</span><h2>GL to Trial Balance Reconciler questions, answered directly</h2><p>Written in short form so users and answer engines can get a clear response without generic filler.</p></div><div class="faq-list"><div class="faq-item"><button class="faq-question" aria-expanded="false">What does a GL to trial balance reconciler do?<span class="faq-toggle">+</span></button><div class="faq-answer"><p>It sums the GL detail by account and compares each total to the corresponding trial balance line to surface accounts that do not tie.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false">Who is this reconciler built for?<span class="faq-toggle">+</span></button><div class="faq-answer"><p>Controllers, staff accountants, and close reviewers who need to verify that the GL detail supports the trial balance before sign-off.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false">What file formats does this tool accept?<span class="faq-toggle">+</span></button><div class="faq-answer"><p>CSV, TSV, and tab-delimited text files exported from any ERP or accounting system.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false">Does this tool upload my data anywhere?<span class="faq-toggle">+</span></button><div class="faq-answer"><p>No. Both files are parsed and compared entirely in your browser. Nothing leaves your machine.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false">What kinds of differences does the tool flag?<span class="faq-toggle">+</span></button><div class="faq-answer"><p>Accounts in the GL but not on the TB, accounts on the TB but not in the GL, and any account where the GL total and TB balance do not match.</p></div></div></div></div></section>
+
+<section class="ls-tool-cta"><div class="container"><div class="ls-tool-cta-card reveal"><span class="section-label ls-tool-cta-label">Next Step</span><h2>Need this connected to a broader workflow?</h2><p>Use the browser tool first. If you need a richer internal workflow, automation, or reviewer routing around it, Ledger Summit can build the next layer around your process.</p><a href="/book-a-call/" class="btn-primary btn-glow">Book a free call</a><div class="ls-tool-inline-links"><a href="/tools/">All tools</a><a href="/services/ai-accounting-tools/">Custom AI accounting tools</a><a href="/book-a-call/">Book a call</a></div></div></div></section>
+
+</main>
+
+  <footer class="footer"><div class="container"><div class="footer-inner"><a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a><ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul></div><div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p></div></div></footer>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="/js/shared.js?v=20260320"></script>
+  <script src="/js/gl-to-trial-balance-reconciler.js"></script>
+<script>window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };</script><script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+</html>

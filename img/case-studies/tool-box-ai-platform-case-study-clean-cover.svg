@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI platform clean cover</title>
+  <desc id="desc">Minimal cover image for the Tool Box AI platform case study.</desc>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="36" x2="1140" y2="639" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B214E"/>
+      <stop offset="0.56" stop-color="#174083"/>
+      <stop offset="1" stop-color="#1F6298"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(920 200) rotate(138) scale(430 300)">
+      <stop stop-color="#85CEFF" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#85CEFF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.18em; fill: #D9E7FF; }
+      .tag { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #8FD4FF; }
+      .headline { font: 900 62px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .sub { font: 600 28px/1.45 Inter, Arial, sans-serif; fill: #D8E6FF; }
+      .chip { font: 800 22px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .cardTitle { font: 800 16px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #B6D2FF; }
+      .cardBody { font: 700 34px/1.2 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .cardMini { font: 600 18px/1.4 Inter, Arial, sans-serif; fill: #DCE7FF; }
+      .chipBox { fill: rgba(116,201,255,0.16); stroke: rgba(116,201,255,0.34); }
+      .panel { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.18); }
+    </style>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glow)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="tag">PLATFORM CASE STUDY</text>
+  <text x="72" y="226" class="headline">How Ledger Summit</text>
+  <text x="72" y="294" class="headline">Built Tool Box AI</text>
+  <text x="72" y="378" class="sub">One operating layer for approvals, reconciliations,</text>
+  <text x="72" y="416" class="sub">project finance, controls, and AI routing.</text>
+
+  <rect x="72" y="510" width="172" height="54" rx="27" class="chipBox"/>
+  <text x="158" y="544" class="chip">4 workflows</text>
+  <rect x="260" y="510" width="156" height="54" rx="27" class="chipBox"/>
+  <text x="338" y="544" class="chip">15 layers</text>
+
+  <rect x="742" y="154" width="338" height="348" rx="34" class="panel"/>
+  <text x="786" y="210" class="cardTitle">PLATFORM</text>
+  <text x="786" y="272" class="cardBody">Shared logic.</text>
+  <text x="786" y="318" class="cardBody">Clear controls.</text>
+  <text x="786" y="392" class="cardMini">Approvals.</text>
+  <text x="786" y="424" class="cardMini">Reconciliation.</text>
+  <text x="786" y="456" class="cardMini">Project finance.</text>
+</svg>

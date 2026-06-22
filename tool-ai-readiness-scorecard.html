@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Readiness Scorecard for Finance Teams | Ledger Summit</title>
+  <meta name="description" content="Score your finance team&#x27;s AI readiness with a free 50-point scorecard. Get a personalized roadmap from Ledger Summit covering close operations, controls.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/tool-ai-readiness-scorecard.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Readiness Scorecard for Finance Teams | Ledger Summit">
+  <meta property="og:description" content="Score your finance team&#x27;s AI readiness with a free 50-point scorecard. Get a personalized roadmap from Ledger Summit covering close operations, controls.">
+  <meta property="og:url" content="https://ledgersummit.com/tool-ai-readiness-scorecard.html">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Readiness Scorecard for Finance Teams | Ledger Summit">
+  <meta name="twitter:description" content="Score your finance team&#x27;s AI readiness with a free 50-point scorecard. Get a personalized roadmap from Ledger Summit covering close operations, controls.">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css?v=20260505b">
+  <link rel="stylesheet" href="/css/subpages.css?v=20260505b">
+  
+<style>
+  .scorecard {
+    display: grid;
+    gap: 28px;
+    padding: 32px;
+    border: 1px solid rgba(219, 228, 239, 0.92);
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  }
+  .progress-shell {
+    display: grid;
+    gap: 8px;
+  }
+  .progress-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .progress-bar {
+    height: 8px;
+    border-radius: 999px;
+    background: #eef3fa;
+    overflow: hidden;
+  }
+  .progress-bar > div {
+    height: 100%;
+    background: linear-gradient(90deg, var(--brand) 0%, #4ea4f8 100%);
+    transition: width 220ms ease;
+  }
+  .cat-step {
+    display: grid;
+    gap: 16px;
+  }
+  .cat-step.is-hidden { display: none; }
+  .cat-head h2 { margin-bottom: 6px; }
+  .cat-head p { color: var(--muted); margin: 0; }
+  .question {
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fbfdff;
+  }
+  .question + .question { margin-top: 12px; }
+  .question .q-text {
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+  .options {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+  @media (max-width: 720px) {
+    .options { grid-template-columns: 1fr 1fr; }
+  }
+  .option {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+  }
+  .option:hover { border-color: var(--brand); }
+  .option input { display: none; }
+  .option.is-selected {
+    background: var(--brand);
+    color: #fff;
+    border-color: var(--brand-deep);
+  }
+  .step-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .step-actions .filler { flex: 1; }
+  .results {
+    display: grid;
+    gap: 18px;
+  }
+  .results.is-hidden { display: none; }
+  .result-headline {
+    display: grid;
+    gap: 8px;
+    padding: 22px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(234, 243, 255, 0.92), #fff);
+    border: 1px solid rgba(188, 215, 246, 0.95);
+  }
+  .result-headline .badge {
+    display: inline-flex;
+    width: fit-content;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .result-grid { grid-template-columns: 1fr; }
+  }
+  .result-card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #fff;
+  }
+  .result-card .cat-name { font-weight: 800; }
+  .result-card .tier-name {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-deep);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .result-bar {
+    margin-top: 10px;
+    height: 6px;
+    border-radius: 999px;
+    background: #eef3fa;
+    overflow: hidden;
+  }
+  .result-bar > div {
+    height: 100%;
+    background: var(--brand);
+  }
+  .result-recs ul {
+    margin: 8px 0 0;
+    padding-left: 22px;
+    color: var(--ink-soft);
+  }
+  .result-recs li::marker { color: var(--brand); }
+  .send-results {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    border: 1px dashed var(--line-strong);
+    border-radius: 18px;
+    background: #fbfdff;
+  }
+  .send-results label { font-weight: 700; }
+  .send-results input[type="email"] {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+  }
+  details.faq-item {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 16px;
+    background: #fff;
+  }
+  details.faq-item + details.faq-item { margin-top: 10px; }
+  details.faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+  }
+  details.faq-item p { color: var(--muted); margin-top: 8px; }
+</style>
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "AI Readiness Scorecard for Finance Teams", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://ledgersummit.com/tool-ai-readiness-scorecard.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the AI Readiness Scorecard measure?", "acceptedAnswer": {"@type": "Answer", "text": "It scores your finance team across 7 categories — close operations, reconciliations, reporting, data and systems, controls and audit readiness, AI tooling maturity, and governance — using 43 questions. It returns a tier (Foundational / Building / Scaling / Optimized) per category and a personalized recommendation."}}, {"@type": "Question", "name": "Is the scorecard free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There's no charge to take it. You can email yourself the result; we'll follow up only if you choose to book a call."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "About 6–10 minutes. There are 43 questions across 7 categories, with four-option Likert answers."}}, {"@type": "Question", "name": "What do I get at the end?", "acceptedAnswer": {"@type": "Answer", "text": "A per-category tier, an overall readiness score, and a prioritized list of next steps. You can email the result to yourself; we don't store it server-side in this version."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ledgersummit.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ledgersummit.com/tool-categories.html"}, {"@type": "ListItem", "position": 3, "name": "AI Readiness Scorecard", "item": "https://ledgersummit.com/tool-ai-readiness-scorecard.html"}]}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+        alt="Ledger Summit logo" width="36" height="36" decoding="async">
+      <span>Ledger Summit</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/tools/">Tools</a></li>
+      <li><a href="/toolboxai/">Tool Box AI</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="/services/" onclick="closeMobileNav()">Services</a>
+  <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+  <a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a>
+  <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+  <a href="/about/" onclick="closeMobileNav()">About</a>
+  <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+  <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">Free finance tool</span>
+              <h1>AI Readiness Scorecard for Finance Teams</h1>
+            </div>
+            <p class="lead">Score your team across 7 categories in about 6 minutes. Get a personalized roadmap covering close operations, controls, data, and AI tooling.</p>
+            <div class="hero-profile"><strong>Built for:</strong> Controllers, CFOs, and finance leaders evaluating where AI fits next &mdash; without breaking SOX or shipping work auditors can't follow.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#scorecard">Start the scorecard</a>
+              <a class="btn btn-soft" href="services-ai-controls-framework.html">See the AI Controls Framework</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">What you'll get</span>
+            <p class="panel-copy">A per-category tier (Foundational / Building / Scaling / Optimized), an overall score, and a prioritized list of next steps you can act on this quarter.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>43 questions</strong><span>Across 7 categories</span></article>
+              <article class="metric-card"><strong>~6 min</strong><span>To complete</span></article>
+              <article class="metric-card"><strong>Free</strong><span>No login required</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section" id="scorecard">
+      <div class="container">
+        <div class="scorecard" aria-live="polite">
+          <div class="progress-shell">
+            <div class="progress-row">
+              <span id="progress-label">Step 1 of 7</span>
+              <span id="progress-pct">0% complete</span>
+            </div>
+            <div class="progress-bar"><div id="progress-fill" style="width:0%"></div></div>
+          </div>
+
+          <div id="steps"></div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn-soft" id="prev-btn" disabled>Back</button>
+            <span class="filler"></span>
+            <button type="button" class="btn btn-primary" id="next-btn">Next</button>
+          </div>
+        </div>
+
+        <div class="scorecard results is-hidden" id="results">
+          <div class="result-headline">
+            <span class="badge" id="overall-tier">Foundational</span>
+            <h2 id="overall-h2">Your AI readiness score</h2>
+            <p class="lead" id="overall-blurb"></p>
+            <div>
+              <strong style="font-size:32px" id="overall-score">0</strong>
+              <span style="color:var(--muted); margin-left:6px">/ 3.00</span>
+            </div>
+          </div>
+
+          <div class="result-grid" id="result-cards"></div>
+
+          <div class="result-recs">
+            <h2>What to do next</h2>
+            <ul id="rec-list"></ul>
+          </div>
+
+          <div class="send-results">
+            <label for="email-out">Email yourself this scorecard</label>
+            <p style="color:var(--muted); margin:0">We don't store your email. The button opens your mail client with the scorecard summary so you can keep a copy.</p>
+            <input id="email-out" type="email" placeholder="you@company.com" aria-label="Your email">
+            <div class="step-actions">
+              <a class="btn btn-soft" id="email-link" href="#">Email me my scorecard</a>
+              <a class="btn btn-primary" href="/#book">Book a 30-minute review</a>
+            </div>
+          </div>
+
+          <div>
+            <button type="button" class="btn btn-soft" id="restart-btn">Take it again</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common questions about the scorecard</h2>
+        </div>
+        <details class="faq-item"><summary><strong>What does this measure?</strong></summary>
+          <p>43 questions across 7 categories: close operations, reconciliations, reporting, data and systems, controls and audit readiness, AI tooling maturity, and governance. You get a per-category tier and an overall score.</p>
+        </details>
+        <details class="faq-item"><summary><strong>How is the score calculated?</strong></summary>
+          <p>Each question is rated 0–3. Per category, we average the responses. Tiers map to averages: Foundational (under 1.0), Building (1.0–2.0), Scaling (2.0–2.5), Optimized (2.5–3.0).</p>
+        </details>
+        <details class="faq-item"><summary><strong>Do you store my answers?</strong></summary>
+          <p>No. Scoring runs in your browser. The "email me" button opens your mail client with the result; nothing is sent to us unless you choose to book a call.</p>
+        </details>
+        <details class="faq-item"><summary><strong>What if my team doesn't fit a generic mid-market mold?</strong></summary>
+          <p>The scorecard is calibrated for U.S. mid-market finance teams ($5M–$500M). If you're outside that lane (very small, very large, or in a regulated industry like GovCon), the framework still applies but the recommendations may need vertical-specific judgment. Book a call and we'll walk it through.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>Want a controller's read on your scorecard?</h2>
+            <p>30-minute call. We'll walk through your scorecard, name the highest-leverage move for your team, and tell you whether AI is the next step or whether the basics need to land first.</p>
+          </div>
+          <a class="btn btn-primary" href="/#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+          alt="Ledger Summit" width="30" height="30" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/toolboxai/">Tool Box AI</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/book-a-call/">Book a Call</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const DATA = {"categories": [{"id": "close", "label": "Close Operations", "intro": "How fast and how reliably do you close the books each month?", "questions": ["Our monthly close completes in 7 business days or fewer.", "We have a written close calendar with task owners and dependencies.", "Manual journal entries are reviewed and approved before posting.", "Variance/flux analysis is part of the close (not after).", "Late-task escalations are tracked and trending down.", "Recurring entries (accruals, prepaids, depreciation) are templated.", "We run a same-day management pack at sign-off."]}, {"id": "rec", "label": "Reconciliations & Subledger", "intro": "How well are your reconciliations and subledgers controlled?", "questions": ["Bank, credit card, and merchant accounts reconcile within 1 day of close.", "AR and AP subledgers tie to the GL with reviewer sign-off.", "Intercompany matching is automated (multi-entity teams).", "Reconciling items have an owner, age, and resolution SLA.", "Inventory or fixed-asset roll-forwards reconcile to the GL.", "Reconciliations carry timestamped logs and source-data attachments."]}, {"id": "rep", "label": "Reporting & Analytics", "intro": "Can you produce decision-grade reports without heroics?", "questions": ["Management pack delivers same-day after close.", "We have dashboards that update without manual exports.", "Variance commentary is templated and reviewed.", "Lender/board reporting reuses the same source as management reporting.", "KPI definitions are documented and consistent across teams.", "Forecasts vs actuals are compared with named drivers."]}, {"id": "data", "label": "Data & Systems", "intro": "How clean is the data layer underneath finance work?", "questions": ["We have a single source of truth for the GL and trial balance.", "Vendor and customer master data is deduplicated and governed.", "Chart of accounts is documented with mapping rules.", "Integrations (payroll, AP, AR, banking) post automatically.", "We have a finance data warehouse or staging layer for analytics.", "Source data is reconciled to GL each close (revenue, payroll, billing)."]}, {"id": "ctrl", "label": "Controls & Audit Readiness", "intro": "How would your team look under an external audit today?", "questions": ["User roles and segregation of duties are documented.", "JE posting and approvals leave a timestamped audit trail.", "We can produce a PBC list and evidence pack within 48 hours.", "Controls tied to revenue recognition (ASC 606) are documented.", "Lease accounting (ASC 842) is current and disclosure-ready.", "Year-end audit prep takes 5 days or less.", "Material policies (rev rec, accruals, leases) have written memos."]}, {"id": "ai", "label": "AI Tooling Maturity", "intro": "Where is your team in deploying AI and automation?", "questions": ["We have at least one AI/automation workflow in production today.", "AI workflows have scope limits (accounts, entities, thresholds).", "AI outputs are reviewed by a named human before posting.", "We capture AI evidence (inputs, outputs, approvals) per cycle.", "We have a written controls matrix for AI in finance.", "We've discussed PCAOB / auditor expectations for AI use."]}, {"id": "gov", "label": "Governance & Change Management", "intro": "How disciplined is the team about change?", "questions": ["Process changes follow a documented change-management routine.", "Material policy decisions get a written memo with reviewer sign-off.", "We track and triage exceptions to standard workflows.", "There is an annual review of controls, roles, and policies.", "Auditor and lender feedback is logged and addressed before next cycle."]}], "options": [{"label": "Strongly agree", "score": 3}, {"label": "Mostly true", "score": 2}, {"label": "Sometimes true", "score": 1}, {"label": "Not yet", "score": 0}], "tiers": [{"name": "Foundational", "min": 0.0, "max": 1.0, "blurb": "Fix the basics first; reach for automation only after the workflow is repeatable.", "recs": ["Stand up a written close calendar with task owners and dependencies.", "Tie your AR/AP subledgers to the GL with reviewer sign-off.", "Document the chart of accounts and master-data ownership."]}, {"name": "Building", "min": 1.0, "max": 2.0, "blurb": "The workflow exists; the next move is controls, owners, and a single source of truth.", "recs": ["Add reconciliation evidence packs and reviewer sign-off.", "Templatize recurring JEs (accruals, prepaids, depreciation).", "Build a same-day management pack format you can ship at sign-off."]}, {"name": "Scaling", "min": 2.0, "max": 2.5, "blurb": "Solid baseline; ready to add automation and controls-aware AI for quality and speed.", "recs": ["Pilot one AI workflow (close orchestration or reconciliation matching).", "Define scope limits and approval routing for any AI agent.", "Stand up an AI evidence pack template before scaling further."]}, {"name": "Optimized", "min": 2.5, "max": 3.01, "blurb": "Strong; AI agents with formal controls and an evidence-pack discipline are the next step.", "recs": ["Adopt the AI Controls Framework (controls matrix per agent).", "Move to managed close-as-a-service if you want a 5-day audit-ready close every month.", "Walk your auditor through the AI evidence pack before fieldwork."]}]};
+
+    // State
+    const responses = {}; // { catId: [score, score, ...] }
+    DATA.categories.forEach(c => { responses[c.id] = new Array(c.questions.length).fill(null); });
+
+    let stepIndex = 0;
+
+    const stepsEl = document.getElementById('steps');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressLabel = document.getElementById('progress-label');
+    const progressPct = document.getElementById('progress-pct');
+    const progressFill = document.getElementById('progress-fill');
+
+    function renderSteps() {
+      stepsEl.innerHTML = '';
+      DATA.categories.forEach((c, ci) => {
+        const step = document.createElement('div');
+        step.className = 'cat-step' + (ci === stepIndex ? '' : ' is-hidden');
+        step.dataset.cat = c.id;
+        step.innerHTML = '<div class="cat-head"><h2>' + c.label + '</h2><p>' + c.intro + '</p></div>';
+        c.questions.forEach((q, qi) => {
+          const qEl = document.createElement('div');
+          qEl.className = 'question';
+          let optsHtml = '<div class="options">';
+          DATA.options.forEach((o, oi) => {
+            const sel = responses[c.id][qi] === o.score ? ' is-selected' : '';
+            optsHtml += '<label class="option' + sel + '" data-cat="' + c.id + '" data-q="' + qi + '" data-score="' + o.score + '"><input type="radio" name="' + c.id + '-' + qi + '" value="' + o.score + '"' + (sel ? ' checked' : '') + '>' + o.label + '</label>';
+          });
+          optsHtml += '</div>';
+          qEl.innerHTML = '<p class="q-text">' + (qi + 1) + '. ' + q + '</p>' + optsHtml;
+          step.appendChild(qEl);
+        });
+        stepsEl.appendChild(step);
+      });
+      // Wire option clicks
+      stepsEl.querySelectorAll('.option').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          const cat = el.dataset.cat;
+          const qi = parseInt(el.dataset.q, 10);
+          const score = parseInt(el.dataset.score, 10);
+          responses[cat][qi] = score;
+          // toggle selected within sibling group
+          const parent = el.parentElement;
+          parent.querySelectorAll('.option').forEach(o => o.classList.remove('is-selected'));
+          el.classList.add('is-selected');
+          updateProgress();
+        });
+      });
+      updateProgress();
+      updateNav();
+    }
+
+    function answeredCount() {
+      let n = 0;
+      Object.values(responses).forEach(arr => arr.forEach(v => { if (v !== null) n++; }));
+      return n;
+    }
+
+    function totalQ() {
+      return DATA.categories.reduce((a, c) => a + c.questions.length, 0);
+    }
+
+    function updateProgress() {
+      const total = totalQ();
+      const done = answeredCount();
+      const pct = Math.round((done / total) * 100);
+      progressFill.style.width = pct + '%';
+      progressPct.textContent = pct + '% complete';
+      progressLabel.textContent = 'Step ' + (stepIndex + 1) + ' of ' + DATA.categories.length;
+    }
+
+    function currentStepComplete() {
+      const cat = DATA.categories[stepIndex];
+      return responses[cat.id].every(v => v !== null);
+    }
+
+    function updateNav() {
+      prevBtn.disabled = stepIndex === 0;
+      const isLast = stepIndex === DATA.categories.length - 1;
+      nextBtn.textContent = isLast ? 'See my results' : 'Next';
+    }
+
+    function showStep(i) {
+      stepIndex = Math.max(0, Math.min(i, DATA.categories.length - 1));
+      const allSteps = stepsEl.querySelectorAll('.cat-step');
+      allSteps.forEach((el, idx) => {
+        el.classList.toggle('is-hidden', idx !== stepIndex);
+      });
+      updateNav();
+      updateProgress();
+      // scroll to top of scorecard
+      document.getElementById('scorecard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    prevBtn.addEventListener('click', () => showStep(stepIndex - 1));
+    nextBtn.addEventListener('click', () => {
+      if (!currentStepComplete()) {
+        alert('Please answer every question in this section before moving on.');
+        return;
+      }
+      const isLast = stepIndex === DATA.categories.length - 1;
+      if (isLast) {
+        showResults();
+      } else {
+        showStep(stepIndex + 1);
+      }
+    });
+
+    function tierFor(avg) {
+      const tiers = DATA.tiers;
+      for (let i = 0; i < tiers.length; i++) {
+        if (avg >= tiers[i].min && avg < tiers[i].max) return tiers[i];
+      }
+      return tiers[tiers.length - 1];
+    }
+
+    function showResults() {
+      // Compute per-category averages and overall
+      const cats = DATA.categories.map(c => {
+        const arr = responses[c.id];
+        const avg = arr.reduce((a, b) => a + b, 0) / arr.length;
+        return { id: c.id, label: c.label, avg, tier: tierFor(avg) };
+      });
+      const overall = cats.reduce((a, c) => a + c.avg, 0) / cats.length;
+      const overallTier = tierFor(overall);
+
+      document.querySelector('.scorecard:not(.results)').classList.add('is-hidden');
+      const res = document.getElementById('results');
+      res.classList.remove('is-hidden');
+
+      document.getElementById('overall-tier').textContent = overallTier.name;
+      document.getElementById('overall-score').textContent = overall.toFixed(2);
+      document.getElementById('overall-blurb').textContent = overallTier.blurb;
+
+      const grid = document.getElementById('result-cards');
+      grid.innerHTML = '';
+      cats.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'result-card';
+        const pct = Math.round((c.avg / 3) * 100);
+        card.innerHTML =
+          '<div class="cat-name">' + c.label + '</div>' +
+          '<div class="tier-name">' + c.tier.name + ' &middot; ' + c.avg.toFixed(2) + ' / 3</div>' +
+          '<div class="result-bar"><div style="width:' + pct + '%"></div></div>';
+        grid.appendChild(card);
+      });
+
+      const recList = document.getElementById('rec-list');
+      recList.innerHTML = '';
+      // Combine: recommendations from the lowest-scoring two categories' tiers, plus overall tier
+      const sorted = [...cats].sort((a, b) => a.avg - b.avg);
+      const seen = new Set();
+      const recs = [];
+      sorted.slice(0, 2).forEach(c => {
+        c.tier.recs.forEach(r => {
+          if (!seen.has(r)) { seen.add(r); recs.push(r + ' (focus: ' + c.label + ')'); }
+        });
+      });
+      overallTier.recs.forEach(r => { if (!seen.has(r)) { seen.add(r); recs.push(r); } });
+      recs.slice(0, 6).forEach(r => {
+        const li = document.createElement('li');
+        li.textContent = r;
+        recList.appendChild(li);
+      });
+
+      // Hook up email link
+      const emailIn = document.getElementById('email-out');
+      const emailLink = document.getElementById('email-link');
+      function buildMailto() {
+        const to = (emailIn.value || '').trim();
+        const subject = encodeURIComponent('My AI Readiness Scorecard from Ledger Summit');
+        const lines = [];
+        lines.push('AI Readiness Scorecard - Ledger Summit');
+        lines.push('');
+        lines.push('Overall: ' + overallTier.name + ' (' + overall.toFixed(2) + ' / 3.00)');
+        lines.push('  ' + overallTier.blurb);
+        lines.push('');
+        lines.push('Per-category breakdown:');
+        cats.forEach(c => {
+          lines.push('  - ' + c.label + ': ' + c.tier.name + ' (' + c.avg.toFixed(2) + ' / 3)');
+        });
+        lines.push('');
+        lines.push('Top recommendations:');
+        recs.slice(0, 6).forEach(r => lines.push('  - ' + r));
+        lines.push('');
+        lines.push('Want a controller\'s read on this? Book a 30-minute call:');
+        lines.push('https://ledgersummit.com/#book');
+        const body = encodeURIComponent(lines.join('\n'));
+        return 'mailto:' + (to || '') + '?subject=' + subject + '&body=' + body;
+      }
+      emailLink.setAttribute('href', buildMailto());
+      emailIn.addEventListener('input', () => emailLink.setAttribute('href', buildMailto()));
+
+      res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('restart-btn').addEventListener('click', () => {
+      DATA.categories.forEach(c => { responses[c.id] = new Array(c.questions.length).fill(null); });
+      document.getElementById('results').classList.add('is-hidden');
+      document.querySelector('.scorecard:not(.results)').classList.remove('is-hidden');
+      stepIndex = 0;
+      renderSteps();
+    });
+
+    renderSteps();
+  </script>
+<script src="/js/shared.js" defer></script>
+</body>
+</html>

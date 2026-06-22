@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI execution flow diagram</title>
+  <desc id="desc">A Visio-style diagram showing a finance request moving through intake, AI assistance, policy checks, approvals, posting, controls, outputs, and feedback loops.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef3fb"/>
+    </linearGradient>
+    <linearGradient id="stage" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f9fe"/>
+    </linearGradient>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#5b79a4"/>
+    </marker>
+    <style>
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #14365d; }
+      .subtitle { font: 500 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4f6784; }
+      .h { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17385f; }
+      .b { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #445b78; }
+      .s { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; fill: #6282a9; }
+      .center { text-anchor: middle; }
+      .box { fill: url(#stage); stroke: #d6e3f1; stroke-width: 1.5; rx: 18; }
+      .line { stroke: #5b79a4; stroke-width: 2.5; fill: none; marker-end: url(#arrow2); }
+      .line-soft { stroke: #8ca2be; stroke-width: 1.8; fill: none; marker-end: url(#arrow2); stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="840" fill="url(#bg2)"/>
+  <text x="60" y="58" class="title">Execution Flow Inside Tool Box AI</text>
+  <text x="60" y="84" class="subtitle">A request becomes a controlled finance event, then a posted and traceable accounting outcome.</text>
+
+  <rect x="60" y="140" width="150" height="124" class="box"/>
+  <text x="84" y="170" class="s">STEP 1</text>
+  <text x="84" y="198" class="h">Intake</text>
+  <text x="84" y="222" class="b">Form, email, vendor portal,</text>
+  <text x="84" y="240" class="b">Slack, Teams, or upload</text>
+
+  <rect x="252" y="140" width="172" height="124" class="box"/>
+  <text x="276" y="170" class="s">STEP 2</text>
+  <text x="276" y="198" class="h">AI Pre-Work</text>
+  <text x="276" y="222" class="b">OCR, duplicate checks,</text>
+  <text x="276" y="240" class="b">classification, confidence scoring</text>
+
+  <rect x="466" y="140" width="188" height="124" class="box"/>
+  <text x="490" y="170" class="s">STEP 3</text>
+  <text x="490" y="198" class="h">Policy &amp; Context</text>
+  <text x="490" y="222" class="b">Tenant, role, budget, entity,</text>
+  <text x="490" y="240" class="b">project, and workflow rules</text>
+
+  <rect x="696" y="140" width="182" height="124" class="box"/>
+  <text x="720" y="170" class="s">STEP 4</text>
+  <text x="720" y="198" class="h">Approval Path</text>
+  <text x="720" y="222" class="b">Routing, delegation, SLA timers,</text>
+  <text x="720" y="240" class="b">comments, and exceptions</text>
+
+  <rect x="920" y="140" width="220" height="124" class="box"/>
+  <text x="944" y="170" class="s">STEP 5</text>
+  <text x="944" y="198" class="h">Post or Sync</text>
+  <text x="944" y="222" class="b">ERP or payment action executed</text>
+  <text x="944" y="240" class="b">through normalized adapters</text>
+
+  <path d="M210 194 L252 194" class="line"/>
+  <path d="M424 194 L466 194" class="line"/>
+  <path d="M654 194 L696 194" class="line"/>
+  <path d="M878 194 L920 194" class="line"/>
+
+  <rect x="60" y="342" width="520" height="188" class="box"/>
+  <text x="84" y="370" class="s">CONTROL CHECKS HAPPEN THROUGHOUT</text>
+  <text x="84" y="400" class="h">Auth, tenant isolation, idempotency,</text>
+  <text x="84" y="422" class="h">rate limits, SoD, validation, audit</text>
+  <text x="84" y="452" class="b">These controls are not a final review step. They wrap the</text>
+  <text x="84" y="470" class="b">request from first touch through final posting response.</text>
+  <text x="84" y="500" class="b">Tool Box AI reduces spreadsheet cleanup and late discovery</text>
+  <text x="84" y="518" class="b">because invalid work is routed, corrected, or blocked earlier.</text>
+
+  <rect x="620" y="342" width="520" height="188" class="box"/>
+  <text x="644" y="370" class="s">NORMALIZED EXECUTION OUTPUTS</text>
+  <text x="644" y="400" class="h">Requisition, PO, bill, payment, invoice,</text>
+  <text x="644" y="422" class="h">journal, project cost, and audit event</text>
+  <text x="644" y="452" class="b">The same operating pattern supports multiple workflow families</text>
+  <text x="644" y="470" class="b">without rewriting finance logic for every ERP or payment system.</text>
+  <text x="644" y="500" class="b">Every output keeps lineage back to source records, approval</text>
+  <text x="644" y="518" class="b">state, decision history, and workflow status.</text>
+
+  <path d="M338 264 L338 342" class="line-soft"/>
+  <path d="M1030 264 L1030 342" class="line-soft"/>
+
+  <rect x="60" y="596" width="256" height="132" class="box"/>
+  <text x="84" y="624" class="s">FEEDBACK LOOP</text>
+  <text x="84" y="652" class="h">Exceptions</text>
+  <text x="84" y="676" class="b">Mismatch, missing mapping, low confidence,</text>
+  <text x="84" y="694" class="b">retry paths, and approval holds</text>
+
+  <rect x="350" y="596" width="256" height="132" class="box"/>
+  <text x="374" y="624" class="s">FEEDBACK LOOP</text>
+  <text x="374" y="652" class="h">Monitoring</text>
+  <text x="374" y="676" class="b">Sync status, queue health, stale items,</text>
+  <text x="374" y="694" class="b">operational dashboards, and alerts</text>
+
+  <rect x="640" y="596" width="240" height="132" class="box"/>
+  <text x="664" y="624" class="s">FEEDBACK LOOP</text>
+  <text x="664" y="652" class="h">Analytics</text>
+  <text x="664" y="676" class="b">Cycle time, touchless rate, aging,</text>
+  <text x="664" y="694" class="b">discount capture, DSO, and match rate</text>
+
+  <rect x="914" y="596" width="226" height="132" class="box"/>
+  <text x="938" y="624" class="s">FEEDBACK LOOP</text>
+  <text x="938" y="652" class="h">Continuous Learning</text>
+  <text x="938" y="676" class="b">Correction history improves routing,</text>
+  <text x="938" y="694" class="b">coding, and exception prioritization</text>
+
+  <path d="M1030 530 L1030 596" class="line"/>
+  <path d="M760 530 L760 596" class="line-soft"/>
+  <path d="M478 530 L478 596" class="line-soft"/>
+  <path d="M188 596 C188 548, 224 494, 302 464" class="line-soft"/>
+  <path d="M188 596 C188 478, 188 260, 252 194" class="line-soft"/>
+</svg>

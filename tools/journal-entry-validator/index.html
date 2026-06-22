@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal Entry Validator Tool | Ledger Summit</title>
+  <meta name="description"
+    content="Validate journal entry exports in your browser. Catch unbalanced journals, missing IDs, missing approvals, missing support, duplicate patterns, round-dollar.">
+  <link rel="canonical" href="https://ledgersummit.com/tools/journal-entry-validator/">
+  <meta property="og:title" content="Journal Entry Validator Tool | Ledger Summit">
+  <meta property="og:description"
+    content="Browser-based journal entry validation for controllers and accounting teams. Upload a JE export, validate control checks, and export an exceptions file.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgersummit.com/tools/journal-entry-validator/">
+  <meta property="og:image"
+    content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Journal Entry Validator Tool | Ledger Summit">
+  <meta name="twitter:description"
+    content="Journal entry validation for controllers, accounting managers, and close teams.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=20260311">
+  <link rel="stylesheet" href="/css/pages.css?v=20260311">
+  <link rel="stylesheet" href="/css/journal-entry-validator.css?v=20260311">
+  <link rel="stylesheet" href="/css/tool-pages.css?v=20260419b">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ledger Summit Journal Entry Validator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "isAccessibleForFree": true,
+    "description": "Browser-based Journal Entry Validator and journal entry review tool for controllers, accountants, and close teams.",
+    "url": "https://ledgersummit.com/tools/journal-entry-validator/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ledger Summit",
+      "url": "https://ledgersummit.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Journal Entry Validator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A journal entry validator reviews exported journal entry detail to catch unbalanced journals, missing IDs, missing descriptions, duplicate patterns, missing approvals, missing support references, and other exceptions before close review moves on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the Ledger Summit Journal Entry Validator upload my data to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This page processes the file inside your browser so you can review a journal entry export before sharing anything with a vendor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which file format works best?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CSV exports work best. The tool also handles tab-delimited data pasted directly from Excel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should use this journal entry review tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Controllers, accounting managers, close teams, auditors, and finance operators who need a faster way to review exported journal entry detail before close, audit, or flux review."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Tools",
+        "item": "https://ledgersummit.com/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Journal Entry Validator",
+        "item": "https://ledgersummit.com/tools/journal-entry-validator/"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="tool-page ls-theme-gold">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+          alt="Ledger Summit logo" width="36" height="36" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  </div>
+
+  <main id="main">
+    <section class="jev-hero ls-tool-hero">
+      <div class="container">
+        <div class="jev-hero-grid ls-tool-hero-grid">
+          <div class="jev-hero-copy ls-tool-hero-copy reveal">
+            <span class="section-label">Journal Entries</span>
+            <h1>Journal entry validator for faster close-control review.</h1>
+            <p>The Ledger Summit Journal Entry Validator helps accounting teams review exported journal entry detail
+              before close, audit testing, or controller sign-off. Upload a CSV export, map the fields, and surface the
+              journals that fail basic control checks first.</p>
+            <div class="jev-answer-strip ls-tool-answer-strip">
+              <strong>Direct answer</strong>
+              <span>A journal entry validator checks whether exported journals are balanced, documented, approved, and
+                internally consistent so reviewers can investigate the highest-risk exceptions first.</span>
+            </div>
+            <div class="jev-hero-actions ls-tool-hero-actions">
+              <a href="#validator" class="btn-primary btn-glow">Open the validator</a>
+              <a href="/book-a-call/" class="btn-secondary">Need a custom version?</a>
+            </div>
+            <div class="jev-hero-pills ls-tool-hero-pills" aria-label="Key proof points">
+              <span class="jev-hero-pill ls-tool-hero-pill"><i></i>Browser-only processing</span>
+              <span class="jev-hero-pill ls-tool-hero-pill"><i></i>CSV or pasted Excel data</span>
+              <span class="jev-hero-pill ls-tool-hero-pill"><i></i>Built for U.S. close teams</span>
+            </div>
+          </div>
+
+          <aside class="jev-hero-panel ls-tool-hero-panel reveal-right" aria-label="What the tool validates">
+            <span class="jev-panel-badge ls-tool-panel-badge"><i></i>Reviewer-first</span>
+            <div class="jev-panel-head ls-tool-panel-head">
+              <h2>What gets validated</h2>
+              <p>Designed around the real intent behind JE review: identify the control failures quickly, explain why
+                each journal surfaced, and
+                leave with a clean follow-up file.</p>
+            </div>
+            <div class="jev-preview-metrics ls-tool-preview-metrics">
+              <div class="jev-preview-card ls-tool-preview-card">
+                <strong>1</strong>
+                <span>Auto-map common journal export columns from headers and sample values.</span>
+              </div>
+              <div class="jev-preview-card ls-tool-preview-card">
+                <strong>2</strong>
+                <span>Validate journal controls instead of scanning a raw dump manually.</span>
+              </div>
+              <div class="jev-preview-card ls-tool-preview-card">
+                <strong>3</strong>
+                <span>Surface exception journals, missing approvers, and support gaps.</span>
+              </div>
+              <div class="jev-preview-card ls-tool-preview-card">
+                <strong>4</strong>
+                <span>Export an exceptions file for reviewer follow-up and audit prep.</span>
+              </div>
+            </div>
+            <div class="jev-preview-list ls-tool-preview-list">
+              <div class="jev-preview-item ls-tool-preview-item">
+                <strong>Out-of-balance journals</strong>
+                <span>net not equal to zero, one-sided, or single-line</span>
+              </div>
+              <div class="jev-preview-item ls-tool-preview-item">
+                <strong>Approval and support gaps</strong>
+                <span>missing approver, missing preparer, missing reference</span>
+              </div>
+              <div class="jev-preview-item ls-tool-preview-item">
+                <strong>Top-side risk</strong>
+                <span>manual, spreadsheet, duplicate-pattern, round-dollar</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="jev-tool-section ls-tool-section" id="validator">
+      <div class="container">
+        <div class="jev-tool-shell ls-tool-shell" id="jev-app">
+          <div class="jev-lab-grid ls-tool-layout-stack"><section class="jev-panel">
+              <div class="jev-panel-title">
+                <h3>1. Load your export</h3>
+                <span>CSV or paste</span>
+              </div>
+
+              <label class="jev-dropzone">
+                <input id="jev-file" type="file" accept=".csv,.txt,.tsv" aria-label="Upload a journal entry export">
+                <strong>Upload a journal entry CSV or paste an export copied from Excel</strong>
+                <span>Best results come from ERP exports that include posting date, journal ID, account, description,
+                  and either a signed amount or debit and credit columns. Preparer, approver, support reference, and
+                  reversal date fields make the validator stronger.</span>
+              </label>
+
+              <div class="jev-split"><span>or</span></div>
+
+              <div class="jev-paste-wrap">
+                <textarea id="jev-paste"
+                  placeholder="Paste CSV or tab-delimited rows copied from Excel here."></textarea>
+              </div>
+
+              <div class="jev-action-row">
+                <button type="button" class="jev-btn jev-btn-primary" id="jev-paste-button">Use pasted data</button>
+                <button type="button" class="jev-btn jev-btn-secondary" id="jev-sample">Try sample journals</button>
+                <button type="button" class="jev-btn jev-btn-tertiary" id="jev-reset">Reset</button>
+              </div>
+
+              <div id="jev-status" class="jev-status muted" role="status" aria-live="polite"></div>
+
+              <div id="jev-setup-meta" class="jev-setup-meta" aria-live="polite"></div>
+
+              <div class="jev-panel-title" style="margin-top:1.25rem;">
+                <h3>2. Review the smart-mapped columns</h3>
+                <span>Smart mapping</span>
+              </div>
+
+              <div id="jev-mapping-grid" class="jev-mapping-grid"></div>
+
+              <div class="jev-action-row">
+                <button type="button" class="jev-btn jev-btn-primary" id="jev-analyze">Validate journals</button>
+                <button type="button" class="jev-btn jev-btn-secondary" id="jev-export" disabled>Export exceptions
+                  file</button>
+              </div>
+            </section><div class="jev-tool-head ls-tool-head ls-tool-head-inline">
+            <div>
+              <span class="section-label">Live Tool</span>
+              <h2>Journal entry validation in the browser</h2>
+              <p>Main features are above the fold on purpose: upload a file, map the fields, and get a prioritized
+                exception queue before you scroll into the how-to guide below.</p>
+            </div>
+            
+          </div><section class="jev-panel">
+              <div class="jev-empty-state" id="jev-empty">
+                <h3>What this journal entry validator is built to solve</h3>
+                <p>Most teams do not want to wait for a workflow demo when they are in the middle of close. They want
+                  a fast answer to one question: which journals fail the core control checks in this export?</p>
+                <div class="jev-empty-list">
+                  <div class="jev-empty-item">
+                    <strong>Too many manual journals to scan line by line</strong>
+                    <span>Use a browser-based pass to identify the exception journals before deeper review begins.</span>
+                  </div>
+                  <div class="jev-empty-item">
+                    <strong>Late close reviews and last-minute controller sign-off</strong>
+                    <span>Out-of-balance journals, missing approvals, missing support, and duplicate patterns surface
+                      quickly.</span>
+                  </div>
+                  <div class="jev-empty-item">
+                    <strong>Reviewer follow-up without platform lock-in</strong>
+                    <span>Export just the exception lines and continue your workflow in Excel, audit workpapers, or your
+                      ERP.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jev-results" id="jev-results" hidden>
+                <div class="jev-summary-grid">
+                  <div class="jev-summary-card" data-metric="rows"></div>
+                  <div class="jev-summary-card" data-metric="flagged"></div>
+                  <div class="jev-summary-card" data-metric="accounts"></div>
+                  <div class="jev-summary-card" data-metric="net"></div>
+                </div>
+
+                <article class="jev-result-card">
+                  <div class="jev-card-head">
+                    <div>
+                      <h3>Top validation failures</h3>
+                      <p>These are the control failures affecting the most journals in the current file.</p>
+                    </div>
+                  </div>
+                  <div class="jev-flag-grid" id="jev-flag-grid"></div>
+                </article>
+
+                <article class="jev-result-card">
+                  <div class="jev-card-head">
+                    <div>
+                      <h3>Exception journal queue</h3>
+                      <p>The highest-risk journals are sorted first, with control failures attached so the reviewer file
+                        is already prioritized.</p>
+                    </div>
+                  </div>
+                  <div id="jev-findings-table"></div>
+                </article>
+
+                <article class="jev-result-card">
+                  <div class="jev-card-head">
+                    <div>
+                      <h3>Preparer hot spots</h3>
+                      <p>Use this view when you need to see where exception concentration is building by preparer.</p>
+                    </div>
+                  </div>
+                  <div class="jev-hotspot-grid" id="jev-hotspot-grid"></div>
+                </article>
+
+                <article class="jev-result-card">
+                  <div class="jev-card-head">
+                    <div>
+                      <h3>Close-control insights</h3>
+                      <p>Use this view for a quick summary of control coverage across the file.</p>
+                    </div>
+                  </div>
+                  <div class="jev-insight-grid" id="jev-insight-grid"></div>
+                </article>
+
+                <article class="jev-result-card">
+                  <div class="jev-card-head">
+                    <div>
+                      <h3>Search the reviewed lines</h3>
+                      <p>Filter by journal, account, memo, preparer, approver, entity, or source to move from control
+                        validation into follow-up review.</p>
+                    </div>
+                  </div>
+                  <div class="jev-search-row">
+                    <input id="jev-search" class="jev-search-input" type="search"
+                      placeholder="Search lines by journal, account, memo, preparer, approver, or source">
+                  </div>
+                  <div id="jev-explorer-table"></div>
+                </article>
+              </div>
+            </section></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="jev-feature-band ls-tool-feature-band">
+      <div class="container">
+        <div class="jev-feature-grid ls-tool-feature-grid">
+          <article class="jev-feature-card ls-tool-feature-card reveal">
+            <div class="jev-feature-icon ls-tool-feature-icon">01</div>
+            <strong>Map almost any JE export</strong>
+            <p>Use signed amounts or separate debit and credit columns. No rigid template required.</p>
+          </article>
+          <article class="jev-feature-card ls-tool-feature-card reveal">
+            <div class="jev-feature-icon ls-tool-feature-icon">02</div>
+            <strong>Validate core controls fast</strong>
+            <p>Balance checks, missing approvals, support gaps, duplicate patterns, and manual top-side signals surface
+              immediately.</p>
+          </article>
+          <article class="jev-feature-card ls-tool-feature-card reveal">
+            <div class="jev-feature-icon ls-tool-feature-icon">03</div>
+            <strong>Understand why each journal failed</strong>
+            <p>Each surfaced journal shows the rule failures, not just a vague risk label.</p>
+          </article>
+          <article class="jev-feature-card ls-tool-feature-card reveal">
+            <div class="jev-feature-icon ls-tool-feature-icon">04</div>
+            <strong>Export the exceptions file</strong>
+            <p>Download flagged lines and take them straight into close review, PBC support, or controller follow-up.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section jev-guide-section ls-tool-guide-section" id="guide">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Guide Below The Tool</span>
+          <h2>How to use a journal entry validator well</h2>
+          <p>This section is built for answer engines, searchers, and busy reviewers: direct definitions, concrete
+            steps, and practical follow-up guidance.</p>
+        </div>
+
+        <div class="jev-answer-grid ls-tool-answer-grid">
+          <article class="jev-answer-card ls-tool-answer-card reveal">
+            <strong>What it is</strong>
+            <p>A journal entry validator reviews exported journal detail to identify journals that fail core accounting
+              controls before close review, audit testing, or cleanup starts.</p>
+          </article>
+          <article class="jev-answer-card ls-tool-answer-card reveal">
+            <strong>Who it is for</strong>
+            <p>Controllers, accounting managers, senior accountants, internal audit, and outsourced close teams who
+              need a faster first-pass review of journal activity.</p>
+          </article>
+          <article class="jev-answer-card ls-tool-answer-card reveal">
+            <strong>What file works best</strong>
+            <p>CSV exports with posting date, journal ID, account, description, and amount fields work best. Preparer,
+              approver, support reference, and reversal date fields make the checks more valuable.</p>
+          </article>
+        </div>
+
+        <div class="jev-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Workflow</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Four practical steps</h2>
+          <p>Use the validator as a triage layer. The goal is not to replace judgment; it is to shorten the time from
+            "raw journal export" to "investigation-ready exceptions list."</p>
+        </div>
+
+        <div class="jev-steps-grid ls-tool-steps-grid">
+          <article class="jev-step-card ls-tool-step-card reveal">
+            <div class="jev-step-number ls-tool-step-number">1</div>
+            <strong>Export journal detail</strong>
+            <p>Pull the period-specific journal entry report from your ERP with as many descriptive fields
+              as available.</p>
+          </article>
+          <article class="jev-step-card ls-tool-step-card reveal">
+            <div class="jev-step-number ls-tool-step-number">2</div>
+            <strong>Map the important columns</strong>
+            <p>At minimum, map date, journal ID, account, and amount or debit and credit. Add preparer, approver,
+              support reference, and reversal date if available.</p>
+          </article>
+          <article class="jev-step-card ls-tool-step-card reveal">
+            <div class="jev-step-number ls-tool-step-number">3</div>
+            <strong>Review the exception journals</strong>
+            <p>Start with out-of-balance journals, missing approvals, missing support, duplicate patterns, and large
+              manual entries because they create the fastest cleanup wins.</p>
+          </article>
+          <article class="jev-step-card ls-tool-step-card reveal">
+            <div class="jev-step-number ls-tool-step-number">4</div>
+            <strong>Export the exceptions file</strong>
+            <p>Download flagged lines and route them into manager review, supporting-document requests, or
+              audit workpapers.</p>
+          </article>
+        </div>
+
+        <div class="jev-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Investigation Checklist</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">What reviewers usually validate first</h2>
+          <p>These checks come from the pain points teams mention most often: late close pressure, heavy manual journal
+            volume, missing support, controller sign-off delays, and journals that are hard to explain quickly.</p>
+        </div>
+
+        <div class="jev-checklist-grid ls-tool-checklist-grid">
+          <article class="jev-check-card ls-tool-check-card reveal">
+            <strong>Journal balance</strong>
+            <p>If the journal does not net to zero, the export or the journal itself deserves immediate follow-up.</p>
+          </article>
+          <article class="jev-check-card ls-tool-check-card reveal">
+            <strong>Approval coverage</strong>
+            <p>If an approver field exists but is blank, that is usually one of the fastest high-value control gaps to
+              clear.</p>
+          </article>
+          <article class="jev-check-card ls-tool-check-card reveal">
+            <strong>Support references</strong>
+            <p>Blank ticket IDs, attachment references, or support links usually create slowdowns in both close and
+              audit review.</p>
+          </article>
+          <article class="jev-check-card ls-tool-check-card reveal">
+            <strong>Manual and spreadsheet journals</strong>
+            <p>These are not automatically wrong, but they often deserve a second look during close and audit review.</p>
+          </article>
+          <article class="jev-check-card ls-tool-check-card reveal">
+            <strong>Accrual reversal gaps</strong>
+            <p>Accrual-like journals without reversal dates often create follow-up work at the next close.</p>
+          </article>
+          <article class="jev-check-card ls-tool-check-card reveal">
+            <strong>Duplicate journal patterns</strong>
+            <p>Repeated date, amount, description, and entity patterns can signal reposts, Excel resubmissions, or
+              duplicated corrections.</p>
+          </article>
+        </div>
+
+        <div class="jev-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Why This Page Exists</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Built to close the gap between raw exports and enterprise platforms</h2>
+          <p>Many JE tools on the market focus on workflow, posting automation, or larger close suites. This page
+            solves a narrower but urgent job: give the reviewer a useful validation answer right now.</p>
+        </div>
+
+        <div class="jev-gap-grid ls-tool-gap-grid">
+          <article class="jev-gap-card ls-tool-gap-card reveal">
+            <strong>Immediate triage instead of implementation</strong>
+            <p>Use the tool as soon as you have a CSV. No onboarding sequence required.</p>
+            <ul>
+              <li>Upload or paste a real export.</li>
+              <li>Map columns in the browser.</li>
+              <li>Get a ranked exception queue immediately.</li>
+            </ul>
+          </article>
+          <article class="jev-gap-card ls-tool-gap-card reveal">
+            <strong>Explainable flags instead of black-box scoring</strong>
+            <p>Reviewers need rationale they can defend during close, audit, or manager review.</p>
+            <ul>
+              <li>Each surfaced journal lists the triggering control failures.</li>
+              <li>Preparer hot spots summarize where exception volume is clustering.</li>
+              <li>Control insights help reviewers move faster.</li>
+            </ul>
+          </article>
+          <article class="jev-gap-card ls-tool-gap-card reveal">
+            <strong>Useful even before a custom build</strong>
+            <p>Ledger Summit builds custom accounting tools, but this page delivers value before you ever book a call.</p>
+            <ul>
+              <li>Browser-based privacy for initial triage.</li>
+              <li>Exportable flagged rows for next steps.</li>
+              <li>Clear path to a custom reviewer workflow if needed.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section jev-faq ls-tool-faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Journal entry validator questions, answered directly</h2>
+          <p>Written in short, answer-engine-friendly form so searchers can get a clear answer without digging through
+            sales copy.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is a journal entry validator?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>A journal entry validator reviews exported journal detail to flag journals that are unbalanced,
+                undocumented, unapproved, duplicated, or otherwise risky before close or audit work continues.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What does this tool validate?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>This tool validates journal balance, missing journal IDs, missing descriptions, missing preparers,
+                missing approvers, missing support references, duplicate patterns, manual or spreadsheet sources,
+                round-dollar top-side signals, and accrual-like journals missing reversal dates.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Does this tool send my file to Ledger Summit?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>No. The page processes the file in your browser. That makes it useful for a first-pass validation when
+                you are not ready to move raw JE data into a third-party platform.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Which columns should I include in the export?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Best practice is posting date, journal ID or batch, account number, account name, description or memo,
+                and either a signed amount or separate debit and credit columns. Preparer, approver, support reference,
+                reversal date, source, and entity fields make the validation more valuable.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can Ledger Summit build a custom journal entry review
+              workflow for our ERP?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. If you want recurring reviewer logic, ERP connectivity, approval routing, supporting-document
+                checks, or account-specific scoring, Ledger Summit can turn this concept into a custom internal tool for
+                your close process.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="jev-cta ls-tool-cta">
+      <div class="container">
+        <div class="jev-cta-card ls-tool-cta-card reveal">
+          <span class="section-label ls-tool-cta-label">Next Step</span>
+          <h2>Want this connected to your ERP, approval flow, and audit trail?</h2>
+          <p>Use the free validator for first-pass review. If you want a branded internal tool with your own rules,
+            scoring, and workflow, Ledger Summit can build the production version around your actual close process.</p>
+          <a href="/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+          <div class="jev-inline-links ls-tool-inline-links">
+            <a href="/tools/">All tools</a>
+            <a href="/services/ai-accounting-tools/">Custom AI accounting tools</a>
+            <a href="/blog/accounting-close/">Month-end close case study</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand">
+          <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+            alt="Ledger Summit" width="30" height="30" decoding="async">
+          <span>Ledger Summit</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/book-a-call/">Book a Call</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="/js/shared.js?v=20260320"></script>
+  <script src="/js/journal-entry-validator.js"></script>
+  <script>
+    window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };
+  </script>
+  <script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+
+</html>

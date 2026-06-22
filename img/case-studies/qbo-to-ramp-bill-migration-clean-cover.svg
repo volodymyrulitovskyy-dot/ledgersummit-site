@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">QBO to Ramp bill migration clean cover</title>
+  <desc id="desc">Minimal cover image for a QBO to Ramp bill migration case study.</desc>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="36" x2="1140" y2="639" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1F49"/>
+      <stop offset="0.56" stop-color="#14397F"/>
+      <stop offset="1" stop-color="#1C5A97"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 220) rotate(142) scale(430 290)">
+      <stop stop-color="#86CFFF" stop-opacity="0.23"/>
+      <stop offset="1" stop-color="#86CFFF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.18em; fill: #D9E7FF; }
+      .tag { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #8FD4FF; }
+      .headline { font: 900 68px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .sub { font: 600 28px/1.45 Inter, Arial, sans-serif; fill: #D8E6FF; }
+      .chip { font: 800 22px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .cardTitle { font: 800 16px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #B6D2FF; }
+      .cardBody { font: 700 34px/1.2 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .cardMini { font: 600 18px/1.4 Inter, Arial, sans-serif; fill: #DCE7FF; }
+      .chipBox { fill: rgba(116,201,255,0.16); stroke: rgba(116,201,255,0.34); }
+      .panel { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.18); }
+    </style>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glow)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="tag">AP MIGRATION</text>
+  <text x="72" y="244" class="headline">QBO to Ramp</text>
+  <text x="72" y="320" class="headline">Bill Migration</text>
+  <text x="72" y="394" class="sub">3,000 plus bills moved in under a week with invoice</text>
+  <text x="72" y="432" class="sub">images, PO detail, and a clean AP aging tie-out.</text>
+
+  <rect x="72" y="510" width="180" height="54" rx="27" class="chipBox"/>
+  <text x="162" y="544" class="chip">3,000+ bills</text>
+  <rect x="268" y="510" width="134" height="54" rx="27" class="chipBox"/>
+  <text x="335" y="544" class="chip">6 days</text>
+  <rect x="418" y="510" width="194" height="54" rx="27" class="chipBox"/>
+  <text x="515" y="544" class="chip">aging tied out</text>
+
+  <rect x="736" y="154" width="344" height="348" rx="34" class="panel"/>
+  <text x="780" y="210" class="cardTitle">HANDOFF</text>
+  <text x="780" y="272" class="cardBody">Bills moved.</text>
+  <text x="780" y="318" class="cardBody">Controls kept.</text>
+  <text x="780" y="392" class="cardMini">Images preserved.</text>
+  <text x="780" y="424" class="cardMini">PO context retained.</text>
+  <text x="780" y="456" class="cardMini">Finance ready on day one.</text>
+</svg>

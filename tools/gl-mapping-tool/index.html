@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GL Mapping Tool | Ledger Summit</title>
+  <meta name="description"
+    content="Map GL accounts between two charts of accounts in your browser. Upload source and target account lists, review auto-suggested mappings, and export a clean.">
+  <link rel="canonical" href="https://ledgersummit.com/tools/gl-mapping-tool/">
+  <meta property="og:title" content="GL Mapping Tool | Ledger Summit">
+  <meta property="og:description"
+    content="Browser-based GL account mapping for chart-of-accounts migrations. Upload source and target lists, review suggested mappings, and export a clean mapping file.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgersummit.com/tools/gl-mapping-tool/">
+  <meta property="og:image"
+    content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GL Mapping Tool | Ledger Summit">
+  <meta name="twitter:description"
+    content="Map GL accounts between two charts of accounts in your browser. Auto-suggested fuzzy matching with CSV export.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=20260311">
+  <link rel="stylesheet" href="/css/pages.css?v=20260311">
+  <link rel="stylesheet" href="/css/tool-pages.css?v=20260419b">
+
+  <link rel="stylesheet" href="/css/gl-mapping-tool.css?v=20260311">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ledger Summit GL Mapping Tool",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "isAccessibleForFree": true,
+    "description": "Browser-based GL account mapping tool for chart-of-accounts migrations. Upload source and target account lists, review auto-suggested mappings, and export a clean mapping file.",
+    "url": "https://ledgersummit.com/tools/gl-mapping-tool/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ledger Summit",
+      "url": "https://ledgersummit.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a GL mapping tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A GL mapping tool helps you match accounts from a source chart of accounts to a target chart of accounts during ERP migrations, consolidations, or system conversions. It auto-suggests mappings based on account names and types so you can review and export a clean mapping file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this GL mapping tool upload my data to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The tool processes both files entirely inside your browser. Your chart of accounts data never leaves your machine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What file format works best for GL account mapping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CSV exports with account code, account name, and optionally account type columns work best. The tool auto-detects delimiters including comma, tab, semicolon, and pipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the fuzzy matching work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool normalizes account names by removing punctuation, standardizing whitespace, and comparing cleaned text. Exact normalized matches are flagged as exact. Partial token overlap and type-based matching produce fuzzy suggestions ranked by confidence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Ledger Summit build a custom GL mapping workflow for our migration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If you need recurring mapping logic, multi-entity support, approval routing, or ERP-specific integrations, Ledger Summit can build a custom migration tool tailored to your chart of accounts structure."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Tools",
+        "item": "https://ledgersummit.com/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GL Mapping Tool",
+        "item": "https://ledgersummit.com/tools/gl-mapping-tool/"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="tool-page ls-theme-indigo">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation"><div class="nav-inner"><a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></nav><div class="mobile-nav" id="mobileNav" aria-hidden="true"><a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a></div>
+
+  <main id="main">
+    <section class="glm-hero ls-tool-hero">
+      <div class="container">
+        <div class="glm-hero-grid ls-tool-hero-grid">
+          <div class="glm-hero-copy ls-tool-hero-copy reveal">
+            <span class="section-label">GL Mapping Tool</span>
+            <h1>GL mapping tool for cleaner chart-of-accounts migrations.</h1>
+            <p>The Ledger Summit GL Mapping Tool helps accounting teams match accounts between a source and target chart of accounts before an ERP migration, consolidation, or system conversion. Upload two CSV files, review auto-suggested mappings, override where needed, and export a clean mapping file.</p>
+            <div class="glm-answer-strip ls-tool-answer-strip">
+              <strong>Direct answer</strong>
+              <span>A GL mapping tool compares two charts of accounts and auto-suggests which source accounts correspond to which target accounts based on name similarity, account type, and code patterns so reviewers can finalize the mapping faster.</span>
+            </div>
+            <div class="glm-hero-actions ls-tool-hero-actions">
+              <a href="#mapper" class="btn-primary btn-glow">Open the mapper</a>
+              <a href="/book-a-call/" class="btn-secondary">Need a custom version?</a>
+            </div>
+            <div class="glm-hero-pills ls-tool-hero-pills" aria-label="Key proof points">
+              <span class="glm-hero-pill ls-tool-hero-pill"><i></i>Browser-only processing</span>
+              <span class="glm-hero-pill ls-tool-hero-pill"><i></i>Fuzzy name matching</span>
+              <span class="glm-hero-pill ls-tool-hero-pill"><i></i>CSV export of mapping</span>
+            </div>
+          </div>
+
+          <aside class="glm-hero-panel ls-tool-hero-panel reveal-right" aria-label="What the tool does">
+            <span class="glm-panel-badge ls-tool-panel-badge"><i></i>Migration-ready</span>
+            <div class="glm-panel-head ls-tool-panel-head">
+              <h2>How it works</h2>
+              <p>Designed for the real workflow behind COA migrations: upload both lists, review suggestions, fix edge cases, and export a clean file.</p>
+            </div>
+            <div class="glm-preview-metrics ls-tool-preview-metrics">
+              <div class="glm-preview-card ls-tool-preview-card">
+                <strong>1</strong>
+                <span>Upload source and target account lists as CSV files.</span>
+              </div>
+              <div class="glm-preview-card ls-tool-preview-card">
+                <strong>2</strong>
+                <span>Auto-detect columns and suggest account mappings by name similarity.</span>
+              </div>
+              <div class="glm-preview-card ls-tool-preview-card">
+                <strong>3</strong>
+                <span>Review exact matches, fuzzy suggestions, and unmapped accounts.</span>
+              </div>
+              <div class="glm-preview-card ls-tool-preview-card">
+                <strong>4</strong>
+                <span>Override suggestions and export a finalized mapping CSV.</span>
+              </div>
+            </div>
+            <div class="glm-preview-list ls-tool-preview-list">
+              <div class="glm-preview-item ls-tool-preview-item">
+                <strong>Exact matches</strong>
+                <span>identical normalized account names</span>
+              </div>
+              <div class="glm-preview-item ls-tool-preview-item">
+                <strong>Fuzzy matches</strong>
+                <span>partial name overlap and type alignment</span>
+              </div>
+              <div class="glm-preview-item ls-tool-preview-item">
+                <strong>Unmapped accounts</strong>
+                <span>flagged for manual review</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="glm-tool-section ls-tool-section" id="mapper">
+      <div class="container">
+        <div class="glm-tool-shell ls-tool-shell" id="glm-app">
+          <div class="glm-lab-grid ls-tool-layout-stack"><section class="glm-panel">
+              <div class="glm-panel-title">
+                <h3>1. Upload source and target account lists</h3>
+                <span>CSV files</span>
+              </div>
+
+              <div class="glm-upload-pair">
+                <div class="glm-upload-area" id="glm-source-area">
+                  <h4>Source accounts</h4>
+                  <p>The chart of accounts you are migrating from.</p>
+                  <label class="glm-file-label">
+                    Choose CSV
+                    <input id="glm-source-file" type="file" accept=".csv,.txt,.tsv" aria-label="Upload source chart of accounts">
+                  </label>
+                  <div class="glm-upload-status" id="glm-source-status">No file loaded</div>
+                </div>
+                <div class="glm-upload-area" id="glm-target-area">
+                  <h4>Target accounts</h4>
+                  <p>The chart of accounts you are migrating to.</p>
+                  <label class="glm-file-label">
+                    Choose CSV
+                    <input id="glm-target-file" type="file" accept=".csv,.txt,.tsv" aria-label="Upload target chart of accounts">
+                  </label>
+                  <div class="glm-upload-status" id="glm-target-status">No file loaded</div>
+                </div>
+              </div>
+
+              <div class="glm-action-row" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem">
+                <button type="button" class="glm-btn glda-btn glda-btn-primary" id="glm-analyze">Analyze mapping</button>
+                <button type="button" class="glm-btn glda-btn glda-btn-secondary" id="glm-sample">Try sample data</button>
+                <button type="button" class="glm-btn glda-btn glda-btn-secondary" id="glm-export" disabled>Export mapping CSV</button>
+                <button type="button" class="glm-btn glda-btn glda-btn-tertiary" id="glm-reset">Reset</button>
+              </div>
+
+              <div id="glm-status" class="glda-status muted" role="status" aria-live="polite"></div>
+            </section><div class="glm-tool-head ls-tool-head ls-tool-head-inline">
+            <div>
+              <span class="section-label">Live Tool</span>
+              <h2>GL account mapping in the browser</h2>
+              <p>Upload your source and target charts of accounts, review auto-suggested mappings, override where needed, and export the result.</p>
+            </div>
+            
+          </div><section class="glm-panel">
+              <div class="glm-empty-state" id="glm-empty">
+                <h3>What this GL mapping tool is built to solve</h3>
+                <p>Chart-of-accounts migrations are tedious and error-prone. This tool eliminates the manual spreadsheet work of matching accounts one by one.</p>
+                <div class="glda-empty-list">
+                  <div class="glda-empty-item">
+                    <strong>ERP migrations and system conversions</strong>
+                    <span>Match your old chart of accounts to the new structure before go-live.</span>
+                  </div>
+                  <div class="glda-empty-item">
+                    <strong>Consolidation and multi-entity mapping</strong>
+                    <span>Align subsidiary accounts to a parent chart of accounts for reporting.</span>
+                  </div>
+                  <div class="glda-empty-item">
+                    <strong>Audit-ready mapping documentation</strong>
+                    <span>Export a clean CSV that documents every account mapping decision for the audit trail.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glm-results" id="glm-results" hidden>
+                <div class="glm-summary-grid" id="glm-summary-grid"></div>
+
+                <article class="glda-result-card">
+                  <div class="glda-card-head">
+                    <div>
+                      <h3>Account mapping table</h3>
+                      <p>Review each suggested mapping. Use the override dropdown to change any target assignment. Exact matches are green, fuzzy matches are yellow, and unmapped accounts are red.</p>
+                    </div>
+                  </div>
+                  <div id="glm-mapping-table"></div>
+                </article>
+
+                <article class="glda-result-card" id="glm-unmapped-section" hidden>
+                  <div class="glda-card-head">
+                    <div>
+                      <h3>Unmapped target accounts</h3>
+                      <p>These target accounts were not matched to any source account. They may be new accounts in the target system or accounts that need manual mapping.</p>
+                    </div>
+                  </div>
+                  <div class="glm-unmapped-list" id="glm-unmapped-list"></div>
+                </article>
+              </div>
+            </section></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="glm-feature-band ls-tool-feature-band">
+      <div class="container">
+        <div class="glm-feature-grid ls-tool-feature-grid">
+          <article class="glm-feature-card ls-tool-feature-card reveal">
+            <div class="glm-feature-icon ls-tool-feature-icon">01</div>
+            <strong>Side-by-side uploads</strong>
+            <p>Load source and target charts of accounts independently. The tool auto-detects columns in each file.</p>
+          </article>
+          <article class="glm-feature-card ls-tool-feature-card reveal">
+            <div class="glm-feature-icon ls-tool-feature-icon">02</div>
+            <strong>Fuzzy name matching</strong>
+            <p>Normalized text comparison catches variations in naming conventions, abbreviations, and word order.</p>
+          </article>
+          <article class="glm-feature-card ls-tool-feature-card reveal">
+            <div class="glm-feature-icon ls-tool-feature-icon">03</div>
+            <strong>Override any suggestion</strong>
+            <p>Every row has a dropdown to manually select the correct target account when the auto-match is wrong.</p>
+          </article>
+          <article class="glm-feature-card ls-tool-feature-card reveal">
+            <div class="glm-feature-icon ls-tool-feature-icon">04</div>
+            <strong>Export a clean mapping file</strong>
+            <p>Download the finalized mapping as a CSV with source code, source name, target code, target name, and match type.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section glm-guide-section ls-tool-guide-section" id="guide">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Guide Below The Tool</span>
+          <h2>How to use a GL mapping tool well</h2>
+          <p>Practical steps for accounting teams running chart-of-accounts migrations, consolidations, or ERP conversions.</p>
+        </div>
+
+        <div class="glm-answer-grid ls-tool-answer-grid">
+          <article class="glm-answer-card ls-tool-answer-card reveal">
+            <strong>What it is</strong>
+            <p>A GL mapping tool compares two charts of accounts and suggests which source accounts map to which target accounts based on name similarity, account type, and code patterns.</p>
+          </article>
+          <article class="glm-answer-card ls-tool-answer-card reveal">
+            <strong>Who it is for</strong>
+            <p>Controllers, accounting managers, ERP implementation teams, and consultants who need to document account mapping decisions during system migrations.</p>
+          </article>
+          <article class="glm-answer-card ls-tool-answer-card reveal">
+            <strong>What file works best</strong>
+            <p>CSV exports with account code, account name, and optionally account type columns. The tool auto-detects delimiters and maps columns automatically.</p>
+          </article>
+        </div>
+
+        <div class="glm-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Workflow</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Four practical steps</h2>
+          <p>Use this tool as the first pass in your migration workflow. The goal is to automate the obvious matches so reviewers can focus on the accounts that genuinely need judgment.</p>
+        </div>
+
+        <div class="glm-steps-grid ls-tool-steps-grid">
+          <article class="glm-step-card ls-tool-step-card reveal">
+            <div class="glm-step-number ls-tool-step-number">1</div>
+            <strong>Export both charts of accounts</strong>
+            <p>Pull the source and target account lists from your old and new systems as CSV files with account code and name columns.</p>
+          </article>
+          <article class="glm-step-card ls-tool-step-card reveal">
+            <div class="glm-step-number ls-tool-step-number">2</div>
+            <strong>Upload and review column detection</strong>
+            <p>The tool auto-detects account code, account name, and account type columns. Verify the detection is correct before analyzing.</p>
+          </article>
+          <article class="glm-step-card ls-tool-step-card reveal">
+            <div class="glm-step-number ls-tool-step-number">3</div>
+            <strong>Review and override mappings</strong>
+            <p>Check exact matches first, then review fuzzy suggestions. Use the override dropdown to correct any mismatches.</p>
+          </article>
+          <article class="glm-step-card ls-tool-step-card reveal">
+            <div class="glm-step-number ls-tool-step-number">4</div>
+            <strong>Export the mapping file</strong>
+            <p>Download the finalized mapping as a CSV and use it as the migration crosswalk, audit documentation, or ERP import template.</p>
+          </article>
+        </div>
+
+        <div class="glm-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Best Practices</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Common pitfalls in chart-of-accounts migrations</h2>
+          <p>These are the issues that cause rework, audit findings, and reporting errors after go-live.</p>
+        </div>
+
+        <div class="glm-checklist-grid ls-tool-checklist-grid">
+          <article class="glm-check-card ls-tool-check-card reveal">
+            <strong>Unmapped accounts carry balances</strong>
+            <p>Every account with a balance must have a target. This tool flags unmapped accounts so nothing falls through the cracks.</p>
+          </article>
+          <article class="glm-check-card ls-tool-check-card reveal">
+            <strong>Name variations cause false negatives</strong>
+            <p>Abbreviations, extra spaces, and different word order can prevent exact matches. Fuzzy matching catches these.</p>
+          </article>
+          <article class="glm-check-card ls-tool-check-card reveal">
+            <strong>Type mismatches break reporting</strong>
+            <p>Mapping an expense account to a liability account will distort financial statements. Type-aware matching helps prevent this.</p>
+          </article>
+          <article class="glm-check-card ls-tool-check-card reveal">
+            <strong>Many-to-one mappings need documentation</strong>
+            <p>When multiple source accounts map to a single target, the mapping file should clearly document each decision.</p>
+          </article>
+          <article class="glm-check-card ls-tool-check-card reveal">
+            <strong>New target accounts go unused</strong>
+            <p>Target accounts with no source mapping may be intentionally new or may indicate a gap in the migration plan.</p>
+          </article>
+          <article class="glm-check-card ls-tool-check-card reveal">
+            <strong>No audit trail of mapping decisions</strong>
+            <p>Exporting the mapping CSV with match types creates a documented record of every mapping decision for auditors.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section glm-faq ls-tool-faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>GL mapping tool questions, answered directly</h2>
+          <p>Short, clear answers for accounting teams evaluating this tool for their next migration.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is a GL mapping tool?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>A GL mapping tool helps you match accounts from a source chart of accounts to a target chart of accounts during ERP migrations, consolidations, or system conversions. It auto-suggests mappings based on account names and types so you can review and export a clean mapping file.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Does this tool send my chart of accounts to a server?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>No. Both files are processed entirely inside your browser. Your chart of accounts data never leaves your machine, which makes it safe for initial mapping work before involving external platforms.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What file format works best?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>CSV exports with account code, account name, and optionally account type columns work best. The tool auto-detects delimiters including comma, tab, semicolon, and pipe, so most ERP exports will work without reformatting.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How does the fuzzy matching work?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>The tool normalizes account names by removing punctuation, converting to lowercase, and standardizing whitespace. It then compares cleaned text using token overlap scoring. Exact normalized matches score highest, followed by partial word matches and account-type alignment.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can Ledger Summit build a custom mapping workflow for our migration?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. If you need recurring mapping logic, multi-entity support, approval routing, historical balance migration, or ERP-specific integrations, Ledger Summit can build a custom migration tool tailored to your chart of accounts structure and workflow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="glm-cta ls-tool-cta">
+      <div class="container">
+        <div class="glm-cta-card ls-tool-cta-card reveal">
+          <span class="section-label ls-tool-cta-label">Next Step</span>
+          <h2>Need a production-grade mapping workflow for your ERP migration?</h2>
+          <p>Use the free mapper for initial account matching. If you need a branded internal tool with approval workflows, multi-entity support, and historical balance tracking, Ledger Summit can build the production version around your actual migration process.</p>
+          <a href="/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+          <div class="glm-inline-links ls-tool-inline-links">
+            <a href="/tools/">More tools</a>
+            <a href="/services/ai-accounting-tools/">Custom AI accounting tools</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-inner"><a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a><ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul></div><div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p></div></div></footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="/js/shared.js?v=20260320"></script>
+  <script src="/js/gl-mapping-tool.js"></script>
+<script>window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };</script><script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+
+</html>

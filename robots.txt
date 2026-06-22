@@ -1,3 +1,14 @@
+# Ledger Summit — robots.txt
+# Full allow for crawlers. WordPress admin paths are excluded via the host config.
+
 User-agent: *
 Allow: /
+
+# Crawl-delay intentionally omitted — Googlebot and Bingbot ignore it and handle
+# rate-limiting automatically.
+
+# Host / canonical
+Host: ledgersummit.com
+
+# XML sitemap
 Sitemap: https://ledgersummit.com/sitemap.xml

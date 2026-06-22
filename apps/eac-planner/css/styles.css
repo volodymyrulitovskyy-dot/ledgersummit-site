@@ -1,0 +1,252 @@
+body {
+  font-feature-settings: "ss01" on, "cv02" on, "cv03" on;
+}
+
+canvas {
+  max-width: 100%;
+}
+
+/* ─── Header inline selects ──────────────────────────────────────── */
+
+.header-select {
+  height: 1.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.header-select:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.header-select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+}
+
+.header-select option {
+  background: #132238;
+  color: #fff;
+}
+
+/* ─── Tab bar ────────────────────────────────────────────────────── */
+
+/* Flush the tab bar divider with the sticky header bottom */
+.nav-trigger {
+  line-height: 1;
+}
+
+/* ─── Card section headings ─────────────────────────────────────── */
+/* Every card (shadow-panel) uses h2 + small-caps eyebrow.
+   Reduce h2 from text-2xl (24 px) to text-base (16 px) so data
+   is the dominant visual element inside each card, not the title. */
+
+.shadow-panel h2 {
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-top: 0.15rem;
+}
+
+/* The eyebrow label above h2 (e.g. "OVERVIEW") */
+.shadow-panel .card-eyebrow,
+.shadow-panel p.text-\[11px\] {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+}
+
+/* ─── Roadmap card ───────────────────────────────────────────────── */
+
+.roadmap-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.92)),
+    linear-gradient(135deg, rgba(29, 111, 109, 0.08), rgba(217, 119, 87, 0.08));
+}
+
+/* ─── Form controls ──────────────────────────────────────────────── */
+
+input,
+select,
+button {
+  transition: all 160ms ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(53, 92, 125, 0.12);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ─── Compact planning tables ────────────────────────────────────── */
+
+.compact-input {
+  line-height: 1.15;
+}
+
+.compact-table th,
+.compact-table td {
+  padding-top: 0.03rem;
+  padding-bottom: 0.03rem;
+}
+
+.compact-table input,
+.compact-table select {
+  min-height: 1.1rem;
+  padding-top: 0.02rem;
+  padding-bottom: 0.02rem;
+}
+
+.compact-table thead th {
+  background: #f8fafc;
+}
+
+/* ─── Sticky columns ─────────────────────────────────────────────── */
+
+.sticky-col {
+  position: sticky;
+  background: #fff;
+}
+
+.sticky-col-1 {
+  left: 0;
+}
+
+.sticky-col-2 {
+  left: 14.5rem;
+}
+
+.sticky-z-header {
+  z-index: 4;
+}
+
+.sticky-z-cell {
+  z-index: 3;
+}
+
+/* ─── Labor column widths ────────────────────────────────────────── */
+
+.labor-name-cell {
+  min-width: 14.5rem;
+  width: 14.5rem;
+}
+
+.labor-role-cell {
+  min-width: 13rem;
+  width: 13rem;
+}
+
+.labor-employee-select {
+  min-width: 13.5rem;
+}
+
+.labor-role-select {
+  min-width: 12rem;
+}
+
+.labor-col-1 {
+  min-width: 14.5rem;
+  width: 14.5rem;
+}
+
+.labor-col-2 {
+  min-width: 13rem;
+  width: 13rem;
+}
+
+.labor-col-3 {
+  min-width: 6.25rem;
+  width: 6.25rem;
+}
+
+/* ─── Other category column widths ──────────────────────────────── */
+
+.subcontractors-col-1,
+.equipment-col-1,
+.materials-col-1,
+.odc-col-1 {
+  min-width: 14rem;
+  width: 14rem;
+}
+
+.subcontractors-col-2,
+.materials-col-2 {
+  min-width: 14rem;
+  width: 14rem;
+}
+
+.subcontractors-col-3,
+.equipment-col-3,
+.materials-col-3,
+.odc-col-3 {
+  min-width: 6.5rem;
+  width: 6.5rem;
+}
+
+.equipment-col-2 {
+  min-width: 6.75rem;
+  width: 6.75rem;
+}
+
+.odc-col-2 {
+  min-width: 0;
+  width: 0;
+}
+
+.planning-rate-col {
+  min-width: 6.5rem;
+  width: 6.5rem;
+}
+
+.planning-unit-col {
+  min-width: 6.75rem;
+  width: 6.75rem;
+}
+
+/* ─── Sticky planning columns ────────────────────────────────────── */
+
+.sub-sticky-1,
+.material-sticky-1,
+.equipment-sticky-1,
+.odc-sticky-1 {
+  min-width: 14rem;
+  width: 14rem;
+}
+
+.sub-sticky-2,
+.material-sticky-2 {
+  left: 14rem;
+  min-width: 14rem;
+  width: 14rem;
+}
+
+.equipment-sticky-2 {
+  left: 14rem;
+  min-width: 6.5rem;
+  width: 6.5rem;
+}
+
+.odc-sticky-2 {
+  left: 14rem;
+  min-width: 0;
+  width: 0;
+}

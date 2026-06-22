@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Variance Commentary Agent Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit deployed an AI agent that generates draft variance and flux commentary on month-end P&L for a $250M holdco.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-ai-variance-commentary-agent.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Variance Commentary Agent Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit deployed an AI agent that generates draft variance and flux commentary on month-end P&L for a $250M holdco.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-ai-variance-commentary-agent.html">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Variance Commentary Agent Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit deployed an AI agent that generates draft variance and flux commentary on month-end P&L for a $250M holdco.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css?v=20260505b">
+  <link rel="stylesheet" href="/css/subpages.css?v=20260505b">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"AI Variance Commentary Agent Case Study | Ledger Summit","description":"See how Ledger Summit deployed an AI agent that generates draft variance and flux commentary on month-end P&L for a $250M holdco — turning a 2-day FP&A task into a 30-minute review.","author":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"datePublished":"2026-05-05","dateModified":"2026-05-05","url":"https://ledgersummit.com/case-study-ai-variance-commentary-agent.html"}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a>
+    <ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div><span class="eyebrow">AI variance commentary case study</span><h1>AI Variance Commentary Agent Case Study</h1></div>
+            <p class="lead">A $250M PE-backed holdco deployed an AI agent that drafts variance and flux commentary on month-end P&L — pulling actuals, budget, and prior-period data, surfacing material drivers, and generating reviewer-ready prose. FP&A team time on commentary dropped from 2 days to 30 minutes per cycle.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on a $250M PE-backed holdco with 7 entities, NetSuite OneWorld + NSPB, 5-person FP&A team. Sponsor and board cadence required monthly variance commentary across consolidated and entity-level P&L; FP&A spent 2 days every cycle on the writeup.</div>
+            <div class="hero-actions"><a class="btn btn-primary" href="#measured-results">See measured results</a><a class="btn btn-soft" href="/#book">Talk through your situation</a></div>
+            <div class="jump-links"><a class="jump-link" href="#company-context">Company context</a><a class="jump-link" href="#before">Before — what was actually broken</a><a class="jump-link" href="#what-we-built">What Ledger Summit implemented</a><a class="jump-link" href="#mechanics">AI variance commentary mechanics</a><a class="jump-link" href="#implementation-timeline">Implementation timeline</a><a class="jump-link" href="#measured-results">Measured results</a></div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">Variance commentary is high-value work delivered through low-value writing. AI drafts; humans review, refine, and own the narrative.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>2 days → 30 min</strong><span>Commentary cycle time</span></article>
+              <article class="metric-card"><strong>95%</strong><span>Variances explained</span></article>
+              <article class="metric-card"><strong>7 entities</strong><span>Consolidated + entity P&L coverage</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="story-grid">
+          <article class="story-card story-wide" id="company-context"><h2>Company context</h2>
+            <p>The client is a $250M PE-backed holdco with 7 operating entities. Monthly variance commentary requirement: consolidated and per-entity P&L, ~25 variance lines per cycle, written in business-context language for sponsor and board. FP&A team was spending ~2 days per cycle drafting; the rest of the close cycle waited.</p>
+            <p>AI commentary works because the inputs are structured (actuals, budget, prior period, business drivers) and the output format is templatable (variance + driver + reviewer commentary). The agent doesn't replace judgment; it drafts the routine 80% so reviewers refine the strategic 20%.</p>
+            <ul><li>$250M PE-backed holdco</li><li>7 operating entities</li><li>NetSuite OneWorld + NSPB</li><li>5-person FP&A team</li><li>Monthly variance commentary required</li><li>~25 variance lines per cycle</li><li>Sponsor + board reading audience</li></ul>
+          </article>
+          <article class="story-card " id="before"><h2>Before — what was actually broken</h2>
+            <ul><li>Manual variance pull from NetSuite for each entity</li><li>Manual flux calculation against budget + prior period</li><li>Manual writeup of each variance with business context</li><li>2-day FP&A team effort per cycle</li><li>Inconsistent voice / depth across entities</li><li>Late close from FP&A waiting on accounting</li></ul>
+          </article>
+          <article class="story-card " id="what-we-built"><h2>What Ledger Summit implemented</h2>
+            <ul><li>AI commentary agent: pulls actuals from NetSuite, budget from NSPB, prior-period from NetSuite history</li><li>Variance threshold logic: % of plan + absolute dollar threshold per line</li><li>Driver attribution: pulls operational drivers (headcount, deals, transactions) and ties to financial variance</li><li>Generative draft: produces commentary per variance with structure (what changed, why, business context)</li><li>Reviewer interface: each commentary marked draft; reviewer accepts, edits, or rewrites</li><li>Variance trail: which budget line, which actuals, which drivers fed each commentary</li><li>Tone calibration: drafts learn from past reviewer edits (style, terminology, depth)</li><li>Confidentiality: all data processing inside client tenant; no external API training data sharing</li><li>Documentation: each commentary version-controlled with reviewer approval</li></ul>
+          </article>
+          <article class="story-card story-wide" id="mechanics"><h2>AI variance commentary mechanics</h2>
+            <div class="table-wrap"><table><thead><tr><th>Component</th><th>What it does</th></tr></thead><tbody><tr><td>Variance threshold</td><td>% + absolute dollar; threshold tunable per account / entity</td></tr><tr><td>Data integration</td><td>Actuals (NetSuite), budget (NSPB), prior period (NetSuite)</td></tr><tr><td>Driver attribution</td><td>Operational data (HRIS, CRM, transaction systems) tied to financial variance</td></tr><tr><td>Draft generation</td><td>LLM with prompt template per variance type</td></tr><tr><td>Tone calibration</td><td>Learn from reviewer edits to match company voice</td></tr><tr><td>Reviewer routing</td><td>Each commentary marked draft; reviewer accepts / edits / rewrites</td></tr><tr><td>Audit trail</td><td>Version-controlled commentary with reviewer approval</td></tr><tr><td>Confidentiality</td><td>All processing inside client tenant; no training-data leakage</td></tr><tr><td>Continuous improvement</td><td>Reviewer edits feed back to model improvement</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="implementation-timeline"><h2>Implementation timeline</h2>
+            <ul><li><strong>Weeks 1–2:</strong> Discovery: variance threshold review, commentary template inventory, reviewer-style learning</li><li><strong>Weeks 3–4:</strong> Agent build: integration to NetSuite + NSPB; prompt templates per variance type</li><li><strong>Weeks 5–6:</strong> Calibration: 3 cycles of shadow-mode draft generation; reviewer edits captured for tone learning</li><li><strong>Week 7:</strong> Cutover: first cycle with agent-drafted commentary</li><li><strong>Week 8:</strong> Hypercare; reviewer feedback loop; tone refinement</li></ul>
+          </article>
+          <article class="story-card story-wide" id="measured-results"><h2>Measured results</h2>
+            <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Delta</th></tr></thead><tbody><tr><td>Commentary draft time</td><td>2 days</td><td>30 minutes</td><td>−98%</td></tr><tr><td>Variances with commentary</td><td>~80%</td><td>~95%</td><td>+15 pp</td></tr><tr><td>Reviewer edits per draft</td><td>—</td><td>~30%</td><td>—</td></tr><tr><td>Cross-entity consistency</td><td>Variable</td><td>Standardized</td><td>—</td></tr><tr><td>Close cycle (FP&A handoff)</td><td>5 days</td><td>3 days</td><td>−40%</td></tr><tr><td>Sponsor pack delivery</td><td>7 days post-close</td><td>3 days post-close</td><td>−4 days</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="alternatives"><h2>Alternatives considered</h2>
+            <div class="table-wrap"><table><thead><tr><th>Option</th><th>Time</th><th>Cost</th><th>Strengths</th><th>Weaknesses</th></tr></thead><tbody><tr><td>Mosaic / Cube AI features</td><td>3 months</td><td>$120K–$220K / yr</td><td>Embedded in platform</td><td>Less custom prompt depth</td></tr><tr><td>Anaplan with AI extensions</td><td>5 months</td><td>$200K–$420K + license</td><td>Powerful platform</td><td>Way over-scoped</td></tr><tr><td>Custom Anthropic Claude / OpenAI build</td><td>5 months</td><td>$280K–$420K</td><td>Full control</td><td>Maintenance + governance</td></tr><tr><td>Ledger Summit AI agent (selected)</td><td>8 weeks</td><td>$120K–$180K + ongoing</td><td>Right-sized; SOX-aware</td><td>Maintenance</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="when-fits"><h2>When this approach fits</h2>
+            <ul><li>$50–500M companies with monthly variance reporting requirement</li><li>Multi-entity / NetSuite OneWorld with NSPB or comparable FP&A platform</li><li>PE-backed with sponsor reporting</li><li>FP&A team of 3+ producing commentary</li><li>Existing budget discipline (numbers exist to compare)</li><li>CFO open to AI-drafted content with reviewer authority</li></ul>
+          </article>
+          <article class="story-card story-wide" id="lessons-learned"><h2>Lessons learned</h2>
+            <ul><li><strong>Tone calibration matters.</strong> Generic AI commentary reads generic; learning from past reviewer edits produces company-voice writing.</li><li><strong>Driver attribution = real value.</strong> "Revenue down $200K because customer X delayed" is more useful than "Revenue down 5%."</li><li><strong>Reviewer authority preserved.</strong> AI drafts; reviewer owns the narrative. The agent never finalizes.</li><li><strong>Threshold per line, not flat.</strong> Different variance materiality for revenue vs. T&E vs. payroll.</li><li><strong>Data integration is the hard part.</strong> Variance commentary is templatable; getting clean inputs from NetSuite + NSPB + operational systems is the work.</li></ul>
+          </article>
+          <article class="story-card story-wide" id="faq"><h2>Frequently asked questions</h2>
+            <div class="faq-list"><details><summary><strong>Does this replace FP&A team?</strong></summary><p>No. It removes routine drafting work. The team focuses on strategic interpretation, scenario modeling, and the conversations that drive decisions.</p></details><details><summary><strong>How does the AI tone match company voice?</strong></summary><p>Learns from reviewer edits over 2-3 cycles; converges on company terminology, depth, and structure.</p></details><details><summary><strong>What about confidentiality?</strong></summary><p>All data processing inside client tenant; no external training-data sharing. LLM operating against company data, not learning from it.</p></details><details><summary><strong>How does this support audit?</strong></summary><p>Commentary is reviewer-approved; audit trail exists. Auditor sees what was drafted, what was edited, and who approved.</p></details><details><summary><strong>What if the AI gets a variance wrong?</strong></summary><p>Reviewer authority always; AI draft is starting point, not final word. Threshold logic flags low-confidence drafts.</p></details><details><summary><strong>Can it handle scenario / what-if analysis?</strong></summary><p>Yes — extension of the same agent. Same data integration; different prompt patterns.</p></details><details><summary><strong>What about cash-flow variance?</strong></summary><p>Yes — same pattern applies; integrates with cash-flow forecast.</p></details><details><summary><strong>How do you handle restated periods?</strong></summary><p>Restatement triggers re-draft; commentary versioning tracks history.</p></details><details><summary><strong>Does this work for service-business variance (utilization, etc.)?</strong></summary><p>Yes — operational drivers tied to financial variance through metric-of-the-day attribution.</p></details><details><summary><strong>What's the typical cost?</strong></summary><p>$120–280K project + ongoing license / maintenance. Cost-effective for $50M+ FP&A teams.</p></details></div>
+          </article>
+          <article class="story-card story-wide" id="related"><h2>Related Ledger Summit work</h2>
+            <ul><li><a href="/case-study-nspb-fpa-consolidation.html">NSPB FP&A consolidation</a> — companion FP&A platform case study</li><li><a href="/case-study-13-week-cash-flow-forecasting.html">13-week cash flow</a> — companion FP&A automation</li><li><a href="/services-ai-controls-framework.html">AI controls framework</a> — governance for AI in finance</li><li><a href="/services-fractional-controller.html">Fractional controller</a> — controller-level oversight</li><li><a href="/services-month-end-close-automation.html">Month-end close automation</a> — close discipline</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div><h2>Spending too long writing variance commentary?</h2><p>A 30-minute call walks your variance review and tells you what AI commentary looks like.</p></div>
+          <a class="btn btn-primary" href="/#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a>
+        <ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p></div>
+    </div>
+  </footer>
+  <script src="/js/shared.js" defer></script>
+</body>
+</html>
+

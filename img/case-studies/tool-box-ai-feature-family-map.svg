@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI feature family map</title>
+  <desc id="desc">A Visio-style diagram showing Tool Box AI as a shared finance operating core surrounded by the major workflow families, shared controls, and finance outcomes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6faff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#5a7aa6"/>
+    </marker>
+    <style>
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #14365d; }
+      .subtitle { font: 500 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4f6784; }
+      .h { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17385f; }
+      .b { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #445b78; }
+      .s { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; fill: #6282a9; }
+      .center { text-anchor: middle; }
+      .box { fill: url(#panel); stroke: #d6e3f1; stroke-width: 1.5; rx: 20; }
+      .pill { fill: #edf4fb; stroke: #d6e3f1; stroke-width: 1; rx: 18; }
+      .line { stroke: #5a7aa6; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #8ca2be; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="780" fill="url(#bg)"/>
+  <text x="60" y="58" class="title">Feature Families Inside Tool Box AI</text>
+  <text x="60" y="84" class="subtitle">One shared finance operating core supports multiple workflow families without changing the control model.</text>
+
+  <rect x="390" y="156" width="420" height="156" class="box"/>
+  <text x="600" y="186" class="s center">SHARED OPERATING CORE</text>
+  <text x="600" y="220" class="h center">Tool Box AI Workflow, Control, and Audit Layer</text>
+  <text x="600" y="246" class="b center">Approvals, roles, audit records, exception routing,</text>
+  <text x="600" y="264" class="b center">document intake, workflow states, and reporting logic</text>
+  <text x="600" y="290" class="b center">stay consistent even when the finance workflow changes.</text>
+
+  <rect x="88" y="144" width="238" height="138" class="pill"/>
+  <text x="207" y="176" class="s center">WORKFLOW FAMILY</text>
+  <text x="207" y="208" class="h center">Procure-to-Pay</text>
+  <text x="207" y="232" class="b center">Requisitions, POs, vendor onboarding,</text>
+  <text x="207" y="250" class="b center">invoice capture, matching, approvals, pay</text>
+
+  <rect x="874" y="144" width="238" height="138" class="pill"/>
+  <text x="993" y="176" class="s center">WORKFLOW FAMILY</text>
+  <text x="993" y="208" class="h center">Order-to-Cash</text>
+  <text x="993" y="232" class="b center">Quotes, orders, invoicing, cash application,</text>
+  <text x="993" y="250" class="b center">collections, credit controls, bank feedback</text>
+
+  <rect x="112" y="382" width="238" height="138" class="pill"/>
+  <text x="231" y="414" class="s center">WORKFLOW FAMILY</text>
+  <text x="231" y="446" class="h center">Time-to-Pay</text>
+  <text x="231" y="470" class="b center">Time capture, approvals, payroll export,</text>
+  <text x="231" y="488" class="b center">journal posting, reconciliation support</text>
+
+  <rect x="850" y="382" width="238" height="138" class="pill"/>
+  <text x="969" y="414" class="s center">WORKFLOW FAMILY</text>
+  <text x="969" y="446" class="h center">Project Financials</text>
+  <text x="969" y="470" class="b center">Dimensions, cost capture, billing, revenue,</text>
+  <text x="969" y="488" class="b center">margin visibility, project dashboards</text>
+
+  <path d="M326 213 L390 213" class="line"/>
+  <path d="M810 213 L874 213" class="line-soft"/>
+  <path d="M350 451 C430 451, 470 350, 500 312" class="line"/>
+  <path d="M850 451 C770 451, 730 350, 700 312" class="line-soft"/>
+
+  <rect x="110" y="590" width="980" height="122" class="box"/>
+  <text x="134" y="620" class="s">SHARED CONTROL AND EXECUTION OUTCOMES</text>
+  <rect x="136" y="642" width="172" height="44" class="pill"/>
+  <text x="222" y="669" class="h center">Role-Based Access</text>
+  <rect x="326" y="642" width="172" height="44" class="pill"/>
+  <text x="412" y="669" class="h center">Audit Trail</text>
+  <rect x="516" y="642" width="172" height="44" class="pill"/>
+  <text x="602" y="669" class="h center">ERP Translation</text>
+  <rect x="706" y="642" width="172" height="44" class="pill"/>
+  <text x="792" y="669" class="h center">Payment Execution</text>
+  <rect x="896" y="642" width="172" height="44" class="pill"/>
+  <text x="982" y="669" class="h center">Reporting and Analytics</text>
+
+  <path d="M600 312 L600 590" class="line"/>
+</svg>

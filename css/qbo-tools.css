@@ -1,0 +1,535 @@
+:root {
+    --qbo-surface: #ffffff;
+    --qbo-surface-soft: #f7f9fd;
+    --qbo-line: rgba(10, 22, 40, 0.08);
+    --qbo-line-strong: rgba(10, 22, 40, 0.12);
+    --qbo-muted: #617087;
+    --qbo-ink: #0d1c31;
+    --qbo-blue: #2d68f6;
+    --qbo-teal: #0fbf8c;
+    --qbo-amber: #f3a24f;
+    --qbo-coral: #e0674a;
+    --qbo-rose: #d9496f;
+    --qbo-chip: rgba(45, 104, 246, 0.08);
+    --qbo-shadow: 0 24px 64px rgba(10, 22, 40, 0.08);
+}
+
+.qbo-tool-grid,
+.qbo-dataset-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.qbo-tool-grid {
+    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+}
+
+.qbo-dataset-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.qbo-panel,
+.qbo-dataset-shell {
+    background: var(--qbo-surface);
+    border: 1px solid var(--qbo-line);
+    border-radius: 24px;
+    box-shadow: var(--qbo-shadow);
+}
+
+.qbo-panel {
+    padding: 1.25rem;
+}
+
+.qbo-dataset-shell {
+    padding: 1rem;
+}
+
+.qbo-panel-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.95rem;
+}
+
+.qbo-panel-title h3 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.qbo-panel-title span {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--qbo-muted);
+}
+
+.qbo-dropzone {
+    display: grid;
+    gap: 0.45rem;
+    padding: 1.25rem;
+    border-radius: 22px;
+    border: 1.5px dashed rgba(45, 104, 246, 0.24);
+    background: linear-gradient(180deg, rgba(45, 104, 246, 0.05) 0%, rgba(248, 249, 252, 0.92) 100%);
+    color: var(--qbo-ink);
+    cursor: pointer;
+}
+
+.qbo-dropzone input {
+    display: none;
+}
+
+.qbo-dropzone strong {
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.qbo-dropzone span {
+    color: var(--qbo-muted);
+    line-height: 1.65;
+    font-size: 0.92rem;
+}
+
+.qbo-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.95rem 0;
+}
+
+.qbo-split span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+    background: var(--qbo-surface-soft);
+    border: 1px solid var(--qbo-line);
+    color: var(--qbo-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.qbo-paste-wrap textarea,
+.qbo-search-row input,
+.qbo-text-input,
+.qbo-select,
+.qbo-search-row select {
+    width: 100%;
+    border: 1px solid var(--qbo-line-strong);
+    border-radius: 16px;
+    background: #fff;
+    color: var(--qbo-ink);
+    font: inherit;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.qbo-paste-wrap textarea:focus,
+.qbo-search-row input:focus,
+.qbo-text-input:focus,
+.qbo-select:focus,
+.qbo-search-row select:focus {
+    outline: none;
+    border-color: rgba(45, 104, 246, 0.5);
+    box-shadow: 0 0 0 4px rgba(45, 104, 246, 0.1);
+}
+
+.qbo-paste-wrap textarea {
+    min-height: 160px;
+    padding: 1rem;
+    resize: vertical;
+}
+
+.qbo-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.qbo-action-row-wide {
+    margin-top: 1.25rem;
+    justify-content: flex-start;
+}
+
+.qbo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.7rem 1rem;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.qbo-btn:hover {
+    transform: translateY(-1px);
+}
+
+.qbo-btn-primary {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(45, 104, 246, 0.18);
+}
+
+.qbo-btn-secondary {
+    background: var(--qbo-surface-soft);
+    border-color: var(--qbo-line);
+    color: var(--qbo-ink);
+}
+
+.qbo-btn-tertiary {
+    background: #fff;
+    border-color: var(--qbo-line);
+    color: var(--qbo-muted);
+}
+
+.qbo-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.qbo-status {
+    margin-top: 0.9rem;
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    border: 1px solid transparent;
+}
+
+.qbo-status.muted {
+    background: var(--qbo-surface-soft);
+    color: var(--qbo-muted);
+    border-color: var(--qbo-line);
+}
+
+.qbo-status.success {
+    background: rgba(15, 191, 140, 0.08);
+    color: #0b6b51;
+    border-color: rgba(15, 191, 140, 0.16);
+}
+
+.qbo-status.error {
+    background: rgba(217, 73, 111, 0.08);
+    color: #8a2342;
+    border-color: rgba(217, 73, 111, 0.14);
+}
+
+.qbo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 0.9rem;
+}
+
+.qbo-meta-chip,
+.qbo-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: var(--qbo-chip);
+    color: var(--qbo-ink);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.qbo-mapping-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+
+.qbo-field {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.qbo-field label {
+    font-size: 0.77rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--qbo-muted);
+}
+
+.qbo-select,
+.qbo-text-input {
+    min-height: 46px;
+    padding: 0.8rem 0.9rem;
+}
+
+.qbo-help {
+    color: var(--qbo-muted);
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+.qbo-empty-state h3,
+.qbo-card-head h3 {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.45rem;
+}
+
+.qbo-empty-state p,
+.qbo-card-head p,
+.qbo-empty-item span,
+.qbo-insight-card p,
+.qbo-summary-card p,
+.qbo-signal-card p {
+    color: var(--qbo-muted);
+    line-height: 1.7;
+}
+
+.qbo-empty-list,
+.qbo-insight-grid,
+.qbo-signal-grid,
+.qbo-summary-grid {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.qbo-empty-list {
+    margin-top: 1rem;
+}
+
+.qbo-empty-item,
+.qbo-insight-card,
+.qbo-signal-card,
+.qbo-summary-card,
+.qbo-result-card {
+    background: var(--qbo-surface-soft);
+    border: 1px solid var(--qbo-line);
+    border-radius: 20px;
+}
+
+.qbo-empty-item,
+.qbo-insight-card,
+.qbo-signal-card,
+.qbo-summary-card {
+    padding: 1rem;
+}
+
+.qbo-empty-item strong,
+.qbo-insight-card strong,
+.qbo-signal-card strong {
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.qbo-results {
+    display: grid;
+    gap: 1rem;
+}
+
+.qbo-summary-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.qbo-summary-card strong {
+    display: block;
+    font-size: 1.65rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.35rem;
+}
+
+.qbo-summary-card span,
+.qbo-signal-card span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--qbo-muted);
+    margin-bottom: 0.35rem;
+}
+
+.qbo-signal-grid,
+.qbo-insight-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.qbo-signal-card strong {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.45rem;
+}
+
+.qbo-card-head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.95rem;
+}
+
+.qbo-result-card {
+    padding: 1rem;
+}
+
+.qbo-table-wrap {
+    overflow: auto;
+    border: 1px solid var(--qbo-line);
+    border-radius: 18px;
+    background: #fff;
+}
+
+.qbo-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+}
+
+.qbo-table th,
+.qbo-table td {
+    padding: 0.8rem 0.9rem;
+    border-bottom: 1px solid var(--qbo-line);
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9rem;
+}
+
+.qbo-table th {
+    position: sticky;
+    top: 0;
+    background: #f7f9fd;
+    z-index: 1;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--qbo-muted);
+}
+
+.qbo-table tbody tr:hover {
+    background: rgba(45, 104, 246, 0.04);
+}
+
+.qbo-flag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.qbo-flag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(217, 73, 111, 0.08);
+    color: #8a2342;
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.qbo-flag.is-warn {
+    background: rgba(243, 162, 79, 0.14);
+    color: #8f5a10;
+}
+
+.qbo-flag.is-good {
+    background: rgba(15, 191, 140, 0.12);
+    color: #0b6b51;
+}
+
+.qbo-search-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.qbo-search-row input,
+.qbo-search-row select {
+    min-height: 46px;
+    padding: 0.8rem 0.9rem;
+}
+
+.qbo-search-row input {
+    flex: 1 1 260px;
+}
+
+.qbo-search-row select {
+    flex: 0 0 220px;
+}
+
+.qbo-inline-note {
+    margin-top: 0.75rem;
+    color: var(--qbo-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.qbo-rule-note {
+    margin-top: 0.9rem;
+    padding: 0.9rem 1rem;
+    border-radius: 16px;
+    background: rgba(243, 162, 79, 0.1);
+    border: 1px solid rgba(243, 162, 79, 0.16);
+    color: #7e5311;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.qbo-balance-good {
+    color: #0b6b51;
+    font-weight: 700;
+}
+
+.qbo-balance-bad {
+    color: #8a2342;
+    font-weight: 700;
+}
+
+@media (max-width: 1120px) {
+    .qbo-tool-grid,
+    .qbo-dataset-grid,
+    .qbo-summary-grid,
+    .qbo-signal-grid,
+    .qbo-insight-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 820px) {
+    .qbo-tool-grid,
+    .qbo-dataset-grid,
+    .qbo-summary-grid,
+    .qbo-signal-grid,
+    .qbo-insight-grid,
+    .qbo-mapping-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .qbo-panel,
+    .qbo-dataset-shell {
+        padding: 1rem;
+    }
+
+    .qbo-action-row,
+    .qbo-search-row {
+        flex-direction: column;
+    }
+
+    .qbo-search-row select {
+        flex-basis: auto;
+    }
+}

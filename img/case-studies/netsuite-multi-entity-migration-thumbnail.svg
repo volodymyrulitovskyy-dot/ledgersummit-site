@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">NetSuite multi-entity migration case study thumbnail</title>
+  <desc id="desc">A clean cover image for a case study about moving five entities across four countries into one NetSuite environment.</desc>
+  <defs>
+    <linearGradient id="bg" x1="40" y1="30" x2="1140" y2="645" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1E49"/>
+      <stop offset="0.54" stop-color="#143B84"/>
+      <stop offset="1" stop-color="#1E66A6"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 160) rotate(18) scale(440 280)">
+      <stop stop-color="#5F85FF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#5F85FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1040 560) rotate(-12) scale(340 220)">
+      <stop stop-color="#6FE0FF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#6FE0FF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.2em; fill: #C9DEFF; }
+      .kicker { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #8FD5FF; }
+      .headline { font: 900 66px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .body { font: 600 28px/1.45 Inter, Arial, sans-serif; fill: #DCE8FF; }
+      .chip { font: 800 22px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .panelTitle { font: 800 18px/1.2 Inter, Arial, sans-serif; fill: #DCEAFF; }
+      .panelText { font: 700 22px/1.2 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .panelLabel { font: 700 14px/1.2 Inter, Arial, sans-serif; fill: #A7C8FF; letter-spacing: 0.08em; }
+      .panelMini { font: 600 15px/1.35 Inter, Arial, sans-serif; fill: #D5E6FF; }
+      .grid { stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+      .card { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.20); }
+      .flow { stroke: rgba(255,255,255,0.82); stroke-width: 4; stroke-linecap: round; }
+      .accent { fill: rgba(116, 201, 255, 0.18); stroke: rgba(116, 201, 255, 0.36); }
+      .outcome { fill: rgba(186,246,193,0.15); stroke: rgba(186,246,193,0.28); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glowA)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glowB)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <g opacity="0.45">
+    <path d="M0 96H1200M0 192H1200M0 288H1200M0 384H1200M0 480H1200M0 576H1200" class="grid"/>
+    <path d="M114 0V675M228 0V675M342 0V675M456 0V675M570 0V675M684 0V675M798 0V675M912 0V675M1026 0V675M1140 0V675" class="grid"/>
+  </g>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="kicker">NETSUITE MIGRATION</text>
+  <text x="72" y="244" class="headline">Multi-Entity</text>
+  <text x="72" y="316" class="headline">Migration</text>
+  <text x="72" y="392" class="body">Five legal entities, four countries, four years of</text>
+  <text x="72" y="430" class="body">history, and working intercompany eliminations.</text>
+
+  <g>
+    <rect x="72" y="496" width="156" height="54" rx="27" class="accent"/>
+    <text x="150" y="530" class="chip">5 entities</text>
+    <rect x="244" y="496" width="170" height="54" rx="27" class="accent"/>
+    <text x="329" y="530" class="chip">4 countries</text>
+    <rect x="430" y="496" width="144" height="54" rx="27" class="accent"/>
+    <text x="502" y="530" class="chip">3 weeks</text>
+  </g>
+
+  <g>
+    <rect x="680" y="98" width="438" height="480" rx="32" class="card"/>
+    <text x="724" y="140" class="panelLabel">SOURCE SYSTEMS</text>
+
+    <rect x="724" y="166" width="116" height="74" rx="20" class="card"/>
+    <text x="756" y="198" class="panelTitle">QBO</text>
+    <text x="756" y="222" class="panelMini">legacy books</text>
+
+    <rect x="860" y="166" width="116" height="74" rx="20" class="card"/>
+    <text x="892" y="198" class="panelTitle">Xero</text>
+    <text x="892" y="222" class="panelMini">entity stack</text>
+
+    <rect x="996" y="166" width="116" height="74" rx="20" class="card"/>
+    <text x="1028" y="198" class="panelTitle">Legacy</text>
+    <text x="1028" y="222" class="panelMini">historic data</text>
+
+    <path d="M782 262C792 304 822 328 888 348" class="flow"/>
+    <path d="M918 262C912 306 922 330 938 348" class="flow"/>
+    <path d="M1054 262C1026 304 996 328 958 348" class="flow"/>
+
+    <rect x="808" y="352" width="182" height="88" rx="24" fill="#FFFFFF"/>
+    <text x="846" y="390" class="panelLabel" fill="#4873D8">UNIFIED TARGET</text>
+    <text x="846" y="420" class="panelText" fill="#17376E">NetSuite</text>
+
+    <rect x="724" y="474" width="116" height="64" rx="18" class="outcome"/>
+    <text x="756" y="504" class="panelTitle">History</text>
+    <text x="756" y="526" class="panelMini">4 years preserved</text>
+
+    <rect x="860" y="474" width="116" height="64" rx="18" class="outcome"/>
+    <text x="892" y="504" class="panelTitle">Entities</text>
+    <text x="892" y="526" class="panelMini">clean structure</text>
+
+    <rect x="996" y="474" width="116" height="64" rx="18" class="outcome"/>
+    <text x="1028" y="504" class="panelTitle">Close</text>
+    <text x="1028" y="526" class="panelMini">ready day one</text>
+  </g>
+</svg>

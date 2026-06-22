@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">NetSuite API integration automation case study thumbnail</title>
+  <desc id="desc">A clean cover image for a case study about connecting AP, payroll, timesheets, and schedules back to NetSuite.</desc>
+  <defs>
+    <linearGradient id="bg" x1="40" y1="30" x2="1140" y2="645" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091B45"/>
+      <stop offset="0.54" stop-color="#12347B"/>
+      <stop offset="1" stop-color="#1E6AA8"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 150) rotate(18) scale(430 280)">
+      <stop stop-color="#6A83FF" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#6A83FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1040 540) rotate(-12) scale(340 220)">
+      <stop stop-color="#67E0FF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#67E0FF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.2em; fill: #C9DEFF; }
+      .kicker { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #8FD5FF; }
+      .headline { font: 900 60px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .body { font: 600 27px/1.45 Inter, Arial, sans-serif; fill: #DCE8FF; }
+      .chip { font: 800 21px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .panelTitle { font: 800 18px/1.2 Inter, Arial, sans-serif; fill: #DCEAFF; }
+      .panelText { font: 700 22px/1.2 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .panelLabel { font: 700 14px/1.2 Inter, Arial, sans-serif; fill: #A7C8FF; letter-spacing: 0.08em; }
+      .panelMini { font: 600 15px/1.35 Inter, Arial, sans-serif; fill: #D5E6FF; }
+      .grid { stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+      .card { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.20); }
+      .flow { stroke: rgba(255,255,255,0.82); stroke-width: 4; stroke-linecap: round; }
+      .accent { fill: rgba(116, 201, 255, 0.18); stroke: rgba(116, 201, 255, 0.36); }
+      .outcome { fill: rgba(186,246,193,0.15); stroke: rgba(186,246,193,0.28); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glowA)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glowB)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <g opacity="0.45">
+    <path d="M0 96H1200M0 192H1200M0 288H1200M0 384H1200M0 480H1200M0 576H1200" class="grid"/>
+    <path d="M114 0V675M228 0V675M342 0V675M456 0V675M570 0V675M684 0V675M798 0V675M912 0V675M1026 0V675M1140 0V675" class="grid"/>
+  </g>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="kicker">NETSUITE AUTOMATION</text>
+  <text x="72" y="232" class="headline">API Integrations</text>
+  <text x="72" y="298" class="headline">and Ledger-Native</text>
+  <text x="72" y="364" class="headline">Schedules</text>
+  <text x="72" y="430" class="body">Project, AP, timesheets, and payroll connected through</text>
+  <text x="72" y="468" class="body">controlled bridges instead of spreadsheets.</text>
+
+  <g>
+    <rect x="72" y="520" width="134" height="50" rx="25" class="accent"/>
+    <text x="139" y="551" class="chip">AP</text>
+    <rect x="220" y="520" width="164" height="50" rx="25" class="accent"/>
+    <text x="302" y="551" class="chip">payroll</text>
+    <rect x="398" y="520" width="176" height="50" rx="25" class="accent"/>
+    <text x="486" y="551" class="chip">timesheets</text>
+    <rect x="588" y="520" width="176" height="50" rx="25" class="accent"/>
+    <text x="676" y="551" class="chip">schedules</text>
+  </g>
+
+  <g>
+    <rect x="694" y="100" width="424" height="470" rx="32" class="card"/>
+    <text x="738" y="142" class="panelLabel">CONNECTED SYSTEMS</text>
+
+    <rect x="738" y="176" width="112" height="64" rx="18" class="card"/>
+    <text x="770" y="208" class="panelTitle">AP</text>
+    <text x="770" y="230" class="panelMini">invoice flow</text>
+
+    <rect x="962" y="176" width="112" height="64" rx="18" class="card"/>
+    <text x="994" y="208" class="panelTitle">Payroll</text>
+    <text x="994" y="230" class="panelMini">allocations</text>
+
+    <rect x="738" y="332" width="112" height="64" rx="18" class="card"/>
+    <text x="770" y="364" class="panelTitle">Projects</text>
+    <text x="770" y="386" class="panelMini">cost detail</text>
+
+    <rect x="962" y="332" width="112" height="64" rx="18" class="card"/>
+    <text x="994" y="364" class="panelTitle">Time</text>
+    <text x="994" y="386" class="panelMini">approved hrs</text>
+
+    <path d="M850 208C900 218 912 242 912 268" class="flow"/>
+    <path d="M962 208C928 220 916 242 912 268" class="flow"/>
+    <path d="M850 364C900 350 912 326 912 308" class="flow"/>
+    <path d="M962 364C928 350 916 326 912 308" class="flow"/>
+
+    <rect x="852" y="246" width="120" height="84" rx="24" fill="#FFFFFF"/>
+    <text x="884" y="278" class="panelLabel" fill="#4873D8">CONTROLLED CORE</text>
+    <text x="884" y="308" class="panelText" fill="#17376E">NetSuite</text>
+
+    <rect x="760" y="442" width="292" height="70" rx="22" class="outcome"/>
+    <text x="792" y="474" class="panelTitle">Close-ready schedules</text>
+    <text x="792" y="498" class="panelMini">One ledger layer with less Excel and stronger control.</text>
+  </g>
+</svg>

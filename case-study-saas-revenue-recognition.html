@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS Revenue Recognition Automation Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-saas-revenue-recognition.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SaaS Revenue Recognition Automation Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-saas-revenue-recognition.html">
+  <meta property="og:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SaaS Revenue Recognition Automation Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.">
+  <meta name="twitter:image" content="https://ledgersummit.com/assets/og-home.jpg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css?v=20260505b">
+  <link rel="stylesheet" href="/css/subpages.css?v=20260505b">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "SaaS Revenue Recognition Automation (ASC 606) Case Study", "description": "See how Ledger Summit automated ASC 606 revenue recognition, contract modifications, and deferred revenue waterfalls for a $50M ARR vertical SaaS company.", "author": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "publisher": {"@type": "Organization", "name": "Ledger Summit", "url": "https://ledgersummit.com"}, "datePublished": "2026-05-04", "dateModified": "2026-05-04", "url": "https://ledgersummit.com/case-study-saas-revenue-recognition.html"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Did you migrate to a rev-rec product like RightRev or Zenskar?", "acceptedAnswer": {"@type": "Answer", "text": "No. We built the engine on top of the existing NetSuite + Salesforce + Stripe stack. The client evaluated RightRev and Zenskar; for this scale ($50M ARR, vertical SaaS) the build-and-integrate path delivered faster and cost less. Above ~$200M ARR or with very complex commerce, a dedicated product often makes sense."}}, {"@type": "Question", "name": "How did the auditor react?", "acceptedAnswer": {"@type": "Answer", "text": "Positive. The evidence pack walked them through every contract with allocations, JEs, and reviewer sign-off. They asked for 4 sample contracts, all passed without follow-up requests. Audit fieldwork dropped 1.5 days for the rev-rec area."}}, {"@type": "Question", "name": "How do you handle complex contract modifications?", "acceptedAnswer": {"@type": "Answer", "text": "Modification logic is documented (prospective vs. cumulative catch-up, blended pricing, separate contracts) with worked examples in the controls package. The system flags modifications that require judgment; a reviewer signs off before posting."}}]}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+        alt="Ledger Summit logo" width="36" height="36" decoding="async">
+      <span>Ledger Summit</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/tools/">Tools</a></li>
+      <li><a href="/toolboxai/">Tool Box AI</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="/services/" onclick="closeMobileNav()">Services</a>
+  <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+  <a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a>
+  <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+  <a href="/about/" onclick="closeMobileNav()">About</a>
+  <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+  <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">SaaS revenue recognition case study</span>
+              <h1>SaaS Revenue Recognition Automation (ASC 606) Case Study</h1>
+            </div>
+            <p class="lead">A $50M ARR SaaS company moved from a contract-by-contract spreadsheet for ASC 606 to an automated revenue recognition workflow with deferred revenue waterfalls, contract modifications, and audit-ready evidence.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on a vertical SaaS company at $50M ARR with usage-based revenue, multi-year contracts, and frequent contract modifications. NetSuite GL, 6-person finance team.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#measured-results">See measured results</a>
+              <a class="btn btn-soft" href="/#book">Talk through your workflow</a>
+            </div>
+            <div class="jump-links">
+              <a class="jump-link" href="#before-automation">Before automation</a>
+              <a class="jump-link" href="#what-ledger-summit-implemented">What Ledger Summit implemented</a>
+              <a class="jump-link" href="#implementation-timeline">Implementation timeline</a>
+              <a class="jump-link" href="#measured-results">Measured results</a>
+              <a class="jump-link" href="#controls-and-data-handling">Controls and audit-ready evidence</a>
+              <a class="jump-link" href="#policy-decisions">Notable policy decisions</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">This case study follows the Ledger Summit transition model: document the current SOP, automate one workflow at a time, and keep independent controls around what gets posted.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>11 → 5 days</strong><span>Revenue close cycle</span></article>
+              <article class="metric-card"><strong>100%</strong><span>Contracts auto-recognized</span></article>
+              <article class="metric-card"><strong>Audit-ready</strong><span>Per-contract evidence pack</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Case study breakdown</span>
+          <h2>How the workflow changed from manual effort to controlled automation</h2>
+        </div>
+        <div class="story-grid">
+        <article class="story-card story-wide" id="company-context">
+          <h2>Company context and the revenue surface area</h2>
+          <p>The company is a vertical SaaS platform serving mid-market customers, with $50M ARR split roughly 70% subscription / 30% usage-based consumption. The customer book runs ~480 active contracts, with average contract value of $95K and term lengths between 12 and 36 months. About 22% of the book is multi-year, 14% includes professional services tied to the subscription, and 6% includes premium support add-ons sold as separate performance obligations.</p>
+          <p>Revenue recognition complexity does not come from any one factor but from how factors combine. A typical large customer at this company has a multi-year subscription with annual price escalators, a usage-based component priced per-API-call with monthly minimums, an implementation services SOW recognized over the implementation period, and one or two premium support tiers added mid-term. Each of these elements has its own ASC 606 treatment, and modifications happen on roughly 18% of contracts every quarter.</p>
+          <ul>
+            <li><strong>Subscription revenue</strong> — fixed monthly fees, recognized ratably over the term, with annual escalators that re-trigger transaction-price re-allocation</li>
+            <li><strong>Usage-based revenue</strong> — variable consideration, recognized as customers consume, constrained where minimum commitments apply</li>
+            <li><strong>Implementation services</strong> — distinct performance obligation when standalone, otherwise combined with subscription and recognized over the term</li>
+            <li><strong>Premium support</strong> — distinct performance obligation; standalone selling price estimated using cost-plus + observable evidence</li>
+            <li><strong>Material rights</strong> — multi-year discounts and renewal options assessed for materiality each cycle</li>
+          </ul>
+        </article>
+        <article class="story-card" id="before-automation">
+          <h2>Before automation — where revenue actually lived</h2>
+          <p>Revenue recognition lived in two spreadsheets that the senior accountant maintained personally: one for committed ARR with one row per active contract and a column per future month, and one for usage that pulled from a Stripe export and applied minimum commitments by hand. Contract modifications required manual recalculation of cumulative catch-up against the prior allocation, and modifications that crossed quarter-end frequently broke the spreadsheet's array formulas.</p>
+          <p>The auditor flagged 7 modifications the prior year that had been computed inconsistently — five used prospective treatment when the goods/services were not distinct from the original contract (cumulative catch-up should have applied), and two used cumulative catch-up when they should have been treated as separate contracts. The findings did not cause a restatement but consumed roughly nine days of senior-accountant time during fieldwork to re-perform.</p>
+          <ul>
+            <li>Manual ASC 606 revenue schedule per contract, maintained in two spreadsheets</li>
+            <li>Usage revenue posted from billing system separately, no reconciliation</li>
+            <li>Contract modifications recalculated by hand with no documented logic</li>
+            <li>Deferred revenue waterfall built from spreadsheets at quarter-end</li>
+            <li>Standalone selling price re-estimated only when the auditor asked</li>
+            <li>Auditor findings on modification cumulative-catch-up calculations (7 contracts)</li>
+            <li>Revenue close cycle: 11 business days, ending on the day of the board pack</li>
+          </ul>
+        </article>
+        <article class="story-card" id="what-ledger-summit-implemented">
+          <h2>What Ledger Summit implemented</h2>
+          <p>We built a contract-aware revenue engine that pulls from the CRM and billing system, applies ASC 606 logic, generates revenue-recognition journal entries, and produces a per-contract evidence pack. Contract modifications run through documented logic with reviewer sign-off. The engine sits on top of the existing NetSuite + Salesforce + Stripe stack — no rip-and-replace, no migration to a dedicated rev-rec product.</p>
+          <ul>
+            <li>Contract-level rev-rec engine integrated with Salesforce (orders) and Stripe (usage)</li>
+            <li>ASC 606 five-step logic: identify contract, identify performance obligations, determine transaction price, allocate transaction price to POs, recognize revenue as POs are satisfied</li>
+            <li>Contract modification handling: prospective vs. cumulative catch-up vs. separate contract, with worked-example documentation and reviewer sign-off on judgment-heavy cases</li>
+            <li>Usage-based revenue tied to source Stripe events with daily reconciliation and monthly true-up</li>
+            <li>Deferred revenue waterfall auto-generated each close, with full GL roll-forward tie-out</li>
+            <li>Per-contract evidence pack: contract data, allocation worksheet, JE trace, reviewer log, modification history</li>
+            <li>Standalone selling price re-estimation cadence: annual review, with documented methodology</li>
+          </ul>
+        </article>
+        <article class="story-card" id="architecture">
+          <h2>Technical architecture and data flow</h2>
+          <p>Salesforce remains the source of truth for contract data — order lines, term dates, escalator clauses, modification flags, and SOW metadata. Stripe remains the source of truth for billing events and usage. The rev-rec engine reads from both nightly, applies ASC 606 logic, and writes journal entries back to NetSuite via the suiteTalk API on the close calendar.</p>
+          <p>Three principles drove the design. First, every revenue number on the financial statements has to be traceable back to a contract and a performance obligation in under five clicks. Second, modifications never silently change prior-period revenue — modifications that would adjust historical revenue produce a flagged journal entry that requires reviewer sign-off before posting. Third, the engine never blocks the close — if a contract has missing data or ambiguous treatment, the engine flags it for manual review rather than failing the run.</p>
+          <ul>
+            <li><strong>Salesforce → engine</strong> — order, modification, and contract metadata pulled nightly; contract version history retained</li>
+            <li><strong>Stripe → engine</strong> — invoice and usage events pulled daily; minimum commitment and overage logic applied centrally</li>
+            <li><strong>Engine → NetSuite</strong> — JEs posted via suiteTalk in summary form, with contract-level detail in a custom record for drill-down</li>
+            <li><strong>Engine → controls system</strong> — every reviewer decision, override, and modification ruling logged with timestamp and user</li>
+            <li><strong>Reconciliation</strong> — daily check that sum of contract-level revenue equals sum of GL revenue; failures alert immediately</li>
+          </ul>
+        </article>
+        <article class="story-card story-wide" id="implementation-timeline">
+          <h2>Implementation timeline — 10 weeks from policy refresh to clean cutover</h2>
+          <ul>
+            <li><strong>Week 1–2: Discovery and policy refresh.</strong> Contract inventory, performance-obligation analysis on 480 active contracts, and refresh of the ASC 606 policy memo. Identified 23 contracts where prior treatment did not align with current policy; planned remediation as part of cutover.</li>
+            <li><strong>Week 3–5: Build.</strong> Engine logic for the five-step model, modification logic with three branches (prospective, cumulative catch-up, separate contract), Salesforce and Stripe integrations, deferred revenue waterfall generator, evidence pack generator. Walkthrough with auditor at end of week 5 to validate approach before parallel run.</li>
+            <li><strong>Week 6: Parallel run.</strong> Engine ran in shadow mode against the May close. Variances vs. spreadsheet investigated line by line: 4 reconciling items found (3 were spreadsheet errors, 1 was a misclassified modification — engine was right in all 4).</li>
+            <li><strong>Week 7: Cutover.</strong> First close on the new system for June. 23 prior-treatment-misaligned contracts remediated as part of opening balance adjustment, with audit walkthrough memo.</li>
+            <li><strong>Week 8–10: Hypercare.</strong> Rule refinement on three edge cases (foreign-currency contracts, terminated-and-restarted contracts, contracts with zero-dollar pilot phases). Auditor walk-through script prepared and tested with the audit lead.</li>
+          </ul>
+        </article>
+        <article class="story-card story-wide story-results" id="measured-results">
+          <h2>Measured results</h2>
+          <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Delta</th></tr></thead><tbody>
+            <tr><td>Revenue close cycle</td><td>11 business days</td><td>5 business days</td><td>−55%</td></tr>
+            <tr><td>Contracts auto-recognized</td><td>~60% (rest manual)</td><td>100%</td><td>+40 pp</td></tr>
+            <tr><td>Modification recalculation time</td><td>4–8 hours per contract</td><td>15 minutes per contract</td><td>−95%</td></tr>
+            <tr><td>Senior-accountant time on rev-rec / month</td><td>~70 hours</td><td>~12 hours</td><td>−83%</td></tr>
+            <tr><td>Auditor findings (rev-rec area)</td><td>7</td><td>0</td><td>−7</td></tr>
+            <tr><td>Audit fieldwork days for rev-rec</td><td>4 days</td><td>2.5 days</td><td>−1.5 days</td></tr>
+            <tr><td>Deferred revenue tie-out variance</td><td>$0–$45K monthly</td><td>$0 monthly</td><td>−100%</td></tr>
+            <tr><td>SSP re-estimation cadence</td><td>Ad hoc</td><td>Annual, documented</td><td>—</td></tr>
+          </tbody></table></div>
+        </article>
+        <article class="story-card" id="controls-and-data-handling">
+          <h2>Controls and audit-ready evidence</h2>
+          <ul>
+            <li>Per-contract trace from contract data → allocation → JE → revenue schedule; auditor reaches the underlying contract in three clicks from the trial balance</li>
+            <li>Modification logic documented with worked examples for each of the three branches; reviewer sign-off required on cumulative-catch-up and separate-contract rulings</li>
+            <li>Usage data reconciled to source Stripe billing system daily, with a monthly tie-out memo</li>
+            <li>Deferred revenue waterfall ties to GL roll-forward exactly each close — a difference of even one cent triggers a hold on close sign-off</li>
+            <li>ASC 606 policy memo refreshed and version-controlled; auditor walk-through script prepared</li>
+            <li>SSP estimation methodology documented with annual refresh schedule</li>
+            <li>Segregation of duties: preparer (revenue accountant) ≠ approver (controller) on modification rulings</li>
+            <li>Change log on engine logic itself: every rule change requires a documented reason and reviewer approval</li>
+          </ul>
+        </article>
+        <article class="story-card" id="policy-decisions">
+          <h2>Notable policy decisions made during the project</h2>
+          <ul>
+            <li><strong>Termination-for-convenience:</strong> treated as a single performance-obligation period rather than separate enforceable rights, based on legal review of contract termination clauses; documented and accepted by auditor</li>
+            <li><strong>Material rights (renewal options):</strong> assessed using a 5%-of-transaction-price threshold for renewal discounts; concluded immaterial for current contract structure; documented with re-assessment trigger if pricing changes</li>
+            <li><strong>Standalone selling price (subscription):</strong> observable from list price + actual discounting distribution; re-estimated annually</li>
+            <li><strong>Standalone selling price (usage):</strong> cost-plus methodology where no observable list price exists; documented with reviewer sign-off on the markup percentage</li>
+            <li><strong>Variable consideration (usage):</strong> expected-value method based on prior-period actuals; constrained where customer is in first three months and run-rate not yet stable</li>
+            <li><strong>Contract combinations:</strong> contracts entered into within 30 days with the same customer or related parties combined into a single arrangement; threshold documented and tested</li>
+            <li><strong>Implementation services:</strong> assessed as distinct or non-distinct on a SOW-by-SOW basis; majority concluded non-distinct (capability is integrated), recognized over the term</li>
+          </ul>
+        </article>
+        <article class="story-card story-wide" id="scenarios-covered">
+          <h2>Scenario coverage — every revenue situation we modeled</h2>
+          <p>Comprehensive automation only works if the engine can handle every contract scenario the sales team will close. Each of these was modeled, documented, and tested before cutover.</p>
+          <div class="table-wrap"><table><thead><tr><th>Scenario</th><th>Treatment</th><th>Reviewer required?</th></tr></thead><tbody>
+            <tr><td>New contract, single PO, fixed price</td><td>Ratable over term</td><td>No</td></tr>
+            <tr><td>New contract, multiple POs, allocated price</td><td>Allocate by relative SSP, recognize each PO independently</td><td>No</td></tr>
+            <tr><td>New contract with usage component</td><td>Subscription ratable; usage as-consumed with constraints</td><td>No</td></tr>
+            <tr><td>Mid-term upgrade (add seats / tier increase)</td><td>Cumulative catch-up if not distinct; prospective if distinct</td><td>Yes</td></tr>
+            <tr><td>Mid-term downgrade</td><td>Prospective; reassess transaction price for remaining term</td><td>Yes</td></tr>
+            <tr><td>Contract extension at price discount</td><td>Material rights assessment; modification or separate contract</td><td>Yes</td></tr>
+            <tr><td>Termination + new contract within 30 days</td><td>Combined as a single arrangement</td><td>Yes</td></tr>
+            <tr><td>Implementation services with the subscription</td><td>Combined unless capability is independently usable</td><td>One-time at SOW</td></tr>
+            <tr><td>Premium support added mid-term</td><td>Separate PO; allocation over remaining term</td><td>No</td></tr>
+            <tr><td>Pilot phase at zero dollars</td><td>Constrained variable consideration; recognize zero until paid phase begins</td><td>No</td></tr>
+            <tr><td>Foreign-currency contract</td><td>Re-measured at functional currency on each recognition date; CTA into OCI</td><td>No</td></tr>
+            <tr><td>Customer credit memo (service issue)</td><td>Variable consideration update; reduce remaining transaction price</td><td>Yes</td></tr>
+            <tr><td>Renewal at higher price (escalator triggered)</td><td>New contract for renewal period; no carry-over</td><td>No</td></tr>
+            <tr><td>Reseller / channel sale</td><td>Principal-vs-agent assessment; recognize gross or net per ruling</td><td>One-time at deal type</td></tr>
+            <tr><td>Multi-year prepaid with annual escalators</td><td>Allocate prepaid amount over total term; escalator changes future-period recognition only</td><td>No</td></tr>
+          </tbody></table></div>
+        </article>
+        <article class="story-card story-wide" id="alternatives-considered">
+          <h2>Alternatives considered — build vs. buy at $50M ARR</h2>
+          <p>The client evaluated three approaches before selecting build-and-integrate. The decision is sensitive to ARR scale, deal-mix complexity, and team headcount; our recommendation flips above ~$200M ARR or with materially more complex commerce.</p>
+          <div class="table-wrap"><table><thead><tr><th>Option</th><th>Time to live</th><th>3-year cost</th><th>Strengths</th><th>Weaknesses at this scale</th></tr></thead><tbody>
+            <tr><td>RightRev (dedicated rev-rec product)</td><td>4–6 months</td><td>$280K–$420K</td><td>Purpose-built; strong audit posture</td><td>Heavy implementation; license overhead vs. value at $50M ARR</td></tr>
+            <tr><td>Zenskar (subscription-billing-plus-rev-rec)</td><td>3–5 months</td><td>$220K–$340K</td><td>Tight billing-to-rev-rec coupling</td><td>Disrupts existing Stripe billing; team retraining cost</td></tr>
+            <tr><td>NetSuite Advanced Revenue Management</td><td>6–9 months</td><td>$140K–$260K</td><td>Already in NetSuite; one-vendor</td><td>Module is rigid for usage-based; modification logic is awkward</td></tr>
+            <tr><td>Build on existing stack (selected)</td><td>10 weeks</td><td>$95K–$140K</td><td>Fits existing architecture; full ASC 606 control; auditor-friendly</td><td>Maintenance load on internal team; we transition ownership</td></tr>
+          </tbody></table></div>
+          <p>At ~$200M ARR, modification volume and contract-shape diversity typically push organizations toward a dedicated product. Below that, the build-and-integrate path delivers faster, costs less, and produces a stronger audit posture because the logic is explicit rather than abstracted behind a vendor's black-box engine.</p>
+        </article>
+        <article class="story-card" id="when-this-applies">
+          <h2>When this approach fits</h2>
+          <p>The build-and-integrate pattern is the right answer when the company has:</p>
+          <ul>
+            <li>$10M–$200M ARR with growth above 30% YoY</li>
+            <li>An existing accounting platform that supports clean JE posting (NetSuite, Sage Intacct, even Xero/QBO at the lower end)</li>
+            <li>A CRM that holds canonical contract terms (typically Salesforce or HubSpot)</li>
+            <li>A billing system with clean usage event data (Stripe, Chargebee, Maxio, Recurly)</li>
+            <li>Modification volume below ~5% of contracts per month</li>
+            <li>A finance team of 4–10 with at least one revenue-focused accountant</li>
+          </ul>
+        </article>
+        <article class="story-card" id="when-it-doesnt-fit">
+          <h2>When the build-and-integrate path doesn't fit</h2>
+          <ul>
+            <li><strong>Above ~$200M ARR with high deal-shape diversity.</strong> Dedicated rev-rec product becomes worth the implementation cost.</li>
+            <li><strong>Public-company readiness in flight.</strong> If the company is on a 12-month IPO track, audit and SOX readiness usually argue for a vendor-backed rev-rec product with attestation.</li>
+            <li><strong>Heavy usage-based pricing with embedded discounting.</strong> If 70%+ of revenue is usage with custom price tiers per customer, dedicated commerce platforms (Stripe Sigma + custom downstream, or Zenskar) are usually a better fit.</li>
+            <li><strong>Multi-element bundles with hardware or services dominating.</strong> ASC 606 treatment for hardware and managed services often requires PO-level cost tracking the engine doesn't model — full ERP module makes more sense.</li>
+            <li><strong>Channel-heavy distribution with reseller margin variability.</strong> Principal-vs-agent assessment combined with high reseller volume needs richer transaction-level metadata than the build pattern handles cleanly.</li>
+          </ul>
+        </article>
+        <article class="story-card story-wide" id="lessons-learned">
+          <h2>Lessons learned and what we'd do differently</h2>
+          <ul>
+            <li><strong>Ship the policy refresh before the engine.</strong> Discovering 23 misaligned contracts in week 2 was painful but better than discovering them in week 8. Future projects: policy review is its own phase.</li>
+            <li><strong>Auditor walkthrough at week 5, not week 9.</strong> Catching one method-of-allocation question early saved a rebuild in hypercare.</li>
+            <li><strong>Build the modification UX before the calculation engine.</strong> The hardest engineering work was not the math — it was making it obvious to the revenue accountant which modification branch applied. We now design the reviewer screen first.</li>
+            <li><strong>Reconcile daily, not at close.</strong> Daily reconciliation caught the four shadow-run variances within hours instead of at month-end. Daily reconciliation is now default.</li>
+            <li><strong>Reserve hypercare time for foreign-currency edges.</strong> Two of three rule refinements during hypercare were FX-related. Future projects: dedicate one full week of hypercare to currency edges if the book has any non-USD contracts.</li>
+          </ul>
+        </article>
+        <article class="story-card story-wide" id="faq">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-list">
+            <details><summary><strong>Did you migrate to a rev-rec product like RightRev or Zenskar?</strong></summary><p>No. We built the engine on top of the existing NetSuite + Salesforce + Stripe stack. The client evaluated RightRev and Zenskar; for this scale ($50M ARR, vertical SaaS) the build-and-integrate path delivered faster and cost less. Above ~$200M ARR or with very complex commerce, a dedicated product often makes sense.</p></details>
+            <details><summary><strong>How did the auditor react?</strong></summary><p>Positive. The evidence pack walked them through every contract with allocations, JEs, and reviewer sign-off. They asked for 4 sample contracts; all passed without follow-up requests. Audit fieldwork dropped 1.5 days for the rev-rec area.</p></details>
+            <details><summary><strong>How do you handle complex contract modifications?</strong></summary><p>Modification logic is documented in three branches — prospective, cumulative catch-up, and separate contract — with worked examples in the controls package. The system flags modifications that require judgment; a reviewer signs off before posting. Eight of every ten modifications classify automatically.</p></details>
+            <details><summary><strong>Does this work for usage-based pricing?</strong></summary><p>Yes — usage is modeled as variable consideration with constraints. The engine pulls usage events from Stripe daily, applies minimum-commitment logic per contract, and recognizes revenue as consumption occurs. Constraints apply where the customer is in their first three months and run-rate is not yet stable, or where minimums make recognition formulaic.</p></details>
+            <details><summary><strong>What about multi-element bundles (subscription + services + hardware)?</strong></summary><p>If hardware or material services are a meaningful element, this approach gets harder — full ERP rev-rec modules typically handle that pattern better. For software-plus-implementation-services, our approach handles it cleanly: implementation services are assessed distinct or non-distinct on a SOW-by-SOW basis and recognized accordingly.</p></details>
+            <details><summary><strong>How do you handle foreign-currency contracts?</strong></summary><p>Each contract is denominated in its negotiated currency and re-measured at the functional currency rate on each recognition date. Cumulative translation adjustment flows to OCI. The engine stores both the contract currency and functional-currency snapshots for audit trace.</p></details>
+            <details><summary><strong>What happens to revenue when a customer churns mid-term?</strong></summary><p>Most contracts have non-cancellable terms, so churn does not reduce already-recognized revenue. If termination-for-convenience applies (assessed during onboarding), remaining transaction price is reduced prospectively. If termination triggers a refund, variable-consideration logic handles the catch-up.</p></details>
+            <details><summary><strong>How do you assess standalone selling price (SSP)?</strong></summary><p>Subscription SSP is observable from list price plus the actual discounting distribution across the book. Usage SSP uses a cost-plus methodology where no list price exists. Both are re-estimated annually with documented methodology and reviewer sign-off.</p></details>
+            <details><summary><strong>What if our deal mix changes — does the engine break?</strong></summary><p>The engine handles the scenarios documented above. New deal shapes (e.g., a new product line with materially different revenue mechanics) require a rule extension, which is a 1–2 week project. We watch for new deal shapes during quarterly reviews.</p></details>
+            <details><summary><strong>How long does this take to implement?</strong></summary><p>Typical timeline is 8–12 weeks. Discovery and policy refresh: 2 weeks. Build: 3 weeks. Parallel run: 1 month. Cutover: 1 week. Hypercare: 2–3 weeks. The compressed version is 8 weeks if the policy memo is already current and the contract book is clean.</p></details>
+            <details><summary><strong>What does ongoing support look like?</strong></summary><p>Post-go-live we do quarterly reviews to look at new deal shapes, audit-letter responses, and rule refinements. Ongoing engine maintenance can be transitioned to the internal team after 90 days, or kept on retainer if the team prefers.</p></details>
+            <details><summary><strong>Is this approach SOX-ready?</strong></summary><p>Yes. The control framework — segregation of duties, change log, reviewer sign-off, daily reconciliation, evidence pack — maps to SOX 404 control objectives for revenue recognition. Companies on an IPO track typically have us add a SOX-specific walkthrough memo and key-control narrative in hypercare.</p></details>
+          </div>
+        </article>
+        <article class="story-card story-wide" id="related-work">
+          <h2>Related Ledger Summit work</h2>
+          <ul>
+            <li><a href="/services-month-end-close-automation.html">Month-end close automation</a> — the broader close discipline that revenue automation plugs into</li>
+            <li><a href="/services-netsuite-implementation-partner.html">NetSuite implementation partner</a> — companies on QBO or Xero who need NetSuite first before this rev-rec pattern works</li>
+            <li><a href="/services-ai-controls-framework.html">AI controls framework</a> — the underlying control posture pattern (preparer, reviewer, evidence, change log)</li>
+            <li><a href="/case-study-multi-entity-intercompany.html">Multi-entity intercompany case study</a> — companion case study for groups whose rev-rec spans entities</li>
+          </ul>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>ASC 606 stuck in spreadsheets?</h2>
+            <p>A 30-minute call maps your contract complexity and tells you whether automation is the right next step.</p>
+          </div>
+          <a class="btn btn-primary" href="/#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+          alt="Ledger Summit" width="30" height="30" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/toolboxai/">Tool Box AI</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/book-a-call/">Book a Call</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/shared.js" defer></script>
+</body>
+</html>

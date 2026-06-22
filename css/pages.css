@@ -1,0 +1,1502 @@
+/* ============================================
+   LEDGER SUMMIT — Inner Pages Styles
+   About, Contact, Tools, Book a Call
+   ============================================ */
+
+/* ---- Page Hero (simple) ---- */
+.page-hero {
+    background: linear-gradient(165deg, #1a3a6e 0%, #1e4a8a 30%, #2260a8 60%, #1a3f7a 100%);
+    padding: calc(var(--section-pad) + 5rem) 0 var(--section-pad);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(130, 185, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.page-hero h1 {
+    font-size: var(--h1);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.page-hero p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+    position: relative;
+}
+
+.page-hero .section-label {
+    position: relative;
+    color: #fff;
+    background: rgba(255,255,255,0.15);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+}
+
+/* ---- Case Study: Byline meta (date + read time) ---- */
+.cs-byline-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+}
+
+.cs-byline-meta span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.cs-byline-meta span::before {
+    content: '·';
+    margin-right: 0.1rem;
+}
+
+.cs-byline-meta span:first-child::before {
+    display: none;
+}
+
+.cs-byline-meta svg {
+    width: 13px;
+    height: 13px;
+    opacity: 0.5;
+}
+
+/* ---- Content Sections ---- */
+.page-section {
+    padding: var(--section-pad) 0;
+}
+
+.page-section.bg-light {
+    background: var(--off-white);
+}
+
+.page-section.bg-navy {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.page-section.bg-navy .section-header p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ---- Team Cards (reused from home) ---- */
+.team-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-card-photo {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.team-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.team-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 22, 40, 0.6) 0%, transparent 50%);
+}
+
+.team-card-badge {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.team-card-body {
+    padding: 1.5rem;
+}
+
+.team-card-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.team-card-role {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.team-card-bio {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+
+/* ---- Benefits Grid ---- */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.benefit-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-sm);
+    background: var(--blue-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+
+/* ---- Contact Card ---- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info h2 {
+    font-size: var(--h2);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.contact-info p {
+    font-size: 1.05rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-detail-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--blue-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-detail strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+}
+
+.contact-detail span {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+}
+
+.contact-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contact-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--blue-subtle);
+    color: var(--blue);
+    transition: all var(--transition);
+}
+
+.contact-social a:hover {
+    background: var(--blue);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.contact-cta-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.contact-cta-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.contact-cta-card p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.contact-cta-card .btn-primary {
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* ---- Videos Grid ---- */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.video-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.video-thumb {
+    position: relative;
+    padding-bottom: 56.25%;
+    background: var(--gray-50);
+}
+
+.video-thumb iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-info {
+    padding: 1.2rem;
+}
+
+.video-info h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* ---- Booking Page ---- */
+.booking-hero {
+    background: linear-gradient(165deg, #1a3a6e 0%, #1e4a8a 30%, #2260a8 60%, #1a3f7a 100%);
+    padding: calc(var(--section-pad) + 5rem) 0 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(130, 185, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.booking-hero h1 {
+    font-size: var(--h1);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.booking-hero p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    position: relative;
+}
+
+.trust-badges-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.booking-embed {
+    padding: var(--section-pad) 0;
+}
+
+.booking-embed-container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    min-height: 0;
+    display: block;
+}
+
+.booking-placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--gray-400);
+}
+
+.booking-placeholder h3 {
+    font-size: 1.3rem;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.booking-placeholder p {
+    margin-bottom: 1.5rem;
+}
+
+.booking-placeholder code {
+    background: var(--gray-50);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+
+/* ---- Deliverables Grid (for booking page) ---- */
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.deliverable-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    text-align: center;
+}
+
+.deliverable-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--blue-hover));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.deliverable-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.deliverable-card p {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+
+/* ---- Tagline Block ---- */
+.tagline-block {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tagline-block blockquote {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--gray-800);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blue);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+}
+
+.stat-divider {
+    width: 1px;
+    background: var(--gray-100);
+    align-self: stretch;
+}
+
+
+/* ---- CTA Section (light bg) ---- */
+.cta-section {
+    background: var(--off-white);
+    padding: var(--section-pad) 0;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: var(--h2);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.05rem;
+    color: var(--gray-400);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+
+/* ---- Case Study: Author Card ---- */
+.cs-author-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    margin-top: 2rem;
+}
+
+.cs-author-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--blue);
+    flex-shrink: 0;
+}
+
+.cs-author-info h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+}
+
+.cs-author-info .cs-author-role {
+    font-size: 0.82rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    display: block;
+}
+
+.cs-author-info p {
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ---- Case Study: Narrative Block ---- */
+.cs-narrative {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.cs-narrative h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.cs-narrative .cs-lead {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.cs-narrative p {
+    font-size: 1rem;
+    color: var(--gray-400);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.cs-narrative ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+}
+
+.cs-narrative ul li {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 0.95rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+}
+
+.cs-narrative ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+/* ---- Case Study: Results Dashboard ---- */
+.cs-results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.cs-result-card {
+    background: #fff;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), #5aa0ff);
+}
+
+.cs-result-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+    position: relative;
+}
+
+.cs-result-label {
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    line-height: 1.4;
+    position: relative;
+}
+
+/* ---- Case Study: Customer Review Card ---- */
+.cs-review-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-100);
+    text-align: center;
+    position: relative;
+}
+
+.cs-review-card::before {
+    content: '"';
+    position: absolute;
+    top: -0.25rem;
+    left: 2rem;
+    font-size: 5rem;
+    color: var(--blue);
+    opacity: 0.12;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.cs-review-card blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gray-800);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.cs-review-person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.cs-review-person img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cs-review-person strong {
+    font-size: 0.95rem;
+    display: block;
+}
+
+.cs-review-person span {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+}
+
+.cs-review-stars {
+    color: #f59e0b;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+/* ---- Case Study: Timeline ---- */
+.cs-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    position: relative;
+}
+
+.cs-timeline::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: var(--gray-100);
+}
+
+.cs-timeline-step {
+    text-align: center;
+    position: relative;
+}
+
+.cs-timeline-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--blue);
+    margin: 0 auto 1rem;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 2px var(--blue);
+    position: relative;
+    z-index: 1;
+}
+
+.cs-timeline-step h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 0.35rem;
+}
+
+.cs-timeline-step p {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+}
+
+/* ---- Case Study: AI CTA Banner ---- */
+.cs-ai-cta {
+    background: linear-gradient(135deg, #e8eeff 0%, #f0f4ff 50%, #eef2ff 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    text-align: center;
+    color: var(--gray-800);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-ai-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(59, 108, 245, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 50%, rgba(59, 108, 245, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cs-ai-cta h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: var(--gray-800);
+}
+
+.cs-ai-cta p {
+    color: var(--gray-500);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.cs-ai-cta .btn-primary {
+    position: relative;
+}
+
+/* ---- Case Study: Blog-style screenshot ---- */
+.cs-screenshot {
+    max-width: 780px;
+    margin: 2rem auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 20px 48px -12px rgba(0,0,0,0.18));
+    border: 1px solid var(--gray-100);
+}
+
+.cs-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cs-screenshot-caption {
+    background: var(--white);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    text-align: center;
+    border-top: 1px solid var(--gray-100);
+    font-style: italic;
+}
+
+/* ---- Case Study: About the Author (footer-style) ---- */
+.cs-about-author {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-100);
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.cs-about-author-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--blue);
+    flex-shrink: 0;
+}
+
+.cs-about-author-body h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 0.15rem;
+}
+
+.cs-about-author-body .cs-about-author-title {
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.cs-about-author-body p {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+}
+
+.cs-about-author-body .cs-author-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.cs-credential-badge {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    background: rgba(34, 96, 168, 0.08);
+    color: var(--blue);
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ---- Case Study: Byline at top (single-line) ---- */
+.cs-byline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+}
+
+.cs-byline-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid rgba(255,255,255,0.25);
+    flex-shrink: 0;
+}
+
+.cs-byline-info {
+    display: contents;
+}
+
+.cs-byline-info strong {
+    color: #fff;
+    font-size: 0.82rem;
+}
+
+.cs-byline-info strong::after {
+    content: '·';
+    margin: 0 0.25rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 400;
+}
+
+.cs-byline-info span {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+}
+
+.cs-byline-info span::after {
+    content: '·';
+    margin: 0 0.25rem;
+    color: rgba(255,255,255,0.35);
+}
+
+/* ---- Case Study: Key capabilities grid ---- */
+.cs-capabilities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    max-width: 780px;
+    margin: 2rem auto 0;
+}
+
+.cs-capability-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    border: 1px solid var(--gray-100);
+    box-shadow: var(--shadow-sm);
+}
+
+.cs-capability-card h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--gray-800);
+}
+
+.cs-capability-card p {
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+    .team-cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .deliverables-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-results-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-timeline {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-timeline::before {
+        display: none;
+    }
+}
+
+
+/* ---- Case Study V2: Reading Progress Bar ---- */
+.cs-reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #4fc3f7, #2196f3, #1565c0);
+    z-index: 1100;
+    transition: width 0.15s ease-out;
+}
+
+/* ---- Case Study V2: Industry Stats Row ---- */
+.cs-industry-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.cs-industry-stat {
+    background: #fff;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-industry-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--blue);
+}
+
+.cs-industry-stat .stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.cs-industry-stat .stat-label {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+}
+
+.cs-industry-stat .stat-source {
+    font-size: 0.7rem;
+    color: var(--gray-300);
+    margin-top: 0.6rem;
+    font-style: italic;
+}
+
+/* ---- Case Study V2: Process Flow ---- */
+.cs-process-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 2.5rem 0;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.cs-flow-step {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    position: relative;
+    padding: 1.2rem 0.8rem;
+}
+
+.cs-flow-step::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--gray-300);
+    z-index: 1;
+}
+
+.cs-flow-step:last-child::after {
+    display: none;
+}
+
+.cs-flow-step .flow-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin: 0 auto 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.cs-flow-step.flow-pain .flow-icon {
+    background: rgba(59, 108, 245, 0.08);
+    border: 2px solid rgba(59, 108, 245, 0.2);
+}
+
+.cs-flow-step.flow-ok .flow-icon {
+    background: rgba(76, 175, 80, 0.1);
+    border: 2px solid rgba(76, 175, 80, 0.3);
+}
+
+.cs-flow-step .flow-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+}
+
+.cs-flow-step .flow-pain-tag {
+    font-size: 0.62rem;
+    color: var(--blue);
+    margin-top: 0.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ---- Case Study V2: Before / After Table ---- */
+.cs-before-after {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 2.5rem 0;
+    border: 1px solid var(--gray-100);
+}
+
+.cs-ba-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.cs-ba-row:last-child {
+    border-bottom: none;
+}
+
+.cs-ba-row.cs-ba-header {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.cs-ba-cell {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+}
+
+.cs-ba-cell.metric {
+    font-weight: 600;
+    color: var(--navy);
+    background: rgba(0,0,0,0.015);
+}
+
+.cs-ba-cell.before {
+    color: #c62828;
+    background: rgba(239,83,80,0.04);
+}
+
+.cs-ba-cell.after {
+    color: #2e7d32;
+    background: rgba(76,175,80,0.04);
+    font-weight: 600;
+}
+
+/* ---- Case Study V2: Mid-Page CTA ---- */
+.cs-mid-cta {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e3f0fd 100%);
+    border: 1px solid rgba(33, 150, 243, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cs-mid-cta h3 {
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+}
+
+.cs-mid-cta p {
+    color: var(--gray-400);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+/* ---- Case Study V2: FAQ Accordion ---- */
+.cs-faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cs-faq-item {
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius);
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    transition: box-shadow var(--transition);
+}
+
+.cs-faq-item:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.cs-faq-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.4rem;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy);
+    font-family: inherit;
+}
+
+.cs-faq-q::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--gray-300);
+    transition: transform var(--transition);
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.cs-faq-item.open .cs-faq-q::after {
+    content: '−';
+    color: var(--blue);
+}
+
+.cs-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.cs-faq-a-inner {
+    padding: 0 1.4rem 1.2rem;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+}
+
+/* ---- Case Study V2: Pullquote ---- */
+.cs-pullquote {
+    border-left: 4px solid var(--blue);
+    padding: 1.2rem 1.8rem;
+    margin: 2rem 0;
+    background: rgba(33, 150, 243, 0.04);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.7;
+}
+
+.cs-pullquote cite {
+    display: block;
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--gray-400);
+    margin-top: 0.6rem;
+}
+
+
+.cs-figure {
+    margin: 2rem 0 0;
+    padding: 1.15rem;
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 18px 50px rgba(15, 42, 95, 0.08);
+}
+
+.cs-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: calc(var(--radius-lg) - 6px);
+    background: linear-gradient(180deg, #f6faff 0%, #eef4ff 100%);
+}
+
+.cs-figure figcaption {
+    margin-top: 0.85rem;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+
+    .page-hero {
+        padding-top: calc(var(--section-pad) + 4rem);
+    }
+
+    .team-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-row {
+        gap: 1.5rem;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .trust-badges-row {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+
+    .booking-hero {
+        padding-top: calc(var(--section-pad) + 4rem);
+    }
+
+    .cs-results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-author-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cs-ai-cta {
+        padding: 2rem 1.5rem;
+    }
+
+    .cs-ai-cta h2 {
+        font-size: 1.4rem;
+    }
+
+    .cs-capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-about-author {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .cs-industry-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-process-flow {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .cs-flow-step::after {
+        display: none;
+    }
+
+    .cs-flow-step {
+        flex: 0 0 calc(50% - 0.5rem);
+        min-width: 0;
+    }
+
+    .cs-ba-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-ba-cell.metric {
+        font-weight: 700;
+        background: var(--gray-100);
+    }
+
+    .cs-mid-cta {
+        padding: 1.8rem 1.2rem;
+    }
+}

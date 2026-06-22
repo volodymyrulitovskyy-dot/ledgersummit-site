@@ -1,0 +1,68 @@
+    .gltb-dataset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+    .gltb-shell{background:#fff;border:1px solid rgba(10,22,40,.08);border-radius:24px;box-shadow:0 24px 64px rgba(10,22,40,.08);padding:1.25rem}
+    .gltb-shell-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:.75rem}
+    .gltb-shell-title h3{font-size:1rem;font-weight:700;margin:0}
+    .gltb-shell-title span{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#617087;font-weight:600}
+    .gltb-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed rgba(10,22,40,.12);border-radius:16px;padding:1.5rem 1rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s}
+    .gltb-dropzone:hover{border-color:#2d68f6;background:rgba(45,104,246,.04)}
+    .gltb-dropzone input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .gltb-dropzone strong{font-size:.92rem;margin-bottom:.25rem}
+    .gltb-dropzone span{font-size:.78rem;color:#617087}
+    .gltb-split{text-align:center;font-size:.72rem;color:#617087;margin:.5rem 0;text-transform:uppercase;letter-spacing:.06em}
+    .gltb-paste textarea{width:100%;min-height:72px;border:1px solid rgba(10,22,40,.12);border-radius:10px;padding:.6rem .75rem;font-size:.82rem;font-family:inherit;resize:vertical}
+    .gltb-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
+    .gltb-btn{border:none;border-radius:10px;padding:.5rem 1rem;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+    .gltb-btn-primary{background:#2d68f6;color:#fff}
+    .gltb-btn-primary:hover{background:#1b52d0}
+    .gltb-btn-secondary{background:rgba(45,104,246,.08);color:#2d68f6}
+    .gltb-btn-secondary:hover{background:rgba(45,104,246,.14)}
+    .gltb-btn-tertiary{background:transparent;color:#617087}
+    .gltb-btn-tertiary:hover{color:#0d1c31}
+    .gltb-btn:disabled{opacity:.45;cursor:not-allowed}
+    .gltb-status{font-size:.78rem;color:#617087;margin-top:.5rem;min-height:1.2em}
+    .gltb-mapping{margin-top:1rem}
+    .gltb-mapping-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.5rem}
+    .gltb-mapping-item label{display:block;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#617087;margin-bottom:.2rem}
+    .gltb-mapping-item select{width:100%;border:1px solid rgba(10,22,40,.12);border-radius:8px;padding:.4rem .5rem;font-size:.82rem;font-family:inherit;background:#f7f9fd}
+    .gltb-analyze-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.25rem}
+    .gltb-note{font-size:.72rem;color:#617087;margin-top:.75rem}
+    .gltb-results{display:none}
+    .gltb-results.active{display:block}
+    .gltb-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;margin-bottom:1.25rem}
+    .gltb-summary-card{background:#f7f9fd;border:1px solid rgba(10,22,40,.08);border-radius:14px;padding:.9rem 1rem;text-align:center}
+    .gltb-summary-card .gltb-card-value{font-size:1.6rem;font-weight:800;color:#0d1c31;line-height:1.1}
+    .gltb-summary-card .gltb-card-label{font-size:.72rem;color:#617087;text-transform:uppercase;letter-spacing:.04em;margin-top:.2rem}
+    .gltb-summary-card.gltb-alert{border-color:#e0674a;background:rgba(224,103,74,.06)}
+    .gltb-summary-card.gltb-alert .gltb-card-value{color:#e0674a}
+    .gltb-summary-card.gltb-ok{border-color:#0fbf8c;background:rgba(15,191,140,.06)}
+    .gltb-summary-card.gltb-ok .gltb-card-value{color:#0fbf8c}
+    .gltb-result-card{background:#fff;border:1px solid rgba(10,22,40,.08);border-radius:18px;padding:1.1rem;margin-bottom:1rem}
+    .gltb-result-card h3{font-size:1rem;font-weight:700;margin:0 0 .15rem}
+    .gltb-result-card p{font-size:.82rem;color:#617087;margin:0 0 .75rem}
+    .gltb-filter-row{display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap}
+    .gltb-filter-btn{border:1px solid rgba(10,22,40,.12);background:#f7f9fd;border-radius:8px;padding:.35rem .75rem;font-size:.78rem;cursor:pointer;font-weight:600;transition:background .2s,border-color .2s}
+    .gltb-filter-btn.active{background:#2d68f6;color:#fff;border-color:#2d68f6}
+    .gltb-recon-table{width:100%;border-collapse:collapse;font-size:.82rem}
+    .gltb-recon-table th{text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:#617087;padding:.5rem .6rem;border-bottom:2px solid rgba(10,22,40,.12);font-weight:600;white-space:nowrap}
+    .gltb-recon-table td{padding:.5rem .6rem;border-bottom:1px solid rgba(10,22,40,.06)}
+    .gltb-recon-table tr.gltb-row-diff{background:rgba(224,103,74,.05)}
+    .gltb-recon-table tr.gltb-row-match{background:rgba(15,191,140,.03)}
+    .gltb-recon-table tr.gltb-row-missing{background:rgba(243,162,79,.06)}
+    .gltb-status-badge{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:.2rem .55rem;border-radius:6px;white-space:nowrap}
+    .gltb-badge-match{background:rgba(15,191,140,.12);color:#0a8a60}
+    .gltb-badge-diff{background:rgba(224,103,74,.12);color:#c44e33}
+    .gltb-badge-gl-only{background:rgba(243,162,79,.12);color:#b57a2e}
+    .gltb-badge-tb-only{background:rgba(45,104,246,.1);color:#2254b8}
+    .gltb-empty-state{text-align:center;padding:2.5rem 1rem}
+    .gltb-empty-state h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem}
+    .gltb-empty-state p{font-size:.85rem;color:#617087;max-width:420px;margin:0 auto .75rem}
+    .gltb-empty-list{display:grid;gap:.5rem;max-width:400px;margin:0 auto}
+    .gltb-empty-item{text-align:left;padding:.6rem .75rem;border:1px solid rgba(10,22,40,.06);border-radius:10px;background:#f7f9fd}
+    .gltb-empty-item strong{display:block;font-size:.82rem}
+    .gltb-empty-item span{font-size:.75rem;color:#617087}
+    .gltb-table-wrap{overflow-x:auto}
+    @media(max-width:860px){
+      .gltb-dataset-grid{grid-template-columns:1fr}
+      .gltb-tool-grid{grid-template-columns:1fr!important}
+    }
+    .gltb-tool-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);gap:1.25rem}

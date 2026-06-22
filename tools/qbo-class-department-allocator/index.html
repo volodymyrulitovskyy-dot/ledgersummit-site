@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QBO Class/Department Allocator | Ledger Summit</title>
+  <meta name="description" content="Allocate missing class and department or location values in QuickBooks Online using historical patterns.">
+  <link rel="canonical" href="https://ledgersummit.com/tools/qbo-class-department-allocator/">
+  <meta property="og:title" content="QBO Class/Department Allocator | Ledger Summit">
+  <meta property="og:description" content="Allocate missing class and department or location values in QuickBooks Online using historical patterns.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgersummit.com/tools/qbo-class-department-allocator/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QBO Class/Department Allocator | Ledger Summit">
+  <meta name="twitter:description" content="Allocate missing class and department or location values in QuickBooks Online using historical patterns.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=20260311">
+  <link rel="stylesheet" href="/css/pages.css?v=20260311">
+  <link rel="stylesheet" href="/css/tool-pages.css?v=20260419b">
+  <link rel="stylesheet" href="/css/qbo-tools.css?v=20260311">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ledger Summit QBO Class/Department Allocator",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web Browser",
+  "isAccessibleForFree": true,
+  "description": "Allocate missing class and department or location values in QuickBooks Online using historical patterns. Compare current uncoded transactions against prior coded exports in your browser.",
+  "url": "https://ledgersummit.com/tools/qbo-class-department-allocator/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ledger Summit",
+    "url": "https://ledgersummit.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is QBO Class/Department Allocator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A QBO class and department allocator compares current uncoded transactions against historical coded transactions to suggest likely class and location assignments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does QBO Class/Department Allocator help with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This tool suggests class and location values by looking for repeated historical combinations by account and payee first, then memo, payee-only, and account-only patterns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool upload my QuickBooks data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The page processes the file in your browser for a first-pass review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which export works best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One current export with missing coding and one historical export with cleaner class and location data work best."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Ledger Summit build a custom workflow around this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If you want recurring rules, approvals, or connected update workflows, Ledger Summit can build a custom version around your reporting model."
+      }
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tools",
+      "item": "https://ledgersummit.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "QBO Class/Department Allocator",
+      "item": "https://ledgersummit.com/tools/qbo-class-department-allocator/"
+    }
+  ]
+}</script>
+</head>
+<body class="tool-page ls-theme-emerald">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a>
+      <ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  </div>
+  <main id="main">
+    <section class="ls-tool-hero"><div class="container"><div class="ls-tool-hero-grid"><div class="ls-tool-hero-copy reveal"><span class="section-label">Allocation</span><h1>QBO class and department allocation from your own history.</h1><p>Compare current uncoded transactions against historical exports that already contain clean coding so reviewers can suggest likely class and location assignments faster.</p><div class="ls-tool-answer-strip"><strong>Direct answer</strong><span>A QBO class and department allocator uses historical coding patterns to suggest class and location assignments for current QuickBooks Online transactions that are still uncoded.</span></div><div class="ls-tool-hero-actions"><a href="#tool" class="btn-primary btn-glow">Open the tool</a><a href="/book-a-call/" class="btn-secondary">Need a custom version?</a></div><div class="ls-tool-hero-pills"><span class="ls-tool-hero-pill"><i></i>Browser-only processing</span><span class="ls-tool-hero-pill"><i></i>CSV or pasted Excel data</span><span class="ls-tool-hero-pill"><i></i>Built for QBO cleanup and review</span></div></div><aside class="ls-tool-hero-panel reveal-right"><span class="ls-tool-panel-badge"><i></i>Reviewer-first</span><div class="ls-tool-panel-head"><h2>What this allocator helps you fix</h2><p>QBO supports class and location tracking, but cleanup becomes manual when current transactions arrive without the right coding. This page uses your own history to suggest the most likely assignments.</p></div><div class="ls-tool-preview-metrics">
+              <div class="ls-tool-preview-card">
+                <strong>1</strong>
+                <span>Load the current uncoded export and a historical coded export.</span>
+              </div>
+              <div class="ls-tool-preview-card">
+                <strong>2</strong>
+                <span>Auto-map both datasets separately.</span>
+              </div>
+              <div class="ls-tool-preview-card">
+                <strong>3</strong>
+                <span>Suggest likely class and location assignments using historical patterns.</span>
+              </div>
+              <div class="ls-tool-preview-card">
+                <strong>4</strong>
+                <span>Export an allocation queue for review and update.</span>
+              </div></div><div class="ls-tool-preview-list">
+              <div class="ls-tool-preview-item">
+                <strong>Coding issues</strong>
+                <span>missing class, missing location, or both missing together</span>
+              </div>
+              <div class="ls-tool-preview-item">
+                <strong>Suggestion logic</strong>
+                <span>account plus payee, memo, payee-only, and account-only historical rules</span>
+              </div>
+              <div class="ls-tool-preview-item">
+                <strong>Review output</strong>
+                <span>confidence level and rule basis for each suggested allocation</span>
+              </div></div></aside></div></div></section>
+    <section class="ls-tool-section" id="tool"><div class="container"><div class="ls-tool-shell" id="qbo-class-department-allocator-app"><div class="qbo-tool-grid ls-tool-layout-stack"><section class="qbo-panel">
+              <div class="qbo-panel-title"><h3>1. Load both sides of the comparison</h3><span>Dual input</span></div>
+              <p class="qbo-inline-note">Use one current transaction export that still has class or location gaps and one historical export that already contains cleaner coding. The tool looks for reusable patterns between them.</p>
+              <div class="qbo-dataset-grid">
+              <section class="qbo-dataset-shell" data-dataset="current">
+                <div class="qbo-panel-title"><h3>Current transactions export</h3><span>Current period</span></div>
+                <label class="qbo-dropzone">
+                  <input data-role="file-input" type="file" accept=".csv,.txt,.tsv" aria-label="Upload Current transactions export">
+                  <strong>Upload the current QBO transactions that need coding</strong>
+                  <span>Use the current export that contains account, payee, memo, amount, and any class or location fields already present.</span>
+                </label>
+                <div class="qbo-split"><span>or</span></div>
+                <div class="qbo-paste-wrap"><textarea data-role="paste-input" placeholder="Paste current QBO transaction rows here."></textarea></div>
+                <div class="qbo-action-row">
+                  <button type="button" class="qbo-btn qbo-btn-primary" data-role="paste-button">Use pasted data</button>
+                  <button type="button" class="qbo-btn qbo-btn-secondary" data-role="sample-button">Try sample file</button>
+                  <button type="button" class="qbo-btn qbo-btn-tertiary" data-role="reset-button">Reset</button>
+                </div>
+                <div class="qbo-status muted" data-role="status" role="status" aria-live="polite"></div>
+                <div class="qbo-meta" data-role="meta" aria-live="polite"></div>
+                <div class="qbo-panel-title" style="margin-top:1.1rem;"><h3>Review the smart-mapped columns</h3><span>Smart mapping</span></div>
+                <div class="qbo-mapping-grid" data-role="mapping-grid"></div>
+              </section><div class="ls-tool-head ls-tool-head-inline"><div><span class="section-label">Live Tool</span><h2>Allocation suggestions in the browser</h2><p>The live allocator stays at the top: load both exports, confirm the smart mapping, and review the suggested coding queue before you scroll into the guide content.</p></div></div><section class="qbo-dataset-shell" data-dataset="history">
+                <div class="qbo-panel-title"><h3>Historical coded export</h3><span>Reference history</span></div>
+                <label class="qbo-dropzone">
+                  <input data-role="file-input" type="file" accept=".csv,.txt,.tsv" aria-label="Upload Historical coded export">
+                  <strong>Upload a historical export with stronger class and location coding</strong>
+                  <span>Use prior QBO data that already has reliable class and location assignments. Cleaner history produces better suggestions.</span>
+                </label>
+                <div class="qbo-split"><span>or</span></div>
+                <div class="qbo-paste-wrap"><textarea data-role="paste-input" placeholder="Paste historical coded rows here."></textarea></div>
+                <div class="qbo-action-row">
+                  <button type="button" class="qbo-btn qbo-btn-primary" data-role="paste-button">Use pasted data</button>
+                  <button type="button" class="qbo-btn qbo-btn-secondary" data-role="sample-button">Try sample file</button>
+                  <button type="button" class="qbo-btn qbo-btn-tertiary" data-role="reset-button">Reset</button>
+                </div>
+                <div class="qbo-status muted" data-role="status" role="status" aria-live="polite"></div>
+                <div class="qbo-meta" data-role="meta" aria-live="polite"></div>
+                <div class="qbo-panel-title" style="margin-top:1.1rem;"><h3>Review the smart-mapped columns</h3><span>Smart mapping</span></div>
+                <div class="qbo-mapping-grid" data-role="mapping-grid"></div>
+              </section></div>
+              <div class="qbo-action-row qbo-action-row-wide">
+                <button type="button" class="qbo-btn qbo-btn-primary" data-role="analyze-button">Suggest allocations</button>
+                <button type="button" class="qbo-btn qbo-btn-secondary" data-role="export-button" disabled>Export suggestions</button>
+              </div>
+              <div class="qbo-rule-note">The strongest suggestions come from history that is already clean and representative of how your team usually codes by account, vendor, and memo pattern.</div>
+            </section>
+            <section class="qbo-panel">
+              <div class="qbo-empty-state" data-role="empty">
+                <h3>What this allocator is built to solve</h3>
+                <p>When class or location coding is incomplete, teams usually end up manually copying patterns they already know by memory. This tool turns that historical memory into a browser-side review queue.</p>
+                <div class="qbo-empty-list">
+                  <div class="qbo-empty-item">
+                    <strong>Missing class and location together</strong>
+                    <span>Find the rows that weaken management reporting the most.</span>
+                  </div>
+                  <div class="qbo-empty-item">
+                    <strong>Repeated vendors with stable historical coding</strong>
+                    <span>Use past behavior to suggest likely assignments faster.</span>
+                  </div>
+                  <div class="qbo-empty-item">
+                    <strong>Transactions with no obvious rule</strong>
+                    <span>Keep unresolved rows visible so reviewers know where judgment is still required.</span>
+                  </div></div>
+              </div>
+
+              <div class="qbo-results" data-role="results" hidden>
+                <div class="qbo-summary-grid" data-role="summary"></div>
+                <article class="qbo-result-card">
+                  <div class="qbo-card-head"><div><h3 data-role="signals-title">Priority signals</h3><p data-role="signals-description">The biggest issues in the current review.</p></div></div>
+                  <div class="qbo-signal-grid" data-role="signals"></div>
+                </article>
+                <article class="qbo-result-card">
+                  <div class="qbo-card-head"><div><h3 data-role="findings-title">Priority queue</h3><p data-role="findings-description">Highest-value items first.</p></div></div>
+                  <div data-role="findings-table"></div>
+                </article>
+                <article class="qbo-result-card">
+                  <div class="qbo-card-head"><div><h3 data-role="insights-title">Review insights</h3><p data-role="insights-description">Patterns that explain where cleanup or follow-up is likely to happen.</p></div></div>
+                  <div class="qbo-insight-grid" data-role="insights"></div>
+                </article>
+                <article class="qbo-result-card">
+                  <div class="qbo-card-head"><div><h3 data-role="explorer-title">Detailed explorer</h3><p data-role="explorer-description">Search the reviewed rows directly in the browser.</p></div></div>
+                  <div class="qbo-search-row"><input data-role="explorer-search" type="search" placeholder="Search by account, payee, memo, suggested class, or location"></div>
+                  <div data-role="explorer-table"></div>
+                </article>
+              </div>
+            </section>
+          </div></div></div></section>
+    <section class="ls-tool-feature-band"><div class="container"><div class="ls-tool-feature-grid">
+          <article class="ls-tool-feature-card reveal">
+            
+            <strong>Use your own historical coding patterns</strong>
+            <p>The tool suggests classes and locations from real behavior, not from a generic rule list.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            
+            <strong>See the rule basis</strong>
+            <p>Each suggested row shows whether the signal came from account plus payee, memo, payee, or account patterns.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            
+            <strong>Separate high-confidence from weak suggestions</strong>
+            <p>Rows with contested or weak history stay visible instead of being treated as certain.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            
+            <strong>Export the suggestion queue</strong>
+            <p>Use the output as a bookkeeper handoff or manager review file before applying updates.</p>
+          </article></div></div></section>
+    <section class="page-section ls-tool-guide-section" id="guide"><div class="container"><div class="section-header"><span class="section-label">Guide Below The Tool</span><h2>How to use a QBO class and department allocator well</h2><p>This section explains which exports work best, how suggestions are generated, and where reviewers should still expect to apply judgment.</p></div><div class="ls-tool-answer-grid"><article class="ls-tool-answer-card reveal"><strong>What it is</strong><p>A QBO class and department allocator compares current uncoded transactions against historical coded transactions to suggest likely class and location assignments.</p></article><article class="ls-tool-answer-card reveal"><strong>Who it is for</strong><p>Bookkeepers, controllers, and operations-minded teams that rely on QBO class or location tracking for management reporting.</p></article><article class="ls-tool-answer-card reveal"><strong>What file works best</strong><p>One current export with missing coding and one historical export with cleaner class and location data work best.</p></article></div><div class="ls-tool-guide-copy"><span class="section-label">Workflow</span><h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Four practical steps</h2><p>Use the allocator as a suggestion layer, not as a blind auto-posting engine. It is designed to shorten review time, not remove judgment entirely.</p></div><div class="ls-tool-steps-grid">
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">1</div>
+            <strong>Export both datasets</strong>
+            <p>Pull the current QBO transactions and a historical period with cleaner class and location assignments.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">2</div>
+            <strong>Confirm the smart mapping</strong>
+            <p>Map account, payee, memo, amount, class, and location fields on both sides.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">3</div>
+            <strong>Review the suggestion queue</strong>
+            <p>Start with high-confidence suggestions and then inspect rows where the history is split or weak.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">4</div>
+            <strong>Export the review file</strong>
+            <p>Use the output to update QBO or to route a manager review before changes are applied.</p>
+          </article></div><div class="ls-tool-guide-copy"><span class="section-label">Review Checklist</span><h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">What reviewers usually validate first</h2><p>These are the issues that most often slow down class and location cleanup in QBO.</p></div><div class="ls-tool-checklist-grid">
+          <article class="ls-tool-check-card reveal">
+            
+            <strong>Missing both fields</strong>
+            <p>Transactions missing both class and location usually create the biggest reporting-quality problem.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            
+            <strong>Missing class only</strong>
+            <p>Useful when location is filled but class tracking is incomplete.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            
+            <strong>Missing location only</strong>
+            <p>Useful when class is present but location reporting is still broken.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            
+            <strong>High-confidence historical pattern</strong>
+            <p>Rows with one dominant historical combination are the fastest wins.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            
+            <strong>Contested rule history</strong>
+            <p>If history is split across multiple combinations, the suggestion should be reviewed carefully.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            
+            <strong>No historical rule</strong>
+            <p>These rows still require manual judgment and should not disappear into the background.</p>
+          </article></div><div class="ls-tool-guide-copy"><span class="section-label">Why This Page Exists</span><h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Built to close the gap between QBO segment tracking and manual coding cleanup</h2><p>Search results around class and location tracking usually explain setup steps. This page solves the ongoing spreadsheet problem instead: use historical behavior to backfill the current gaps.</p></div><div class="ls-tool-gap-grid">
+          <article class="ls-tool-gap-card reveal">
+            
+            <strong>Historical pattern reuse</strong>
+            <p>Load current and historical data together, auto-map both sides, and generate a suggestion queue immediately.</p>
+          </article>
+          <article class="ls-tool-gap-card reveal">
+            
+            <strong>Confidence with context</strong>
+            <p>The tool shows whether a suggestion is strong or contested instead of hiding the uncertainty.</p>
+          </article>
+          <article class="ls-tool-gap-card reveal">
+            
+            <strong>Useful before a deeper automation build</strong>
+            <p>This gives a team value before any internal allocation engine is built.</p>
+          </article></div></div></section>
+    <section class="page-section ls-tool-faq" id="faq"><div class="container"><div class="section-header"><span class="section-label">FAQ</span><h2>QBO Class/Department Allocator questions, answered directly</h2><p>Written in short form so searchers can get a clear answer without digging through generic product copy.</p></div><div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is QBO Class/Department Allocator?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer"><p>A QBO class and department allocator compares current uncoded transactions against historical coded transactions to suggest likely class and location assignments.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What does QBO Class/Department Allocator help with?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer"><p>This tool suggests class and location values by looking for repeated historical combinations by account and payee first, then memo, payee-only, and account-only patterns.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Does this tool upload my QuickBooks data?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer"><p>No. The page processes the file in your browser for a first-pass review.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Which export works best?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer"><p>One current export with missing coding and one historical export with cleaner class and location data work best.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can Ledger Summit build a custom workflow around this?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer"><p>Yes. If you want recurring rules, approvals, or connected update workflows, Ledger Summit can build a custom version around your reporting model.</p></div>
+          </div></div></div></section>
+    <section class="ls-tool-cta"><div class="container"><div class="ls-tool-cta-card reveal"><span class="section-label ls-tool-cta-label">Next Step</span><h2>Need a stronger QBO coding workflow?</h2><p>Use the free allocator to generate first-pass suggestions now. If you want a more governed class and location process, Ledger Summit can build it around your reporting structure.</p><a href="/book-a-call/" class="btn-primary btn-glow">Book a free call</a><div class="ls-tool-inline-links"><a href="/tools/">All tools</a><a href="/services/ai-accounting-tools/">Custom AI accounting tools</a><a href="/book-a-call/">Book a call</a></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer-inner"><a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a><ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul><div class="footer-social"><a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg></a><a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg></a></div></div><div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p></div></div></footer>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="/js/shared.js?v=20260320"></script><script src="/js/qbo-core.js"></script><script src="/js/qbo-class-department-allocator.js"></script><script>window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };</script><script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+</html>

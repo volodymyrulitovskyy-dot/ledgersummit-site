@@ -1,0 +1,542 @@
+<!-- ===== PROMO BAR ===== -->
+<div class="promo-bar" id="promoBar" role="region" aria-label="Site announcement">
+  <div class="promo-bar-inner">
+    <a href="/tools/" class="promo-bar-link">
+      <span class="promo-bar-emoji" aria-hidden="true">📊</span>
+      <span class="promo-bar-text">207 free accounting &amp; finance tools — no signup, no upload</span>
+      <span class="promo-bar-arrow" aria-hidden="true">→</span>
+    </a>
+    <button type="button" class="promo-bar-close" id="promoBarClose" aria-label="Dismiss announcement">×</button>
+  </div>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+        alt="Ledger Summit logo" width="36" height="36" decoding="async">
+      <span>Ledger Summit</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/portal/">Portal</a></li>
+      <li><a href="/tools/">Tools</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="/services/" onclick="closeMobileNav()">Services</a>
+  <a href="/portal/" onclick="closeMobileNav()">Portal</a>
+  <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+  <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+  <a href="/about/" onclick="closeMobileNav()">About</a>
+  <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+  <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+
+<main id="main">
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="hero target-hero" id="hero">
+    <div class="container target-hero-grid">
+      <div class="target-hero-copy">
+        <h1>Accounting clarity for better business decisions.</h1>
+        <p class="hero-sub">
+          We automate accounting, close the books faster, and provide financial clarity with AI solutions.
+        </p>
+        <form class="target-hero-form" action="/book-a-call/" method="get">
+          <label class="sr-only" for="targetHeroEmail">Email Address</label>
+          <input id="targetHeroEmail" name="email" type="email" placeholder="Email Address" autocomplete="email">
+          <button type="submit">Book a review</button>
+        </form>
+        <a class="target-hero-link" href="#services">See what's included →</a>
+      </div>
+
+      <div class="target-hero-stage" aria-label="Ledger Summit advisor and portal preview">
+        <div class="target-grid-bg" aria-hidden="true"></div>
+        <div class="target-yellow-arc" aria-hidden="true"></div>
+        <figure class="target-advisor-cutout">
+          <img
+            src="https://images.unsplash.com/photo-1581065178047-8ee15951ede6?auto=format&amp;fit=crop&amp;w=1100&amp;q=86"
+            alt="Smiling professional woman in business attire" width="1100" height="1540"
+            loading="eager" decoding="async">
+        </figure>
+        <div class="target-income-card" aria-hidden="true">
+          <span>Net income ›</span>
+          <strong>$17,560.45</strong>
+          <em>+10% vs prior month</em>
+          <div class="target-bars"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="target-ready-card" aria-hidden="true">
+          <span>Bridget, your CFO</span>
+          <strong>Your close pack is ready →</strong>
+        </div>
+        <div class="target-chat-chip" aria-hidden="true">you're my hero!</div>
+      </div>
+    </div>
+
+    <div class="hero-trust-bar">
+      <span>Built for founders, operators, controllers, and small finance teams</span>
+      <div class="trust-logos">
+        <span class="trust-logo">QuickBooks</span>
+        <span class="trust-divider">&bull;</span>
+        <span class="trust-logo">Xero</span>
+        <span class="trust-divider">&bull;</span>
+        <span class="trust-logo">NetSuite</span>
+        <span class="trust-divider">&bull;</span>
+        <span class="trust-logo">Sage</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 1.5 WHAT WE HANDLE ===== -->
+  <section class="ls-paths" id="choose-path" aria-labelledby="paths-title">
+    <div class="container">
+      <div class="kw-header reveal">
+        <span class="kw-label">What we handle</span>
+        <h2 class="kw-title" id="paths-title">Accounting support that keeps the books clean and decisions moving.</h2>
+        <p class="kw-subtitle">Start with the work you need most: cleanup, monthly bookkeeping, AI-assisted close, reporting, FP&amp;A, CFO support, or workflow automation.</p>
+      </div>
+      <div class="ls-paths-grid ls-paths-grid-3">
+        <a class="ls-path-card reveal" href="/services/accounting/">
+          <span class="ls-path-tag">Books</span>
+          <h3>Monthly bookkeeping</h3>
+          <p>Transactions, classifications, reconciliations, review notes, and monthly bookkeeping support.</p>
+          <span class="ls-path-proof"><strong>Clean books</strong> every month</span>
+          <span class="ls-path-cta">View accounting services →</span>
+        </a>
+        <a class="ls-path-card reveal" href="/services-managed-close-as-a-service.html">
+          <span class="ls-path-tag">Close</span>
+          <h3>Month-end close</h3>
+          <p>Close checklists, accrual support, reconciliations, approvals, and reporting packages.</p>
+          <span class="ls-path-proof"><strong>Reviewed</strong> close process</span>
+          <span class="ls-path-cta">View close support →</span>
+        </a>
+        <a class="ls-path-card reveal" href="/services/finance/">
+          <span class="ls-path-tag">Reports</span>
+          <h3>Financial reporting</h3>
+          <p>P&amp;L, balance sheet, cash view, KPI dashboard, and owner-ready summaries.</p>
+          <span class="ls-path-proof"><strong>Answers</strong> not raw exports</span>
+          <span class="ls-path-cta">View finance services →</span>
+        </a>
+        <a class="ls-path-card reveal" href="/services/fractional-ai-cfo/">
+          <span class="ls-path-tag">CFO</span>
+          <h3>Finance guidance</h3>
+          <p>Budgeting, cash planning, margin review, cost analysis, and decision support.</p>
+          <span class="ls-path-proof"><strong>Operator-ready</strong> guidance</span>
+          <span class="ls-path-cta">View CFO support →</span>
+        </a>
+        <a class="ls-path-card reveal" href="/book-a-call/">
+          <span class="ls-path-tag">Cleanup</span>
+          <h3>Catch-up bookkeeping</h3>
+          <p>Prior-month cleanup, missing document lists, reconciliations, and a clean starting point.</p>
+          <span class="ls-path-proof"><strong>Backlog</strong> under control</span>
+          <span class="ls-path-cta">Ask about cleanup →</span>
+        </a>
+        <a class="ls-path-card reveal" href="/services/ai-automation-workflows/">
+          <span class="ls-path-tag">Automation</span>
+          <h3>AI automation &amp; FP&amp;A</h3>
+          <p>AI-assisted close workflows, reporting packs, KPI dashboards, and cash-flow forecasts that reduce manual spreadsheet work.</p>
+          <span class="ls-path-proof"><strong>Less manual</strong> close and reporting</span>
+          <span class="ls-path-cta">View automation services →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 2. OUTCOMES ===== -->
+  <section class="problem-questions" id="services" aria-labelledby="outcomes-title">
+    <div class="container">
+      <div class="kw-header reveal">
+        <span class="kw-label">What changes</span>
+        <h2 class="kw-title" id="outcomes-title">Accounting clarity for better business decisions.</h2>
+        <p class="kw-subtitle">Ledger Summit helps teams close faster, reduce manual workflows with AI, and turn reviewed books into clearer reports, FP&amp;A, and CFO-style answers.</p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card reveal">
+          <span class="problem-num">01</span>
+          <h3 class="problem-q">Close faster.</h3>
+          <p class="problem-a">Open requests, missing statements, approvals, and cleanup items are visible before they slow down month-end.</p>
+        </article>
+        <article class="problem-card reveal">
+          <span class="problem-num">02</span>
+          <h3 class="problem-q">Automate FP&amp;A reporting.</h3>
+          <p class="problem-a">Monthly financials, cash views, KPI snapshots, forecasts, and variance notes are tied to reviewed accounting activity.</p>
+        </article>
+        <article class="problem-card reveal">
+          <span class="problem-num">03</span>
+          <h3 class="problem-q">Reduce manual workflow drag.</h3>
+          <p class="problem-a">Statements, invoices, payroll files, approvals, exception notes, and reconciliation support stay organized by workflow.</p>
+        </article>
+        <article class="problem-card reveal">
+          <span class="problem-num">04</span>
+          <h3 class="problem-q">Ask better finance questions.</h3>
+          <p class="problem-a">Bookkeeping support connects to cash planning, margin review, cost control, and CFO-style decision support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 3. BEST FIT ===== -->
+  <section class="problem-questions" id="best-fit" aria-labelledby="best-fit-title">
+    <div class="container">
+      <div class="kw-header reveal">
+        <span class="kw-label">Best fit</span>
+        <h2 class="kw-title" id="best-fit-title">Built for teams that need accounting to be organized, visible, and ready for decisions.</h2>
+        <p class="kw-subtitle">Ledger Summit works best when the business has outgrown ad hoc bookkeeping, but does not need a full in-house finance department yet.</p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card reveal">
+          <span class="problem-num">01</span>
+          <h3 class="problem-q">Founder-led companies</h3>
+          <p class="problem-a">Owners who need the books handled, reports explained, and finance questions answered without becoming the accounting department.</p>
+        </article>
+        <article class="problem-card reveal">
+          <span class="problem-num">02</span>
+          <h3 class="problem-q">Small finance teams</h3>
+          <p class="problem-a">Controllers and operators who need clean handoffs, document follow-up, reconciliations, and close support without adding headcount.</p>
+        </article>
+        <article class="problem-card reveal">
+          <span class="problem-num">03</span>
+          <h3 class="problem-q">Multi-entity operators</h3>
+          <p class="problem-a">Businesses juggling multiple locations, entities, classes, departments, or reporting views that need a steadier monthly rhythm.</p>
+        </article>
+        <article class="problem-card reveal">
+          <span class="problem-num">04</span>
+          <h3 class="problem-q">Service, SaaS, and ecommerce teams</h3>
+          <p class="problem-a">Companies where margin, cash, revenue, vendor spend, and operational reporting matter as much as basic bookkeeping accuracy.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 4. PORTAL FEATURES ===== -->
+  <section class="key-wins" id="portal-features">
+    <div class="container">
+      <div class="kw-header reveal">
+        <span class="kw-label">Client workspace</span>
+        <h2 class="kw-title">One place for tasks, documents, reports, and finance questions.</h2>
+        <p class="kw-subtitle">The portal is how the service runs: requests, files, close status, reporting, and answers stay connected to the same accounting workflow.</p>
+      </div>
+      <div class="kw-row kw-row-quad">
+        <a href="/portal/" class="kw-card reveal">
+          <div class="kw-card-body">
+            <span class="kw-tag">Communication</span>
+            <h3 class="kw-card-title">Questions with context</h3>
+            <p class="kw-card-desc">Ask about books, reports, cash, margins, or cleanup items without starting a new email thread.</p>
+          </div>
+        </a>
+        <a href="/portal/" class="kw-card reveal">
+          <div class="kw-card-body">
+            <span class="kw-tag">Documents</span>
+            <h3 class="kw-card-title">Requests in one queue</h3>
+            <p class="kw-card-desc">See what we need from you, upload documents, and track what is already complete.</p>
+          </div>
+        </a>
+        <a href="/portal/" class="kw-card reveal">
+          <div class="kw-card-body">
+            <span class="kw-tag">Reports</span>
+            <h3 class="kw-card-title">Reports when ready</h3>
+            <p class="kw-card-desc">Access monthly close packs, dashboards, reconciliation summaries, and cash views from one place.</p>
+          </div>
+        </a>
+        <a href="/portal/" class="kw-card reveal">
+          <div class="kw-card-body">
+            <span class="kw-tag">Evidence</span>
+            <h3 class="kw-card-title">Review trail included</h3>
+            <p class="kw-card-desc">Approvals, support, review notes, and close history stay connected to each workflow.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 4. STARTING POINTS ===== -->
+  <section class="services" id="approach">
+    <div class="container">
+      <div class="svc-top reveal">
+        <div class="svc-top-left">
+          <span class="svc-label">Service paths</span>
+          <h2 class="svc-title">Start with the right<br>accounting support.</h2>
+        </div>
+        <div class="svc-top-right">
+          <p class="svc-subtitle">Scope depends on transaction volume, entity count, cleanup status, reporting needs, and how much finance support your team wants beyond the books.</p>
+        </div>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card svc-accent-blue reveal">
+          <div class="svc-card-accent"></div>
+          <span class="svc-watermark">01</span>
+          <div class="svc-card-inner">
+            <div class="svc-card-badge"><span class="svc-badge-text">Clean Books</span></div>
+            <h3 class="svc-card-title">Monthly bookkeeping</h3>
+            <p class="svc-card-desc">For companies that need reliable books, reconciliations, and a clean monthly accounting rhythm.</p>
+            <ul class="svc-features">
+              <li>Transaction coding and review</li>
+              <li>Bank and credit card reconciliations</li>
+              <li>Missing document follow-up</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc-card svc-accent-navy reveal">
+          <div class="svc-card-accent"></div>
+          <span class="svc-watermark">02</span>
+          <div class="svc-card-inner">
+            <div class="svc-card-badge"><span class="svc-badge-text">AI Close &amp; Reports</span></div>
+            <h3 class="svc-card-title">AI-assisted close &amp; reporting</h3>
+            <p class="svc-card-desc">For teams that need faster close support, fewer manual workflows, reports, dashboards, and review notes they can trust.</p>
+            <ul class="svc-features">
+              <li>Close checklist and status</li>
+              <li>Financial statements, forecasts, and KPI views</li>
+              <li>Variance and exception notes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc-card svc-accent-teal reveal">
+          <div class="svc-card-accent"></div>
+          <span class="svc-watermark">03</span>
+          <div class="svc-card-inner">
+            <div class="svc-card-badge"><span class="svc-badge-text">Finance Partner</span></div>
+            <h3 class="svc-card-title">CFO &amp; FP&amp;A support</h3>
+            <p class="svc-card-desc">For companies that need clean books plus cash planning, budget support, forecasts, and strategic finance answers.</p>
+            <ul class="svc-features">
+              <li>Cash forecast and budget support</li>
+              <li>Margin and cost analysis</li>
+              <li>Decision-ready finance guidance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 5. ONBOARDING ===== -->
+  <section class="process rollout-phased" id="process">
+    <div class="container">
+      <div class="kw-header reveal">
+        <span class="kw-label">How it works</span>
+        <h2 class="kw-title">From messy handoffs to a monthly accounting rhythm.</h2>
+        <p class="kw-subtitle">We start by understanding the current books, then set up the portal, clean up what is needed, and operate the recurring workflow.</p>
+      </div>
+      <ol class="rollout-track" role="list">
+        <li class="rollout-phase reveal" data-phase="1">
+          <div class="rollout-phase-header">
+            <span class="rollout-week">Step 1</span>
+            <h3 class="rollout-name">Review</h3>
+          </div>
+          <p class="rollout-desc">We look at your books, systems, reports, close process, document flow, and current pain points.</p>
+          <ul class="rollout-deliverables">
+            <li>Current-state assessment</li>
+            <li>Cleanup and reporting gaps</li>
+            <li>Recommended starting scope</li>
+          </ul>
+        </li>
+        <li class="rollout-phase reveal" data-phase="2">
+          <div class="rollout-phase-header">
+            <span class="rollout-week">Step 2</span>
+            <h3 class="rollout-name">Set up</h3>
+          </div>
+          <p class="rollout-desc">We create the portal workspace, request list, close calendar, reporting structure, and owner handoffs.</p>
+          <ul class="rollout-deliverables">
+            <li>Portal workspace</li>
+            <li>Document request queue</li>
+            <li>Close and reporting cadence</li>
+          </ul>
+        </li>
+        <li class="rollout-phase reveal" data-phase="3">
+          <div class="rollout-phase-header">
+            <span class="rollout-week">Step 3</span>
+            <h3 class="rollout-name">Clean up</h3>
+          </div>
+          <p class="rollout-desc">We handle catch-up work, reconciliations, missing support, classification cleanup, and open accounting questions.</p>
+          <ul class="rollout-deliverables">
+            <li>Prior-month cleanup</li>
+            <li>Reconciliation support</li>
+            <li>Clean starting point</li>
+          </ul>
+        </li>
+        <li class="rollout-phase reveal" data-phase="4">
+          <div class="rollout-phase-header">
+            <span class="rollout-week">Step 4</span>
+            <h3 class="rollout-name">Operate</h3>
+          </div>
+          <p class="rollout-desc">Monthly bookkeeping, close, reports, and finance questions run through one organized workflow.</p>
+          <ul class="rollout-deliverables">
+            <li>Monthly books and reports</li>
+            <li>Close status and review notes</li>
+            <li>Ongoing finance support</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ===== 6. REVIEWS ===== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Client Results</span>
+        <h2>Accounting clarity. Faster close. Better finance answers.</h2>
+        <p>Homepage proof stays focused on the outcomes accounting buyers care about: speed, visibility, accuracy, and less owner involvement.</p>
+      </div>
+      <div class="rev-row rev-row-2">
+        <div class="rev-card rev-card-lg reveal">
+          <div class="rev-quote-mark">&quot;</div>
+          <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Month-end prep is about 50% faster, and the team knows what is missing before close week.</blockquote>
+          <div class="rev-metric-chip">50% faster month-end</div>
+          <div class="rev-author-block">
+            <img src="/img/reviews/melissa.svg" alt="Smiling professional woman in business attire" class="rev-avatar" width="48" height="48" loading="eager" decoding="async">
+            <div><div class="rev-name">Melissa T.</div><div class="rev-role">Controller, multi-entity SMB</div></div>
+          </div>
+        </div>
+        <div class="rev-card rev-card-lg reveal">
+          <div class="rev-quote-mark">&quot;</div>
+          <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Cash forecasting became a reliable view instead of a spreadsheet rebuilt from scratch every month.</blockquote>
+          <div class="rev-metric-chip">Real-time cash flow</div>
+          <div class="rev-author-block">
+            <img src="/img/reviews/doug.svg" alt="Smiling professional man in business attire" class="rev-avatar" width="48" height="48" loading="eager" decoding="async">
+            <div><div class="rev-name">Doug M.</div><div class="rev-role">CFO</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="videos-cta-wrap">
+        <a href="/services/homepage-details/" class="btn-secondary">See all reviews, certifications, and demos</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 7. WHY LEDGER SUMMIT ===== -->
+  <section class="why-us" id="why-us" aria-labelledby="why-us-title">
+    <div class="container">
+      <div class="kw-header reveal">
+        <span class="kw-label">Why Ledger Summit</span>
+        <h2 class="kw-title" id="why-us-title">Accounting support with visibility built in.</h2>
+      </div>
+      <div class="why-us-grid">
+        <article class="why-us-card reveal"><div class="why-us-icon" aria-hidden="true">✓</div><h3>Accounting reviewed</h3><p>Bookkeeping, close, and reports are reviewed with accounting context, not treated like raw data entry.</p></article>
+        <article class="why-us-card reveal"><div class="why-us-icon" aria-hidden="true">↔</div><h3>Your systems stay</h3><p>QuickBooks, Xero, NetSuite, or Sage remains your ledger while Ledger Summit organizes the work around it.</p></article>
+        <article class="why-us-card reveal"><div class="why-us-icon" aria-hidden="true">?</div><h3>Advice included</h3><p>You can ask finance questions about cash, margins, cost changes, and reporting instead of just receiving exports.</p></article>
+        <article class="why-us-card reveal"><div class="why-us-icon" aria-hidden="true">+</div><h3>Scale the scope</h3><p>Start with cleanup or monthly books, then add close support, reporting, automation, or CFO guidance as needed.</p></article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 8. FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Common Questions</span>
+        <h2>FAQ</h2>
+        <p>Fast answers for teams evaluating outsourced accounting support with a portal-led operating model.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-question" aria-expanded="true">Do you replace our bookkeeper or support our existing team?<span class="faq-toggle">+</span></button>
+          <div class="faq-answer" role="region" style="max-height: 220px;"><p>Both models can work. Ledger Summit can handle monthly bookkeeping directly, support an internal finance team, or step in for cleanup, close, reporting, and CFO-style finance support.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can you clean up prior months?<span class="faq-toggle">+</span></button>
+          <div class="faq-answer" role="region"><p>Yes. We can start with catch-up bookkeeping, reconciliations, missing document lists, classification cleanup, and open issue review before moving into monthly support.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do we need to switch accounting systems?<span class="faq-toggle">+</span></button>
+          <div class="faq-answer" role="region"><p>No. Ledger Summit works on top of QuickBooks, Xero, NetSuite, Sage, and supporting payroll, AP, and reporting tools.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">What do we get from the first conversation?<span class="faq-toggle">+</span></button>
+          <div class="faq-answer" role="region"><p>A review of your current bookkeeping, close, reporting, systems, cleanup needs, and recommended starting scope. You will know whether to start with cleanup, monthly books, reporting, or CFO support.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do you provide tax filing?<span class="faq-toggle">+</span></button>
+          <div class="faq-answer" role="region"><p>Ledger Summit focuses on clean accounting records, reporting, documentation, and tax-ready books. If tax filing is needed, we can coordinate records and support with your tax preparer or CPA.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can we add CFO support later?<span class="faq-toggle">+</span></button>
+          <div class="faq-answer" role="region"><p>Yes. Many teams start with bookkeeping or cleanup, then add cash planning, budgeting, margin analysis, KPI reporting, or finance decision support once the books are reliable.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 9. FINAL CTA ===== -->
+  <section class="final-cta final-cta-light" id="contact">
+    <div class="container">
+      <div class="final-cta-content">
+        <h2>Ready for accounting clarity?</h2>
+        <p>Email info@ledgersummit.com to discuss cleanup, monthly books, AI-assisted close, FP&amp;A reporting, or CFO support.</p>
+        <a href="mailto:info@ledgersummit.com" class="btn-primary">Email info@ledgersummit.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-brand">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+          alt="Ledger Summit" width="30" height="30" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/portal/">Portal</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/book-a-call/">Book a Call</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ledger Summit. Bookkeeping, reporting &amp; finance support.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+    stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>

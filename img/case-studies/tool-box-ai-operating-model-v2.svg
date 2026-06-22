@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI operating model diagram</title>
+  <desc id="desc">A Visio-style diagram showing business users and intake channels flowing into the Tool Box AI portal, workflow modules, control layer, and integrations with systems of record.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fbff"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fbff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#5a7aa6"/>
+    </marker>
+    <style>
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #14365d; }
+      .subtitle { font: 500 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4f6784; }
+      .h { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17385f; }
+      .b { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #445b78; }
+      .s { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; fill: #6282a9; }
+      .center { text-anchor: middle; }
+      .box { fill: url(#panel); stroke: #d6e3f1; stroke-width: 1.5; rx: 20; }
+      .pill { fill: #edf4fb; stroke: #d6e3f1; stroke-width: 1; rx: 14; }
+      .line { stroke: #5a7aa6; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #8ba2bf; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" fill="url(#bg)"/>
+  <text x="60" y="58" class="title">How Tool Box AI Actually Works</text>
+  <text x="60" y="84" class="subtitle">One finance operating layer sitting between business intake and ERP or payment execution.</text>
+
+  <rect x="50" y="118" width="1100" height="138" class="box"/>
+  <text x="74" y="146" class="s">WHO STARTS THE WORK</text>
+
+  <rect x="74" y="166" width="190" height="58" class="pill"/>
+  <text x="169" y="201" class="h center">Finance Teams</text>
+
+  <rect x="286" y="166" width="190" height="58" class="pill"/>
+  <text x="381" y="201" class="h center">Project Teams</text>
+
+  <rect x="498" y="166" width="190" height="58" class="pill"/>
+  <text x="593" y="193" class="h center">Managers &amp;</text>
+  <text x="593" y="211" class="h center">Approvers</text>
+
+  <rect x="710" y="166" width="190" height="58" class="pill"/>
+  <text x="805" y="193" class="h center">Vendors &amp;</text>
+  <text x="805" y="211" class="h center">Customers</text>
+
+  <rect x="922" y="166" width="190" height="58" class="pill"/>
+  <text x="1017" y="193" class="h center">Bots, Email,</text>
+  <text x="1017" y="211" class="h center">Slack</text>
+
+  <rect x="50" y="292" width="1100" height="160" class="box"/>
+  <text x="74" y="320" class="s">PORTAL AND WORKFLOW LAYER</text>
+
+  <rect x="74" y="342" width="308" height="82" class="pill"/>
+  <text x="228" y="372" class="h center">Portal Experience</text>
+  <text x="228" y="394" class="b center">Role-aware screens, intake forms, inboxes,</text>
+  <text x="228" y="412" class="b center">approvals, dashboards, and work queues</text>
+
+  <rect x="446" y="342" width="308" height="82" class="pill"/>
+  <text x="600" y="372" class="h center">Workflow Engine</text>
+  <text x="600" y="394" class="b center">Routing, state machines, SLA timers,</text>
+  <text x="600" y="412" class="b center">exception queues, escalations, and alerts</text>
+
+  <rect x="818" y="342" width="294" height="82" class="pill"/>
+  <text x="965" y="372" class="h center">AI Assistance</text>
+  <text x="965" y="394" class="b center">OCR, duplicate checks, coding suggestions,</text>
+  <text x="965" y="412" class="b center">anomaly detection, and risk scoring</text>
+
+  <rect x="50" y="492" width="1100" height="132" class="box"/>
+  <text x="74" y="520" class="s">FINANCE MODULES</text>
+
+  <rect x="74" y="544" width="162" height="54" class="pill"/>
+  <text x="155" y="577" class="h center">P2P</text>
+
+  <rect x="252" y="544" width="162" height="54" class="pill"/>
+  <text x="333" y="577" class="h center">O2C</text>
+
+  <rect x="430" y="544" width="162" height="54" class="pill"/>
+  <text x="511" y="577" class="h center">Time-to-Pay</text>
+
+  <rect x="608" y="544" width="188" height="54" class="pill"/>
+  <text x="702" y="577" class="h center">Project Financials</text>
+
+  <rect x="812" y="544" width="142" height="54" class="pill"/>
+  <text x="883" y="577" class="h center">Audit</text>
+
+  <rect x="970" y="544" width="142" height="54" class="pill"/>
+  <text x="1041" y="577" class="h center">Reporting</text>
+
+  <rect x="50" y="664" width="360" height="112" class="box"/>
+  <text x="74" y="692" class="s">CONTROL LAYER</text>
+  <text x="74" y="720" class="h">Tenant context, JWT, RBAC,</text>
+  <text x="74" y="742" class="h">SoD, idempotency, rate limiting</text>
+  <text x="74" y="762" class="b">Defines who can act, what can post, and how every</text>
+  <text x="74" y="780" class="b">mutation is authorized, protected, and traced.</text>
+
+  <rect x="430" y="664" width="330" height="112" class="box"/>
+  <text x="454" y="692" class="s">INTEGRATION LAYER</text>
+  <text x="454" y="720" class="h">Accounting Abstraction Layer</text>
+  <text x="454" y="742" class="h">+ Payment Abstraction Layer</text>
+  <text x="454" y="762" class="b">Normalizes ERP and payment behavior into one</text>
+  <text x="454" y="780" class="b">operating model for Tool Box AI workflows.</text>
+
+  <rect x="780" y="664" width="370" height="112" class="box"/>
+  <text x="804" y="692" class="s">SYSTEMS OF RECORD</text>
+  <text x="804" y="720" class="h">NetSuite, Xero, QBO, Bill.com, Ramp</text>
+  <text x="804" y="742" class="b">Plus webhooks, queues, sync status, and</text>
+  <text x="804" y="760" class="b">source-system feedback loops back into the portal</text>
+
+  <path d="M169 224 L169 292" class="line"/>
+  <path d="M381 224 L381 292" class="line"/>
+  <path d="M593 224 L593 292" class="line"/>
+  <path d="M805 224 L805 292" class="line"/>
+  <path d="M1017 224 L1017 292" class="line"/>
+
+  <path d="M228 424 L228 492" class="line"/>
+  <path d="M600 424 L600 492" class="line"/>
+  <path d="M965 424 L965 492" class="line"/>
+
+  <path d="M333 598 L333 664" class="line-soft"/>
+  <path d="M883 598 L883 664" class="line-soft"/>
+
+  <path d="M760 720 L780 720" class="line"/>
+  <path d="M780 744 C748 744, 718 744, 688 744" class="line-soft"/>
+</svg>

@@ -1,0 +1,881 @@
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+                alt="Ledger Summit logo" width="36" height="36" decoding="async">
+            <span>Ledger Summit</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/book-a-call/" class="nav-cta">Book a free call</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+
+<main id="main">
+
+    <!-- ===== 1. HERO (matches home page) ===== -->
+    <section class="hero-services dark-section" id="hero">
+        <!-- Particle network canvas -->
+        <canvas class="hero-particles" id="heroParticles"></canvas>
+        <!-- Aurora orbs -->
+        <div class="hero-aurora">
+            <div class="aurora-orb orb-1"></div>
+            <div class="aurora-orb orb-2"></div>
+            <div class="aurora-orb orb-3"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-badge shimmer">
+                    <span class="badge-dot"></span>
+                    Services
+                </div>
+                <h1>
+                    Robust AI tools <br>
+                    for accounting <br>
+                    &amp; finance teams
+                </h1>
+                <p class="hero-sub">
+                    We use AI to build robust tools, test them carefully, and then connect those tools to automate
+                    repetitive accounting and finance work inside your existing stack.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary btn-glow">Explore Services</a>
+                    <a href="/book-a-call/" class="btn-secondary">Discuss Your Workflow</a>
+                </div>
+            </div>
+
+            <!-- Service Category Quick-Nav -->
+            <div class="svc-quicknav">
+                <a href="#services" class="svc-qn-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                    <span>Finance with AI</span>
+                    <small>Tested tools for planning and reporting</small>
+                </a>
+                <a href="#services" class="svc-qn-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                    <span>Accounting with AI</span>
+                    <small>Tested tools for close and reconciliation</small>
+                </a>
+                <a href="#services" class="svc-qn-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                    <span>Finance AI Tools</span>
+                    <small>Built, validated, and integrated</small>
+                </a>
+                <a href="#services" class="svc-qn-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                    <span>Accounting AI Tools</span>
+                    <small>Controls-first tools for busy teams</small>
+                </a>
+                <a href="#services" class="svc-qn-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23" />
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                    <span>Finance Advisory</span>
+                    <small>Tools-backed planning and reporting</small>
+                </a>
+                <a href="#services" class="svc-qn-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    <span>Accounting Operations</span>
+                    <small>Close, compliance, and control support</small>
+                </a>
+                <a href="#services" class="svc-qn-card svc-qn-new">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    <span>Automation Workflows</span>
+                    <small>Tested tools connected across systems</small>
+                </a>
+                <a href="#services" class="svc-qn-card svc-qn-new">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    <span>Fractional CFO Support</span>
+                    <small>Leadership with tested tools behind it</small>
+                </a>
+            </div>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="hero-trust-bar">
+            <span>Trusted by finance teams using</span>
+            <div class="trust-logos">
+                <span class="trust-logo">QuickBooks</span>
+                <span class="trust-dot">&bull;</span>
+                <span class="trust-logo">Xero</span>
+                <span class="trust-dot">&bull;</span>
+                <span class="trust-logo">NetSuite</span>
+                <span class="trust-dot">&bull;</span>
+                <span class="trust-logo">Sage</span>
+                <span class="trust-dot">&bull;</span>
+                <span class="trust-logo">Excel</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 2. TRUST METRICS BAR ===== -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-bar-grid">
+                <div class="trust-item">
+                    <div class="trust-number">20+</div>
+                    <div class="trust-label">Years of Finance Expertise</div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-number">50+</div>
+                    <div class="trust-label">Finance Teams Automated</div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-number">10,000+</div>
+                    <div class="trust-label">Hours Saved Per Year</div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-number">3 Weeks</div>
+                    <div class="trust-label">Average Go-Live Timeline</div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-number">92%</div>
+                    <div class="trust-label">Clients Proceed After Audit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 3. SERVICES GRID ===== -->
+    <section class="services-grid-section" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Services</span>
+                <h2>Tested AI Tools That Power Automation</h2>
+                <p>We use AI to build robust tools, test them carefully, and then connect those tools to automation
+                    inside your existing stack.</p>
+            </div>
+
+            <div class="svc-grid-4">
+                <!-- Card 1: Finance with AI -->
+                <a href="https://ledgersummit.com/services/ai-finance" class="svc-hub-card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3>Finance with AI</h3>
+                    <p class="card-desc">We build and test robust finance tools for forecasting, reporting, and
+                        FP&amp;A, then connect those tools so automation runs on trusted outputs.</p>
+                    <ul class="card-features">
+                        <li>13-week and 26-week cash flow tools</li>
+                        <li>Variance analysis with review controls</li>
+                        <li>Leadership dashboards built on tested logic</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+
+                <!-- Card 2: Accounting with AI -->
+                <a href="https://ledgersummit.com/services/ai-accounting" class="svc-hub-card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Accounting with AI</h3>
+                    <p class="card-desc">We build carefully tested accounting tools for close, reconciliation, and
+                        review, then use them to automate routine accounting work.</p>
+                    <ul class="card-features">
+                        <li>Reconciliation tools with control checks</li>
+                        <li>Tested accrual and deferral logic</li>
+                        <li>Source-to-post validation controls</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+
+                <!-- Card 3: Finance AI Tools -->
+                <a href="https://ledgersummit.com/services/ai-finance-tools" class="svc-hub-card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg>
+                    </div>
+                    <h3>Finance AI Tools</h3>
+                    <p class="card-desc">Private finance tools built with AI, tested against your data, and designed to
+                        support safe automation across planning and reporting.</p>
+                    <ul class="card-features">
+                        <li>Secure internal tool deployments</li>
+                        <li>Natural-language finance queries with review layers</li>
+                        <li>Anomaly detection with validation thresholds</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+
+                <!-- Card 4: Accounting AI Tools -->
+                <a href="https://ledgersummit.com/services/ai-accounting-tools" class="svc-hub-card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                        </svg>
+                    </div>
+                    <h3>Accounting AI Tools</h3>
+                    <p class="card-desc">We build robust accounting tools for intake, coding, and review, then test
+                        them fully before they automate posting workflows.</p>
+                    <ul class="card-features">
+                        <li>Invoice capture with review rules</li>
+                        <li>Expense categorization with test cases</li>
+                        <li>GL suggestions with approval checks</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+
+                <!-- Card 5: Finance Advisory -->
+                <a href="https://ledgersummit.com/services/finance" class="svc-hub-card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3>Finance Advisory</h3>
+                    <p class="card-desc">We pair tested tools with finance advisory so planning, analysis, and reporting
+                        become easier to automate and easier to trust.</p>
+                    <ul class="card-features">
+                        <li>Planning models connected to live data</li>
+                        <li>Scenario tools with reviewed logic</li>
+                        <li>Board reporting workflows that auto-refresh</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+
+                <!-- Card 6: Accounting Operations -->
+                <a href="https://ledgersummit.com/accounting" class="svc-hub-card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
+                    </div>
+                    <h3>Accounting Operations</h3>
+                    <p class="card-desc">We combine hands-on accounting support with tested tools that improve close
+                        quality, compliance, and repeatable automation.</p>
+                    <ul class="card-features">
+                        <li>Close support with embedded controls</li>
+                        <li>Compliance workflows with documented checks</li>
+                        <li>Multi-entity processes built for repeatability</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+
+                <!-- Card 7: Automation Workflows (NEW) -->
+                <a href="https://ledgersummit.com/services/ai-automation-workflows" class="svc-hub-card reveal">
+                    <span class="new-badge">New</span>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                        </svg>
+                    </div>
+                    <h3>Automation Workflows</h3>
+                    <p class="card-desc">After the tools are built and validated, we connect your ERP, bank, payroll,
+                        and CRM so automation runs end to end with clear controls.</p>
+                    <ul class="card-features">
+                        <li>Cross-platform connectors</li>
+                        <li>Approval and exception routing</li>
+                        <li>API orchestration with audit trails</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+
+                <!-- Card 8: Fractional CFO Support (NEW) -->
+                <a href="https://ledgersummit.com/services/fractional-ai-cfo" class="svc-hub-card reveal">
+                    <span class="new-badge">New</span>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </div>
+                    <h3>Fractional CFO Support</h3>
+                    <p class="card-desc">Executive finance leadership backed by robust, tested AI tools for
+                        forecasting, reporting, and scenario planning.</p>
+                    <ul class="card-features">
+                        <li>Forecasting tools with reviewed assumptions</li>
+                        <li>Strategic capital planning</li>
+                        <li>Board reporting supported by tested models</li>
+                    </ul>
+                    <span class="card-link">Explore Service →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 4. SPEED & SAVINGS ===== -->
+    <section class="speed-section dark-section">
+        <div class="container">
+            <div class="speed-grid">
+                <div class="speed-text reveal">
+                    <span class="section-label section-label-light">Speed &amp; Savings</span>
+                    <h2>Tools First.<br>Automation Next.</h2>
+                    <p>We do not start with blind automation. We build robust tools, test them against real workflows,
+                        and then deploy automation on a trusted foundation - usually in weeks, not months.</p>
+                    <a href="/book-a-call/" class="btn-primary">See the Build Process</a>
+                </div>
+                <div class="speed-comparison reveal">
+                    <div class="speed-row">
+                        <div class="speed-col old">
+                            <div class="speed-col-label">Traditional</div>
+                            <div class="speed-col-value">6–12 months</div>
+                        </div>
+                        <div class="speed-arrow">→</div>
+                        <div class="speed-col new">
+                            <div class="speed-col-label">With Ledger Summit</div>
+                            <div class="speed-col-value">3–4 weeks</div>
+                        </div>
+                    </div>
+                    <div class="speed-row">
+                        <div class="speed-col old">
+                            <div class="speed-col-label">Manual Hours</div>
+                            <div class="speed-col-value">40+ hrs/week</div>
+                        </div>
+                        <div class="speed-arrow">→</div>
+                        <div class="speed-col new">
+                            <div class="speed-col-label">Automated</div>
+                            <div class="speed-col-value">Under 4 hrs</div>
+                        </div>
+                    </div>
+                    <div class="speed-row">
+                        <div class="speed-col old">
+                            <div class="speed-col-label">Annual Cost</div>
+                            <div class="speed-col-value">$200K+ labor</div>
+                        </div>
+                        <div class="speed-arrow">→</div>
+                        <div class="speed-col new">
+                            <div class="speed-col-label">Savings</div>
+                            <div class="speed-col-value">$150K+ saved</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 5. WHY LEDGER SUMMIT ===== -->
+    <section class="why-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Why Us</span>
+                <h2>Why Teams Trust Our Build Process</h2>
+                <p>We combine finance expertise with AI engineering to build tools that are robust, carefully tested,
+                    and ready for dependable automation.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Finance-Led Design</h3>
+                    <p>MBAs and CPAs help define the tool logic, review outputs, and pressure-test edge cases before
+                        go-live.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>Built on Your Stack</h3>
+                    <p>We build on top of QuickBooks, Xero, NetSuite, Sage, and other systems so the tool fits your
+                        current workflow.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Tested Before Go-Live</h3>
+                    <p>Every tool is reviewed against real accounting and finance scenarios before it is trusted with
+                        automation.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
+                    <h3>Secure by Default</h3>
+                    <p>Private environments, controlled access, and audit-friendly data pipelines keep your information
+                        protected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 6. PROCESS TIMELINE ===== -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">How We Work</span>
+                <h2>From Workflow Audit to Tested Automation</h2>
+                <p>Our 3-step process builds the tool first, validates it carefully, and only then automates the
+                    workflow.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-card reveal">
+                    <div class="step-number">01</div>
+                    <div class="step-label">Week 1–2</div>
+                    <h3>Workflow Audit</h3>
+                    <p>We map your current systems, inputs, approvals, and bottlenecks. You get tool requirements, risk
+                        points, and a shortlist of the best automation opportunities.</p>
+                </div>
+                <div class="process-card reveal">
+                    <div class="step-number">02</div>
+                    <div class="step-label">Week 3–4</div>
+                    <h3>Build and Test</h3>
+                    <p>We build robust AI-assisted tools around your chart of accounts, business rules, and control
+                        needs, then test them with real scenarios and reviewers.</p>
+                </div>
+                <div class="process-card reveal">
+                    <div class="step-number">03</div>
+                    <div class="step-label">Week 5+</div>
+                    <h3>Automate and Expand</h3>
+                    <p>Once the tools are trusted, we connect them to production workflows, train your team, and expand
+                        automation step by step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 7. CLIENT RESULTS ===== -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Client Results</span>
+                <h2>What Clients Say About Their Results</h2>
+                <p>Real feedback from finance leaders who moved from manual work to tested tools and dependable
+                    automation.</p>
+            </div>
+
+            <div class="rev-grid">
+                <div class="rev-card reveal">
+                    <div class="rev-stars">★★★★★</div>
+                    <blockquote>Our bookkeeping used to be fully manual: bank recs in spreadsheets, constant correction
+                        entries, and close delays every month. Ledger Summit moved those tasks into automated workflows.
+                        Now month-end prep is about 50% faster.</blockquote>
+                    <div class="rev-metric">50% faster month-end</div>
+                    <div class="rev-author">
+                        <img src="/img/reviews/lauren.svg"
+                            alt="Melissa T." decoding="async">
+                        <div>
+                            <div class="rev-name">Melissa T.</div>
+                            <div class="rev-role">Controller, Multi-entity SMB ($6.8M revenue)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rev-card reveal">
+                    <div class="rev-stars">★★★★★</div>
+                    <blockquote>Ledger Summit transformed our cash flow forecasting from a weekly headache into a
+                        reliable, real-time view. We now see 13-week projections with accuracy we've never had before.
+                    </blockquote>
+                    <div class="rev-metric">Real-time cash flow</div>
+                    <div class="rev-author">
+                        <img src="/img/reviews/doug.svg" alt="Doug M." decoding="async">
+                        <div>
+                            <div class="rev-name">Doug M.</div>
+                            <div class="rev-role">CFO</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rev-card reveal">
+                    <div class="rev-stars">★★★★★</div>
+                    <blockquote>We were spending 20+ hours per week on manual data entry and reconciliation. After
+                        implementing Ledger Summit's automation, we reduced that to under 2 hours. ROI paid for itself
+                        in the first month.</blockquote>
+                    <div class="rev-metric">20+ hrs → under 2 hrs</div>
+                    <div class="rev-author">
+                        <img src="/img/reviews/james.svg"
+                            alt="James R." decoding="async">
+                        <div>
+                            <div class="rev-name">James R.</div>
+                            <div class="rev-role">Director of Finance, SaaS ($8.5M revenue)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rev-card reveal">
+                    <div class="rev-stars">★★★★★</div>
+                    <blockquote>We struggled with payroll reconciliation across multiple entities — every month was a
+                        fire drill. Ledger Summit automated the cross-references. Discrepancies are flagged instantly
+                        now.</blockquote>
+                    <div class="rev-metric">Multi-entity payroll automated</div>
+                    <div class="rev-author">
+                        <img src="/img/reviews/sarah.svg"
+                            alt="Sarah W." decoding="async">
+                        <div>
+                            <div class="rev-name">Sarah W.</div>
+                            <div class="rev-role">VP Accounting, Professional Services ($15M)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 8. VIDEO GALLERY ===== -->
+    <section class="video-section dark-section" id="videos">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label section-label-light">Resources</span>
+                <h2>See the Tools in Action</h2>
+                <p>Deep dives, case studies, and walkthroughs showing how tested tools turn into reliable finance
+                    automation.</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card reveal">
+                    <div class="video-thumb">
+                        <img src="/img/case-studies/project-eac-dashboard.png"
+                            alt="AI Strategy for CFOs" loading="lazy" decoding="async">
+                        <a href="https://www.youtube.com/@LedgerSummit/videos" target="_blank" rel="noopener noreferrer"
+                            class="play-btn" aria-label="Watch: The 3-Step AI Strategy for CFOs">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="video-info">
+                        <h4>The 3-Step AI Strategy for CFOs</h4>
+                        <p>How a tested tool rollout replaces manual AP and AR work.</p>
+                    </div>
+                </div>
+
+                <div class="video-card reveal">
+                    <div class="video-thumb">
+                        <img src="/img/case-studies/financial-reporting-dashboard.png"
+                            alt="Month-End Close Automation" loading="lazy" decoding="async">
+                        <a href="https://www.youtube.com/@LedgerSummit/videos" target="_blank" rel="noopener noreferrer"
+                            class="play-btn" aria-label="Watch: Month-End Close in 24 Hours">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="video-info">
+                        <h4>Month-End Close in 24 Hours</h4>
+                        <p>How validated reconciliation tools compress the close.</p>
+                    </div>
+                </div>
+
+                <div class="video-card reveal">
+                    <div class="video-thumb">
+                        <img src="/img/case-studies/budgeting-scenario-dashboard.png"
+                            alt="Custom LLMs for Finance" loading="lazy" decoding="async">
+                        <a href="https://www.youtube.com/@LedgerSummit/videos" target="_blank" rel="noopener noreferrer"
+                            class="play-btn" aria-label="Watch: Custom LLMs for Finance Data">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="video-info">
+                        <h4>Custom LLMs for Finance Data</h4>
+                        <p>How secure internal tools support finance teams.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-cta">
+                <a href="https://www.youtube.com/@LedgerSummit/videos" target="_blank" rel="noopener noreferrer"
+                    class="btn-secondary">View All Videos on YouTube →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 9. INTEGRATIONS BAR ===== -->
+    <section class="integrations-section">
+        <div class="container">
+            <div class="integrations-label">Works seamlessly with your existing stack</div>
+            <div class="integrations-logos">
+                <div class="integration-item">
+                    <div class="int-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4a5568" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <span>QuickBooks</span>
+                </div>
+                <div class="integration-item">
+                    <div class="int-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4a5568" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M8 12h8M12 8v8" />
+                        </svg>
+                    </div>
+                    <span>Xero</span>
+                </div>
+                <div class="integration-item">
+                    <div class="int-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4a5568" stroke-width="1.5">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        </svg>
+                    </div>
+                    <span>NetSuite</span>
+                </div>
+                <div class="integration-item">
+                    <div class="int-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4a5568" stroke-width="1.5">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
+                    </div>
+                    <span>Sage Intacct</span>
+                </div>
+                <div class="integration-item">
+                    <div class="int-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4a5568" stroke-width="1.5">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                        </svg>
+                    </div>
+                    <span>Excel</span>
+                </div>
+                <div class="integration-item">
+                    <div class="int-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4a5568" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <span>Google Sheets</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 10. FAQ ===== -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about how we build and test tools before they automate accounting and
+                    finance workflows.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">Do we need to switch accounting software?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p><strong>Absolutely not.</strong> We build tools on top of your existing systems -
+                            QuickBooks, Xero, NetSuite, Sage, or proprietary ERPs - test them carefully, and then use
+                            them to automate work without disrupting your team.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How long does a tool build take?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Most tool builds and validation cycles are completed in <strong>3 to 4 weeks</strong>. Once
+                            the tool is trusted, automation can be rolled into production quickly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How secure is our financial data?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Security is built into the process. We use isolated environments, enterprise-grade
+                            encryption, and controlled access so your data stays private and your tools stay
+                            audit-friendly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What ROI can we expect from tested automation tools?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Clients commonly reduce manual data entry by <strong>90%+</strong>, speed up close cycles,
+                            and save material labor hours because the tool logic is validated before automation goes
+                            live.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What accounting systems do you integrate with?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>We connect tested tools to major platforms including <strong>QuickBooks Online/Desktop,
+                                Xero, NetSuite, Sage Intacct, Microsoft Dynamics</strong>, plus custom ERPs, banking
+                            feeds, payroll systems, and data warehouses.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Who builds Ledger Summit's tools and automation?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Our team combines <strong>20+ years of hands-on finance and accounting expertise</strong>
+                            with modern AI engineering. Every tool is designed by operators, tested against real
+                            workflows, and then deployed by engineers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 11. FINAL CTA ===== -->
+    <section class="final-cta dark-section" id="contact">
+        <div class="container">
+            <div class="final-cta-inner reveal">
+                <span class="section-label section-label-light">Get Started</span>
+                <h2>Ready to put tested AI tools to work?</h2>
+                <p>Book a free discovery call. We will identify the workflows that need robust tools first, then show
+                    how those tools can support reliable automation.</p>
+                <a href="/book-a-call/" class="btn-primary">Book a Workflow Audit</a>
+                <div class="trust-reminder">
+                    <div><span>3 weeks</span> avg. go-live</div>
+                    <div><span>90%+</span> manual work cut</div>
+                    <div><span>Zero</span> system changes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <a href="/" class="footer-brand">
+                <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+                    alt="Ledger Summit" width="30" height="30" decoding="async">
+                <span>Ledger Summit</span>
+            </a>
+            <div class="footer-links">
+                <a href="/services/">Services</a>
+                <a href="/tools/">Tools</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/book-a-call/">Book a Call</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.6C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/ledgersummit" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ledger Summit. Tested AI tools for accounting and finance automation.</p>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15" />
+    </svg>
+</button>

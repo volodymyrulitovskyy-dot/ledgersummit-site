@@ -1,0 +1,518 @@
+/* ============================================
+   LEDGER SUMMIT — Subpages design bridge
+   Maps the strategy preview-page class set onto
+   the shared design tokens in /css/shared.css so
+   /services-*, /case-study-*, and /tool-* render
+   visually consistent with the rest of the site.
+   ============================================ */
+
+/* ---- Body / shell ---- */
+body.ls-subpage {
+  font-family: var(--font);
+  color: var(--gray-800);
+  background: var(--off-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.ls-subpage .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+.subpage-main { display: block; padding-bottom: 0; }
+
+/* ---- Type ---- */
+.ls-subpage h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0.4rem 0 1rem;
+  color: var(--white);
+}
+.ls-subpage h2 {
+  font-size: var(--h2);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--navy);
+  margin: 0 0 1rem;
+}
+.ls-subpage h3 {
+  font-size: var(--h3);
+  font-weight: 700;
+  color: var(--navy);
+  margin: 1.5rem 0 0.5rem;
+}
+.ls-subpage h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 0.5rem;
+}
+.ls-subpage p { margin: 0 0 1rem; color: var(--gray-600); }
+.ls-subpage ul, .ls-subpage ol { padding-left: 1.25rem; color: var(--gray-600); }
+.ls-subpage li { margin: 0.25rem 0; }
+.ls-subpage a { color: var(--blue); text-decoration: none; }
+.ls-subpage a:hover { text-decoration: underline; }
+
+/* ---- Text on dark sections — override the grey/blue defaults ---- */
+.subpage-hero, .subpage-hero p, .subpage-hero li,
+.subpage-cta,  .subpage-cta p,  .subpage-cta li {
+  color: rgba(255, 255, 255, 0.92);
+}
+.subpage-hero h1, .subpage-hero h2, .subpage-hero h3, .subpage-hero h4,
+.subpage-cta h1, .subpage-cta h2, .subpage-cta h3, .subpage-cta h4 {
+  color: var(--white);
+}
+.subpage-hero a:not(.btn):not(.jump-link),
+.subpage-cta  a:not(.btn) {
+  color: #d8e6ff;
+}
+.subpage-hero a:not(.btn):not(.jump-link):hover,
+.subpage-cta  a:not(.btn):hover {
+  color: var(--white);
+}
+.subpage-hero strong, .subpage-cta strong { color: var(--white); }
+
+/* Kill any blue-on-blue: any pill, label, or accent that defaults to blue
+   when sitting inside the dark navy/blue hero or CTA gets a white treatment. */
+.subpage-hero .eyebrow,
+.subpage-hero .tier-name,
+.subpage-hero .cat-name,
+.subpage-hero .panel-label,
+.subpage-hero .badge,
+.subpage-cta  .eyebrow,
+.subpage-cta  .tier-name,
+.subpage-cta  .cat-name,
+.subpage-cta  .badge {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+/* Panel-label keeps its teal accent — readable on dark glass and consistent
+   with the rest of the dashboard panels site-wide. */
+.subpage-hero .panel-label { color: var(--teal); background: transparent; border: none; backdrop-filter: none; }
+
+/* Buttons inside the dark hero shouldn't be blue text on blue —
+   force white text on every variant. */
+.subpage-hero .btn,
+.subpage-cta  .btn { color: var(--white); }
+.subpage-hero .btn-soft,
+.subpage-cta  .btn-soft {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.subpage-hero .btn-soft:hover,
+.subpage-cta  .btn-soft:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-subtle);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.subpage-hero .eyebrow {
+  background: rgba(255,255,255,0.12);
+  color: #d8e6ff;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.lead {
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  color: rgba(255,255,255,0.85);
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+/* ---- Hero (subpage-hero) ---- */
+.subpage-hero {
+  background: linear-gradient(165deg, #0a1628 0%, #1a2d4e 35%, #1e4a8a 70%, #1a3f7a 100%);
+  color: #fff;
+  padding: calc(var(--section-pad) + 4rem) 0 calc(var(--section-pad) - 1rem);
+  position: relative;
+  overflow: hidden;
+}
+.subpage-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%; right: -15%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(130, 185, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.hero-shell { position: relative; z-index: 1; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+.hero-copy { display: flex; flex-direction: column; gap: 1rem; }
+.hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.hero-profile {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+}
+.hero-profile strong { color: var(--white); }
+
+/* Hero side panel */
+.hero-panel {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  color: rgba(255,255,255,0.92);
+}
+.panel-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+.panel-copy { color: rgba(255,255,255,0.78); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.6rem;
+}
+.metric-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.metric-card strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+}
+.metric-card span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.35;
+}
+
+/* Hero jump links */
+.jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.jump-link {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+.jump-link:hover {
+  background: rgba(255,255,255,0.16);
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* ---- Buttons ---- */
+.ls-subpage .btn,
+.ls-subpage a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ls-subpage .btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 8px 24px var(--blue-glow);
+}
+.ls-subpage .btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); text-decoration: none; }
+.ls-subpage .btn-soft {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.ls-subpage .btn-soft:hover { background: rgba(255,255,255,0.18); text-decoration: none; }
+.subpage-section .btn-soft, .subpage-cta.is-light .btn-soft {
+  background: var(--blue-subtle);
+  color: var(--blue);
+  border: 1px solid rgba(59,108,245,0.2);
+}
+.subpage-section .btn-soft:hover, .subpage-cta.is-light .btn-soft:hover {
+  background: rgba(59,108,245,0.16);
+}
+
+/* ---- Sections ---- */
+.subpage-section {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.subpage-section:nth-of-type(even) { background: var(--off-white); }
+.section-intro {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+.section-intro .eyebrow { color: var(--blue); background: var(--blue-subtle); border: none; }
+.section-intro h2 { margin-bottom: 0.75rem; }
+.section-intro p { color: var(--gray-600); font-size: 1.05rem; }
+
+/* ---- Story / case-study cards ---- */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.story-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.story-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.story-card.story-wide { grid-column: 1 / -1; }
+.story-card .badge {
+  display: inline-block;
+  background: var(--teal-glow);
+  color: #0a8267;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+.story-results {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+/* ---- Tables ---- */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-100);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  margin: 1.5rem 0;
+}
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 560px;
+}
+.table-wrap thead th {
+  background: linear-gradient(165deg, #0a1628 0%, #1a2d4e 100%);
+  color: #fff;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.table-wrap tbody td {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--gray-100);
+  vertical-align: top;
+  color: var(--gray-800);
+}
+.table-wrap tbody tr:nth-child(even) td { background: var(--off-white); }
+
+/* ---- Pricing tiers ---- */
+.tier-name {
+  display: inline-block;
+  background: var(--blue-subtle);
+  color: var(--blue);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* ---- Pillar / category headers ---- */
+.cat-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.cat-name {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+/* ---- Subpage CTA ---- */
+.subpage-cta {
+  background: linear-gradient(165deg, #0a1628 0%, #1a2d4e 100%);
+  color: #fff;
+  padding: var(--section-pad) 0;
+  text-align: center;
+}
+.subpage-cta h2 { color: var(--white); margin-bottom: 1rem; }
+.subpage-cta p { color: rgba(255,255,255,0.8); max-width: 60ch; margin: 0 auto 1.5rem; }
+.cta-shell { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.cta-shell .hero-actions { justify-content: center; }
+
+/* ---- FAQ ---- */
+.faq-list {
+  max-width: 820px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.subpage-section .faq-item {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--shadow-sm);
+  margin: 0;
+}
+.subpage-section .faq-item h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+.subpage-section .faq-item p { margin: 0; }
+
+/* ---- AI Readiness Scorecard tool styling ---- */
+.scorecard {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+.q-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.options { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--off-white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.option:hover { background: var(--blue-subtle); border-color: var(--blue); }
+.option.sel { background: var(--blue-subtle); border-color: var(--blue); }
+.option input[type="radio"] { margin-top: 0.2rem; flex-shrink: 0; }
+.step-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.send-results { margin-top: 1.5rem; }
+.is-hidden { display: none !important; }
+
+.progress-shell { margin-bottom: 1.5rem; }
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin-bottom: 0.3rem;
+}
+.progress-bar {
+  height: 6px;
+  background: var(--gray-100);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-bar .filler {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--teal) 100%);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.results { margin-top: 2rem; }
+.result-bar {
+  background: var(--off-white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.result-headline {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.result-recs ul { padding-left: 1.25rem; }
+.result-recs li { margin-bottom: 0.5rem; }
+
+/* ---- Mobile tweaks ---- */
+@media (max-width: 720px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .ls-subpage .btn { width: 100%; text-align: center; }
+  .subpage-section { padding: calc(var(--section-pad) - 1rem) 0; }
+}

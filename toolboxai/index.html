@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Primary SEO -->
+  <title>Tool Box AI: Instant ERP Upgrade for QBO &amp; Xero | Ledger Summit</title>
+  <meta name="description"
+    content="Instant enterprise upgrade to your QuickBooks or Xero. Enterprise-grade accounting — multi-entity, approvals, audit-ready controls.">
+  <meta name="keywords"
+    content="instant enterprise upgrade QuickBooks, QBO ERP upgrade, Xero ERP upgrade, enterprise accounting in weeks, NetSuite alternative, Costpoint alternative, Unanet alternative, no migration ERP, multi-entity accounting QuickBooks, project accounting QBO, audit-ready QuickBooks, finance operations platform">
+  <meta name="author" content="Ledger Summit">
+  <meta name="publisher" content="Ledger Summit">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://ledgersummit.com/toolboxai/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ledger Summit">
+  <meta property="og:title" content="Tool Box AI — Instant ERP Upgrade for QuickBooks &amp; Xero">
+  <meta property="og:description"
+    content="Enterprise-grade accounting on top of your QBO or Xero — live in weeks, not a six-figure NetSuite or Costpoint migration.">
+  <meta property="og:url" content="https://ledgersummit.com/toolboxai/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta property="og:image:alt" content="Tool Box AI — the finance operations platform from Ledger Summit">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tool Box AI — Instant ERP Upgrade for QBO &amp; Xero">
+  <meta name="twitter:description"
+    content="Enterprise-grade accounting on top of QBO/Xero — live in weeks, not a six-figure migration.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:image:alt" content="Tool Box AI by Ledger Summit">
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://app.sem.chat">
+  <link rel="dns-prefetch" href="https://www.youtube.com">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <!-- Styles (shared site design system) -->
+  <link rel="stylesheet" href="/css/shared.css">
+  <link rel="stylesheet" href="/css/home.css?v=2">
+
+  <!-- Page-local adjustments layered on top of the shared design system.
+       Only for elements the homepage doesn't already ship (comparison table, pricing card). -->
+  <style>
+    /* Comparison table — uses shared tokens */
+    .tbx-compare-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--gray-100); background: var(--white); box-shadow: var(--shadow-md); }
+    .tbx-compare { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 0.95rem; }
+    .tbx-compare thead th { background: linear-gradient(165deg,#0a1628 0%,#1a2d4e 100%); color: #fff; text-align: left; padding: 1rem 1.1rem; font-weight: 700; letter-spacing: .01em; font-size: 0.88rem; text-transform: uppercase; }
+    .tbx-compare thead th.tbx-col-us { background: linear-gradient(165deg,#1e4a8a 0%,#3b6cf5 100%); position: relative; }
+    .tbx-compare thead th.tbx-col-us::after { content: "Recommended"; position: absolute; top: .4rem; right: .8rem; font-size: .58rem; letter-spacing: .14em; background: var(--teal); color: #0a1628; padding: .18rem .45rem; border-radius: 999px; font-weight: 800; }
+    .tbx-compare tbody td { padding: .95rem 1.1rem; border-top: 1px solid var(--gray-100); vertical-align: top; color: var(--gray-800); }
+    .tbx-compare tbody tr:nth-child(even) td { background: var(--off-white); }
+    .tbx-compare tbody td:first-child { font-weight: 600; color: var(--navy); width: 26%; }
+    .tbx-compare tbody td.tbx-col-us { background: rgba(59,108,245,0.05); font-weight: 600; color: var(--navy); }
+    .tbx-compare tbody tr:nth-child(even) td.tbx-col-us { background: rgba(59,108,245,0.08); }
+    .tbx-check { color: var(--teal); font-weight: 800; }
+    .tbx-partial { color: var(--amber); font-weight: 700; }
+    .tbx-cross { color: var(--coral); font-weight: 700; }
+    .tbx-price { color: var(--gray-600); font-size: .88rem; }
+    .tbx-compare-caption { padding: .85rem 1.1rem; font-size: .78rem; color: var(--gray-600); background: var(--off-white); border-top: 1px solid var(--gray-100); }
+
+    /* Cost-comparison card band */
+    .tbx-cost-band { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; margin-top: 2rem; }
+    .tbx-cost-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-md); padding: 1.4rem 1.3rem; box-shadow: var(--shadow-sm); }
+    .tbx-cost-card h4 { font-size: 0.82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gray-600); margin: 0 0 .5rem; font-weight: 700; }
+    .tbx-cost-card .tbx-cost-value { font-size: 1.55rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+    .tbx-cost-card .tbx-cost-sub { font-size: .85rem; color: var(--gray-600); margin-top: .3rem; }
+    .tbx-cost-card.tbx-cost-us { background: linear-gradient(165deg,#0a1628 0%,#1e4a8a 100%); color: #fff; border-color: transparent; box-shadow: 0 10px 40px rgba(10,22,40,.25); }
+    .tbx-cost-card.tbx-cost-us h4 { color: rgba(255,255,255,0.7); }
+    .tbx-cost-card.tbx-cost-us .tbx-cost-value { color: #fff; }
+    .tbx-cost-card.tbx-cost-us .tbx-cost-sub { color: rgba(255,255,255,0.75); }
+
+    /* Breadcrumb */
+    .tbx-breadcrumb { font-size: .82rem; color: var(--gray-600); padding: 1rem 0 0; }
+    .tbx-breadcrumb a { color: var(--blue); text-decoration: none; }
+    .tbx-breadcrumb a:hover { text-decoration: underline; }
+    .tbx-breadcrumb [aria-current] { color: var(--gray-800); font-weight: 600; }
+
+    /* Disclosure-based FAQ respects existing .faq-item styling.
+       We keep <details> for performance + a11y while blending with the site look. */
+    .faq-item.tbx-faq-details { padding: 0; }
+    .faq-item.tbx-faq-details > summary { list-style: none; cursor: pointer; }
+    .faq-item.tbx-faq-details > summary::-webkit-details-marker { display: none; }
+
+    /* Hero H1 accent word (teal underline wash) */
+    .tbx-hero-accent {
+      position: relative;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+    .tbx-hero-accent::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0.05em;
+      height: 0.22em;
+      background: var(--teal-glow);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    /* Hero impact strip — three KPI proof points, same tokens as dash-metric */
+    .tbx-hero-impact {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .tbx-hero-impact li {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .tbx-hero-impact .tbx-impact-num {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .tbx-hero-impact .tbx-impact-lbl {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.35;
+    }
+
+    /* Savings callout badge on the Tool Box AI cost card */
+    .tbx-cost-card.tbx-cost-us { position: relative; }
+    .tbx-cost-save {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: var(--teal);
+      color: #0a1628;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 720px) {
+      .tbx-compare thead th.tbx-col-us::after { display: none; }
+    }
+  </style>
+
+  <!-- ===== Structured Data ===== -->
+
+  <!-- Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ledger Summit",
+    "url": "https://ledgersummit.com",
+    "logo": "https://ledgersummit.com/img/ledger-summit-mark.svg",
+    "description": "AI-powered accounting and finance operations for growing businesses.",
+    "sameAs": [
+      "https://www.youtube.com/@LedgerSummit",
+      "https://www.linkedin.com/company/ledgersummit/"
+    ]
+  }
+  </script>
+
+  <!-- SoftwareApplication / Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tool Box AI",
+    "alternateName": "ToolBox AI by Ledger Summit",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "ERP, Accounting, Finance Operations",
+    "operatingSystem": "Web",
+    "url": "https://ledgersummit.com/toolboxai/",
+    "description": "Tool Box AI is the instant enterprise upgrade to your existing QuickBooks or Xero instance — adding workflow, approvals, multi-entity reporting, and audit-ready controls without expensive migration or a six-figure price tag.",
+    "brand": { "@type": "Brand", "name": "Ledger Summit" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ledger Summit",
+      "url": "https://ledgersummit.com"
+    },
+    "featureList": [
+      "Multi-entity ledger and consolidations",
+      "Workflow and approval routing",
+      "Role-based access control",
+      "Audit trails and change accountability",
+      "Executive reporting and dashboards",
+      "Project-driven accounting",
+      "Multi-tenant architecture",
+      "SOC 2-aligned control direction"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "priceCurrency": "USD",
+      "url": "https://ledgersummit.com/book-a-call/"
+    }
+  }
+  </script>
+
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ledgersummit.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tool Box AI", "item": "https://ledgersummit.com/toolboxai/" }
+    ]
+  }
+  </script>
+
+  <!-- FAQPage — answers must match the on-page FAQ text verbatim for Google rich-result eligibility -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Tool Box AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tool Box AI is the instant enterprise upgrade to your existing QuickBooks or Xero. It layers advanced ERP capabilities — multi-entity reporting, workflow and approvals, role-based access, and audit-ready controls — directly onto your current ledger, without expensive migration or a six-figure price tag."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from NetSuite, Costpoint, or Unanet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Same operating-model outcomes — multi-entity consolidation, project accounting, approval workflows, executive reporting, and audit-ready controls — without six-figure enterprise ERP cost, without a multi-quarter implementation, and without ripping out QuickBooks or Xero."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to replace my existing accounting system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Tool Box AI is designed to sit on top of QuickBooks or Xero and add the ERP layer — workflow, consolidations, project accounting, and reporting — while keeping your existing ledger as the system of record."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Tool Box AI secure enough for enterprise deployment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The platform is engineered around multi-tenant isolation, role-based access, audit trails, workflow accountability, and operational rigor — and is being developed toward a strong SOC 2-aligned operating model."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Tool Box AI SOC 2 certified?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tool Box AI is being built toward a SOC 2-aligned operating model. We do not claim a completed SOC 2 certification — we are building toward the security, access, and control posture that supports one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Tool Box AI cost compared to NetSuite, Costpoint, or Unanet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NetSuite, Costpoint, and Unanet license fees typically run in the tens of thousands to low six figures per year, plus multi-quarter implementation costs. Tool Box AI is positioned at SMB economics on top of your existing QuickBooks or Xero subscription, with engagement-based onboarding rather than a full ERP migration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Tool Box AI support GovCon and project-driven accounting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The platform is designed to support multi-entity structures, project-driven accounting, labor distribution, indirect rate structures, and GovCon-oriented documentation flows — without six-figure enterprise ERP cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to go live?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most deployments go live in weeks, not quarters, because Tool Box AI layers onto your existing QuickBooks or Xero ledger instead of replacing it. Timeline scales with entity count, workflow complexity, and reporting scope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I book a private demo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Private walkthroughs are available for qualified buyers and partners. Book a private demo at ledgersummit.com/book-a-call/."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- HowTo — mirrors the 4-step rollout section; eligible for Google how-to rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to upgrade QuickBooks or Xero to enterprise-grade ERP with Tool Box AI",
+    "description": "A four-step rollout that layers enterprise ERP capabilities onto an existing QuickBooks or Xero ledger, typically live in weeks rather than the multi-quarter timeline of a six-figure enterprise ERP migration.",
+    "totalTime": "P4W",
+    "supply": [
+      { "@type": "HowToSupply", "name": "Existing QuickBooks Online or Xero tenant" },
+      { "@type": "HowToSupply", "name": "Read-only admin access for assessment" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Assess & map",
+        "text": "Document current QBO or Xero workflows, approvals, entity structure, and control gaps. Produce an entity and chart review, approval and segregation-of-duties audit, and a control gap shortlist.",
+        "url": "https://ledgersummit.com/toolboxai/#rollout"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Connect & configure",
+        "text": "Stand up Tool Box AI on top of your existing ledger and configure roles, approval workflows, and reporting packs.",
+        "url": "https://ledgersummit.com/toolboxai/#rollout"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Go-live in phases",
+        "text": "Turn on ERP-layer capabilities one workflow at a time — multi-entity consolidations, approval workflows with SoD, and executive reporting packs — with parallel validation before cutover.",
+        "url": "https://ledgersummit.com/toolboxai/#rollout"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Scale & harden",
+        "text": "Extend into project accounting, GovCon workflows, indirect rate structures, and audit evidence automation as the team matures.",
+        "url": "https://ledgersummit.com/toolboxai/#rollout"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Ledger Summit home">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/toolboxai/" aria-current="page" class="active">Tool Box AI</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/book-a-call/" class="nav-cta">Book a private demo</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a private demo</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="hero" id="hero" aria-labelledby="tbx-hero-title">
+      <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+      <div class="hero-aurora" aria-hidden="true">
+        <div class="aurora-orb orb-1"></div>
+        <div class="aurora-orb orb-2"></div>
+        <div class="aurora-orb orb-3"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-text">
+          <nav class="tbx-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> &nbsp;/&nbsp; <span aria-current="page">Tool Box AI</span>
+          </nav>
+
+          <div class="hero-badge shimmer">
+            <span class="badge-dot"></span>
+            Instant enterprise upgrade for QuickBooks &amp; Xero
+          </div>
+          <h1 id="tbx-hero-title">
+            Enterprise-grade accounting <br>
+            in <span class="tbx-hero-accent">weeks</span> — not a
+            <span style="white-space:nowrap;">six-figure migration.</span>
+          </h1>
+          <p class="hero-sub">
+            Tool Box AI is the instant enterprise upgrade to your existing QuickBooks or Xero.
+            Enable advanced ERP capabilities — workflows, approvals, multi-entity
+            reporting, project accounting, government accounting, audit-ready controls, many more!
+            No rip-and-replace. No six-figure enterprise ERP cost.
+          </p>
+          <div class="hero-buttons">
+            <a href="/book-a-call/" class="btn-primary btn-glow">Book a private demo</a>
+            <a href="#comparison" class="btn-secondary">See the ERP comparison</a>
+          </div>
+
+          <!-- Impact strip: the three numbers buyers care about -->
+          <ul class="tbx-hero-impact" aria-label="Tool Box AI at a glance">
+            <li>
+              <span class="tbx-impact-num">4&nbsp;weeks</span>
+              <span class="tbx-impact-lbl">typical go-live on top of QBO / Xero</span>
+            </li>
+            <li>
+              <span class="tbx-impact-num">$0</span>
+              <span class="tbx-impact-lbl">ledger migration cost — keep your system of record</span>
+            </li>
+            <li>
+              <span class="tbx-impact-num">$50k+</span>
+              <span class="tbx-impact-lbl">in savings</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Dashboard preview -->
+        <div class="hero-dashboard" role="img" aria-label="Tool Box AI finance operations command center preview">
+          <div class="dash-glow-border"></div>
+          <div class="dash-inner">
+            <div class="dash-metrics">
+              <div class="dash-metric-card">
+                <div class="dash-metric-label">ERP feature parity</div>
+                <div class="dash-metric-value">
+                  <span class="dash-number" data-target="95">0</span>%+
+                </div>
+                <div class="dash-progress-bar">
+                  <div class="dash-progress-fill" style="--target-width: 95%"></div>
+                </div>
+              </div>
+              <div class="dash-metric-card">
+                <div class="dash-metric-label">License cost vs. NetSuite</div>
+                <div class="dash-metric-value">
+                  <span class="dash-number" data-target="70">0</span>%
+                  <span class="dash-metric-badge ok">↓ lower</span>
+                </div>
+                <div class="dash-progress-bar">
+                  <div class="dash-progress-fill" style="--target-width: 80%"></div>
+                </div>
+              </div>
+              <div class="dash-metric-card">
+                <div class="dash-metric-label">Time to go-live</div>
+                <div class="dash-metric-value">
+                  <span class="dash-number" data-target="4">0</span> weeks
+                </div>
+                <div class="dash-progress-bar">
+                  <div class="dash-progress-fill" style="--target-width: 35%"></div>
+                </div>
+              </div>
+              <div class="dash-metric-card">
+                <div class="dash-metric-label">QBO / Xero migration</div>
+                <div class="dash-metric-value">
+                  <span class="dash-number" data-target="0">0</span>
+                  <span class="dash-metric-badge ok">✓ none</span>
+                </div>
+                <div class="dash-progress-bar">
+                  <div class="dash-progress-fill" style="--target-width: 100%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="dash-workflows">
+              <div class="dash-workflow-item">
+                <div class="dash-wf-dot active"></div>
+                <span>Multi-entity consolidations</span>
+                <span class="dash-wf-status live">Automated</span>
+              </div>
+              <div class="dash-workflow-item">
+                <div class="dash-wf-dot active"></div>
+                <span>Approval workflows &amp; SoD</span>
+                <span class="dash-wf-status live">Automated</span>
+              </div>
+              <div class="dash-workflow-item">
+                <div class="dash-wf-dot progress"></div>
+                <span>Project accounting &amp; EAC</span>
+                <span class="dash-wf-status pending">In Progress</span>
+              </div>
+              <div class="dash-workflow-item">
+                <div class="dash-wf-dot"></div>
+                <span>Audit evidence export</span>
+                <span class="dash-wf-status queued">Queued</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust bar — positions the category -->
+      <div class="hero-trust-bar">
+        <span>Sits on top of</span>
+        <div class="trust-logos">
+          <span class="trust-logo">QuickBooks</span>
+          <span class="trust-divider">•</span>
+          <span class="trust-logo">Xero</span>
+          <span class="trust-divider">•</span>
+          <span class="trust-logo">Sage Intacct</span>
+          <span class="trust-divider">•</span>
+          <span class="trust-logo">NetSuite</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 2. WHY COMPANIES OUTGROW QBO/XERO ===== -->
+    <section class="key-wins" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <div class="kw-header reveal">
+          <span class="kw-label">Why growing companies outgrow QBO &amp; Xero</span>
+          <h2 class="kw-title" id="why-title">The gap between QuickBooks and NetSuite shouldn't cost six figures to cross.</h2>
+          <p class="kw-subtitle">QuickBooks and Xero are excellent ledgers. But as finance teams add entities, projects,
+            approval discipline, and governance requirements, they hit a wall — a six-figure enterprise ERP
+            migration, or keep patching spreadsheets? Tool Box AI is the instant enterprise upgrade
+            that sits on top of what you already have.</p>
+        </div>
+
+        <div class="kw-row kw-row-quad">
+          <div class="kw-card reveal">
+            <div class="kw-card-body">
+              <span class="kw-tag">Multi-entity</span>
+              <h3 class="kw-card-title">QuickBooks and Xero weren't built for groups</h3>
+              <p class="kw-card-desc">Intercompany, consolidations, eliminations, and multi-entity reporting start
+                living in spreadsheets — with all the audit exposure that creates.</p>
+            </div>
+          </div>
+          <div class="kw-card reveal">
+            <div class="kw-card-body">
+              <span class="kw-tag">Approvals</span>
+              <h3 class="kw-card-title">Approvals escape the system of record</h3>
+              <p class="kw-card-desc">Email threads, shared drives, and tribal knowledge replace the SoD and audit
+                trail sophisticated buyers expect.</p>
+            </div>
+          </div>
+          <div class="kw-card reveal">
+            <div class="kw-card-body">
+              <span class="kw-tag">Advanced ERP</span>
+              <h3 class="kw-card-title">Advanced ERP capabilities</h3>
+              <p class="kw-card-desc">Project accounting, EAC, labor distribution, and indirect rate structures
+                that QuickBooks class tracking was never meant to handle.</p>
+            </div>
+          </div>
+          <div class="kw-card reveal">
+            <div class="kw-card-body">
+              <span class="kw-tag">Governance</span>
+              <h3 class="kw-card-title">Diligence questions don't have clean answers</h3>
+              <p class="kw-card-desc">Procurement and security reviews ask about access controls, change accountability,
+                and evidence — the small-business stack can't answer cleanly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tbx-cost-band" aria-label="License cost comparison">
+          <div class="tbx-cost-card">
+            <h4>NetSuite — annual</h4>
+            <div class="tbx-cost-value">$50k+</div>
+            <div class="tbx-cost-sub">Subscription + per-user + implementation partner fees</div>
+          </div>
+          <div class="tbx-cost-card">
+            <h4>Deltek Costpoint — annual</h4>
+            <div class="tbx-cost-value">$50k+</div>
+            <div class="tbx-cost-sub">GovCon pricing scales with users, modules, and rollout</div>
+          </div>
+          <div class="tbx-cost-card">
+            <h4>Unanet — annual</h4>
+            <div class="tbx-cost-value">$50k+</div>
+            <div class="tbx-cost-sub">Per-user GovCon / AEC pricing plus implementation</div>
+          </div>
+          <div class="tbx-cost-card tbx-cost-us">
+            <span class="tbx-cost-save">Save $50k+ / yr</span>
+            <h4>Tool Box AI</h4>
+            <div class="tbx-cost-value">SMB economics</div>
+            <div class="tbx-cost-sub">Sits on top of your existing QBO or Xero — no ERP migration required</div>
+          </div>
+        </div>
+        <p class="kw-subtitle" style="margin-top:1rem;font-size:.85rem;color:var(--gray-600);">Ranges reflect publicly
+          discussed pricing bands across customer forums and industry reporting. Actual pricing varies by user count,
+          modules, and implementation scope.</p>
+      </div>
+    </section>
+
+
+    <!-- ===== 3. WHAT YOU GET (SERVICES-STYLE TIERS) ===== -->
+    <section class="services" id="platform" aria-labelledby="platform-title">
+      <div class="container">
+        <div class="svc-top reveal">
+          <div class="svc-top-left">
+            <span class="svc-label">The Tool Box AI platform</span>
+            <h2 class="svc-title" id="platform-title">The ERP layer<br>on top of your ledger.</h2>
+          </div>
+          <div class="svc-top-right">
+            <p class="svc-subtitle">Three connected capability layers that extend QuickBooks or Xero into a real
+              enterprise finance operating system — without forcing a full ERP migration.</p>
+          </div>
+        </div>
+
+        <div class="svc-timeline reveal" aria-hidden="true">
+          <div class="svc-timeline-step">
+            <span class="svc-timeline-dot active"></span>
+            <span class="svc-timeline-label">Layer 01</span>
+          </div>
+          <div class="svc-timeline-line"></div>
+          <div class="svc-timeline-step">
+            <span class="svc-timeline-dot"></span>
+            <span class="svc-timeline-label">Layer 02</span>
+          </div>
+          <div class="svc-timeline-line"></div>
+          <div class="svc-timeline-step">
+            <span class="svc-timeline-dot"></span>
+            <span class="svc-timeline-label">Layer 03</span>
+          </div>
+        </div>
+
+        <div class="svc-grid">
+          <article class="svc-card svc-accent-blue reveal">
+            <div class="svc-card-accent"></div>
+            <span class="svc-watermark">01</span>
+            <div class="svc-card-inner">
+              <div class="svc-card-badge">
+                <span class="svc-badge-text">The ERP feature layer</span>
+              </div>
+              <h3 class="svc-card-title">Multi-entity, approvals, and projects</h3>
+              <p class="svc-card-desc">The ERP capabilities QBO and Xero don't ship — added without a migration.</p>
+              <ul class="svc-features">
+                <li>Multi-entity ledger &amp; consolidations</li>
+                <li>Intercompany &amp; eliminations</li>
+                <li>Approval routing &amp; SoD enforcement</li>
+                <li>Project accounting &amp; EAC</li>
+                <li>Indirect rate &amp; allocation structures</li>
+              </ul>
+              <div class="svc-card-result">
+                <span class="svc-result-label">Replaces</span>
+                <span class="svc-result-value">NetSuite / Costpoint modules</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="svc-card svc-accent-navy reveal">
+            <div class="svc-card-accent"></div>
+            <span class="svc-watermark">02</span>
+            <div class="svc-card-inner">
+              <div class="svc-card-badge">
+                <span class="svc-badge-text">The control layer</span>
+              </div>
+              <h3 class="svc-card-title">Security, access &amp; audit posture</h3>
+              <p class="svc-card-desc">The control evidence sophisticated buyers, auditors, and procurement expect.</p>
+              <ul class="svc-features">
+                <li>Multi-tenant architecture</li>
+                <li>Role-based access &amp; granular permissions</li>
+                <li>Preparer ≠ approver enforcement</li>
+                <li>Change accountability &amp; audit trails</li>
+                <li>SOC 2-aligned operating direction</li>
+              </ul>
+              <div class="svc-card-result">
+                <span class="svc-result-label">Replaces</span>
+                <span class="svc-result-value">Spreadsheet control evidence</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="svc-card svc-accent-teal reveal">
+            <div class="svc-card-accent"></div>
+            <span class="svc-watermark">03</span>
+            <div class="svc-card-inner">
+              <div class="svc-card-badge">
+                <span class="svc-badge-text">The reporting layer</span>
+              </div>
+              <h3 class="svc-card-title">Executive reporting &amp; visibility</h3>
+              <p class="svc-card-desc">Live-ledger reporting with the lineage leadership can defend in any review.</p>
+              <ul class="svc-features">
+                <li>Leadership packs &amp; KPI dashboards</li>
+                <li>Consolidated P&amp;L across entities</li>
+                <li>Cash flow &amp; variance perspectives</li>
+                <li>Operational visibility &amp; SLA tracking</li>
+                <li>Board-ready board and audit exports</li>
+              </ul>
+              <div class="svc-card-result">
+                <span class="svc-result-label">Replaces</span>
+                <span class="svc-result-value">Fragmented BI + spreadsheets</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="svc-trust-bar reveal">
+          <div class="svc-trust-item">
+            <span class="svc-trust-number">3 layers</span>
+            <span class="svc-trust-label">ERP, control, reporting</span>
+          </div>
+          <div class="svc-trust-divider"></div>
+          <div class="svc-trust-item">
+            <span class="svc-trust-number">Weeks</span>
+            <span class="svc-trust-label">Go-live — not quarters</span>
+          </div>
+          <div class="svc-trust-divider"></div>
+          <div class="svc-trust-item">
+            <span class="svc-trust-number">0</span>
+            <span class="svc-trust-label">QBO / Xero migrations required</span>
+          </div>
+          <div class="svc-trust-divider"></div>
+          <div class="svc-trust-item">
+            <span class="svc-trust-number">SOC 2</span>
+            <span class="svc-trust-label">Aligned operating direction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 4. COMPARISON TABLE ===== -->
+    <section class="process" id="comparison" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" style="background: rgba(255,255,255,0.08); color: var(--teal);">The ERP comparison</span>
+          <h2 id="comparison-title">Tool Box AI vs. QuickBooks, Xero, NetSuite, Costpoint &amp; Unanet</h2>
+          <p>See exactly what you get — and what you save.</p>
+        </div>
+
+        <div class="tbx-compare-wrap reveal" role="region" aria-label="ERP feature and cost comparison">
+          <table class="tbx-compare">
+            <caption class="sr-only">Feature-by-feature comparison of Tool Box AI against QuickBooks, Xero, NetSuite,
+              Costpoint, and Unanet.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Capability</th>
+                <th scope="col" class="tbx-col-us">Tool Box AI</th>
+                <th scope="col">QuickBooks / Xero</th>
+                <th scope="col">NetSuite</th>
+                <th scope="col">Costpoint / Unanet</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Multi-entity consolidation</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> Built-in</td>
+                <td><span class="tbx-cross">○</span> Spreadsheet-driven</td>
+                <td><span class="tbx-check">●</span> Built-in</td>
+                <td><span class="tbx-check">●</span> Built-in</td>
+              </tr>
+              <tr>
+                <td>Approval workflows &amp; SoD</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> Policy-driven</td>
+                <td><span class="tbx-partial">◐</span> Limited</td>
+                <td><span class="tbx-check">●</span> Configurable</td>
+                <td><span class="tbx-check">●</span> Configurable</td>
+              </tr>
+              <tr>
+                <td>Project accounting &amp; EAC</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> Included</td>
+                <td><span class="tbx-cross">○</span> Class tracking only</td>
+                <td><span class="tbx-partial">◐</span> Module add-on</td>
+                <td><span class="tbx-check">●</span> Core strength</td>
+              </tr>
+              <tr>
+                <td>Indirect rates / GovCon</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> Supported</td>
+                <td><span class="tbx-cross">○</span> Not supported</td>
+                <td><span class="tbx-partial">◐</span> Via add-ons</td>
+                <td><span class="tbx-check">●</span> Core strength</td>
+              </tr>
+              <tr>
+                <td>Role-based access &amp; audit trail</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> First-class</td>
+                <td><span class="tbx-partial">◐</span> Basic</td>
+                <td><span class="tbx-check">●</span> Full</td>
+                <td><span class="tbx-check">●</span> Full</td>
+              </tr>
+              <tr>
+                <td>Executive reporting from live ledger</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> Native</td>
+                <td><span class="tbx-partial">◐</span> Needs BI tools</td>
+                <td><span class="tbx-check">●</span> Native</td>
+                <td><span class="tbx-check">●</span> Native</td>
+              </tr>
+              <tr>
+                <td>Requires ledger migration</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> No — sits on QBO/Xero</td>
+                <td><span class="tbx-check">●</span> N/A</td>
+                <td><span class="tbx-cross">○</span> Yes — full migration</td>
+                <td><span class="tbx-cross">○</span> Yes — full migration</td>
+              </tr>
+              <tr>
+                <td>Typical time to go-live</td>
+                <td class="tbx-col-us"><span class="tbx-check">●</span> Weeks</td>
+                <td><span class="tbx-check">●</span> Already live</td>
+                <td><span class="tbx-cross">○</span> 6–12 months</td>
+                <td><span class="tbx-cross">○</span> 6–18 months</td>
+              </tr>
+              <tr>
+                <td>Annual license cost band</td>
+                <td class="tbx-col-us"><span class="tbx-price">SMB economics</span></td>
+                <td><span class="tbx-price">$30–$200 / mo</span></td>
+                <td><span class="tbx-price">$35k–$150k+</span></td>
+                <td><span class="tbx-price">$20k–$200k+</span></td>
+              </tr>
+              <tr>
+                <td>SOC 2 posture</td>
+                <td class="tbx-col-us"><span class="tbx-partial">◐</span> SOC 2-aligned direction</td>
+                <td><span class="tbx-check">●</span> SOC 2 vendor-level</td>
+                <td><span class="tbx-check">●</span> SOC 2 vendor-level</td>
+                <td><span class="tbx-check">●</span> SOC 2 vendor-level</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tbx-compare-caption">● = supported · ◐ = partial / add-on · ○ = not supported. Pricing bands
+            reflect publicly discussed ranges; actual pricing depends on users, modules, and implementation scope. Tool
+            Box AI is being developed toward a SOC 2-aligned operating model — a completed SOC 2 certification has not
+            been claimed.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 5. SECURITY & CONTROL ===== -->
+    <section class="first-call" id="security" aria-labelledby="security-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Security &amp; Control</span>
+          <h2 id="security-title">Security and control are product features,<br>not afterthoughts.</h2>
+          <p>Tool Box AI is designed for organizations that expect finance systems to support role-based access,
+            auditability, workflow accountability, and disciplined operational execution.</p>
+        </div>
+
+        <div class="fc-trust-row">
+          <div class="fc-trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b6cf5" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Multi-tenant isolation</span>
+          </div>
+          <div class="fc-trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b6cf5" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>Role-based access &amp; SoD</span>
+          </div>
+          <div class="fc-trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b6cf5" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>SOC 2-aligned direction</span>
+          </div>
+        </div>
+
+        <div class="fc-grid">
+          <div class="fc-card reveal">
+            <div class="fc-card-header">
+              <div class="fc-icon-circle" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/>
+                </svg>
+              </div>
+              <h3>Multi-tenant &amp; access control</h3>
+            </div>
+            <ul class="fc-benefits">
+              <li>Tenant boundaries enforced at the data layer</li>
+              <li>Granular roles across preparer, reviewer, approver, read-only</li>
+              <li>Access review readiness built into the operating model</li>
+            </ul>
+          </div>
+
+          <div class="fc-card reveal">
+            <div class="fc-card-header">
+              <div class="fc-icon-circle" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/>
+                </svg>
+              </div>
+              <h3>Audit &amp; change accountability</h3>
+            </div>
+            <ul class="fc-benefits">
+              <li>Every posting, override, and configuration change logged</li>
+              <li>Evidence-friendly audit trail built into workflows</li>
+              <li>Exportable records sized for audit walkthroughs</li>
+            </ul>
+          </div>
+
+          <div class="fc-card reveal">
+            <div class="fc-card-header">
+              <div class="fc-icon-circle" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/>
+                </svg>
+              </div>
+              <h3>Deployment &amp; SOC 2 posture</h3>
+            </div>
+            <ul class="fc-benefits">
+              <li>Backup, recovery, and continuity patterns built into the model</li>
+              <li>Verification-driven engineering as a product standard</li>
+              <li>Developed toward a SOC 2-aligned operating posture</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 6. HOW WE ROLL IT OUT ===== -->
+    <section class="services" id="rollout" aria-labelledby="rollout-title">
+      <div class="container">
+        <div class="svc-top reveal">
+          <div class="svc-top-left">
+            <span class="svc-label">How rollout works</span>
+            <h2 class="svc-title" id="rollout-title">Go live in weeks,<br>not quarters.</h2>
+          </div>
+          <div class="svc-top-right">
+            <p class="svc-subtitle">A tiered rollout that layers ERP capability onto your existing ledger — starting
+              where the pain is highest, so ROI is visible before the next phase begins.</p>
+          </div>
+        </div>
+
+        <div class="process-steps">
+          <article class="step-card reveal" aria-label="Step 1 of 4">
+            <div class="step-num">1</div>
+            <span class="svc-badge-text" style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;">Week 1</span>
+            <h3>Assess &amp; map</h3>
+            <p>Document current QBO or Xero workflows, approvals, entity structure, and control gaps.</p>
+            <ul>
+              <li>Entity &amp; chart review</li>
+              <li>Approval &amp; SoD audit</li>
+              <li>Control gap shortlist</li>
+            </ul>
+          </article>
+          <article class="step-card reveal" aria-label="Step 2 of 4">
+            <div class="step-num">2</div>
+            <span class="svc-badge-text" style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;">Week 2</span>
+            <h3>Connect &amp; configure</h3>
+            <p>Stand up Tool Box AI on top of your ledger and configure roles, workflows, and reports.</p>
+            <ul>
+              <li>Ledger integration (QBO / Xero)</li>
+              <li>Role &amp; approval design</li>
+              <li>Reporting pack scaffolding</li>
+            </ul>
+          </article>
+          <article class="step-card reveal" aria-label="Step 3 of 4">
+            <div class="step-num">3</div>
+            <span class="svc-badge-text" style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;">Weeks 3–4</span>
+            <h3>Go-live in phases</h3>
+            <p>Turn on ERP-layer capabilities one workflow at a time, with parallel validation before cutover.</p>
+            <ul>
+              <li>Multi-entity &amp; consolidations</li>
+              <li>Approval workflows &amp; SoD</li>
+              <li>Executive reporting packs</li>
+            </ul>
+          </article>
+          <article class="step-card reveal" aria-label="Step 4 of 4">
+            <div class="step-num">4</div>
+            <span class="svc-badge-text" style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;">Month 2+</span>
+            <h3>Scale &amp; harden</h3>
+            <p>Extend into project accounting, GovCon workflows, and audit-ready evidence as the team matures.</p>
+            <ul>
+              <li>Project accounting &amp; EAC</li>
+              <li>Indirect rate &amp; allocations</li>
+              <li>Audit evidence automation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 7. WHO IT'S FOR ===== -->
+    <section class="positioning" id="audience" aria-labelledby="audience-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Who it's for</span>
+          <h2 id="audience-title">Built for the companies in the gap between SMB and enterprise.</h2>
+          <p>Tool Box AI is positioned for teams that have outgrown QuickBooks or Xero but aren't ready to absorb
+            six-figure enterprise ERP economics.</p>
+        </div>
+
+        <div class="pos-grid-cards">
+          <div class="pos-card reveal">
+            <div class="pos-card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b6cf5" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>
+              </svg>
+            </div>
+            <h4>CFOs &amp; controllers</h4>
+            <p>Finance leaders standardizing multi-entity operations, approvals, and reporting without a full ERP
+              migration.</p>
+            <div class="pos-card-stat">
+              <strong>1 platform</strong>
+              <span>across ledgers, approvals &amp; reporting</span>
+            </div>
+          </div>
+          <div class="pos-card reveal">
+            <div class="pos-card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b6cf5" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>
+              </svg>
+            </div>
+            <h4>Multi-entity &amp; growing groups</h4>
+            <p>Companies with 2–20 entities whose consolidations and intercompany live in spreadsheets today.</p>
+            <div class="pos-card-stat">
+              <strong>Consolidations</strong>
+              <span>out of spreadsheets</span>
+            </div>
+          </div>
+          <div class="pos-card reveal">
+            <div class="pos-card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b6cf5" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/>
+              </svg>
+            </div>
+            <h4>GovCon &amp; project-driven</h4>
+            <p>AEC, professional services, and GovCon teams that need enterprise ERP outcomes at SMB economics.</p>
+            <div class="pos-card-stat">
+              <strong>EAC &amp; rates</strong>
+              <span>without six-figure ERP costs</span>
+            </div>
+          </div>
+          <div class="pos-card reveal">
+            <div class="pos-card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b6cf5" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/>
+              </svg>
+            </div>
+            <h4>Security-aware buyers</h4>
+            <p>Procurement, security, and audit evaluators who need finance software that answers diligence cleanly.</p>
+            <div class="pos-card-stat">
+              <strong>Audit-ready</strong>
+              <span>evidence &amp; access control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 8. FAQ ===== -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Common questions</span>
+          <h2 id="faq-title">FAQ for finance, procurement &amp; security teams</h2>
+          <p>Straight answers for the evaluators who will ask the hardest questions.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item tbx-faq-details" open>
+            <summary class="faq-question" aria-expanded="true">
+              What is Tool Box AI?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Tool Box AI is the instant enterprise upgrade to your existing QuickBooks or Xero. It layers
+                advanced ERP capabilities — multi-entity reporting, workflow and approvals, role-based access,
+                and audit-ready controls — directly onto your current ledger, without expensive migration or a
+                six-figure price tag.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              How is this different from NetSuite, Costpoint, or Unanet?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Same operating-model outcomes — multi-entity consolidation, project accounting, approval workflows,
+                executive reporting, and audit-ready controls — without six-figure enterprise ERP cost, without a
+                multi-quarter implementation, and without ripping out QuickBooks or Xero.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              Do I have to replace my existing accounting system?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>No. Tool Box AI is designed to sit on top of QuickBooks or Xero and add the ERP layer — workflow,
+                consolidations, project accounting, and reporting — while keeping your existing ledger as the system of
+                record.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              Is Tool Box AI secure enough for enterprise deployment?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Yes. The platform is engineered around multi-tenant isolation, role-based access, audit trails,
+                workflow accountability, and operational rigor — and is being developed toward a strong SOC 2-aligned
+                operating model.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              Is Tool Box AI SOC 2 certified?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Tool Box AI is being built toward a SOC 2-aligned operating model. We do not claim a completed SOC 2
+                certification — we are building toward the security, access, and control posture that supports one.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              What does Tool Box AI cost compared to NetSuite, Costpoint, or Unanet?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Enterprise ERP platforms typically run in the tens of thousands to low six figures per year, plus
+                multi-quarter implementation costs. Tool Box AI is positioned at SMB economics on top of your existing
+                QuickBooks or Xero subscription, with engagement-based onboarding rather than a full migration.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              Does Tool Box AI support GovCon and project-driven accounting?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Yes. The platform is designed to support multi-entity structures, project-driven accounting, labor
+                distribution, indirect rate structures, and GovCon-oriented documentation flows — without six-figure
+                enterprise ERP cost.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              How long does it take to go live?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Most deployments go live in weeks, not quarters, because Tool Box AI layers onto your existing
+                QuickBooks or Xero ledger instead of replacing it. Timeline scales with entity count, workflow
+                complexity, and reporting scope.</p>
+            </div>
+          </details>
+          <details class="faq-item tbx-faq-details">
+            <summary class="faq-question" aria-expanded="false">
+              Can I book a private demo?
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" role="region">
+              <p>Yes. Private walkthroughs are available for qualified buyers and partners.
+                <a href="/book-a-call/">Book a private demo</a> to start the conversation.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 9. FINAL CTA ===== -->
+    <section class="final-cta final-cta-light" id="contact" aria-labelledby="final-cta-title">
+      <div class="container">
+        <div class="final-cta-content">
+          <h2 id="final-cta-title">Your QBO or Xero — upgraded to enterprise<br>in weeks, not quarters.</h2>
+          <p>Book a private demo. We'll map your current stack, show you the ERP capabilities you're missing,
+            and walk through how Tool Box AI closes the gap — without expensive migration or a six-figure price tag.</p>
+          <a href="/book-a-call/" class="btn-primary">Book a private demo</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand" aria-label="Ledger Summit home">
+          <img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="30" height="30" decoding="async">
+          <span>Ledger Summit</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/toolboxai/">Tool Box AI</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/book-a-call/">Book a demo</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="Ledger Summit on YouTube">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="Ledger Summit on LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. Tool Box AI is the instant enterprise upgrade to your existing QuickBooks or
+          Xero — from Ledger Summit.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="/js/shared.js"></script>
+  <script src="/js/home.js"></script>
+  <script>
+    window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };
+  </script>
+  <script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+
+</html>
