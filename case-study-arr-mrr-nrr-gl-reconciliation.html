@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscription Metrics (ARR/MRR/NRR) GL Reconciliation Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit reconciled subscription metrics (ARR, MRR, NRR, gross retention, churn) to GL revenue for a $75M ARR SaaS company.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-arr-mrr-nrr-gl-reconciliation.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Subscription Metrics (ARR/MRR/NRR) GL Reconciliation Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit reconciled subscription metrics (ARR, MRR, NRR, gross retention, churn) to GL revenue for a $75M ARR SaaS company.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-arr-mrr-nrr-gl-reconciliation.html">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Subscription Metrics (ARR/MRR/NRR) GL Reconciliation Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit reconciled subscription metrics (ARR, MRR, NRR, gross retention, churn) to GL revenue for a $75M ARR SaaS company.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css?v=20260505b">
+  <link rel="stylesheet" href="/css/subpages.css?v=20260505b">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Subscription Metrics (ARR/MRR/NRR) GL Reconciliation Case Study | Ledger Summit","description":"See how Ledger Summit reconciled subscription metrics (ARR, MRR, NRR, gross retention, churn) to GL revenue for a $75M ARR SaaS company — closing the gap between operational reporting and audited financials.","author":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"datePublished":"2026-05-05","dateModified":"2026-05-05","url":"https://ledgersummit.com/case-study-arr-mrr-nrr-gl-reconciliation.html"}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a>
+    <ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">Subscription metrics case study</span>
+              <h1>Subscription Metrics (ARR/MRR/NRR) GL Reconciliation Case Study</h1>
+            </div>
+            <p class="lead">A $75M ARR SaaS company's board pack consistently showed ARR numbers different from the audited revenue line. We reconciled subscription metrics (ARR, MRR, NRR, gross retention, churn) to GL revenue with documented bridge logic — making operating reporting and financial reporting tell the same story.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on a $75M ARR vertical SaaS company with subscription + usage revenue mix, NetSuite GL, Salesforce CRM with custom MRR fields, RevOps team owning operating metrics. Annual external audit; investor-driven board cadence.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#measured-results">See measured results</a>
+              <a class="btn btn-soft" href="/#book">Talk through your situation</a>
+            </div>
+            <div class="jump-links"><a class="jump-link" href="#company-context">Company context</a><a class="jump-link" href="#before">Before — what was actually broken</a><a class="jump-link" href="#what-we-built">What Ledger Summit implemented</a><a class="jump-link" href="#mechanics">Subscription metric mechanics — the canonical bridges</a><a class="jump-link" href="#implementation-timeline">Implementation timeline</a><a class="jump-link" href="#measured-results">Measured results</a></div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">Investor metrics and audited revenue disagreeing is a credibility tax. Reconciliation discipline closes the gap permanently.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>$75M ARR</strong><span>Reconciled to GL revenue</span></article>
+              <article class="metric-card"><strong>110%</strong><span>NRR with documented methodology</span></article>
+              <article class="metric-card"><strong>Same numbers</strong><span>Board pack vs. audited financials</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="story-grid">
+          <article class="story-card story-wide" id="company-context">
+            <h2>Company context</h2>
+            <p>The client is a $75M ARR vertical SaaS company. The RevOps team produced ARR/MRR/NRR/churn metrics from Salesforce monthly. Accounting produced revenue from NetSuite per ASC 606. Board packs showed both. The numbers disagreed — typically by $1–3M annually. Investors noticed; board pack credibility eroded; CFO needed alignment.</p>
+            <p>The disagreement wasn't one issue but five: (1) ARR included committed-but-not-yet-started contracts; (2) revenue excluded non-recurring services; (3) discount treatment differed between operating and accounting; (4) modification effective dates differed; (5) churn timing differed.</p>
+            <ul><li>$75M ARR SaaS, mostly subscription with usage component</li><li>Salesforce CRM with custom MRR fields</li><li>NetSuite GL with ASC 606 revenue recognition</li><li>RevOps team produces ARR / NRR metrics</li><li>Annual external audit</li><li>Board pack with both operating and audited numbers — $1–3M annual disagreement</li></ul>
+          </article>
+          <article class="story-card " id="before">
+            <h2>Before — what was actually broken</h2>
+            <p>Two parallel metric pipelines: RevOps produced operating metrics from Salesforce; Accounting produced revenue from NetSuite. No reconciliation. No documented bridge. Investors raised the gap as a credibility issue.</p>
+            <ul><li>No documented bridge between ARR and revenue</li><li>ARR included not-yet-started contracts</li><li>Revenue excluded services (treated separately)</li><li>Discount methodology differed (gross vs. net)</li><li>Modification timing inconsistent</li><li>Board pack disagreement of $1–3M annually</li></ul>
+          </article>
+          <article class="story-card " id="what-we-built">
+            <h2>What Ledger Summit implemented</h2>
+            <p>A documented bridge between subscription metrics and GL revenue, with monthly reconciliation, methodology documentation, and unified reporting framework.</p>
+            <ul><li>ARR definition: contracted MRR × 12 for active subscriptions only (not pending starts)</li><li>MRR definition: aligned to billing entity for subscription contracts</li><li>NRR (Net Revenue Retention): cohort-based with documented logic</li><li>Gross retention: separate from NRR, documented exclusions (e.g., logo churn vs. expansion)</li><li>Churn: dollar churn per period, with timing aligned to ASC 606 recognition</li><li>Bridge from ARR to revenue: ARR × (months elapsed / 12) + non-recurring + usage − deferred revenue impact</li><li>Monthly reconciliation report: ARR ↔ MRR ↔ recognized revenue ↔ deferred revenue</li><li>Documented methodology for board pack</li><li>Disclosure consistency: same metrics in board pack and audited disclosures</li><li>Investor / auditor walkthrough script</li></ul>
+          </article>
+          <article class="story-card story-wide" id="mechanics">
+            <h2>Subscription metric mechanics — the canonical bridges</h2>
+            <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Definition</th><th>Reconciliation to revenue</th></tr></thead><tbody><tr><td>ARR</td><td>Contracted MRR × 12 for active subs</td><td>ARR is annualized run-rate, not recognized revenue. Bridge through recognition methodology.</td></tr><tr><td>MRR</td><td>Recurring monthly revenue in current month</td><td>MRR for active customers; aligns to invoice cycle</td></tr><tr><td>NRR</td><td>Cohort revenue this year ÷ cohort revenue last year</td><td>Includes expansion, contraction, churn within same cohort</td></tr><tr><td>Gross retention</td><td>Cohort revenue this year (excluding expansion) ÷ cohort revenue last year</td><td>Pure churn measure</td></tr><tr><td>Logo retention</td><td>Active customers this year ÷ active customers last year</td><td>Customer count metric</td></tr><tr><td>Dollar churn</td><td>Lost ARR / starting ARR</td><td>Inverse of gross retention</td></tr><tr><td>Recognized revenue</td><td>GAAP revenue per ASC 606</td><td>Bridge from ARR via recognition pattern</td></tr><tr><td>Bookings</td><td>Total contract value signed</td><td>Future revenue commitment, not current</td></tr><tr><td>Billings</td><td>Invoiced amount</td><td>Often ≠ recognized revenue (deferred)</td></tr><tr><td>Deferred revenue</td><td>Billed not earned</td><td>Balance sheet liability; works backward to ARR</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="implementation-timeline">
+            <h2>Implementation timeline</h2>
+            <ul><li><strong>Weeks 1–2:</strong> Discovery: definition audit; identify all 5 disagreements; quantify each</li><li><strong>Weeks 3–4:</strong> Build: bridge engine pulling from Salesforce + NetSuite; reconciliation logic</li><li><strong>Weeks 5:</strong> Calibrate: 12 months of historical bridge; identify and document remaining differences</li><li><strong>Weeks 6:</strong> Documented methodology with worked examples; auditor concurrence on bridge</li><li><strong>Week 7:</strong> Cutover: first month with reconciliation; board pack alignment</li><li><strong>Week 8:</strong> Hypercare and reconciliation discipline operationalized</li></ul>
+          </article>
+          <article class="story-card story-wide" id="measured-results">
+            <h2>Measured results</h2>
+            <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Delta</th></tr></thead><tbody><tr><td>Board pack ARR vs. revenue disagreement</td><td>$1–3M / yr</td><td>$0</td><td>−100%</td></tr><tr><td>Documented methodology</td><td>None</td><td>Per-metric</td><td>—</td></tr><tr><td>Investor confidence</td><td>Eroded</td><td>Restored</td><td>—</td></tr><tr><td>Reconciliation lag</td><td>Annually at audit</td><td>Monthly</td><td>—</td></tr><tr><td>Disclosure consistency</td><td>Inconsistent</td><td>Aligned</td><td>—</td></tr><tr><td>Audit walkthrough — operating metrics</td><td>None</td><td>Documented</td><td>—</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="alternatives">
+            <h2>Alternatives considered</h2>
+            <div class="table-wrap"><table><thead><tr><th>Option</th><th>Time</th><th>Cost band</th><th>Strengths</th><th>Weaknesses</th></tr></thead><tbody><tr><td>ChartMogul</td><td>3 months</td><td>$120K–$180K / yr</td><td>Subscription metrics platform</td><td>Doesn't fix GL bridge</td></tr><tr><td>Mosaic</td><td>3–4 months</td><td>$180K–$280K / yr</td><td>FP&A platform with subscription</td><td>Over-scoped</td></tr><tr><td>Calibrate (subscription analytics)</td><td>3 months</td><td>$80K–$140K / yr</td><td>Modern</td><td>Newer</td></tr><tr><td>Build on existing stack (selected)</td><td>7 weeks</td><td>$60K–$110K</td><td>Right-sized; produces audit-ready bridge</td><td>Maintenance load</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="when-fits">
+            <h2>When this approach fits</h2>
+            <ul><li>SaaS / subscription companies $20M–$200M ARR</li><li>Salesforce + NetSuite (or comparable)</li><li>Active board / investor cadence with metrics expectations</li><li>Annual external audit requiring revenue cycle controls</li><li>Existing RevOps team owning operating metrics</li><li>Disagreement between operating and audited metrics surfaced</li></ul>
+          </article>
+          <article class="story-card story-wide" id="lessons-learned">
+            <h2>Lessons learned</h2>
+            <ul><li><strong>Definitions first, calculation second.</strong> Most metric disagreements are definitional, not arithmetic.</li><li><strong>Bridge, don't merge.</strong> ARR and revenue answer different questions. The right answer is a documented bridge, not forcing them to be the same.</li><li><strong>Auditor concurrence on methodology.</strong> Worth 1–2 weeks of conversation; saves quarterly disagreement.</li><li><strong>Monthly cadence beats annual.</strong> Catch drift in real time; fix definitions before they compound.</li><li><strong>Same metrics in board pack and disclosures.</strong> Disclosure should match what investors see; that's the credibility test.</li></ul>
+          </article>
+          <article class="story-card story-wide" id="faq">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-list"><details><summary><strong>What's the standard ARR definition?</strong></summary><p>Most common: contracted MRR × 12 for active subscriptions, excluding pending-start and one-time. SaaS Capital and OpenView publish reference definitions.</p></details><details><summary><strong>How do you handle pending-start contracts?</strong></summary><p>Best practice: exclude from ARR (not yet earning); separate "pending ARR" or "ending ARR" metric for those. Document the choice.</p></details><details><summary><strong>Why does ARR disagree with revenue?</strong></summary><p>ARR is annualized run-rate at a point in time; revenue is what you actually earned during a period. They answer different questions.</p></details><details><summary><strong>What about non-recurring revenue (services, setup fees)?</strong></summary><p>Excluded from ARR. Services revenue typically tracked separately (ASR — Annual Services Revenue) or excluded entirely from subscription metrics.</p></details><details><summary><strong>How does NRR include or exclude expansion?</strong></summary><p>NRR includes expansion (upsell, cross-sell). Gross retention excludes expansion. Both metrics; both useful; different signals.</p></details><details><summary><strong>What's the right churn timing?</strong></summary><p>Aligned to revenue recognition timing — when the customer no longer has the right to use the service. Documented per company.</p></details><details><summary><strong>How do you handle multi-year contracts?</strong></summary><p>ARR = annualized contract value (TCV / years). Recognized revenue allocated per ASC 606 over service period.</p></details><details><summary><strong>What about usage-based revenue?</strong></summary><p>Best practice: separate "Usage ARR" or include in MRR with disclaimer. Document the choice.</p></details><details><summary><strong>Does this support the public-company disclosure?</strong></summary><p>Yes — public companies often disclose ARR, MRR, NRR. Documented methodology required for SEC reporting.</p></details><details><summary><strong>What about M&A diligence?</strong></summary><p>Documented bridge between operating metrics and audited revenue is essential for diligence. Buyer's tax, accounting, and valuation teams all need to see the same numbers.</p></details></div>
+          </article>
+          <article class="story-card story-wide" id="related">
+            <h2>Related Ledger Summit work</h2>
+            <ul><li><a href="/case-study-saas-revenue-recognition.html">SaaS rev-rec case study</a> — companion ASC 606 work</li><li><a href="/case-study-order-to-cash-automation-cpq-stripe-netsuite.html">Order-to-cash automation</a> — system integration that produces aligned data</li><li><a href="/services-fractional-controller.html">Fractional controller</a> — controller-level review of metrics methodology</li><li><a href="/services-month-end-close-automation.html">Month-end close automation</a> — close discipline</li><li><a href="/services-ai-controls-framework.html">AI controls framework</a> — control posture for revenue cycle</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>Board pack ARR not matching audited revenue?</h2>
+            <p>A 30-minute call walks your metric definitions and tells you where the bridge breaks.</p>
+          </div>
+          <a class="btn btn-primary" href="/#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a>
+        <ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p></div>
+    </div>
+  </footer>
+  <script src="/js/shared.js" defer></script>
+</body>
+</html>
+

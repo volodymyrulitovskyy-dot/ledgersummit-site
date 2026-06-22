@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Tax Nexus & Avalara Implementation Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit ran a multi-state sales tax nexus assessment, registered in 28 states, deployed Avalara, and remediated 4 years of post-Wayfair exposure.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-sales-tax-nexus-avalara-implementation.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sales Tax Nexus & Avalara Implementation Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit ran a multi-state sales tax nexus assessment, registered in 28 states, deployed Avalara, and remediated 4 years of post-Wayfair exposure.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-sales-tax-nexus-avalara-implementation.html">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sales Tax Nexus & Avalara Implementation Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit ran a multi-state sales tax nexus assessment, registered in 28 states, deployed Avalara, and remediated 4 years of post-Wayfair exposure.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css?v=20260505b">
+  <link rel="stylesheet" href="/css/subpages.css?v=20260505b">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Sales Tax Nexus & Avalara Implementation Case Study | Ledger Summit","description":"See how Ledger Summit ran a multi-state sales tax nexus assessment, registered in 28 states, deployed Avalara, and remediated 4 years of post-Wayfair exposure for a $40M ARR SaaS company.","author":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"datePublished":"2026-05-05","dateModified":"2026-05-05","url":"https://ledgersummit.com/case-study-sales-tax-nexus-avalara-implementation.html"}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a>
+    <ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">Sales tax & nexus case study</span>
+              <h1>Sales Tax Nexus & Avalara Implementation Case Study (Post-Wayfair)</h1>
+            </div>
+            <p class="lead">A $40M ARR SaaS company ran a 28-state nexus assessment, registered in every state with economic-nexus exposure, deployed Avalara across Stripe and NetSuite, and remediated 4 years of accumulated post-Wayfair exposure — without restating prior-period revenue.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on a $40M ARR vertical SaaS company selling into all 50 US states, NetSuite GL, Stripe billing, 6-person finance team. Annual external audit; private equity backed with sponsor-driven IPO horizon.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#measured-results">See measured results</a>
+              <a class="btn btn-soft" href="/#book">Talk through your situation</a>
+            </div>
+            <div class="jump-links"><a class="jump-link" href="#company-context">Company context</a><a class="jump-link" href="#before">Before — what was actually broken</a><a class="jump-link" href="#what-we-built">What Ledger Summit implemented</a><a class="jump-link" href="#mechanics">Nexus and remediation mechanics — what the assessment covers</a><a class="jump-link" href="#implementation-timeline">Implementation timeline</a><a class="jump-link" href="#measured-results">Measured results</a></div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">Post-Wayfair sales tax exposure compounds quietly until a state audit or M&A diligence finds it. The remediation pattern is repeatable.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>28 states</strong><span>New registrations</span></article>
+              <article class="metric-card"><strong>$1.4M</strong><span>Exposure remediated via VDA</span></article>
+              <article class="metric-card"><strong>Avalara live</strong><span>Stripe → Avalara → NetSuite</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="story-grid">
+          <article class="story-card story-wide" id="company-context">
+            <h2>Company context</h2>
+            <p>The client is a $40M ARR vertical SaaS company selling subscription software to mid-market customers in all 50 US states. The team had been collecting sales tax in three states (state of incorporation plus two early-customer states) since founding. After the Supreme Court's 2018 South Dakota v. Wayfair decision, every US state plus DC enacted economic nexus rules — typically a $100K revenue or 200-transaction threshold per state per year. The company crossed those thresholds in many states without realizing it.</p>
+            <p>M&A diligence in late 2025 surfaced the exposure: the buyer's diligence team estimated $1.2M–$1.8M in unremitted sales tax across 28 states, plus interest and potential penalties. The deal didn't die but the purchase agreement carved out the tax liability into a special escrow with the seller responsible for resolution. That's when we were brought in.</p>
+            <ul><li>$40M ARR, all-50-state customer footprint</li><li>Selling into states with combinations of taxable, exempt, and partially-taxable treatment</li><li>Stripe handles billing; NetSuite is the GL</li><li>~80% B2B (frequently exempt with valid resale or exemption certificate)</li><li>~20% B2C / SMB (typically taxable)</li><li>4 years of accumulated nexus exposure</li><li>IPO-readiness on 18-month horizon</li></ul>
+          </article>
+          <article class="story-card " id="before">
+            <h2>Before — what was actually broken</h2>
+            <p>Sales tax was being collected in 3 states (SD home state plus 2 customer-pressure states). Stripe charged tax based on the 3 configured jurisdictions. NetSuite booked the tax payable; payments to the 3 states were timely. Everything outside those 3 states: collected $0, remitted $0, accrued nothing, disclosed nothing.</p>
+            <p>The exemption-certificate process was equally informal: customers who claimed exemption were trusted on the email assertion alone, without a valid certificate on file. About 60% of B2B customers had no valid certificate; if any of those states audited and pushed back on exempt treatment, the company would owe tax + interest + penalties on those transactions too.</p>
+            <ul><li>Sales tax collected in only 3 states</li><li>No nexus monitoring; no quarterly threshold review</li><li>~60% of B2B customers had no valid exemption certificate on file</li><li>Stripe tax configuration outdated relative to actual sales footprint</li><li>No accrual of unremitted-but-likely-owed tax</li><li>No tax disclosure in financials beyond the 3 collecting states</li></ul>
+          </article>
+          <article class="story-card " id="what-we-built">
+            <h2>What Ledger Summit implemented</h2>
+            <p>A six-track remediation: (1) full nexus assessment by state-by-state revenue and transaction history; (2) Voluntary Disclosure Agreement (VDA) negotiation in highest-exposure states; (3) registration in 28 states; (4) Avalara deployment integrated to Stripe and NetSuite; (5) exemption-certificate cleanup with CertCapture; (6) ongoing nexus monitoring as part of monthly close.</p>
+            <ul><li>State-by-state nexus assessment using 4 years of Stripe transaction history</li><li>Voluntary Disclosure Agreement (VDA) program in 6 high-exposure states (typical: tax + 2 years interest, no penalties)</li><li>Registration in 28 states (24 with full statutes-of-limitations exposure, 4 within VDA programs)</li><li>Avalara AvaTax integrated to Stripe (real-time tax calc on invoices) and NetSuite (GL posting)</li><li>Avalara CertCapture for exemption certificate management</li><li>Avalara Returns for monthly/quarterly filing automation in registered states</li><li>Monthly close discipline: nexus threshold review, exempt-customer certificate validation</li><li>IPO-readiness disclosure: tax provision, sales tax payable rollforward, contingency disclosure</li></ul>
+          </article>
+          <article class="story-card story-wide" id="mechanics">
+            <h2>Nexus and remediation mechanics — what the assessment covers</h2>
+            <p>Each state has its own economic nexus threshold, taxable-products rules, and remediation programs. Below is the standard analysis pattern applied state-by-state.</p>
+            <div class="table-wrap"><table><thead><tr><th>Mechanic</th><th>What it requires</th></tr></thead><tbody><tr><td>Economic nexus threshold</td><td>Typically $100K revenue OR 200 transactions in prior or current year (varies: $250K in CA, $500K in NY, $100K in TX, etc.)</td></tr><tr><td>Physical nexus</td><td>Office, employees, inventory, or other physical presence creates nexus regardless of revenue</td></tr><tr><td>Affiliate nexus</td><td>Related-party activity creating nexus — relevant for groups with multiple entities</td></tr><tr><td>Click-through nexus</td><td>Referral arrangements (largely superseded by economic nexus post-Wayfair)</td></tr><tr><td>Marketplace facilitator laws</td><td>When selling through Amazon/Shopify/Etsy, marketplace may collect/remit on your behalf</td></tr><tr><td>Taxability rules</td><td>SaaS taxability varies dramatically: TX, NY, OH typically tax SaaS; CA, OR, MT typically don't</td></tr><tr><td>Resale exemption</td><td>Customer reselling product — needs valid resale certificate</td></tr><tr><td>Use exemption</td><td>Government, education, nonprofit — needs valid exemption certificate</td></tr><tr><td>Voluntary Disclosure Agreement (VDA)</td><td>State program — typically 3-4 year lookback, waived penalties, sometimes reduced interest</td></tr><tr><td>Amnesty programs</td><td>State-specific time-limited programs with similar terms; check periodically</td></tr><tr><td>Sourcing rules</td><td>Origin-based vs. destination-based; bill-to vs. ship-to vs. service-delivery location</td></tr><tr><td>Filing frequency</td><td>Monthly / quarterly / annual; based on annual liability — adjusts as you grow</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="implementation-timeline">
+            <h2>Implementation timeline</h2>
+            <ul><li><strong>Weeks 1–2:</strong> 4-year transaction analysis by state; nexus thresholds determined; exposure quantified per state with interest and penalty modeling</li><li><strong>Weeks 3–4:</strong> VDA program negotiation in 6 highest-exposure states; legal review of VDA terms; contingency reserve calculated</li><li><strong>Weeks 5–7:</strong> Registration in 28 states (file SS-4, register for sales tax, set up filing accounts)</li><li><strong>Weeks 8–10:</strong> Avalara AvaTax integration to Stripe (real-time calc), NetSuite (GL posting), CertCapture for exemption management</li><li><strong>Weeks 11–12:</strong> Exemption certificate sweep — request and validate certificates from existing B2B customers; document non-responses</li><li><strong>Weeks 13–14:</strong> Avalara Returns automation, first month of consolidated multi-state filing; reconciliation to GL</li><li><strong>Weeks 15–16:</strong> Disclosure work: tax provision update, sales tax payable rollforward, contingency disclosure for residual exposure</li></ul>
+          </article>
+          <article class="story-card story-wide" id="measured-results">
+            <h2>Measured results</h2>
+            <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Delta</th></tr></thead><tbody><tr><td>States actively collecting</td><td>3</td><td>31</td><td>+28</td></tr><tr><td>Unremitted exposure</td><td>$1.2M–$1.8M est.</td><td>$0 (VDA settled or current)</td><td>—</td></tr><tr><td>Exemption certificates on file</td><td>~40% of B2B</td><td>100% of active B2B</td><td>+60 pp</td></tr><tr><td>Sales tax filing — manual hours / month</td><td>12 hrs (3 states)</td><td>3 hrs (31 states via Avalara)</td><td>−75%</td></tr><tr><td>Real-time tax calc accuracy</td><td>Manual / wrong</td><td>Avalara automated</td><td>—</td></tr><tr><td>Audit risk — material exposure</td><td>High</td><td>Low</td><td>—</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="alternatives">
+            <h2>Alternatives considered</h2>
+            <div class="table-wrap"><table><thead><tr><th>Option</th><th>Time</th><th>Cost band</th><th>Strengths</th><th>Weaknesses</th></tr></thead><tbody><tr><td>TaxJar (Stripe-acquired)</td><td>3 months</td><td>$80K–$140K / yr</td><td>SaaS-friendly; native Stripe</td><td>Returns automation thinner than Avalara</td></tr><tr><td>Anrok</td><td>2–3 months</td><td>$60K–$120K / yr</td><td>Modern SaaS-only platform</td><td>Newer; less depth on edge cases</td></tr><tr><td>Vertex</td><td>5–7 months</td><td>$240K–$420K / yr</td><td>Enterprise-grade</td><td>Way over-scoped at $40M</td></tr><tr><td>Sovos</td><td>5–7 months</td><td>$180K–$320K / yr</td><td>Strong filings/compliance</td><td>Implementation-heavy</td></tr><tr><td>Avalara (selected)</td><td>10 weeks</td><td>$80K–$160K / yr</td><td>Mature platform; broad state coverage</td><td>Configuration depth requires expertise</td></tr><tr><td>Stay manual</td><td>0</td><td>$0 platform / high risk</td><td>No new vendor</td><td>Compounds exposure; can't scale</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="when-fits">
+            <h2>When this approach fits</h2>
+            <ul><li>Multi-state e-commerce or SaaS post-Wayfair (selling into 5+ states)</li><li>M&A diligence flagging unremitted sales tax exposure</li><li>IPO readiness requiring clean sales tax disclosure</li><li>Existing manual sales tax process consuming finance team time</li><li>Stripe / Shopify / NetSuite / QBO stack supported by Avalara</li><li>Subscription, usage-based, or transactional revenue models</li></ul>
+          </article>
+          <article class="story-card story-wide" id="lessons-learned">
+            <h2>Lessons learned and what we'd do differently</h2>
+            <ul><li><strong>Run the nexus assessment first.</strong> Knowing exposure quantitatively makes VDA negotiation and registration sequencing rational.</li><li><strong>VDAs in highest-exposure states.</strong> Lookback caps + waived penalties are worth the effort; states want voluntary compliance.</li><li><strong>Exemption certificates aren't optional.</strong> 60% of "exempt" customers had no certificate; we treated certificate cleanup as its own workstream.</li><li><strong>Stripe + Avalara isn't set-and-forget.</strong> Product taxability rules vary by state; configuration matters.</li><li><strong>Disclosure language matters at IPO.</strong> Residual exposure should be disclosed cleanly; auditor concurrence on contingency reserve is required.</li></ul>
+          </article>
+          <article class="story-card story-wide" id="faq">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-list"><details><summary><strong>What's a Voluntary Disclosure Agreement (VDA)?</strong></summary><p>A state program where a taxpayer with unregistered exposure proactively discloses, registers, and remits back-tax. Typical terms: 3–4 year lookback (instead of 6+ year statute), waived penalties, sometimes reduced interest. Not all states have VDA programs but most do.</p></details><details><summary><strong>How long does a VDA take?</strong></summary><p>3–6 months from initial outreach to executed agreement and payment. The lookback period and exposure amount drive timing.</p></details><details><summary><strong>Why not just register prospectively and ignore prior exposure?</strong></summary><p>Statute of limitations on sales tax is 6+ years in many states (or open if not registered). Prior exposure can surface in audit or diligence indefinitely. Cleaner to remediate.</p></details><details><summary><strong>How does Avalara integrate with Stripe?</strong></summary><p>AvaTax for SaaS hooks Stripe via API; on each invoice, Avalara calculates tax based on customer ship-to and product taxability; Stripe charges the calculated amount; AvaTax records the liability for filing. Typical integration: 1–2 weeks.</p></details><details><summary><strong>What about exemption certificates?</strong></summary><p>Avalara CertCapture handles requesting, validating, and storing certificates. We sweep existing B2B customers for missing certificates as part of remediation.</p></details><details><summary><strong>How do you handle marketplace facilitators (Amazon, Shopify Marketplace)?</strong></summary><p>Most states require the marketplace to collect/remit on the seller's behalf for marketplace sales. The seller still has nexus but the tax obligation rests with the marketplace. Direct sales (off-marketplace) remain the seller's obligation.</p></details><details><summary><strong>What about international (EU VAT, Canada GST)?</strong></summary><p>Out of scope for US Wayfair remediation. Avalara supports international but most US-only remediations stick to US states. International is a separate workstream.</p></details><details><summary><strong>Does this affect revenue recognition?</strong></summary><p>Sales tax is a liability, not revenue, so prior-period revenue typically isn't restated. The unremitted exposure flows through to a tax liability and potentially a P&L charge for interest.</p></details><details><summary><strong>How does this support IPO?</strong></summary><p>S-1 disclosure of contingencies, sales tax payable rollforward, and clean ongoing process — all part of public-company readiness.</p></details><details><summary><strong>What's the typical cost?</strong></summary><p>Year 1: $80K–$160K all-in (nexus assessment + VDAs + Avalara + remediation labor). Year 2+: $40K–$80K platform + filing fees. Plus the tax remitted itself.</p></details></div>
+          </article>
+          <article class="story-card story-wide" id="related">
+            <h2>Related Ledger Summit work</h2>
+            <ul><li><a href="/services-month-end-close-automation.html">Month-end close automation</a> — close discipline that consumes Avalara data</li><li><a href="/services-fractional-controller.html">Fractional controller</a> — controller-level review of tax posture</li><li><a href="/case-study-saas-revenue-recognition.html">SaaS rev-rec case study</a> — companion ASC 606 work for SaaS</li><li><a href="/case-study-quickbooks-to-netsuite-migration.html">QBO → NetSuite migration</a> — system migration paired with tax cleanup</li><li><a href="/services-ai-controls-framework.html">AI controls framework</a> — control posture for tax automation</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>Worried about post-Wayfair sales tax exposure?</h2>
+            <p>A 30-minute call walks your customer footprint and tells you what's likely owed and where to start.</p>
+          </div>
+          <a class="btn btn-primary" href="/#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a>
+        <ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p></div>
+    </div>
+  </footer>
+  <script src="/js/shared.js" defer></script>
+</body>
+</html>
+

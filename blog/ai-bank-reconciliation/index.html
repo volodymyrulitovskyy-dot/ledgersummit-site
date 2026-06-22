@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Bank Reconciliation in NetSuite: 93% Time Savings [Case Study] - Ledger Summit</title>
+  <meta name="description"
+    content="How a mid-sized business reduced bank reconciliation from 15 hours to under 1 hour per account. 95%+ auto-match rate, $12K annual savings. Real case study with data.">
+  <link rel="canonical" href="https://ledgersummit.com/blog/ai-bank-reconciliation/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=10">
+  <link rel="stylesheet" href="/css/pages.css?v=10">
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI-Powered Bank Reconciliation in NetSuite: 93% Time Savings",
+    "description": "How a mid-sized business automated bank reconciliation with AI, reducing time from 15 hours to under 1 hour per account.",
+    "author": {
+      "@type": "Person",
+      "name": "Vit Ulitovskiy",
+      "jobTitle": "Finance Leader",
+      "url": "https://ledgersummit.com/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ledger Summit",
+      "url": "https://ledgersummit.com"
+    },
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-03-10",
+    "image": "https://ledgersummit.com/img/case-studies/bank-reconciliation-dashboard.png",
+    "mainEntityOfPage": "https://ledgersummit.com/blog/ai-bank-reconciliation/"
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AI bank reconciliation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI bank reconciliation uses machine learning to automatically match bank transactions with ERP records. Instead of comparing rows manually, the AI analyzes amounts, dates, descriptions, and vendor patterns to identify matches at scale - typically achieving 95%+ accuracy with less than 2% unmatched items."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to automate bank reconciliation in NetSuite?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical implementation takes 6-8 weeks, including secure API integrations, AI training on historical data, dashboard development, and parallel testing. The AI engine improves its match accuracy over time as it learns from reviewed exceptions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is AI-powered transaction matching?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Modern AI matching engines achieve 95-99% automatic match rates depending on transaction complexity. Only edge cases - partial payments, timing differences, or unusual descriptions - require human review. This compares to roughly 90% accuracy with manual matching, where 5-10% of entries typically contain errors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What ERP systems support AI bank reconciliation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI bank reconciliation can be implemented on top of NetSuite, QuickBooks, SAP, Oracle, Dynamics 365, Sage Intacct, and most major ERP platforms that offer API access to general ledger and transaction data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does bank reconciliation automation cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The cost depends on transaction volume, number of bank accounts, and ERP complexity. For a mid-sized business with 5-10 bank accounts, typical annual savings range from $50K-$150K in reduced labor costs and error correction. Most implementations pay for themselves within the first 3-6 months."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Review -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Doug M."
+    },
+    "reviewBody": "Our bookkeeping used to be fully manual: bank recs in spreadsheets, constant correction entries. Ledger Summit moved those tasks into automated workflows. Now month-end prep is about 50% faster.",
+    "itemReviewed": {
+      "@type": "Service",
+      "name": "Ledger Summit AI Bank Reconciliation"
+    }
+  }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ledger Summit">
+  <meta property="og:title" content="AI-Powered Bank Reconciliation in NetSuite: 93% Time Savings [Case Study] - Ledger Summit">
+  <meta property="og:description" content="How a mid-sized business reduced bank reconciliation from 15 hours to under 1 hour per account. 95%+ auto-match rate, $12K annual savings. Real case study with data.">
+  <meta property="og:url" content="https://ledgersummit.com/blog/ai-bank-reconciliation/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta property="og:image:alt" content="Ledger Summit — AI-powered accounting and finance automation">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI-Powered Bank Reconciliation in NetSuite: 93% Time Savings [Case Study] - Ledger Summit">
+  <meta name="twitter:description" content="How a mid-sized business reduced bank reconciliation from 15 hours to under 1 hour per account. 95%+ auto-match rate, $12K annual savings. Real case study with data.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+</head>
+
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="cs-reading-progress" id="readingProgress"></div>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+          alt="Ledger Summit logo" width="36" height="36" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ==================== 1. HERO ==================== -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Case Study - NetSuite</span>
+        <h1>AI-Powered Bank <br>Reconciliation</h1>
+        <p>How a mid-sized business cut reconciliation time by 93% - from 15 hours to under 1 hour per account - with AI-driven automation built on NetSuite.</p>
+        <div class="cs-byline">
+          <img src="/img/team/vit-ulitovskiy.jpg" alt="Vit Ulitovskiy" class="cs-byline-photo" decoding="async">
+          <div class="cs-byline-info">
+            <strong>Vit Ulitovskiy, MBA</strong>
+            <span>Finance Leader</span>
+          </div>
+          <div class="cs-byline-meta"><span>Published Jan 15, 2026</span><span>12 min read</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. INDUSTRY CONTEXT ==================== -->
+    <section class="page-section">
+      <div class="container">
+        <div class="cs-narrative reveal">
+          <h2>The Problem Is Bigger Than You Think</h2>
+          <p class="cs-lead">Bank reconciliation is one of the most time-consuming, error-prone processes in finance. And the data shows it's getting worse, not better.</p>
+          <p>As transaction volumes grow and companies add bank accounts, payment processors, and entities, manual reconciliation doesn't just slow down - it breaks. Finance teams spend <strong>20 to 50 hours per month</strong> matching transactions by hand, and despite the effort, errors still slip through.</p>
+        </div>
+
+        <!-- Industry Stats Infographic -->
+        <div class="cs-industry-stats reveal">
+          <div class="cs-industry-stat">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">of spreadsheets used for reconciliation contain at least one error</div>
+            <div class="stat-source">KPMG / Optimus Research, 2025</div>
+          </div>
+          <div class="cs-industry-stat">
+            <div class="stat-number">20-50 hrs</div>
+            <div class="stat-label">average monthly time spent on manual bank reconciliation</div>
+            <div class="stat-source">Kosh.ai Industry Report, 2025</div>
+          </div>
+          <div class="cs-industry-stat">
+            <div class="stat-number">$8.1B</div>
+            <div class="stat-label">projected reconciliation software market by 2034 (from $2.3B in 2025)</div>
+            <div class="stat-source">Fortune Business Insights, 2025</div>
+          </div>
+        </div>
+
+        <div class="cs-narrative reveal">
+          <p>Enterprise tools like BlackLine and FloQast address this for large companies. But mid-market businesses - the ones running NetSuite, QuickBooks, or Sage - are often left behind, stuck with spreadsheets and manual matching. That's exactly where this story begins.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. MEET THE CLIENT ==================== -->
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="cs-narrative reveal">
+          <h2>Meet the Client</h2>
+          <p class="cs-lead">A growing multi-location services company with 8 bank accounts across 3 legal entities. Their finance team of four ran month-end on NetSuite. And every month, the same thing happened.</p>
+          <p>Two full-time staff members spent the first two weeks of every month on bank reconciliation alone. They downloaded CSV files from eight different bank portals, exported transaction reports from NetSuite, pasted everything into Excel, and started matching - line by line, cell by cell.</p>
+          <p>Each bank account took 10 to 15 hours. And even then, 5-10% of the matches were wrong - discovered only during quarterly audits, when fixing them was expensive and disruptive.</p>
+
+          <div class="cs-pullquote">
+            "We knew we were wasting time. But every month the volume was higher, and we had no way to speed it up without hiring more people."
+            <cite> -  Finance Director, Client Company</cite>
+          </div>
+
+          <p>Month-end close was routinely delayed. Leadership couldn't get clean cash balances when they needed to make decisions. And the team was burning out on work that felt repetitive and low-value - but couldn't be skipped.</p>
+          <p>At its core, <strong>this wasn't an accounting problem. It was a data problem.</strong> The company had all the information it needed - thousands of transactions with dates, amounts, descriptions, and vendors. But that data lived in separate systems and was being reviewed by humans one row at a time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. WHAT WAS BREAKING ==================== -->
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Before Automation</span>
+          <h2>What the Old Process Looked Like</h2>
+        </div>
+
+        <!-- Process Flow Infographic -->
+        <div class="cs-process-flow reveal">
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">1</div>
+            <div class="flow-label">Download bank statements</div>
+            <div class="flow-pain-tag">8 bank portals</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">2</div>
+            <div class="flow-label">Export NetSuite data</div>
+            <div class="flow-pain-tag">Manual CSV export</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">3</div>
+            <div class="flow-label">Paste into Excel</div>
+            <div class="flow-pain-tag">Format mismatches</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">4</div>
+            <div class="flow-label">Match line by line</div>
+            <div class="flow-pain-tag">10-15 hrs each</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">5</div>
+            <div class="flow-label">Find & fix errors</div>
+            <div class="flow-pain-tag">5-10% error rate</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">6</div>
+            <div class="flow-label">Upload to NetSuite</div>
+            <div class="flow-pain-tag">Manual re-entry</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">7</div>
+            <div class="flow-label">Manager review</div>
+            <div class="flow-pain-tag">Delayed 3-5 days</div>
+          </div>
+        </div>
+
+        <div class="cs-narrative reveal">
+          <p>Every step in this chain relied on a human doing repetitive work. Every handoff introduced risk. And the whole process had to be repeated - every month, for every account.</p>
+          <p>When transaction volume increased during peak periods (payroll cycles, seasonal revenue spikes), the team simply couldn't keep up. Reconciliation backlogs meant leadership was making decisions based on cash numbers that were days or even weeks old.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. THE AI SOLUTION ==================== -->
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="cs-narrative reveal">
+          <h2>How We Built the AI Solution</h2>
+          <p class="cs-lead">We designed a custom AI reconciliation engine that connects directly to NetSuite and live bank feeds - eliminating manual downloads, manual matching, and manual uploads entirely.</p>
+          <p>Instead of people reviewing transactions one by one, the system processes thousands of transactions in minutes. The AI was trained on 18 months of the client's historical matching data. It learned to recognize patterns in amounts, timing gaps, vendor naming conventions, and multi-part payments.</p>
+          <p><strong>The result: 95%+ of transactions are matched automatically.</strong> Only genuinely ambiguous items - partial payments, unusual descriptions, or timing discrepancies - are flagged for human review. And even those come with confidence scores and suggested matches, so reviewers can approve or reassign with a single click.</p>
+        </div>
+
+        <!-- Dashboard Screenshot -->
+        <div class="cs-screenshot reveal">
+          <img src="/img/case-studies/bank-reconciliation-dashboard.png" alt="AI bank reconciliation dashboard showing 95% auto-match rate, 1,452 matched transactions, and exception queue with confidence scoring" decoding="async">
+          <div class="cs-screenshot-caption">Live reconciliation dashboard: auto-match progress, transaction detail, confidence-ranked exception queue</div>
+        </div>
+
+        <!-- Key Capabilities -->
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>AI Pattern Matching</h4>
+            <p>Learns from historical data to match amounts, dates, descriptions, and vendor behavior - even across naming inconsistencies</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Confidence Scoring</h4>
+            <p>Every match gets a 0-100% confidence score. High-confidence matches auto-approve; low-confidence items route to human review</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>One-Click Review</h4>
+            <p>Exception queue shows side-by-side bank and GL data with suggested matches. Approve, reassign, or flag with a single click</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Full Audit Trail</h4>
+            <p>Every match, override, and comment is logged with timestamps and user IDs - SOX and GAAP audit-ready from day one</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. BEFORE vs AFTER ==================== -->
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Measurable Impact</span>
+          <h2>Before vs. After</h2>
+        </div>
+
+        <div class="cs-before-after reveal">
+          <div class="cs-ba-row cs-ba-header">
+            <div class="cs-ba-cell">Metric</div>
+            <div class="cs-ba-cell">Before</div>
+            <div class="cs-ba-cell">After</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Time per account</div>
+            <div class="cs-ba-cell before">10-15 hours</div>
+            <div class="cs-ba-cell after">< 1 hour</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Match accuracy</div>
+            <div class="cs-ba-cell before">~90% (5-10% errors)</div>
+            <div class="cs-ba-cell after">95%+ auto-match</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Error rate</div>
+            <div class="cs-ba-cell before">5-10% discovered in audit</div>
+            <div class="cs-ba-cell after">< 0.5% with real-time flags</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Close delay</div>
+            <div class="cs-ba-cell before">3-5 days late</div>
+            <div class="cs-ba-cell after">Same-day close</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Annual cost per account</div>
+            <div class="cs-ba-cell before">~$18K in labor</div>
+            <div class="cs-ba-cell after">~$6K (67% reduction)</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Staff capacity freed</div>
+            <div class="cs-ba-cell before">0 hours</div>
+            <div class="cs-ba-cell after">160+ hours/year per account</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. RESULTS CARDS ==================== -->
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The Numbers</span>
+          <h2>Results That Compound</h2>
+        </div>
+        <div class="cs-results-grid reveal">
+          <div class="cs-result-card">
+            <span class="cs-result-number">&lt;1 hr</span>
+            <span class="cs-result-label">Per account<br>(was 10-15 hrs)</span>
+          </div>
+          <div class="cs-result-card">
+            <span class="cs-result-number">120+</span>
+            <span class="cs-result-label">Hours saved<br>per account/year</span>
+          </div>
+          <div class="cs-result-card">
+            <span class="cs-result-number">95%+</span>
+            <span class="cs-result-label">Automatic<br>match rate</span>
+          </div>
+          <div class="cs-result-card">
+            <span class="cs-result-number">$12K+</span>
+            <span class="cs-result-label">Annual savings<br>per account</span>
+          </div>
+        </div>
+        <div class="cs-narrative reveal">
+          <p>With 8 bank accounts, the total annual impact exceeded <strong>960 hours saved</strong> and <strong>$96K+ in reduced labor costs</strong> - before counting the elimination of audit correction entries, which previously cost the company an additional $15K-$20K per year in rework.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. MID-PAGE CTA ==================== -->
+    <section class="page-section">
+      <div class="container">
+        <div class="cs-mid-cta reveal">
+          <h3>Is This Your Problem Too?</h3>
+          <p>If your team is spending more than 2 hours per account on bank reconciliation, there's a faster way. We'll show you exactly what's automatable - and what isn't.</p>
+          <a href="/book-a-call/" class="btn-primary">Get a free workflow analysis &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. TIMELINE ==================== -->
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Implementation</span>
+          <h2>8-Week Rollout</h2>
+        </div>
+        <div class="cs-timeline reveal">
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Weeks 1-2: Connect</h4>
+            <p>Secure API integrations with NetSuite and all 8 bank feeds. Data mapping, field validation, and historical data import for AI training.</p>
+          </div>
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Weeks 3-4: Build</h4>
+            <p>AI matching engine development. Pattern training on 18 months of historical transactions. Review dashboard and exception workflow.</p>
+          </div>
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Weeks 5-6: Scale</h4>
+            <p>Multi-account rollout across all 3 entities. Performance tuning, tolerance rules, and multi-currency handling.</p>
+          </div>
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Weeks 7-8: Launch</h4>
+            <p>Audit trail configuration, SOX/GAAP compliance validation, team training, parallel testing with manual process, and production go-live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. TESTIMONIAL ==================== -->
+    <section class="page-section">
+      <div class="container">
+        <div class="cs-review-card reveal">
+          <div class="cs-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Our bookkeeping used to be fully manual: bank recs in spreadsheets, constant correction entries. Ledger Summit moved those tasks into automated workflows. Now month-end prep is about 50% faster - and our auditors actually complimented the documentation."</blockquote>
+          <div class="cs-review-person">
+            <img src="/img/reviews/doug.svg" alt="Doug M." decoding="async">
+            <div>
+              <strong>Doug M.</strong>
+              <span>Finance Director</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. FAQ ==================== -->
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Common Questions</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="cs-faq-section">
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">What is AI bank reconciliation?</button>
+            <div class="cs-faq-a">
+              <div class="cs-faq-a-inner">
+                AI bank reconciliation uses machine learning to automatically match bank transactions with ERP records. Instead of comparing rows manually, the AI analyzes amounts, dates, descriptions, and vendor patterns to identify matches at scale - typically achieving 95%+ accuracy with less than 2% unmatched items. This approach reduces reconciliation time by 80-93% compared to manual methods.
+              </div>
+            </div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">How long does it take to automate bank reconciliation in NetSuite?</button>
+            <div class="cs-faq-a">
+              <div class="cs-faq-a-inner">
+                A typical implementation takes 6-8 weeks, including secure API integrations with NetSuite and bank feeds, AI training on historical data, dashboard development, and parallel testing. The AI engine continuously improves its match accuracy over time as it learns from reviewed exceptions and new transaction patterns.
+              </div>
+            </div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">How accurate is AI-powered transaction matching?</button>
+            <div class="cs-faq-a">
+              <div class="cs-faq-a-inner">
+                Modern AI matching engines achieve 95-99% automatic match rates depending on transaction complexity. Only edge cases - partial payments, timing differences, or unusual descriptions - require human review. This compares to roughly 90% accuracy with manual matching, where 5-10% of entries typically contain errors that are only discovered during audits.
+              </div>
+            </div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">What ERP systems support AI bank reconciliation?</button>
+            <div class="cs-faq-a">
+              <div class="cs-faq-a-inner">
+                AI bank reconciliation can be built on top of <strong>NetSuite, QuickBooks, SAP, Oracle, Dynamics 365, Sage Intacct</strong>, and most major ERP platforms that offer API access to general ledger and transaction data. The integration approach is the same: connect to the ERP's transaction data, pull live bank feeds, and let the AI handle the matching.
+              </div>
+            </div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">How much does bank reconciliation automation cost?</button>
+            <div class="cs-faq-a">
+              <div class="cs-faq-a-inner">
+                The investment depends on transaction volume, number of bank accounts, and ERP complexity. For a mid-sized business with 5-10 bank accounts, typical annual savings range from <strong>$50K-$150K</strong> in reduced labor costs and error correction. Most implementations pay for themselves within the first 3-6 months. Unlike enterprise tools (BlackLine, FloQast), custom-built solutions are scoped to your exact workflow - no unnecessary modules or per-seat licensing.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 12. ABOUT THE AUTHOR ==================== -->
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">About the Author</span>
+        </div>
+        <div class="cs-about-author reveal">
+          <img src="/img/team/vit-ulitovskiy.jpg" alt="Vit Ulitovskiy" class="cs-about-author-photo" decoding="async">
+          <div class="cs-about-author-body">
+            <h3>Vit Ulitovskiy, MBA</h3>
+            <span class="cs-about-author-title">Finance Leader at Ledger Summit</span>
+            <p>Vit is a seasoned finance leader with over 20 years of experience across healthcare, engineering, and consulting. He has led end-to-end M&A integrations, built finance teams from the ground up, and now focuses on bringing AI-powered automation to accounting workflows.</p>
+            <p>His specialty: helping mid-market companies eliminate the manual processes that slow down month-end close - so finance teams can spend time on analysis and strategy instead of data entry.</p>
+            <div class="cs-author-credentials">
+              <span class="cs-credential-badge">MBA</span>
+              <span class="cs-credential-badge">M&A Integration Expert</span>
+              <span class="cs-credential-badge">Financial Planning</span>
+              <span class="cs-credential-badge">System Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 13. FINAL CTA ==================== -->
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="cs-ai-cta reveal">
+          <h2>Stop Wasting 10+ Hours<br>on Bank Reconciliation</h2>
+          <p>Book a free 30-minute call. Walk away with a workflow map, quick-win list, and a start-here plan - whether you work with us or not. No pitch. No pressure. Just clarity.</p>
+          <a href="/book-a-call/" class="btn-primary">Book a free call &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand">
+          <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+            alt="Ledger Summit" width="30" height="30" decoding="async">
+          <span>Ledger Summit</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/book-a-call/">Book a Call</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script src="/js/shared.js"></script>
+
+  <!-- Reading Progress Bar + FAQ Accordion -->
+  <script>
+  (function() {
+    // Reading progress bar
+    const progressBar = document.getElementById('readingProgress');
+    if (progressBar) {
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+      }, { passive: true });
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.cs-faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.cs-faq-a');
+        const isOpen = item.classList.contains('open');
+
+        // Close others
+        document.querySelectorAll('.cs-faq-item').forEach(function(other) {
+          if (other !== item) {
+            other.classList.remove('open');
+            var otherAnswer = other.querySelector('.cs-faq-a');
+            if (otherAnswer) otherAnswer.style.maxHeight = '0';
+            var otherBtn = other.querySelector('.cs-faq-q');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        if (isOpen) {
+          item.classList.remove('open');
+          answer.style.maxHeight = '0';
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  })();
+  </script>
+  <!-- sem.chat Widget -->
+  <script>
+    window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };
+  </script>
+  <script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+
+</html>

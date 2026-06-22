@@ -1,0 +1,84 @@
+<svg width="1100" height="780" viewBox="0 0 1100 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="780" rx="36" fill="#F8FAFC"/>
+  <rect x="36" y="36" width="1028" height="708" rx="30" fill="url(#bg)"/>
+  <text x="76" y="108" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Month-End Workflow</text>
+  <text x="76" y="144" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="18">A single loop for loading data, reviewing issues, and finalizing the close.</text>
+
+  <g>
+    <rect x="76" y="206" width="222" height="118" rx="24" fill="#0F172A"/>
+    <text x="104" y="244" fill="#A3E635" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">STEP 1</text>
+    <text x="104" y="276" fill="white" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Load data</text>
+    <text x="104" y="304" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="16">Import trial balance or</text>
+    <text x="104" y="326" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="16">upload the latest snapshot.</text>
+  </g>
+
+  <g>
+    <rect x="338" y="206" width="222" height="118" rx="24" fill="#E0F2FE"/>
+    <text x="366" y="244" fill="#0369A1" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">STEP 2</text>
+    <text x="366" y="276" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Run rules</text>
+    <text x="366" y="304" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">Compare balances, trends,</text>
+    <text x="366" y="326" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">and schedule expectations.</text>
+  </g>
+
+  <g>
+    <rect x="600" y="206" width="222" height="118" rx="24" fill="#FEF3C7"/>
+    <text x="628" y="244" fill="#B45309" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">STEP 3</text>
+    <text x="628" y="276" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Work exceptions</text>
+    <text x="628" y="304" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">Assign owners, comment,</text>
+    <text x="628" y="326" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">resolve, or defer issues.</text>
+  </g>
+
+  <g>
+    <rect x="862" y="206" width="162" height="118" rx="24" fill="#DCFCE7"/>
+    <text x="890" y="244" fill="#15803D" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">STEP 4</text>
+    <text x="890" y="276" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Tie out</text>
+    <text x="890" y="304" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">Reconcile and</text>
+    <text x="890" y="326" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">update schedules.</text>
+  </g>
+
+  <g>
+    <rect x="168" y="438" width="222" height="118" rx="24" fill="#F1F5F9"/>
+    <text x="196" y="476" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">STEP 5</text>
+    <text x="196" y="508" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Complete checklist</text>
+    <text x="196" y="536" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">Confirm task ownership,</text>
+    <text x="196" y="558" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">timing, and approvals.</text>
+  </g>
+
+  <g>
+    <rect x="448" y="438" width="222" height="118" rx="24" fill="#DBEAFE"/>
+    <text x="476" y="476" fill="#1D4ED8" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">STEP 6</text>
+    <text x="476" y="508" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Review summary</text>
+    <text x="476" y="536" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">Check metrics, material</text>
+    <text x="476" y="558" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">movements, and progress.</text>
+  </g>
+
+  <g>
+    <rect x="728" y="438" width="196" height="118" rx="24" fill="#111827"/>
+    <text x="756" y="476" fill="#A7F3D0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">STEP 7</text>
+    <text x="756" y="508" fill="white" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Sign off</text>
+    <text x="756" y="536" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="16">Finalize the period and</text>
+    <text x="756" y="558" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="16">preserve the audit trail.</text>
+  </g>
+
+  <path d="M298 265H338" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M560 265H600" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M822 265H862" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M944 324V368C944 390.091 926.091 408 904 408H280C257.909 408 240 425.909 240 448V438" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M390 497H448" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M670 497H728" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+
+  <circle cx="944" cy="324" r="10" fill="#94A3B8"/>
+  <circle cx="240" cy="448" r="10" fill="#94A3B8"/>
+
+  <rect x="76" y="620" width="948" height="82" rx="24" fill="#FFFFFF" fill-opacity="0.72"/>
+  <text x="112" y="661" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Outcome:</text>
+  <text x="216" y="661" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="20">The team gets a controlled, documented path from raw accounting data to reviewed monthly reporting.</text>
+
+  <defs>
+    <linearGradient id="bg" x1="36" y1="36" x2="1064" y2="744" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF4"/>
+      <stop offset="0.55" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EEF2FF"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,948 @@
+/* ============================================
+   LEDGER SUMMIT — Shared Design System
+   Used across all static pages
+   ============================================ */
+
+/* ---- Google Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ---- Design Tokens ---- */
+:root {
+    /* Primary palette */
+    --navy: #0a1628;
+    --navy-light: #121f38;
+    --navy-mid: #1a2d4e;
+    --blue: #3b6cf5;
+    --blue-hover: #2b5ae0;
+    --blue-glow: rgba(59, 108, 245, 0.3);
+    --blue-subtle: rgba(59, 108, 245, 0.08);
+
+    /* Accents */
+    --teal: #06d6a0;
+    --teal-glow: rgba(6, 214, 160, 0.2);
+    --amber: #f4a261;
+    --coral: #ef476f;
+
+    /* Neutrals */
+    --white: #ffffff;
+    --off-white: #f8f9fc;
+    --gray-50: #f0f2f5;
+    --gray-100: #e4e7ec;
+    --gray-200: #c8cdd6;
+    --gray-400: #8892a4;
+    --gray-600: #4a5568;
+    --gray-800: #1e293b;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg-light: rgba(255, 255, 255, 0.85);
+    --glass-border-light: rgba(255, 255, 255, 0.5);
+
+    /* Typography */
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --h1: clamp(2.5rem, 5vw, 4rem);
+    --h2: clamp(1.8rem, 3.5vw, 2.8rem);
+    --h3: clamp(1.2rem, 2vw, 1.5rem);
+    --body: 1rem;
+    --small: 0.875rem;
+
+    /* Spacing */
+    --section-pad: clamp(4rem, 8vw, 7rem);
+    --container: 1200px;
+
+    /* Effects */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 40px var(--blue-glow);
+    --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---- Reset & Base ---- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--body);
+    line-height: 1.7;
+    color: var(--gray-800);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: var(--blue-subtle);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3.5rem;
+}
+
+.section-header h2 {
+    font-size: var(--h2);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute !important;
+    top: -200px !important;
+    left: 0;
+    background: var(--blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 9999;
+    transition: top 0.2s;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+.skip-link:focus {
+    top: 0 !important;
+    clip: auto;
+    overflow: visible;
+    width: auto;
+    height: auto;
+}
+
+
+/* ========================================
+   NAVIGATION — Glassmorphic sticky
+   ======================================== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all var(--transition);
+}
+
+.nav.scrolled {
+    background: rgba(26, 58, 110, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.6rem 0;
+}
+
+/* On inner pages, nav starts with dark bg */
+.nav.nav-dark {
+    background: rgba(26, 58, 110, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.nav-logo img {
+    height: 36px;
+    width: auto;
+}
+
+.nav-logo span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+}
+
+.nav-cta {
+    background: var(--blue);
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition);
+    box-shadow: 0 4px 16px var(--blue-glow);
+}
+
+.nav-cta:hover {
+    background: var(--blue-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--blue-glow);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile nav */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 22, 40, 0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.mobile-nav.open {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-nav a {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition);
+    box-shadow: 0 4px 20px var(--blue-glow);
+}
+
+.btn-primary:hover {
+    background: var(--blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px var(--blue-glow);
+}
+
+.btn-primary.btn-glow {
+    position: relative;
+    overflow: visible;
+}
+
+.btn-primary.btn-glow::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, rgba(80, 150, 255, 0.8), rgba(160, 210, 255, 0.7), rgba(80, 150, 255, 0.8));
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(12px);
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all var(--transition);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Outline variant for light backgrounds */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--blue);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--blue);
+    transition: all var(--transition);
+}
+
+.btn-outline:hover {
+    background: var(--blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px var(--blue-glow);
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: linear-gradient(165deg, #1a3a6e 0%, #1e4a8a 30%, #2260a8 60%, #1a3f7a 100%);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 3rem 0 1.5rem;
+    border-top: none;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer-brand img {
+    height: 30px;
+    width: auto;
+}
+
+.footer-brand span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   ANIMATIONS — Scroll reveal
+   ======================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ========================================
+   SCROLL TO TOP BUTTON
+   ======================================== */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 900;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px var(--blue-glow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: var(--blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--blue-glow);
+}
+
+
+/* ========================================
+   RESPONSIVE — Shared
+   ======================================== */
+@media (max-width: 768px) {
+    :root {
+        --h1: clamp(1.8rem, 6vw, 2.5rem);
+        --h2: clamp(1.4rem, 4vw, 2rem);
+        --section-pad: clamp(3rem, 6vw, 5rem);
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-header p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .scroll-top-btn {
+        bottom: 1.5rem;
+        left: 1rem;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .nav,
+    .hamburger,
+    .mobile-nav,
+    .footer {
+        display: none !important;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+}
+/* ============================================
+   SITE-WIDE: Force white text on blue / navy / dark sections
+   ============================================
+   Fixes grey-on-blue and blue-on-blue readability site-wide.
+   Targets every common dark-section pattern: heroes, final-CTA bands,
+   page-hero blocks, subpage hero/CTA, .dark-section, and any section
+   whose background uses --navy / --navy-mid / --blue.
+
+   Order matters: this block sits at the end of shared.css so it
+   overrides earlier rules that set grey or blue text on dark backgrounds.
+   Page-local CSS files load AFTER shared.css and can still override
+   these defaults if a specific design needs to. */
+
+.hero,
+.svc-hero,
+.page-hero,
+.subpage-hero,
+.subpage-cta,
+.final-cta:not(.final-cta-light),
+.dark-section,
+section.dark-section,
+.process,
+.first-call,
+.team {
+  /* Establish a default light text color on dark backgrounds */
+  --tbx-text-default: rgba(255, 255, 255, 0.92);
+  --tbx-text-muted: rgba(255, 255, 255, 0.78);
+  --tbx-text-soft: rgba(255, 255, 255, 0.65);
+}
+
+/* Body, paragraph, and list text inside dark sections */
+.hero p, .hero li, .hero span:not([class]),
+.svc-hero p, .svc-hero li,
+.page-hero p, .page-hero li,
+.subpage-hero p, .subpage-hero li,
+.subpage-cta p, .subpage-cta li,
+.final-cta:not(.final-cta-light) p, .final-cta:not(.final-cta-light) li,
+.dark-section p, .dark-section li,
+.process p, .process li,
+.first-call p, .first-call li,
+.team blockquote, .team p {
+  color: var(--tbx-text-default, rgba(255, 255, 255, 0.92)) !important;
+}
+
+/* Headings on dark sections */
+.hero h1, .hero h2, .hero h3, .hero h4,
+.svc-hero h1, .svc-hero h2, .svc-hero h3,
+.page-hero h1, .page-hero h2, .page-hero h3,
+.subpage-hero h1, .subpage-hero h2, .subpage-hero h3, .subpage-hero h4,
+.subpage-cta h1, .subpage-cta h2, .subpage-cta h3,
+.final-cta:not(.final-cta-light) h1,
+.final-cta:not(.final-cta-light) h2,
+.final-cta:not(.final-cta-light) h3,
+.dark-section h1, .dark-section h2, .dark-section h3, .dark-section h4,
+.process h2, .process h3,
+.first-call h2:not([style*="color"]),
+.team h2, .team h3 {
+  color: var(--white) !important;
+}
+
+/* Anchor links inside dark sections — readable light blue, not link-blue */
+.hero a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-soft):not(.nav-cta):not(.jump-link):not([class*="logo"]),
+.subpage-hero a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-soft):not(.jump-link),
+.subpage-cta a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-soft),
+.final-cta:not(.final-cta-light) a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-soft),
+.dark-section a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-soft),
+.page-hero a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-soft) {
+  color: #d8e6ff !important;
+}
+.hero a:not(.btn):hover, .subpage-hero a:not(.btn):hover, .subpage-cta a:not(.btn):hover,
+.final-cta:not(.final-cta-light) a:not(.btn):hover, .dark-section a:not(.btn):hover {
+  color: var(--white) !important;
+}
+
+/* Strong / emphasized text on dark sections */
+.hero strong, .subpage-hero strong, .subpage-cta strong,
+.final-cta:not(.final-cta-light) strong, .dark-section strong {
+  color: var(--white);
+}
+
+/* Eyebrow / badge / pill labels that default to blue text — white treatment on dark */
+.hero .section-label, .hero .eyebrow,
+.subpage-hero .section-label, .subpage-hero .eyebrow,
+.subpage-cta .section-label, .subpage-cta .eyebrow,
+.final-cta:not(.final-cta-light) .section-label, .final-cta:not(.final-cta-light) .eyebrow,
+.dark-section .section-label, .dark-section .eyebrow,
+.page-hero .section-label, .page-hero .eyebrow,
+.process .section-label,
+.first-call .section-label {
+  color: var(--white) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+/* Soft / muted text variants on dark sections */
+.hero .hero-sub, .subpage-hero .lead, .subpage-hero .panel-copy,
+.subpage-cta p, .final-cta:not(.final-cta-light) p,
+.dark-section .lead, .dark-section .subtitle, .dark-section .description {
+  color: var(--tbx-text-muted, rgba(255, 255, 255, 0.85)) !important;
+}
+
+/* Buttons on dark backgrounds — ensure they stay white-text */
+.hero .btn-primary, .subpage-hero .btn-primary, .subpage-cta .btn-primary,
+.final-cta:not(.final-cta-light) .btn-primary, .dark-section .btn-primary {
+  color: var(--white) !important;
+}
+.hero .btn-secondary, .subpage-hero .btn-secondary, .subpage-cta .btn-secondary,
+.final-cta:not(.final-cta-light) .btn-secondary, .dark-section .btn-secondary,
+.hero .btn-soft, .subpage-hero .btn-soft, .subpage-cta .btn-soft,
+.dark-section .btn-soft {
+  color: var(--white) !important;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Stat / metric blocks inside dark sections — numbers white, labels light */
+.hero .stat strong, .hero .metric strong, .hero .metric-card strong,
+.subpage-hero .metric-card strong, .subpage-hero .stat strong,
+.dark-section .stat strong, .dark-section strong[class*="number"] {
+  color: var(--white) !important;
+}
+.hero .stat span, .hero .metric span, .hero .metric-card span,
+.subpage-hero .metric-card span, .subpage-hero .stat span,
+.dark-section .stat span, .dark-section span[class*="label"] {
+  color: var(--tbx-text-muted, rgba(255, 255, 255, 0.78)) !important;
+}
+
+/* ============================================
+   ls-paths — "Choose your path" homepage cards
+   ============================================ */
+.ls-paths {
+  background: var(--off-white);
+  padding: var(--section-pad) 0;
+}
+.ls-paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.ls-path-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.4rem;
+  text-decoration: none;
+  color: var(--gray-800);
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  position: relative;
+}
+.ls-path-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue);
+  text-decoration: none;
+}
+.ls-path-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--blue);
+  background: var(--blue-subtle);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+}
+.ls-path-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.25;
+}
+.ls-path-card p {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+  margin: 0;
+  flex-grow: 1;
+}
+.ls-path-proof {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  border-top: 1px solid var(--gray-100);
+  padding-top: 0.75rem;
+}
+.ls-path-proof strong {
+  color: var(--navy);
+  font-weight: 800;
+}
+.ls-path-cta {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.01em;
+}
+.ls-path-card:hover .ls-path-cta { color: var(--blue-hover); }
+
+
+/* ============================================
+   Site-wide mobile UX hardening
+   - 16px+ form/control text (avoids iOS zoom)
+   - 44px minimum touch targets
+   - Single-column layout below tablet
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="date"],
+input[type="month"],
+input[type="datetime-local"],
+select,
+textarea {
+  font-size: 1rem; /* 16px */
+  min-height: 44px;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font);
+}
+input[type="checkbox"], input[type="radio"] {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+button,
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-soft,
+.fpa-btn,
+[role="button"] {
+  min-height: 44px;
+}
+
+/* Mobile: single-column tool layouts and full-width primary buttons */
+@media (max-width: 720px) {
+  .hero-content,
+  .hero-grid,
+  .ls-tool-hero-grid,
+  .ls-tool-layout-stack,
+  .fpa-tool-grid,
+  .svc-grid,
+  .pos-grid-cards,
+  .key-wins .kw-row-quad,
+  .key-wins .kw-row-featured,
+  .ls-paths-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-buttons,
+  .hero-actions,
+  .ls-tool-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-buttons > a,
+  .hero-actions > a,
+  .ls-tool-hero-actions > a,
+  .ls-tool-hero-actions > .btn-primary,
+  .ls-tool-hero-actions > .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  /* No side-by-side card grids that squeeze text on mobile */
+  .ls-tool-hero-panel,
+  .hero-panel,
+  .hero-dashboard {
+    margin-top: 1.5rem;
+  }
+  /* Body text floor on mobile */
+  body, p, li {
+    font-size: max(1rem, 16px);
+    line-height: 1.6;
+  }
+}

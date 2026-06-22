@@ -3,3 +3,11 @@
 .vercel
 .supabase
 node_modules
+
+# local agent/build artifacts (never deploy)
+.agents/
+.claude/
+.playwright-cli/
+output/
+plugins/
+test-results/

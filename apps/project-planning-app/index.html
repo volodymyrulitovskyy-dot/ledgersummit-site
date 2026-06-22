@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Project Planning App for Services Firms | Ledger Summit</title>
+  <meta name="description" content="Plan projects, track resources, model EAC and indirect costs, and review by project or summary. Free in-browser planning app from Ledger Summit.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/apps/project-planning-app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ledger Summit">
+  <meta property="og:title" content="Project Planning App for Services Firms | Ledger Summit">
+  <meta property="og:description" content="Plan projects, track resources, model EAC and indirect costs, and review by project or summary. Free in-browser planning app from Ledger Summit.">
+  <meta property="og:url" content="https://ledgersummit.com/apps/project-planning-app/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta property="og:image:alt" content="Ledger Summit — app">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Project Planning App for Services Firms | Ledger Summit">
+  <meta name="twitter:description" content="Plan projects, track resources, model EAC and indirect costs, and review by project or summary. Free in-browser planning app from Ledger Summit.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Structured data: SoftwareApplication + BreadcrumbList -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Project Planning App for Services Firms","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://ledgersummit.com/apps/project-planning-app/","description":"Plan projects, track resources, model EAC and indirect costs, and review by project or summary. Free in-browser planning app from Ledger Summit.","publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ledgersummit.com/"},{"@type":"ListItem","position":2,"name":"Apps","item":"https://ledgersummit.com/apps/"},{"@type":"ListItem","position":3,"name":"Project Planning App for Services Firms","item":"https://ledgersummit.com/apps/project-planning-app/"}]}]}</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind CSS (compiled) -->
+  <link rel="stylesheet" href="./css/tailwind.css" />
+  <!-- Your custom design system -->
+  <link rel="stylesheet" href="./css/styles.css" />
+<style>.sr-only-h1{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
+</head>
+<body class="min-h-screen bg-slate-50 antialiased">
+  <h1 class="sr-only-h1">Project Planning App for Services Firms</h1>
+  <!-- TOP TAB BAR -->
+  <section class="top-menu shadow-lg sticky top-0 z-50">
+    <div class="flex overflow-x-auto px-4 py-3 gap-2">
+      <button data-tab="auth" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="3"></circle>
+          <path d="M5 19c1.5-3 4-5 7-5s5.5 2 7 5"></path>
+        </svg>
+        <span>Sign In</span>
+      </button>
+
+      <button data-tab="projectSelect" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="6" width="16" height="12" rx="2"></rect>
+          <path d="M4 10h16"></path>
+        </svg>
+        <span>Projects</span>
+      </button>
+
+      <button data-tab="newProjects" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="5" width="16" height="14" rx="2"></rect>
+          <path d="M12 9v6M9 12h6"></path>
+        </svg>
+        <span>New Project</span>
+      </button>
+
+      <button data-tab="summaryPlan" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 19V10"></path>
+          <path d="M10 19V5"></path>
+          <path d="M15 19v-7"></path>
+          <path d="M20 19v-4"></path>
+        </svg>
+        <span>Charts</span>
+      </button>
+
+      <button data-tab="costBudget" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="5" width="16" height="14" rx="2"></rect>
+          <path d="M4 10h16M9 5v14"></path>
+        </svg>
+        <span>Budget</span>
+      </button>
+
+      <button data-tab="revenueBudget" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 8.5C8 7.1 9.3 6 11 6h2c1.7 0 3 1.1 3 2.5S14.7 11 13 11h-2c-1.7 0-3 1.1-3 2.5S9.3 16 11 16h2"></path>
+          <path d="M12 4v2M12 16v4"></path>
+        </svg>
+        <span>Revenue</span>
+      </button>
+
+      <button data-tab="laborHours" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="8" cy="8" r="2.5"></circle>
+          <circle cx="16" cy="8" r="2.5"></circle>
+          <path d="M4.5 18c.8-2.3 2.2-3.5 3.5-3.5s2.7 1.2 3.5 3.5"></path>
+          <path d="M12.5 18c.8-2.3 2.2-3.5 3.5-3.5s2.7 1.2 3.5 3.5"></path>
+        </svg>
+        <span>Labor</span>
+      </button>
+
+      <button data-tab="subsOdcInputs" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="5" width="7" height="6" rx="1.5"></rect>
+          <rect x="13" y="5" width="7" height="6" rx="1.5"></rect>
+          <rect x="4" y="13" width="7" height="6" rx="1.5"></rect>
+          <rect x="13" y="13" width="7" height="6" rx="1.5"></rect>
+        </svg>
+        <span>Subs &amp; ODC</span>
+      </button>
+
+      <button data-tab="pnl" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 18l6-6 4 3 6-7"></path>
+          <path d="M4 6h4M4 10h2"></path>
+        </svg>
+        <span>P&amp;L</span>
+      </button>
+
+      <button data-tab="admin" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 20l3.5-1 2.5 1 3.5-1 2.5 1V6L16 5l-3.5 1L10 5 6.5 6 5 5z"></path>
+          <path d="M10 9h4"></path>
+        </svg>
+        <span>Edit</span>
+      </button>
+
+      <button data-tab="userAdmin" class="tab-btn">
+        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="6" y="10" width="12" height="9" rx="2"></rect>
+          <path d="M9 10V8a3 3 0 0 1 6 0v2"></path>
+        </svg>
+        <span>Access</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- APP HEADER – MATCHED STYLE -->
+  <header class="app-header px-6 py-3">
+    <div class="flex justify-between items-center">
+      <div class="app-title">
+        <!-- Single line: app name + plan context -->
+        <div class="flex flex-wrap items-baseline gap-2">
+          <span class="text-sm font-semibold text-slate-900">
+            Project Planning App ·
+          </span>
+          <span id="planContextHeader" class="text-sm font-medium text-blue-700"></span>
+        </div>
+
+        <!-- Optional second line for current project -->
+        <div id="currentProject" class="text-xs font-medium text-slate-600 mt-1"></div>
+      </div>
+
+      <div class="text-right">
+        <span id="currentUser" class="text-sm font-medium text-slate-600">
+          Not signed in
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT – REDUCED TOP PADDING -->
+  <main class="container mx-auto px-6 py-4 max-w-screen-2xl">
+    <section id="appMain" class="tab-content">
+      <!-- All tabs load here -->
+    </section>
+  </main>
+
+  <!-- Scripts — ORDER + SAFETY FIRST -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Chart.js v4 + Data Labels Plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
+  <!-- Global Chart.js + Datalabels Registration & Styling -->
+  <script>
+    (function () {
+      if (!window.Chart) return;
+
+      if (window.ChartDataLabels) {
+        Chart.register(window.ChartDataLabels);
+      }
+
+      const defaults = Chart.defaults;
+      defaults.font = defaults.font || {};
+      defaults.font.family = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+      defaults.font.size = 13;
+      defaults.color = '#475569';
+
+      defaults.plugins = defaults.plugins || {};
+      defaults.plugins.legend = defaults.plugins.legend || {};
+      defaults.plugins.legend.labels = defaults.plugins.legend.labels || {};
+      defaults.plugins.legend.labels.font = defaults.plugins.legend.labels.font || {};
+      defaults.plugins.legend.labels.font.size = 12;
+      defaults.plugins.legend.labels.boxWidth = 10;
+      defaults.plugins.legend.labels.padding = 12;
+
+      defaults.plugins.tooltip = defaults.plugins.tooltip || {};
+      defaults.plugins.tooltip.titleFont = defaults.plugins.tooltip.titleFont || {};
+      defaults.plugins.tooltip.bodyFont = defaults.plugins.tooltip.bodyFont || {};
+      defaults.plugins.tooltip.titleFont.size = 13;
+      defaults.plugins.tooltip.bodyFont.size = 13;
+      defaults.plugins.tooltip.padding = 10;
+      defaults.plugins.tooltip.cornerRadius = 6;
+
+      defaults.plugins.datalabels = defaults.plugins.datalabels || {};
+      defaults.plugins.datalabels.display = false;
+      defaults.plugins.datalabels.font = defaults.plugins.datalabels.font || {};
+      defaults.plugins.datalabels.font.weight = '600';
+      defaults.plugins.datalabels.font.size = 12;
+      defaults.plugins.datalabels.color = '#1e293b';
+      defaults.plugins.datalabels.anchor = 'end';
+      defaults.plugins.datalabels.align = 'top';
+      defaults.plugins.datalabels.formatter = (value) => {
+        if (typeof value === 'number' && value >= 1000) {
+          return value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+        }
+        return value;
+      };
+    })();
+  </script>
+
+  <!-- Your app -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

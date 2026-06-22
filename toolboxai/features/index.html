@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Primary SEO -->
+  <title>Tool Box AI Features: Complete ERP Capabilities for QBO &amp; Xero | Ledger Summit</title>
+  <meta name="description"
+    content="Explore every Tool Box AI feature — multi-entity accounting, approval workflows, GovCon, revenue recognition, tax, payroll, advanced inventory, and 250+ more.">
+  <meta name="keywords"
+    content="Tool Box AI features, QBO ERP features, Xero ERP features, multi-entity accounting, GovCon accounting, approval workflows, revenue recognition, project accounting, indirect rates, DCAA compliance">
+  <meta name="author" content="Ledger Summit">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ledgersummit.com/toolboxai/features/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ledger Summit">
+  <meta property="og:title" content="Tool Box AI Features — 250+ Enterprise ERP Capabilities">
+  <meta property="og:description" content="Every feature Tool Box AI adds to your QuickBooks or Xero — multi-entity, approvals, GovCon, tax, payroll, inventory, and more.">
+  <meta property="og:url" content="https://ledgersummit.com/toolboxai/features/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tool Box AI Features — 250+ Enterprise ERP Capabilities">
+  <meta name="twitter:description" content="Every feature Tool Box AI adds to your QBO or Xero — from multi-entity consolidation to GovCon compliance.">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/css/shared.css">
+  <link rel="stylesheet" href="/css/home.css?v=2">
+
+  <style>
+    /* Feature page layout */
+    .feat-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin: 2.5rem 0 0;
+    }
+    .feat-toc a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .feat-toc a:hover {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+
+    /* Feature sections */
+    .feat-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .feat-section:nth-child(even) {
+      background: var(--off-white);
+    }
+    .feat-section:last-child {
+      border-bottom: none;
+    }
+    .feat-section-header {
+      margin-bottom: 2.5rem;
+    }
+    .feat-section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(59,108,245,0.08);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 0.8rem;
+    }
+    .feat-section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+    .feat-section-desc {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    /* Feature grid */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+    .feat-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .feat-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: rgba(59,108,245,0.2);
+    }
+    .feat-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .feat-card-title .feat-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, rgba(59,108,245,0.1), rgba(127,15,247,0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feat-card-title .feat-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--blue);
+      stroke-width: 2;
+      fill: none;
+    }
+    .feat-card-desc {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+
+    /* Stats bar */
+    .feat-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0 0;
+    }
+    .feat-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+      text-align: center;
+    }
+    .feat-stat-num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .feat-stat-lbl {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+      margin-top: 0.2rem;
+    }
+
+    /* Subsection headers within a feature section */
+    .feat-sub-header {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(59,108,245,0.15);
+    }
+
+    /* Hero text — white on blue background */
+    #hero h1,
+    #hero .hero-sub,
+    #hero .tbx-breadcrumb,
+    #hero .tbx-breadcrumb a,
+    #hero .tbx-breadcrumb span {
+      color: #fff !important;
+    }
+    #hero .tbx-breadcrumb a {
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    #hero .tbx-breadcrumb a:hover {
+      opacity: 1;
+    }
+    #hero .tbx-breadcrumb {
+      color: rgba(255,255,255,0.7);
+    }
+    #hero .hero-sub {
+      color: rgba(255,255,255,0.85) !important;
+    }
+    #hero .hero-badge {
+      color: #fff;
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 960px) {
+      .feat-section {
+        padding: 3rem 0;
+      }
+      .feat-section-header {
+        margin-bottom: 1.8rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      /* Prevent horizontal overflow */
+      html, body {
+        overflow-x: hidden;
+      }
+
+      /* Hero: tighten vertical space */
+      #hero .hero-content {
+        padding-top: 4.5rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+      }
+      #hero h1 {
+        font-size: clamp(1.85rem, 8vw, 2.4rem) !important;
+        line-height: 1.15 !important;
+        max-width: 100% !important;
+      }
+      #hero .hero-sub {
+        font-size: 0.95rem !important;
+        max-width: 100% !important;
+        padding: 0 0.5rem;
+      }
+      #hero .hero-badge {
+        font-size: 0.72rem;
+        padding: 0.4rem 0.9rem;
+        margin-top: 1rem !important;
+      }
+      #hero .tbx-breadcrumb {
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+
+      /* Jump-to nav: single compact row of pills */
+      .feat-toc {
+        gap: 0.4rem;
+        margin-top: 1.5rem;
+        padding: 0 0.5rem;
+      }
+      .feat-toc a {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.75rem;
+      }
+
+      /* Stats: 2×2 grid on mobile */
+      .feat-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.65rem;
+        margin-top: 1.8rem !important;
+        max-width: 100% !important;
+        padding: 0 0.5rem;
+      }
+      .feat-stat {
+        padding: 0.8rem 0.6rem;
+      }
+      .feat-stat-num {
+        font-size: 1.2rem;
+      }
+      .feat-stat-lbl {
+        font-size: 0.7rem;
+      }
+
+      /* Feature sections */
+      .feat-section {
+        padding: 2.5rem 0;
+      }
+      .feat-section-header {
+        margin-bottom: 1.5rem;
+      }
+      .feat-section-label {
+        font-size: 0.68rem;
+      }
+      .feat-section-title {
+        font-size: 1.4rem;
+      }
+      .feat-section-desc {
+        font-size: 0.9rem;
+      }
+
+      /* Feature grid: single column */
+      .feat-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+      .feat-card {
+        padding: 1.1rem;
+      }
+      .feat-card-title {
+        font-size: 0.92rem;
+      }
+      .feat-card-desc {
+        font-size: 0.83rem;
+      }
+
+      /* Subsection headers */
+      .feat-sub-header {
+        font-size: 1rem;
+        margin: 1.5rem 0 0.8rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #hero h1 {
+        font-size: 1.75rem !important;
+      }
+      #hero .hero-sub {
+        font-size: 0.9rem !important;
+      }
+      .feat-toc a {
+        font-size: 0.68rem;
+        padding: 0.3rem 0.65rem;
+      }
+      .feat-stat-num {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ledgersummit.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tool Box AI", "item": "https://ledgersummit.com/toolboxai/" },
+      { "@type": "ListItem", "position": 3, "name": "Features", "item": "https://ledgersummit.com/toolboxai/features/" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Ledger Summit home">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/toolboxai/" class="active">Tool Box AI</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/book-a-call/" class="nav-cta">Book a private demo</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a private demo</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" aria-labelledby="feat-hero-title" style="min-height:auto; padding-bottom:3rem;">
+      <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+      <div class="hero-aurora" aria-hidden="true">
+        <div class="aurora-orb orb-1"></div>
+        <div class="aurora-orb orb-2"></div>
+        <div class="aurora-orb orb-3"></div>
+      </div>
+
+      <div class="container hero-content" style="display:block; text-align:center; padding-top:6rem;">
+        <nav class="tbx-breadcrumb" aria-label="Breadcrumb" style="justify-content:center; display:flex;">
+          <a href="/">Home</a> &nbsp;/&nbsp; <a href="/toolboxai/">Tool Box AI</a> &nbsp;/&nbsp; <span aria-current="page">Features</span>
+        </nav>
+
+        <div class="hero-badge shimmer" style="margin:1.2rem auto;">
+          <span class="badge-dot"></span>
+          250+ enterprise capabilities on top of QBO &amp; Xero
+        </div>
+
+        <h1 id="feat-hero-title" style="max-width:800px; margin:0 auto;">
+          Every feature. <br>One platform.
+        </h1>
+        <p class="hero-sub" style="max-width:620px; margin:1.2rem auto 0;">
+          Tool Box AI adds enterprise-grade ERP capabilities to your existing QuickBooks or Xero.
+          Here's everything you get — no migration required.
+        </p>
+
+        <!-- Jump-to navigation -->
+        <nav class="feat-toc" aria-label="Jump to feature category">
+          <a href="#accounting">Accounting</a>
+          <a href="#revenue-recognition">Revenue Recognition</a>
+          <a href="#sales-receivables">Sales &amp; Receivables</a>
+          <a href="#purchases-payables">Purchases &amp; Payables</a>
+          <a href="#banking">Banking</a>
+          <a href="#payroll-time">Payroll &amp; Time</a>
+          <a href="#reports">Reports &amp; Analytics</a>
+          <a href="#budgets-planning">Budgets &amp; Planning</a>
+          <a href="#operations">Operations</a>
+          <a href="#govcon">Government Contracting</a>
+          <a href="#tax">Tax</a>
+          <a href="#compliance">Compliance</a>
+          <a href="#commissions">Commissions</a>
+          <a href="#integrations">Integrations</a>
+          <a href="#security">Security &amp; Controls</a>
+        </nav>
+
+        <!-- Stats -->
+        <div class="feat-stats" style="max-width:700px; margin:2.5rem auto 0;">
+          <div class="feat-stat">
+            <div class="feat-stat-num">250+</div>
+            <div class="feat-stat-lbl">features &amp; capabilities</div>
+          </div>
+          <div class="feat-stat">
+            <div class="feat-stat-num">12</div>
+            <div class="feat-stat-lbl">major modules</div>
+          </div>
+          <div class="feat-stat">
+            <div class="feat-stat-num">$0</div>
+            <div class="feat-stat-lbl">migration cost</div>
+          </div>
+          <div class="feat-stat">
+            <div class="feat-stat-num">4 weeks</div>
+            <div class="feat-stat-lbl">typical go-live</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 1. ACCOUNTING CORE ===== -->
+    <section class="feat-section" id="accounting">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Core Accounting</span>
+          <h2 class="feat-section-title">General Ledger &amp; Chart of Accounts</h2>
+          <p class="feat-section-desc">The accounting foundation that extends your QBO or Xero ledger with enterprise-grade
+            GL capabilities, multi-entity support, and automated period management.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg></span>
+              General Ledger
+            </div>
+            <p class="feat-card-desc">Full journal entry management with multi-entity posting, reversing entries, and drill-down from any balance to its source transactions. Supports intercompany eliminations and automated consolidation entries.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></span>
+              Chart of Accounts
+            </div>
+            <p class="feat-card-desc">Hierarchical account structure with account grouping, sub-types, and segment coding. Map your QBO or Xero chart to an enterprise-grade structure without changing your existing ledger.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              Fiscal Periods
+            </div>
+            <p class="feat-card-desc">Define fiscal years, periods, and adjustment periods. Lock closed periods to prevent unauthorized postings. Supports calendar and custom period structures.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+              Recurring Entries
+            </div>
+            <p class="feat-card-desc">Automate repeating journal entries on daily, weekly, monthly, or custom schedules. Set start and end dates, auto-reverse options, and approval requirements for each template.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+              Month-End Close
+            </div>
+            <p class="feat-card-desc">Structured close checklist with task assignment, due dates, dependencies, and sign-off tracking. Track close cycle time and identify bottlenecks across entities and periods.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+              Multi-Currency
+            </div>
+            <p class="feat-card-desc">Transact and report in any currency. Automatic exchange rate updates, unrealized gain/loss calculations, and currency revaluation at period end. Full ASC 830 translation support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 2. REVENUE RECOGNITION ===== -->
+    <section class="feat-section" id="revenue-recognition">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Revenue Recognition</span>
+          <h2 class="feat-section-title">ASC 606 &amp; Contract Revenue</h2>
+          <p class="feat-section-desc">Automated revenue recognition that handles multi-element arrangements, milestone billing,
+            percentage-of-completion, and contract modifications under ASC 606.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              RevRec Dashboard
+            </div>
+            <p class="feat-card-desc">Real-time overview of recognized vs. deferred revenue across all contracts. Spot trends, identify at-risk contracts, and drill into any balance for full transaction-level detail.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              Contract Management
+            </div>
+            <p class="feat-card-desc">Create and track revenue contracts with performance obligations, standalone selling prices, and variable consideration. Supports multi-element arrangements and bundled offerings.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
+              Percentage of Completion
+            </div>
+            <p class="feat-card-desc">Track project completion using cost-to-cost, units-of-delivery, or milestone methods. Automatic revenue calculation based on measured progress and estimate-at-completion updates.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+              Milestones &amp; Modifications
+            </div>
+            <p class="feat-card-desc">Define milestone-based recognition triggers tied to deliverables. Handle contract modifications with prospective or cumulative catch-up treatment as required by ASC 606.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></span>
+              Revenue Waterfall
+            </div>
+            <p class="feat-card-desc">Visualize revenue recognition schedules across time with waterfall charts. See how current bookings translate to future recognized revenue by period, contract, or customer.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M10 4v16"/></svg></span>
+              Recognition Schedules &amp; Reports
+            </div>
+            <p class="feat-card-desc">Generate detailed recognition schedules for each contract and performance obligation. Produce disclosure-ready reports for ASC 606 footnotes and audit workpapers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 3. SALES & RECEIVABLES ===== -->
+    <section class="feat-section" id="sales-receivables">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Sales &amp; Receivables</span>
+          <h2 class="feat-section-title">Invoicing, Collections &amp; Customer Management</h2>
+          <p class="feat-section-desc">End-to-end accounts receivable with smart dunning, aging analysis, and a client self-service portal.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg></span>
+              Invoices
+            </div>
+            <p class="feat-card-desc">Create, send, and track invoices with multi-currency support, line-item detail, project allocation, and approval workflows. Integrates with QBO/Xero billing for seamless sync.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              Customers
+            </div>
+            <p class="feat-card-desc">Centralized customer master with contact details, payment terms, credit limits, and transaction history. Link customers across entities for consolidated AR visibility.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              Aging Reports
+            </div>
+            <p class="feat-card-desc">Current, 30, 60, 90, and 120+ day aging buckets by customer, entity, or project. Export to Excel, schedule for auto-delivery, and drill into any aging bucket for transaction detail.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
+              Smart Dunning
+            </div>
+            <p class="feat-card-desc">Automated collection reminders with configurable escalation rules, email templates, and follow-up schedules. Pause dunning for disputed invoices and track collector effectiveness.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg></span>
+              Client Portal
+            </div>
+            <p class="feat-card-desc">Self-service portal where customers view open invoices, download statements, make payments, and submit disputes. Reduces AR team workload and accelerates collections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 4. PURCHASES & PAYABLES ===== -->
+    <section class="feat-section" id="purchases-payables">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Purchases &amp; Payables</span>
+          <h2 class="feat-section-title">Procurement, POs &amp; Vendor Management</h2>
+          <p class="feat-section-desc">Full procure-to-pay workflow with purchase orders, receiving, 3-way matching, and approval routing.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+              Vendor Management
+            </div>
+            <p class="feat-card-desc">Centralized vendor master data with payment terms, 1099 tracking, W-9 management, insurance certificates, and spend history. Vendor performance metrics and compliance status at a glance.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></span>
+              Purchase Orders
+            </div>
+            <p class="feat-card-desc">Create POs with multi-level approval workflows, budget validation, and project/cost-center allocation. Track PO status from requisition through receipt and invoice matching.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+              Receiving &amp; 3-Way Match
+            </div>
+            <p class="feat-card-desc">Record goods received against POs and automatically match PO, receipt, and vendor invoice for 3-way matching. Flag discrepancies for review before payment authorization.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+              Recurring Bills &amp; Approvals
+            </div>
+            <p class="feat-card-desc">Automate recurring vendor bills for rent, subscriptions, and retainers. Route all bills through configurable approval workflows with segregation-of-duties enforcement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 5. BANKING ===== -->
+    <section class="feat-section" id="banking">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Banking</span>
+          <h2 class="feat-section-title">Bank Reconciliation &amp; Feeds</h2>
+          <p class="feat-section-desc">Automated bank feeds, intelligent matching, and multi-account reconciliation across entities.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></span>
+              Bank Reconciliation
+            </div>
+            <p class="feat-card-desc">Reconcile bank statements against GL balances with intelligent auto-matching, configurable matching rules, and clear reconciliation reports. Track outstanding checks, deposits in transit, and adjustments.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              Bank Feeds
+            </div>
+            <p class="feat-card-desc">Automated transaction feeds from connected bank accounts. AI-assisted categorization learns from your patterns to suggest GL coding, project allocation, and entity assignment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 6. PAYROLL & TIME ===== -->
+    <section class="feat-section" id="payroll-time">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Payroll &amp; Time</span>
+          <h2 class="feat-section-title">Timesheets, Labor Distribution &amp; DCAA Compliance</h2>
+          <p class="feat-section-desc">Enterprise timesheet management with project-level tracking, labor cost distribution, approval workflows, and DCAA-compliant time capture for government contractors.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+              Timesheets
+            </div>
+            <p class="feat-card-desc">Daily or weekly timesheet entry with project, task, and labor category allocation. Supports clock-in/out, overtime rules, and configurable pay periods. Enforces 100% labor distribution.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+              Timesheet Approvals
+            </div>
+            <p class="feat-card-desc">Multi-level approval routing with project manager and supervisor sign-off. Track approval status, resubmissions, and rejections. Full audit trail of all approval actions.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg></span>
+              DCAA Compliance
+            </div>
+            <p class="feat-card-desc">Timekeeping that meets DCAA requirements: daily entry, total-time accounting, supervisor approvals, after-the-fact recording, and floor check support. Audit-ready from day one.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span>
+              Labor Distribution
+            </div>
+            <p class="feat-card-desc">Distribute labor costs across projects, cost pools, and indirect categories. Calculate loaded labor rates with fringe, overhead, and G&amp;A allocations for accurate project costing.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              Holidays &amp; Leave
+            </div>
+            <p class="feat-card-desc">Configure company holiday calendars, PTO accrual policies, and leave types. Employees request time off through the self-service portal with manager approval routing.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+              Payroll Processing
+            </div>
+            <p class="feat-card-desc">Payroll processing with multi-state support, tax withholding calculations, and direct deposit. Integrates with popular payroll providers or runs standalone for full control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 7. REPORTS & ANALYTICS ===== -->
+    <section class="feat-section" id="reports">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Reports &amp; Analytics</span>
+          <h2 class="feat-section-title">Executive Dashboards &amp; Financial Reporting</h2>
+          <p class="feat-section-desc">Live-ledger reporting with consolidated financials, SaaS metrics, and board-ready leadership packs.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></span>
+              CFO Dashboard
+            </div>
+            <p class="feat-card-desc">Executive-level overview with KPIs, cash position, revenue trends, expense ratios, and operational health metrics. Configurable widgets with drill-down to transaction detail.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+              Financial Statements
+            </div>
+            <p class="feat-card-desc">Income statement, balance sheet, cash flow, and trial balance — generated from live ledger data. Consolidated, by entity, by project, or by any dimension. Export to Excel or PDF.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
+              SaaS Metrics
+            </div>
+            <p class="feat-card-desc">ARR, MRR, churn, net revenue retention, CAC, LTV, and payback period — calculated from your actual financial data, not spreadsheet estimates. Track cohort trends over time.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></span>
+              Custom Reports &amp; Ad Hoc Builder
+            </div>
+            <p class="feat-card-desc">Build custom reports with drag-and-drop dimensions, filters, and calculated fields. Save and schedule reports for automatic delivery. Share report templates across the team.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M10 4v16"/></svg></span>
+              GL &amp; Aging Reports
+            </div>
+            <p class="feat-card-desc">GL detail and summary reports, AP aging, AR aging, and trial balance with filtering by entity, period, project, department, and class. Full drill-down to source documents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 8. BUDGETS & PLANNING ===== -->
+    <section class="feat-section" id="budgets-planning">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Budgets &amp; Planning</span>
+          <h2 class="feat-section-title">Budgets, Forecasting &amp; Resource Planning</h2>
+          <p class="feat-section-desc">Budget creation, cash flow forecasting, and resource allocation tools for finance teams that plan ahead.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+              Budget Management
+            </div>
+            <p class="feat-card-desc">Create annual and project budgets with monthly distribution. Compare budget vs. actual in real time. Set alerts for budget thresholds and lock approved budgets to prevent changes.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              Cash Flow Forecasting
+            </div>
+            <p class="feat-card-desc">Project cash inflows and outflows based on AR aging, AP commitments, recurring revenues, and planned expenditures. Scenario modeling with best-case, worst-case, and expected views.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              Resource Planning
+            </div>
+            <p class="feat-card-desc">Allocate people to projects with visual resource boards, utilization tracking, and capacity planning. Identify over- and under-allocated resources before they become problems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 9. OPERATIONS ===== -->
+    <section class="feat-section" id="operations">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Operations</span>
+          <h2 class="feat-section-title">Fixed Assets, Inventory &amp; E-Commerce</h2>
+          <p class="feat-section-desc">Asset management, advanced inventory with lot/serial tracking, and multi-channel e-commerce hub.</p>
+        </div>
+
+        <h3 class="feat-sub-header">Fixed Assets</h3>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3"/></svg></span>
+              Asset Management &amp; Depreciation
+            </div>
+            <p class="feat-card-desc">Track fixed assets from acquisition through disposal. Calculate depreciation using straight-line, declining balance, MACRS, or custom methods. Book and tax depreciation side by side.</p>
+          </div>
+        </div>
+
+        <h3 class="feat-sub-header">Advanced Inventory</h3>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+              Warehouses &amp; Locations
+            </div>
+            <p class="feat-card-desc">Multi-warehouse inventory management with bin-level tracking. Transfer stock between locations, set warehouse-specific reorder points, and track inventory across all facilities.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+              Lot &amp; Serial Tracking
+            </div>
+            <p class="feat-card-desc">Full traceability with lot and serial number tracking through the supply chain. Supports recall management, expiration date tracking, and regulatory compliance requirements.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></span>
+              Bill of Materials &amp; Landed Cost
+            </div>
+            <p class="feat-card-desc">Multi-level BOM management for assemblies and kits. Allocate landed costs (freight, duties, insurance) across purchase orders for accurate inventory valuation.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+              Cycle Count &amp; Valuation
+            </div>
+            <p class="feat-card-desc">Schedule and execute cycle counts by location, category, or ABC classification. Support FIFO, LIFO, weighted average, and specific identification valuation methods.</p>
+          </div>
+        </div>
+
+        <h3 class="feat-sub-header">E-Commerce Hub</h3>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+              Multi-Channel P&amp;L
+            </div>
+            <p class="feat-card-desc">Unified profitability view across Amazon, Shopify, WooCommerce, and other channels. Track revenue, COGS by SKU, platform fees, shipping costs, and returns by channel.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+              Settlement Reconciliation
+            </div>
+            <p class="feat-card-desc">Automatically reconcile marketplace settlements against expected payouts. Identify fee discrepancies, missing deposits, and chargebacks across all sales channels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 10. GOVCON ===== -->
+    <section class="feat-section" id="govcon">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Government Contracting</span>
+          <h2 class="feat-section-title">Full GovCon ERP — Without Costpoint or Unanet</h2>
+          <p class="feat-section-desc">100+ GovCon-specific features covering contracts, indirect rates, cost accounting, earned value,
+            incurred cost submissions, and DCAA compliance — at a fraction of the cost.</p>
+        </div>
+
+        <h3 class="feat-sub-header">Contracts &amp; Projects</h3>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+              Contract Management
+            </div>
+            <p class="feat-card-desc">Track government contracts with CLIN/SLIN structures, funding ceilings, period of performance, contract types (FFP, T&amp;M, CPFF, CPAF), and modification history. AI-powered contract upload parses key terms automatically.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></span>
+              WBS &amp; Task Management
+            </div>
+            <p class="feat-card-desc">Multi-level work breakdown structures with task budgets, cost tracking, and schedule management. Gantt chart visualization with dependency tracking and critical path analysis.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
+              Earned Value Management
+            </div>
+            <p class="feat-card-desc">Full EVM with BCWS, BCWP, ACWP, CPI, SPI, EAC, and ETC calculations. Variance analysis dashboards, CPI/SPI trend tracking, and management reserve monitoring.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg></span>
+              Clause Library &amp; CPARS
+            </div>
+            <p class="feat-card-desc">Searchable contract clause library with FAR/DFARS references. Track CPARS evaluations and past performance data for proposal support and contractor assessment.</p>
+          </div>
+        </div>
+
+        <h3 class="feat-sub-header">Cost Accounting &amp; Indirect Rates</h3>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></span>
+              Indirect Rate Management
+            </div>
+            <p class="feat-card-desc">Configure fringe, overhead, G&amp;A, and material handling pools. Map GL accounts to cost pools, calculate provisional and actual rates, and track rate history across fiscal years.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+              Incurred Cost Submission (ICS)
+            </div>
+            <p class="feat-card-desc">Generate DCAA-compliant incurred cost submissions with all required schedules. Automated data pull from GL, validation checks, and export in the format auditors expect.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></span>
+              Cost Element Breakdown &amp; Margin Analysis
+            </div>
+            <p class="feat-card-desc">Break down project costs by direct labor, materials, subcontracts, ODCs, and indirect allocations. Real-time margin analysis with wrap rate calculations and fee tracking.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              Unallowable Cost Tracking
+            </div>
+            <p class="feat-card-desc">Automatically flag and segregate unallowable costs per FAR 31.205. Prevent unallowable charges from flowing into indirect rate bases or billing calculations.</p>
+          </div>
+        </div>
+
+        <h3 class="feat-sub-header">Workforce &amp; Billing</h3>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+              Employee Directory &amp; Labor Categories
+            </div>
+            <p class="feat-card-desc">Complete employee profiles with labor categories, rate history, security clearances, skill profiles, and certifications. Wrap rate calculation with automatic fringe and indirect loading.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg></span>
+              Government Invoicing
+            </div>
+            <p class="feat-card-desc">Generate SF-1034, SF-1035, and custom invoice formats. Support for cost-type, T&amp;M, and FFP billing with CLIN-level detail, cumulative tracking, and funding ceiling validation.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span>
+              Expense Management
+            </div>
+            <p class="feat-card-desc">Employee expense reports with GSA per diem validation, mileage tracking, OCONUS rates, travel authorization workflows, and credit card import with auto-categorization.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              Subcontractor Management
+            </div>
+            <p class="feat-card-desc">Subcontractor registry with cost tracking, consent management, small business subcontracting plan monitoring, and flow-down clause compliance tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 11. TAX ===== -->
+    <section class="feat-section" id="tax">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Tax</span>
+          <h2 class="feat-section-title">Tax Compliance, Credits &amp; Planning</h2>
+          <p class="feat-section-desc">Multi-jurisdictional tax management covering income, sales &amp; use, property, payroll, and specialty taxes with automated calculations and deadline tracking.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              Tax Dashboard
+            </div>
+            <p class="feat-card-desc">Centralized view of all tax obligations, upcoming deadlines, estimated payments, and filing status across jurisdictions. Alerts for approaching deadlines and payment due dates.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+              Corporate Income Tax &amp; Estimated Payments
+            </div>
+            <p class="feat-card-desc">Federal and state income tax provision calculations, estimated payment tracking, and GL classification mapping. Supports multi-state apportionment and consolidated returns.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+              Sales &amp; Use Tax
+            </div>
+            <p class="feat-card-desc">Multi-state sales and use tax calculation, exemption certificate management, and return preparation. Nexus tracking with economic nexus threshold monitoring by state.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+              Property Tax &amp; Business Licenses
+            </div>
+            <p class="feat-card-desc">Track real and personal property tax obligations, business license renewals, and state registrations. Automated deadline calendars with renewal reminders and filing checklists.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+              1099 &amp; Withholding
+            </div>
+            <p class="feat-card-desc">Automated 1099 preparation with vendor classification, threshold monitoring, and e-filing. W-2/W-4 withholding management with multi-state support.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+              Tax Credits &amp; Depreciation
+            </div>
+            <p class="feat-card-desc">Track R&amp;D tax credits, WOTC, and other incentives. Calculate Section 179, bonus depreciation, and MACRS schedules with book vs. tax depreciation differences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 12. COMPLIANCE ===== -->
+    <section class="feat-section" id="compliance">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Compliance</span>
+          <h2 class="feat-section-title">Federal Compliance &amp; Audit Readiness</h2>
+          <p class="feat-section-desc">Built-in compliance frameworks for DCAA, FAR, and federal contracting with audit trail evidence and control documentation.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              DCAA Compliance Suite
+            </div>
+            <p class="feat-card-desc">Timekeeping, cost accounting, labor compliance, and unallowable cost segregation — all aligned with DCAA requirements. Audit-ready documentation and evidence export.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span>
+              Audit Log &amp; Evidence
+            </div>
+            <p class="feat-card-desc">Every transaction, approval, configuration change, and login event is logged with timestamp, user, and IP address. Export audit evidence in formats auditors expect.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+              Compliance Checklists &amp; Audit Prep
+            </div>
+            <p class="feat-card-desc">Pre-built compliance checklists for DCAA readiness, year-end close, and audit preparation. Track completion status, assign owners, and document evidence for each control point.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 13. COMMISSIONS ===== -->
+    <section class="feat-section" id="commissions">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Commissions &amp; Royalties</span>
+          <h2 class="feat-section-title">Commission Plans, Calculations &amp; Payouts</h2>
+          <p class="feat-section-desc">Full commission lifecycle from plan design through payment — with tiers, splits, clawbacks, draws, and rep self-service.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
+              Commission Plans &amp; Tiers
+            </div>
+            <p class="feat-card-desc">Design unlimited commission plans with tiered rate structures, accelerators, and thresholds. Support flat-rate, percentage, and graduated tier models across products, territories, and teams.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              Splits, Overrides &amp; Territories
+            </div>
+            <p class="feat-card-desc">Split commissions across multiple reps, apply manager overrides, and manage territory-based assignment rules. Automatic calculation handles complex multi-rep deals.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+              Clawbacks, Draws &amp; Disputes
+            </div>
+            <p class="feat-card-desc">Automated clawback calculations for cancelled deals, draw management against future earnings, and dispute resolution workflows with audit trail for every adjustment.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg></span>
+              Rep Portal &amp; Statements
+            </div>
+            <p class="feat-card-desc">Self-service portal where reps view earnings, download statements, track quota attainment, and submit disputes. Reduce finance team workload with transparent commission visibility.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 14. INTEGRATIONS ===== -->
+    <section class="feat-section" id="integrations">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Integrations</span>
+          <h2 class="feat-section-title">Connect Your Existing Stack</h2>
+          <p class="feat-section-desc">Tool Box AI sits on top of your existing accounting system and connects with your financial tools.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+              QuickBooks Online
+            </div>
+            <p class="feat-card-desc">Two-way sync with QBO — chart of accounts, invoices, bills, customers, vendors, and journal entries. Your QBO instance remains the system of record while Tool Box AI adds the ERP layer.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+              Xero
+            </div>
+            <p class="feat-card-desc">Full integration with Xero for contact sync, invoice and bill import, bank transaction feeds, and journal entry posting. Keep Xero as your ledger while adding enterprise capabilities.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+              Oracle NetSuite <span style="font-size:0.7rem;color:var(--blue);font-weight:600;margin-left:0.4rem;">Coming Soon</span>
+            </div>
+            <p class="feat-card-desc">Enterprise-grade integration for GL data, subsidiaries, departments, and multi-entity reporting across NetSuite instances.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></span>
+              Ramp &amp; Bill.com <span style="font-size:0.7rem;color:var(--blue);font-weight:600;margin-left:0.4rem;">Coming Soon</span>
+            </div>
+            <p class="feat-card-desc">Import corporate card transactions from Ramp with auto-categorization. Automate AP/AR workflows with Bill.com for payment processing and vendor management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== 15. SECURITY & CONTROLS ===== -->
+    <section class="feat-section" id="security">
+      <div class="container">
+        <div class="feat-section-header">
+          <span class="feat-section-label">Security &amp; Controls</span>
+          <h2 class="feat-section-title">Enterprise-Grade Access Control &amp; Audit Posture</h2>
+          <p class="feat-section-desc">Multi-tenant isolation, role-based access, approval workflows, and SOC 2-aligned controls built into the platform.</p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+              Role-Based Access Control
+            </div>
+            <p class="feat-card-desc">Granular roles across preparer, reviewer, approver, admin, and read-only. Set permissions at the module, entity, and field level. Enforce segregation of duties at the system layer.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              Multi-Tenant Isolation
+            </div>
+            <p class="feat-card-desc">Tenant boundaries enforced at the data layer — not the application layer. Each organization's data is cryptographically isolated, with no cross-tenant data leakage possible.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+              Approval Workflows &amp; SoD
+            </div>
+            <p class="feat-card-desc">Configurable approval routing for invoices, expenses, journal entries, purchase orders, and timesheets. Preparer-cannot-approve enforcement prevents control bypasses.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card-title">
+              <span class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+              SOC 2-Aligned Direction
+            </div>
+            <p class="feat-card-desc">Platform architecture and operational processes built toward SOC 2 Trust Services Criteria. Backup, recovery, change management, and incident response designed into the operating model.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="final-cta final-cta-light" id="contact" aria-labelledby="feat-cta-title">
+      <div class="container">
+        <div class="final-cta-content">
+          <h2 id="feat-cta-title">250+ features. One platform.<br>No six-figure enterprise ERP cost.</h2>
+          <p>Book a private demo and we'll walk through the features that matter most to your team —
+            on top of your existing QuickBooks or Xero.</p>
+          <a href="/book-a-call/" class="btn-primary">Book a private demo</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand" aria-label="Ledger Summit home">
+          <img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="30" height="30" decoding="async">
+          <span>Ledger Summit</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/toolboxai/">Tool Box AI</a></li>
+          <li><a href="/toolboxai/features/">Features</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/book-a-call/">Book a demo</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="Ledger Summit on YouTube">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="Ledger Summit on LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. Tool Box AI is the instant enterprise upgrade to your existing QuickBooks or
+          Xero — from Ledger Summit.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="/js/shared.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+
+</html>

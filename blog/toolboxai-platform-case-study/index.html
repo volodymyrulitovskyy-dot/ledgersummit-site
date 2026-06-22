@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Ledger Summit Built Tool Box AI: A Unified Finance Platform Case Study</title>
+  <meta name="description" content="A detailed case study on how Ledger Summit designed Tool Box AI for finance and accounting teams: one platform for P2P, O2C, payroll, project financials, ERP.">
+  <link rel="canonical" href="https://ledgersummit.com/blog/toolboxai-platform-case-study/">
+  <meta property="og:title" content="How Ledger Summit Built Tool Box AI">
+  <meta property="og:description" content="Inside the Tool Box AI product build: one finance platform for approvals, accounting workflows, ERP connections, controls, and AI-assisted execution.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ledgersummit.com/blog/toolboxai-platform-case-study/">
+  <meta property="og:image" content="https://ledgersummit.com/img/case-studies/tool-box-ai-platform-case-study-clean-cover.svg?v=20260323d">
+  <meta property="og:image:alt" content="Tool Box AI finance platform case study thumbnail">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How Ledger Summit Built Tool Box AI">
+  <meta name="twitter:description" content="A deep product case study covering how Tool Box AI was designed for finance teams, including workflows, controls, integrations, and AI support.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/case-studies/tool-box-ai-platform-case-study-clean-cover.svg?v=20260323d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=11">
+  <link rel="stylesheet" href="/css/pages.css?v=10">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"How Ledger Summit Built Tool Box AI: A Unified Finance Platform Case Study","description":"A detailed product case study showing how Ledger Summit designed Tool Box AI for finance and accounting teams across Procure-to-Pay, Order-to-Cash, payroll, project financials, integrations, controls, and AI-assisted workflow automation.","author":{"@type":"Person","name":"Vlad Ulitovskiy","jobTitle":"Accounting & Compliance Lead","url":"https://ledgersummit.com/about/"},"publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"datePublished":"2026-03-20","dateModified":"2026-03-23","image":"https://ledgersummit.com/img/case-studies/tool-box-ai-platform-case-study-clean-cover.svg?v=20260323d","mainEntityOfPage":"https://ledgersummit.com/blog/toolboxai-platform-case-study/"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Tool Box AI designed to do?","acceptedAnswer":{"@type":"Answer","text":"Tool Box AI is designed to give finance and accounting teams one operating platform for Procure-to-Pay, Order-to-Cash, payroll-related workflows, and Project Financials, with ERP and payment integrations, audit controls, and AI-assisted automation."}},{"@type":"Question","name":"Which systems does Tool Box AI integrate with?","acceptedAnswer":{"@type":"Answer","text":"The design includes one common accounting connection model for NetSuite, Xero, and QuickBooks Online plus one common payment connection model for Bill.com and Ramp. The roadmap also includes email intake, Slack, Teams, OCR document capture, webhooks, and background sync services."}},{"@type":"Question","name":"How does Tool Box AI handle multi-tenant security?","acceptedAnswer":{"@type":"Answer","text":"The platform is designed so each customer operates inside its own protected data boundary. It combines tenant-aware request handling, database-level data separation, signed authentication tokens, role-based permissions, segregation-of-duties rules, rate limits, audit logging, encryption, and request tracing."}},{"@type":"Question","name":"What product areas are included in the first build phase?","acceptedAnswer":{"@type":"Answer","text":"The first phase focuses on the shared platform foundation plus Procure-to-Pay: requisitions, approval rules, purchase orders, vendor onboarding, invoice capture, matching and coding, invoice approvals, bill pay, bank reconciliation, and early Project Financials setup."}},{"@type":"Question","name":"What AI features are part of the Tool Box AI product vision?","acceptedAnswer":{"@type":"Answer","text":"The roadmap includes OCR-based invoice capture, duplicate detection, vendor suggestions, auto-GL coding, risk scoring, confidence-based routing, smart matching, anomaly detection, and forecasting-oriented insights for approvals, collections, reconciliation, and planning."}},{"@type":"Question","name":"Is this case study about a client deployment or Ledger Summit's own product build?","acceptedAnswer":{"@type":"Answer","text":"This page documents Ledger Summit's own product build effort and explains how Tool Box AI is being structured from roadmap through architecture, workflow design, and implementation."}}]}
+  </script>
+</head>
+<body>
+  <div class="cs-reading-progress" id="readingProgress"></div>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  </div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Case Study - Product Build</span>
+        <h1>How Ledger Summit Built <br>Tool Box AI Into A <br>Unified Finance Platform</h1>
+        <p>A deep look at how the new Tool Box AI product was designed for finance and accounting teams: one platform for approvals, workflow execution, ERP and payment integrations, audit-ready controls, and AI-assisted automation that replaces disconnected spreadsheet work.</p>
+        <div class="cs-byline">
+          <img src="/img/team/vlad-ulitovskiy-20260502.jpg" alt="Vlad Ulitovskiy" class="cs-byline-photo" decoding="async">
+          <div class="cs-byline-info">
+            <strong>Vlad Ulitovskiy, MBA, CPA</strong>
+            <span>Accounting &amp; Compliance Lead</span>
+          </div>
+          <div class="cs-byline-meta"><span>Published Mar 20, 2026</span><span>24 min read</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="cs-narrative reveal">
+          <h2>Why Ledger Summit Chose To Build A Platform Instead Of Another Point Tool</h2>
+          <p class="cs-lead">Most finance teams do not suffer from one missing feature. They suffer from fragmented execution.</p>
+          <p>Procure-to-Pay lives in one set of tools, cash application and collections live in another, project cost capture lives somewhere else, and the accounting truth still gets assembled through exports, approvals, side spreadsheets, and detective work at month-end. The new <strong>Tool Box AI</strong> product was created to collapse that fragmentation into one operating model.</p>
+          <p>The product brief did not call for a narrow calculator or a single workflow widget. It called for a <strong>unified finance operations portal</strong> that could centralize Procure-to-Pay, Order-to-Cash, Time-to-Pay, and Project Financials in one platform, while still working across different ERPs and payment tools. In practice, that means Tool Box AI keeps one business process and translates it into the right accounting or payment action for each connected system.</p>
+          <p>That is what makes this build notable. Tool Box AI was scoped as a full finance operating system: workflow orchestration, approvals, integrations, security, audit support, dimensional governance, analytics, and AI assistance in one product instead of scattered across separate point tools.</p>
+        </div>
+        <div class="cs-industry-stats reveal">
+          <div class="cs-industry-stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">core workflow families designed into one platform: P2P, O2C, Time-to-Pay, and Project Financials</div>
+            <div class="stat-source">Master plan scope</div>
+          </div>
+          <div class="cs-industry-stat">
+            <div class="stat-number">15</div>
+            <div class="stat-label">middleware and control layers planned into the request path from security headers through audit logging</div>
+            <div class="stat-source">Core platform design</div>
+          </div>
+          <div class="cs-industry-stat">
+            <div class="stat-number">5</div>
+            <div class="stat-label">major external finance platforms normalized in the integration vision: NetSuite, Xero, QBO, Bill.com, and Ramp</div>
+            <div class="stat-source">Integration architecture</div>
+          </div>
+        </div>
+        <div class="cs-narrative reveal">
+          <p>This page documents that product build effort. It is not a client migration story. It is the story of how Ledger Summit translated a broad finance operating model into a real platform structure with modules, controls, APIs, data models, workflow definitions, and implementation scaffolding. Where technical terms matter, they are used here to explain how the finance process is controlled, not to make the product sound more complex than it is.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The Operating Problem</span>
+          <h2>The Finance Stack Tool Box AI Was Built To Replace</h2>
+        </div>
+        <div class="cs-narrative reveal">
+          <p class="cs-lead">The target user was not a developer looking for a clever feature. It was a finance team trying to keep approvals, documents, cash, payroll, projects, and audit support from splintering across too many systems.</p>
+          <p>Tool Box AI was designed for AP clerks, AR analysts, controllers, CFOs, project managers, payroll admins, compliance teams, and external vendors or customers who need one portal with role-aware access and traceable workflows. The underlying business problem was recurring and familiar:</p>
+          <ul>
+            <li>Documents and approvals move faster than accounting controls, so finance ends up reconciling decisions after the fact.</li>
+            <li>ERP systems hold balances, but operational steps like intake, routing, coding, and exception management still live in email, chats, and spreadsheets.</li>
+            <li>Integrations move records without always preserving audit evidence, dimensional consistency, or retry-safe posting behavior.</li>
+            <li>Project, payroll, and procurement data often share the same accounting consequences but arrive through different systems and different governance standards.</li>
+            <li>AI is often added as a layer of summarization instead of being embedded into intake, matching, coding, prediction, and exception handling.</li>
+          </ul>
+          <p>Tool Box AI was conceived as an answer to that pattern: a system where workflow, controls, integrations, and analytics belong to the same product instead of becoming a patchwork around the ERP.</p>
+        </div>
+        <div class="cs-process-flow reveal">
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">1</div>
+            <div class="flow-label">Requests start in forms, inboxes, or side systems</div>
+            <div class="flow-pain-tag">Scattered intake</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">2</div>
+            <div class="flow-label">Approvals run through email, Slack, or manual routing</div>
+            <div class="flow-pain-tag">Weak control path</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">3</div>
+            <div class="flow-label">Coding, matching, and exceptions get resolved offline</div>
+            <div class="flow-pain-tag">Spreadsheet drift</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">4</div>
+            <div class="flow-label">ERP sync lands without enough context or proof</div>
+            <div class="flow-pain-tag">Posting ambiguity</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">5</div>
+            <div class="flow-label">Close, reconciliation, and audit support happen later</div>
+            <div class="flow-pain-tag">Late discovery</div>
+          </div>
+          <div class="cs-flow-step flow-pain">
+            <div class="flow-icon">6</div>
+            <div class="flow-label">Leadership still lacks one trusted command surface</div>
+            <div class="flow-pain-tag">Low visibility</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="cs-narrative reveal">
+          <h2>The Product Thesis Behind Tool Box AI</h2>
+          <p class="cs-lead">The product was built around one simple idea: finance software should not stop at recording the result. It should govern how the result gets created.</p>
+          <p>That thesis shaped the platform from the first architectural decisions. Tool Box AI was defined as <strong>API-first, event-driven, multi-tenant, cloud-native, and audit-first</strong>. In plain terms, that means the system was designed to connect cleanly with other tools, respond to workflow events as they happen, keep each customer in its own secure environment, run reliably as an online platform, and preserve a full record of who did what and when.</p>
+          <p>Rather than force the business into one accounting stack, the platform introduced two important translation layers. The <strong>Accounting Abstraction Layer</strong> is essentially a common posting and sync model for NetSuite, Xero, and QuickBooks Online. The <strong>Payment Abstraction Layer</strong> does the same for Bill.com and Ramp. That lets Tool Box AI keep one approval and workflow model even when the system of record changes underneath it.</p>
+        </div>
+        <div class="cs-narrative reveal">
+          <p class="cs-lead">The platform direction does not need a software screenshot to make the point. The important idea is the operating model: one command surface for approvals, workflow visibility, exception handling, analytics, and integration status.</p>
+          <p>Instead of showing a borrowed-looking ERP screen, the article keeps the emphasis on how Tool Box AI is structured and what it is meant to replace. The value of the product comes from the workflow design, control architecture, and finance logic behind the interface, not from mimicking another vendor's software aesthetic.</p>
+        </div>
+        <div class="cs-screenshot reveal">
+          <img src="/img/case-studies/tool-box-ai-operating-model-v2.svg" alt="Visio-style operating model diagram for Tool Box AI" decoding="async">
+          <div class="cs-screenshot-caption">Visio-style operating model: users and intake channels flow into Tool Box AI, which governs workflows, controls, modules, and normalized ERP or payment execution.</div>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>Separate customer environments by design</h4>
+            <p>Each customer was planned to operate inside its own protected data boundary, with database-level separation, customer-specific usage controls, and request handling that always knows which company and workflow it belongs to.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Audit-first workflow model</h4>
+            <p>Every material mutation was planned to carry user identity, timestamps, before/after values, and resource lineage so compliance is part of the operating model.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>ERP-agnostic business logic</h4>
+            <p>Business workflows were designed to remain stable even when the accounting backbone changes from NetSuite to Xero or QuickBooks Online.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>AI embedded into execution</h4>
+            <p>OCR, matching, coding suggestions, forecasting support, and anomaly detection were specified as working parts of the process itself, not as reports that appear after the work is already done.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Platform Architecture</span>
+          <h2>How Tool Box AI Was Actually Structured</h2>
+        </div>
+        <div class="cs-narrative reveal">
+          <p class="cs-lead">The initial build did not start from UI mockups. It started from the platform basics that finance workflows need if they are going to stay reliable under scale, integrations, and audit pressure.</p>
+          <p>The core platform layer introduced the controls that make automated finance work dependable: consistent system settings, structured logging, clear error handling, request tracing, rate limiting, duplicate-prevention safeguards, secure authentication, role-based permissions, segregation-of-duties checks, audit services, managed database connections, in-memory control services, and background workflow processing for tasks that should continue after the first user action.</p>
+        </div>
+        <div class="cs-screenshot reveal">
+          <img src="/img/case-studies/tool-box-ai-execution-flow-v2.svg" alt="Visio-style execution flow diagram for Tool Box AI" decoding="async">
+          <div class="cs-screenshot-caption">Visio-style execution flow: a request moves from intake to AI pre-work, policy checks, approvals, posting, and then back into monitoring, analytics, and exception handling.</div>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>Configuration and environment validation</h4>
+            <p>System settings were validated up front so database access, caching, authentication, rate limits, browser security rules, feature flags, and sync timeouts behave consistently across environments.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Structured logging with context</h4>
+            <p>Every request can be tied back to the customer, user, and workflow involved, while sensitive information is redacted and failures are captured in a way operations and compliance teams can review later.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Hierarchical error handling</h4>
+            <p>Validation errors, permission issues, sync failures, database problems, timeouts, and customer-specific exceptions were separated on purpose so the system can fail safely and route the issue to the right place.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Signed login tokens, sessions, and API keys</h4>
+            <p>The authentication layer covers signed login tokens, session renewal, API key access, and the ability to extend into multi-factor authentication for stronger control over sensitive workflows.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Role-based access and segregation of duties</h4>
+            <p>The access model includes 10 roles, 23 detailed permissions, record-level action checks, and segregation-of-duties rules so the same person cannot both create and approve sensitive finance actions when that would violate policy.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Duplicate prevention and retry safety</h4>
+            <p>Duplicate-prevention logic was designed for payments, sync jobs, and other high-risk actions where network retries happen, so the platform can try again without creating a duplicate bill, payment, or posting.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Customer-aware database access</h4>
+            <p>Database helpers make sure each query stays tied to the right customer, each transaction stays inside the right scope, and operational teams can see connection health before performance issues affect finance users.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Rate limiting and abuse controls</h4>
+            <p>Customer-by-customer and endpoint-by-endpoint throttling protects logins, APIs, and inbound system messages from overload while still telling connected systems when to slow down and retry.</p>
+          </div>
+        </div>
+        <div class="cs-narrative reveal">
+          <p>That foundation matters because finance platforms fail in predictable ways when these controls are deferred. Customer boundaries blur. Retries create duplicates. Manual overrides go unaudited. Approval rules drift away from posting rules. External integrations start acting like the source of truth instead of the accounting control framework. Tool Box AI was explicitly designed to avoid that trap.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">What The Product Includes</span>
+          <h2>The Major Feature Families Inside Tool Box AI</h2>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>Procure-to-Pay</h4>
+            <p>Requisitions, policy-driven approvals, purchase orders, vendor onboarding, invoice capture, invoice matching, approvals, bill pay, and AP reconciliation live in one governed path.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Order-to-Cash</h4>
+            <p>Quotes, sales orders, invoicing, cash application, collections, customer follow-up reminders, credit controls, and bank reconciliation were designed as a single O2C module family.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Time-to-Pay</h4>
+            <p>Timesheet capture, approvals, payroll export, journal posting, and reconciliation are positioned as controlled accounting workflows instead of disconnected HR handoffs.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Project Financials</h4>
+            <p>Assessment, dimensional setup, cost capture, revenue and billing, and dashboards give project-driven teams one financial control surface.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Accounting Abstraction Layer</h4>
+            <p>One normalization layer for NetSuite, Xero, and QuickBooks Online keeps finance logic stable even when the ERP underneath differs.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Payment Abstraction Layer</h4>
+            <p>One normalized payment layer for Bill.com and Ramp lets the workflow engine own execution, approvals, and status tracking across payment rails.</p>
+          </div>
+        </div>
+        <div class="cs-narrative reveal">
+          <p class="cs-lead">In other words, Tool Box AI is not one workflow. It is a controlled operating system for finance work.</p>
+          <p>The most impressive part of the build is not just the breadth of module coverage. It is that the platform was defined with a shared operating language across those modules: approvals, audit records, chartfield and dimension control, integrations, exception routing, automation opportunities, and customer-specific security all reappear as platform capabilities rather than isolated feature experiments.</p>
+        </div>
+        <div class="cs-screenshot reveal">
+          <img src="/img/case-studies/tool-box-ai-feature-family-map.svg" alt="Visio-style feature family map for Tool Box AI" decoding="async">
+          <div class="cs-screenshot-caption">Feature-family map: Tool Box AI keeps one operating core while extending the same control model across P2P, O2C, Time-to-Pay, and Project Financials.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">P2P Depth</span>
+          <h2>The First Major Workflow Family Was Detailed End To End</h2>
+        </div>
+        <div class="cs-narrative reveal">
+          <p class="cs-lead">The current build documentation goes deepest in Procure-to-Pay, and it shows what Tool Box AI means by product completeness.</p>
+          <p>The P2P module alone was documented across a large module design, data model, API specification, workflow set, and code scaffolding. That work produced 10 defined sub-modules, 40+ endpoints, 35+ PostgreSQL tables, 40+ workflow event definitions, and full attention to approvals, exceptions, integration points, and compliance traceability.</p>
+        </div>
+        <div class="cs-screenshot reveal">
+          <img src="/img/case-studies/tool-box-ai-p2p-lifecycle.svg" alt="Visio-style procure-to-pay lifecycle diagram for Tool Box AI" decoding="async">
+          <div class="cs-screenshot-caption">P2P lifecycle: Tool Box AI carries a finance request from requisition to approval, invoice processing, payment execution, ERP posting, and reconciliation support.</div>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>Purchase Requisition Intake</h4>
+            <p>Dynamic intake forms, email-to-requisition parsing, Slack or Teams shortcuts, budget checks, duplicate detection, attachments, and mobile requester support.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Approval Matrix and Policy Engine</h4>
+            <p>Visual rule building, amount and vendor routing, delegation, response-time timers, simulation mode, auditability, and auto-approval logic for low-risk items.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Purchase Orders</h4>
+            <p>PR-to-PO conversion, blanket POs, revision control, partial receipts, vendor acknowledgements, commitment tracking, tax calculation, and ERP sync.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Vendor Onboarding</h4>
+            <p>Self-service registration, duplicate checks, W-9 and banking collection, taxpayer ID validation, sanctions screening, risk scoring, and merge or deactivation workflows.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Vendor Compliance and Risk</h4>
+            <p>Expiration monitoring, re-certification, insurance validation, ESG or diversity tagging, and vendor performance scorecards.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Invoice Capture</h4>
+            <p>OCR, email ingestion, confidence scoring, vendor auto-match, duplicate detection, batch uploads, mobile capture, and routing based on how certain the system is about the extracted invoice data.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Invoice Matching and Coding</h4>
+            <p>2-way and 3-way match logic, tolerance rules, split coding, exception routing, auto-GL suggestions, and visibility into invoices that are still waiting to be matched or resolved.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Invoice Approvals</h4>
+            <p>Multi-level workflows, one-tap approvals, batch processing, holds, releases, escalation logic, comments, and collaboration channels.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Bill Pay and Payment Run</h4>
+            <p>ACH, check, wire, and card execution with scheduling, early-payment discount optimization, remittance, FX handling, and void workflows.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Bank Reconciliation</h4>
+            <p>Daily feed import, auto-matching, exception workbench, period locking, approval workflows, and multi-currency reconciliation handling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The Rest Of The Product</span>
+          <h2>How O2C, Time, And Project Features Extend The Same Logic</h2>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>O2C: Quote to invoice</h4>
+            <p>Quote configuration and pricing, sales orders, invoice management, revenue recognition, cash application, collections, payment reminders, credit management, and AR visibility were all planned as part of one O2C operating chain.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>O2C: Revenue and collections controls</h4>
+            <p>Revenue timing, collection tasking, customer aging, cash matching, and bank-reconciliation feedback loops keep front-office activity connected to accounting consequences.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Time-to-Pay: Time as accounting data</h4>
+            <p>Timesheets, approvals, payroll export, journal creation, and reconciliation convert labor activity into governed finance events instead of post-close cleanup.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Project Financials: Dimensions and margin visibility</h4>
+            <p>Project assessment, entity and dimension setup, cost capture, revenue and billing, and dashboard visibility put operational execution and accounting on the same model.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Portal roles for internal and external users</h4>
+            <p>Controllers, AP teams, AR teams, project managers, buyers, payroll admins, vendors, and customers all fit into the access design through role-aware interfaces.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Shared event model across modules</h4>
+            <p>Workflow state changes, approvals, syncs, exceptions, and audit events were designed to flow through one shared event model, so downstream processes react in a standard way instead of each module needing its own custom logic.</p>
+          </div>
+        </div>
+        <div class="cs-narrative reveal">
+          <p>That continuity is important. A unified platform is only useful if requisitions, invoices, sales orders, payroll journals, and project cost postings can all live under the same rules for user identity, customer separation, approvals, and explainability. Tool Box AI was built with exactly that kind of continuity in mind.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Integration Design</span>
+          <h2>The Features That Make The Product Connect To The Real World</h2>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>NetSuite adapter support</h4>
+            <p>NetSuite support covers SuiteTalk REST, OAuth, transaction sync, and posting patterns that respect how NetSuite expects finance transactions to be created and updated.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Xero adapter support</h4>
+            <p>Xero support covers REST API integration, OAuth 2.0 login handling, webhooks, rate-limit awareness, and normalized records so finance teams can use the same workflow even in a lighter ERP environment.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>QuickBooks Online adapter support</h4>
+            <p>QuickBooks Online support covers transaction sync, custom approval tracking, change-detection sync patterns, and export-friendly normalization so smaller teams still get governed workflows.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Bill.com integration</h4>
+            <p>Vendor, bill, payment, and remittance flows were designed to sync through one shared payment connection model rather than a one-off AP connector.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Ramp integration</h4>
+            <p>Corporate cards, expenses, reimbursements, and bill-pay data can be normalized into shared workflow and approval models across the platform.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Communication and intake surfaces</h4>
+            <p>Email, Slack, Teams, OCR services, webhooks, and queue-based sync were part of the product vision because finance work usually starts before anything reaches the general ledger.</p>
+          </div>
+        </div>
+        <div class="cs-screenshot reveal">
+          <img src="/img/case-studies/tool-box-ai-integration-architecture.svg" alt="Visio-style integration architecture diagram for Tool Box AI" decoding="async">
+          <div class="cs-screenshot-caption">Integration architecture: one finance operating layer sits between intake channels and the ERP or payment systems that post transactions, move funds, and send status back.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">AI Feature Layer</span>
+          <h2>Where Intelligence Was Added To The Workflow Instead Of The Marketing</h2>
+        </div>
+        <div class="cs-narrative reveal">
+          <p class="cs-lead">The AI layer inside Tool Box AI was designed to reduce manual work where finance teams actually feel friction most: intake, matching, coding, exceptions, routing, and forward-looking decision support.</p>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4>Invoice document reading and extraction</h4>
+            <p>AI-powered invoice capture with confidence scoring, template learning, and fallback routing helps AP teams get usable invoice data earlier, before coding and approval work even starts.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Duplicate and anomaly detection</h4>
+            <p>Duplicate requisitions, duplicate invoices, policy overrides, weak support, and unusual transaction patterns are all candidates for risk-based alerting.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Vendor and category suggestions</h4>
+            <p>Historical patterns can guide intake, routing, and classification so requesters and AP teams spend less time correcting unclear vendor names, categories, and coding choices.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Auto-GL coding</h4>
+            <p>Tool Box AI was scoped to learn from prior coding behavior, corrections, and vendor patterns to accelerate invoice coding and exception handling.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Approval and payment optimization</h4>
+            <p>Risk scoring, queue prioritization, early-payment discount decisions, and timing optimization turn the platform into a decision assistant, not just a workflow tracker.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4>Predictive finance insights</h4>
+            <p>Budget utilization forecasts, reconciliation acceleration, margin visibility, and advanced reporting were explicitly called out in later roadmap phases so the platform can improve both execution and finance insight over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Before vs. After</span>
+          <h2>What Tool Box AI Changes In The Operating Model</h2>
+        </div>
+        <div class="cs-before-after reveal">
+          <div class="cs-ba-row cs-ba-header">
+            <div class="cs-ba-cell">Operating Area</div>
+            <div class="cs-ba-cell">Before</div>
+            <div class="cs-ba-cell">After Tool Box AI</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Workflow ownership</div>
+            <div class="cs-ba-cell before">Requests and approvals spread across inboxes and point tools</div>
+            <div class="cs-ba-cell after">One portal with role-aware workflows and traceable routing</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">ERP logic</div>
+            <div class="cs-ba-cell before">Different rules depending on the connected system</div>
+            <div class="cs-ba-cell after">Shared finance logic through common ERP and payment translation layers</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Auditability</div>
+            <div class="cs-ba-cell before">Evidence gathered after the fact</div>
+            <div class="cs-ba-cell after">Audit-first events, before and after change tracking, and user attribution by design</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Tenant security</div>
+            <div class="cs-ba-cell before">Application-level filtering only</div>
+            <div class="cs-ba-cell after">Customer-aware request handling plus database-level separation and tenant-specific controls</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">Exception handling</div>
+            <div class="cs-ba-cell before">Detected at close through spreadsheet reconciliation</div>
+            <div class="cs-ba-cell after">Surfaced during intake, sync, approval, and reconciliation workflow itself</div>
+          </div>
+          <div class="cs-ba-row">
+            <div class="cs-ba-cell metric">AI usage</div>
+            <div class="cs-ba-cell before">Mostly reporting or summarization after work is done</div>
+            <div class="cs-ba-cell after">Embedded into capture, matching, coding, risk scoring, and operational prediction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Build Progress</span>
+          <h2>What The Current Build Already Demonstrates</h2>
+        </div>
+        <div class="cs-results-grid reveal">
+          <div class="cs-result-card">
+            <span class="cs-result-number">40+</span>
+            <span class="cs-result-label">P2P REST endpoints<br>specified so far</span>
+          </div>
+          <div class="cs-result-card">
+            <span class="cs-result-number">35+</span>
+            <span class="cs-result-label">P2P database tables<br>designed with tenancy and audit fields</span>
+          </div>
+          <div class="cs-result-card">
+            <span class="cs-result-number">10</span>
+            <span class="cs-result-label">P2P sub-modules<br>fully outlined in the current design wave</span>
+          </div>
+          <div class="cs-result-card">
+            <span class="cs-result-number">40+</span>
+            <span class="cs-result-label">workflow events<br>mapped for status changes and downstream actions</span>
+          </div>
+        </div>
+        <div class="cs-narrative reveal">
+          <p>Those numbers matter not because they look large in a table, but because they show operating intent. Tool Box AI is being built with defined endpoints, data models, workflow states, integration contracts, and compliance assumptions. That is the difference between a slide-deck concept and a product that can support real finance execution.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Roadmap Logic</span>
+          <h2>How The Product Was Sequenced For Delivery</h2>
+        </div>
+        <div class="cs-timeline reveal">
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Phase 1: Foundation and P2P core</h4>
+            <p>Establish the shared platform controls, authentication, audit services, ERP and payment translation layers, and the first critical P2P workflows including requisitions, approvals, vendor onboarding, invoice capture, matching, and payment execution.</p>
+          </div>
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Phase 2: O2C expansion and operational finance</h4>
+            <p>Add invoicing, cash application, bank reconciliation, collection reminders, expenses, and broader exception-driven finance operations on the same shared control model.</p>
+          </div>
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Phase 3: Advanced commercial and revenue controls</h4>
+            <p>Extend into quote configuration and pricing, sales orders, revenue recognition, collections, and credit management so customer-side operations become as structured as AP-side operations.</p>
+          </div>
+          <div class="cs-timeline-step">
+            <div class="cs-timeline-dot"></div>
+            <h4>Phase 4: AI optimization and advanced reporting</h4>
+            <p>Layer in predictive analytics, more intelligent workflow guidance, e-invoicing readiness, and deeper management visibility once the operational data foundation is stable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Related Free Tools</span>
+          <h2>Public Ledger Summit Tools That Echo The Product Direction</h2>
+        </div>
+        <div class="cs-capabilities-grid reveal">
+          <div class="cs-capability-card">
+            <h4><a href="/tools/financial-close-control-calendar/">Financial Close Control Calendar</a></h4>
+            <p>See how Ledger Summit thinks about controlled execution, task ownership, and earlier issue discovery across the close.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4><a href="/tools/chart-of-accounts-compliance-checker/">Chart of Accounts Compliance Checker</a></h4>
+            <p>Check the dimensional and structural consistency that a platform like Tool Box AI depends on for reliable automation.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4><a href="/tools/segregation-of-duties-risk-matrix/">Segregation of Duties Risk Matrix</a></h4>
+            <p>Explore the same access-control and conflict concepts that sit underneath the platform's role-based permission design.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4><a href="/tools/gl-detail-analyzer/">GL Detail Analyzer</a></h4>
+            <p>Inspect transaction behavior and unusual patterns when integrated workflows or close support need deeper review.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4><a href="/tools/prepaid-expense-amortization/">Prepaid Expense Amortization</a></h4>
+            <p>Reflects the same ledger-native schedule thinking that shows up in the product's treatment of recurring accounting support.</p>
+          </div>
+          <div class="cs-capability-card">
+            <h4><a href="/tools/account-flux-analysis-tool/">Account Flux Analysis Tool</a></h4>
+            <p>Support financial review and exception analysis with the same explainability mindset used throughout the platform architecture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Common Questions</span>
+          <h2>Frequently Asked Questions About The Build</h2>
+        </div>
+        <div class="cs-faq-section">
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">What is Tool Box AI designed to do?</button>
+            <div class="cs-faq-a"><div class="cs-faq-a-inner">Tool Box AI is designed to give finance and accounting teams one operating platform for Procure-to-Pay, Order-to-Cash, payroll-related workflows, and Project Financials, with ERP and payment integrations, audit controls, and AI-assisted automation.</div></div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">Which systems does Tool Box AI integrate with?</button>
+            <div class="cs-faq-a"><div class="cs-faq-a-inner">The current design includes one common accounting connection model for NetSuite, Xero, and QuickBooks Online plus one common payment connection model for Bill.com and Ramp. The roadmap also includes Slack, Teams, email intake, OCR services, webhooks, and background sync.</div></div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">How does Tool Box AI handle multi-tenant security?</button>
+            <div class="cs-faq-a"><div class="cs-faq-a-inner">The platform is designed so each customer operates inside its own protected data boundary. It combines customer-aware request handling, database-level data separation, signed authentication tokens, role-based permissions, segregation-of-duties rules, rate limits, audit logging, encryption, and request tracing.</div></div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">What product areas are included in the first build phase?</button>
+            <div class="cs-faq-a"><div class="cs-faq-a-inner">The initial focus is the platform foundation plus P2P core: requisitions, approval rules, purchase orders, vendor onboarding, invoice capture, matching and coding, invoice approvals, bill pay, bank reconciliation, and early Project Financials setup.</div></div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">What AI features are part of the Tool Box AI product vision?</button>
+            <div class="cs-faq-a"><div class="cs-faq-a-inner">The product brief includes OCR-based invoice capture, duplicate detection, vendor suggestions, auto-GL coding, risk scoring, confidence-based routing, smart matching, anomaly detection, and forecasting-oriented insights across approvals, collections, reconciliation, and planning.</div></div>
+          </div>
+          <div class="cs-faq-item">
+            <button class="cs-faq-q" aria-expanded="false">Is this case study about a client deployment or Ledger Summit's own product build?</button>
+            <div class="cs-faq-a"><div class="cs-faq-a-inner">This page documents Ledger Summit's own product build effort: the architecture, operating model, module design, and feature set behind Tool Box AI as it is being assembled from roadmap to implementation.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">About the Author</span>
+        </div>
+        <div class="cs-about-author reveal">
+          <img src="/img/team/vlad-ulitovskiy-20260502.jpg" alt="Vlad Ulitovskiy" class="cs-about-author-photo" decoding="async">
+          <div class="cs-about-author-body">
+            <h3>Vlad Ulitovskiy, MBA, CPA</h3>
+            <span class="cs-about-author-title">Accounting &amp; Compliance Lead at Ledger Summit</span>
+            <p>Vlad works across accounting operations, control design, ERP structure, and finance transformation. His focus is practical: how to make complex finance systems auditable, scalable, and actually usable by the people responsible for close, compliance, and operational decision-making.</p>
+            <p>At Ledger Summit, he helps turn broad workflow ambition into disciplined product architecture, with special attention to customer data separation, approval logic, auditability, and integration control.</p>
+            <div class="cs-author-credentials">
+              <span class="cs-credential-badge">MBA</span>
+              <span class="cs-credential-badge">CPA</span>
+              <span class="cs-credential-badge">Finance Systems</span>
+              <span class="cs-credential-badge">Controls Design</span>
+              <span class="cs-credential-badge">ERP Architecture</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-light">
+      <div class="container">
+        <div class="cs-ai-cta reveal">
+          <h2>Want a finance platform built around workflow, controls, and explainability?</h2>
+          <p>Book a free call and we will map the approvals, integrations, audit requirements, and workflow priorities that should shape your own finance operating system in language your finance team can actually use.</p>
+          <a href="/book-a-call/" class="btn-primary">Book a free call &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand">
+          <img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async">
+          <span>Ledger Summit</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/book-a-call/">Book a Call</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p>
+      </div>
+    </div>
+  </footer>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+  <script src="/js/shared.js"></script>
+  <script>
+  (function() {
+    var progressBar = document.getElementById('readingProgress');
+    if (progressBar) {
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+      }, { passive: true });
+    }
+    document.querySelectorAll('.cs-faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.parentElement;
+        var answer = item.querySelector('.cs-faq-a');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.cs-faq-item').forEach(function(other) {
+          if (other !== item) {
+            other.classList.remove('open');
+            var otherAnswer = other.querySelector('.cs-faq-a');
+            if (otherAnswer) otherAnswer.style.maxHeight = '0';
+            var otherBtn = other.querySelector('.cs-faq-q');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+        if (isOpen) {
+          item.classList.remove('open');
+          answer.style.maxHeight = '0';
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  })();
+  </script>
+  <script>
+    window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };
+  </script>
+  <script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+</html>

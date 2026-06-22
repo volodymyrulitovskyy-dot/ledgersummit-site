@@ -1,0 +1,504 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  directUrl         = env("DIRECT_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  schemas           = ["med2"]
+}
+
+enum ScheduleType {
+  PREPAID
+  FIXED_ASSET
+  LOAN
+  OTHER
+
+  @@schema("med2")
+}
+
+enum ScheduleStatus {
+  DRAFT
+  ACTIVE
+  CLOSED
+
+  @@schema("med2")
+}
+
+enum ScheduleItemLineType {
+  ADDITION
+  REDUCTION
+  ADJUSTMENT
+
+  @@schema("med2")
+}
+
+enum LineType {
+  ADDITION
+  REDUCTION
+  ADJUSTMENT
+
+  @@schema("med2")
+}
+
+enum GeneratedSource {
+  NONE
+  AMORTIZATION
+
+  @@schema("med2")
+}
+
+enum AmortMethod {
+  NONE
+  STRAIGHT_LINE
+
+  @@schema("med2")
+}
+
+model User {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email           String    @unique
+  user_name       String?
+  password_hash   String?
+  role            String    @default("user")
+  allowed_screens String[]  @default(["home", "checklist", "calendar"])
+  is_active       Boolean   @default(true)
+  created_at      DateTime  @default(now()) @db.Timestamptz(6)
+  last_login      DateTime? @db.Timestamptz(6)
+
+  @@index([email], map: "idx_users_email")
+  @@map("users")
+  @@schema("med2")
+}
+
+model BsLine {
+  id           String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  snapshot_id  String     @db.Uuid
+  section      String
+  account_name String
+  amount       Decimal    @db.Decimal
+  raw          Json?
+  created_at   DateTime   @default(now()) @db.Timestamptz(6)
+  bs_snapshot  BsSnapshot @relation(fields: [snapshot_id], references: [id], onDelete: Cascade)
+
+  @@index([section])
+  @@index([snapshot_id])
+  @@map("bs_lines")
+  @@schema("med2")
+}
+
+model BsSnapshot {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id            String   @db.Uuid
+  as_of_date        DateTime @db.Date
+  source            String   @default("qbo")
+  pulled_at         DateTime @default(now()) @db.Timestamptz(6)
+  pulled_by_user_id String?  @db.Uuid
+  raw_json          Json?
+  created_at        DateTime @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime @default(now()) @db.Timestamptz(6)
+  bs_lines          BsLine[]
+  org               Org      @relation(fields: [org_id], references: [id], onDelete: Cascade)
+
+  @@unique([org_id, as_of_date, source])
+  @@index([org_id, as_of_date])
+  @@index([org_id, source])
+  @@map("bs_snapshots")
+  @@schema("med2")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model CloseTask {
+  id                 String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id             String    @db.Uuid
+  period_id          String?   @db.Uuid
+  title              String
+  description        String?
+  owner_user_id      String?   @db.Uuid
+  owner_name         String?
+  due_date           DateTime? @db.Date
+  status             String    @default("open")
+  priority           String    @default("normal")
+  created_at         DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at         DateTime? @default(now()) @db.Timestamptz(6)
+  computed_due_date  DateTime? @db.Date
+  due_type           String    @default("fixed")
+  due_workday_n      Int?
+  due_workday_anchor String?
+  due_offset_days    Int       @default(0)
+  range_from_date    DateTime? @db.Date
+  range_to_date      DateTime? @db.Date
+  org                Org       @relation(fields: [org_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  period             Period?   @relation(fields: [period_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([computed_due_date])
+  @@index([org_id, period_id], map: "close_tasks_org_period_idx")
+  @@index([period_id, status], map: "close_tasks_period_status_idx")
+  @@index([computed_due_date], map: "idx_close_tasks_computed_due_date")
+  @@index([org_id, period_id], map: "idx_close_tasks_org_period")
+  @@index([org_id, range_from_date, range_to_date], map: "idx_close_tasks_org_range")
+  @@index([owner_user_id], map: "idx_close_tasks_owner")
+  @@index([period_id, status], map: "idx_close_tasks_period_status")
+  @@map("close_tasks")
+  @@schema("med2")
+}
+
+model Exception {
+  id              String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id          String             @db.Uuid
+  snapshot_id     String             @db.Uuid
+  rule_id         String             @db.Uuid
+  status          String             @default("open")
+  severity        String
+  title           String
+  details         String?
+  account_name    String?
+  account_number  String?
+  balance         Decimal?           @db.Decimal
+  target_value    Decimal?           @db.Decimal    // Prior period or scheduled amount
+  variance_amount Decimal?           @db.Decimal    // Dollar variance (activity - target)
+  variance_pct    Decimal?           @db.Decimal    // Percent variance
+  domain          String             @default("GL")
+  entity_key      String?
+  entity_name     String?
+  metric          String?
+  value_signed    Decimal?           @db.Decimal
+  value_abs       Decimal?           @db.Decimal
+  baseline_value  Decimal?           @db.Decimal
+  delta_abs       Decimal?           @db.Decimal
+  delta_pct       Decimal?           @db.Decimal
+  owner_name      String?
+  owner_user_id   String?            @db.Uuid
+  created_at      DateTime?          @default(now()) @db.Timestamptz(6)
+  resolved_reason String?
+  resolved_at     DateTime?          @db.Timestamptz(6)
+  due_date        DateTime?          @db.Date
+  comments        ExceptionComment[]
+  org             Org                @relation(fields: [org_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  rule            Rule               @relation(fields: [rule_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  tb_snapshot     TbSnapshot         @relation(fields: [snapshot_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([org_id, snapshot_id], map: "idx_exceptions_org_snapshot")
+  @@index([rule_id], map: "idx_exceptions_rule_id")
+  @@index([severity], map: "idx_exceptions_severity")
+  @@index([snapshot_id, status], map: "idx_exceptions_snapshot_status")
+  @@index([owner_user_id], map: "idx_exceptions_owner")
+  @@map("exceptions")
+  @@schema("med2")
+}
+
+model OrgMember {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id     String   @db.Uuid
+  user_id    String   @db.Uuid
+  role       String   @default("member")
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  org        Org      @relation(fields: [org_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([org_id, user_id])
+  @@index([org_id])
+  @@index([user_id])
+  @@map("org_members")
+  @@schema("med2")
+}
+
+model Org {
+  id             String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name           String
+  created_at     DateTime       @default(now()) @db.Timestamptz(6)
+  bs_snapshots   BsSnapshot[]
+  close_tasks    CloseTask[]
+  exceptions     Exception[]
+  org_members    OrgMember[]
+  periods        Period[]
+  qbo_connection QboConnection?
+  rules          Rule[]
+  tb_snapshots   TbSnapshot[]
+  schedules      Schedule[]
+
+  @@map("orgs")
+  @@schema("med2")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model Period {
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id      String      @db.Uuid
+  year        Int
+  month       Int
+  status      String      @default("open")
+  created_at  DateTime    @default(now()) @db.Timestamptz(6)
+  close_tasks CloseTask[]
+  org         Org         @relation(fields: [org_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([org_id, year, month])
+  @@index([org_id])
+  @@map("periods")
+  @@schema("med2")
+}
+
+model Schedule {
+  id               String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  orgId            String             @map("org_id") @db.Uuid
+  periodStart      DateTime           @map("period_start") @db.Date
+  periodEnd        DateTime           @map("period_end") @db.Date
+  name             String
+  type             ScheduleType
+  glAccountId      String             @map("gl_account_id")
+  glAccountName    String             @map("gl_account_name")
+  glAccountNumber  String?            @map("gl_account_number")
+  currency         String             @default("USD")
+  openingBalance   Decimal            @map("opening_balance") @db.Decimal(18, 2) @default(0)
+  additions        Decimal            @db.Decimal(18, 2) @default(0)
+  reductions       Decimal            @db.Decimal(18, 2) @default(0)
+  activityExpense  Decimal            @map("activity_expense") @db.Decimal(18, 2) @default(0)
+  endingBalance    Decimal            @map("ending_balance") @db.Decimal(18, 2) @default(0)
+  tbEndingBalance  Decimal?           @map("tb_ending_balance") @db.Decimal(18, 2)
+  varianceToTB     Decimal?           @map("variance_to_tb") @db.Decimal(18, 2)
+  status           ScheduleStatus     @default(DRAFT)
+  notes            String?            @db.Text
+  createdAt        DateTime           @default(now()) @db.Timestamptz(6)
+  updatedAt        DateTime           @default(now()) @db.Timestamptz(6)
+  deletedAt        DateTime?          @db.Timestamptz(6)
+  items            ScheduleItem[]
+  lines            ScheduleLine[]
+  org              Org                @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  preparedBy       String?
+  preparedAt       DateTime?
+  reviewedBy       String?
+  reviewedAt       DateTime?
+  lockAccount      Boolean            @default(true)
+  lockPeriod       Boolean            @default(true)
+  amortMethod      AmortMethod        @default(NONE)
+  amortStartDate   DateTime?          @map("amort_start_date") @db.Date
+  amortEndDate     DateTime?          @map("amort_end_date") @db.Date
+  amortMonthlyAmount Decimal?         @map("amort_monthly_amount") @db.Decimal(18, 2)
+  amortAutoGenerated Boolean          @default(false) @map("amort_auto_generated")
+
+  @@index([orgId, periodStart, periodEnd], map: "idx_schedules_org_period")
+  @@index([orgId, deletedAt], map: "idx_schedules_org_deleted")
+  @@map("schedules")
+  @@schema("med2")
+}
+
+model ScheduleItem {
+  id          String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scheduleId  String                @map("schedule_id") @db.Uuid
+  lineType    ScheduleItemLineType  @map("line_type")
+  description String
+  vendor      String?
+  reference   String?
+  startDate   DateTime?             @map("start_date") @db.Date
+  endDate     DateTime?             @map("end_date") @db.Date
+  amount      Decimal               @db.Decimal(18, 2)
+  createdAt   DateTime              @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime              @default(now()) @db.Timestamptz(6)
+  schedule    Schedule              @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+
+  @@index([scheduleId], map: "idx_schedule_items_schedule_id")
+  @@map("schedule_items")
+  @@schema("med2")
+}
+
+model ScheduleLine {
+  id          String      @id @default(uuid())
+  scheduleId  String      @db.Uuid
+  schedule    Schedule    @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+
+  lineType    LineType
+  lineDate    DateTime    @db.Date
+  description String
+  reference   String?
+  vendor      String?
+  amount      Decimal     @db.Decimal(18, 2)
+  isAutoGenerated Boolean @default(false) @map("is_auto_generated")
+  generatedSource GeneratedSource @default(NONE) @map("generated_source")
+
+  createdAt   DateTime    @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime    @updatedAt @db.Timestamptz(6)
+
+  @@index([scheduleId], map: "idx_schedule_lines_schedule_id")
+  @@map("schedule_lines")
+  @@schema("med2")
+}
+
+model QboConnection {
+  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id        String    @unique @db.Uuid
+  realm_id      String
+  access_token  String
+  refresh_token String
+  expires_at    DateTime  @db.Timestamptz(6)
+  created_at    DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at    DateTime? @default(now()) @db.Timestamptz(6)
+  org           Org       @relation(fields: [org_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([expires_at], map: "idx_qbo_connections_expires_at")
+  @@index([org_id], map: "idx_qbo_connections_org_id")
+  @@map("qbo_connections")
+  @@schema("med2")
+}
+
+model Rule {
+  id                 String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id             String      @db.Uuid
+  name               String
+  description        String?
+  enabled            Boolean     @default(true)
+  rule_type          String
+  target             String      @default("tb_account")
+  account_match      String?
+  threshold_abs      Decimal?    @db.Decimal
+  threshold_pos      Decimal?    @db.Decimal
+  threshold_neg      Decimal?    @db.Decimal
+  severity           String      @default("medium")
+  owner_name         String?
+  owner_user_id      String?     @db.Uuid
+  created_at         DateTime?   @default(now()) @db.Timestamptz(6)
+  updated_at         DateTime?   @default(now()) @db.Timestamptz(6)
+  scope              String?     @default("ALL")
+  variance_mode      String?     @default("NONE")
+  variance_threshold Decimal?    @db.Decimal
+  variance_basis     String?
+  domain             String      @default("GL")
+  metric             String?
+  is_active          Boolean?    @default(true)
+  account_id         String?     @db.Uuid
+  due_date           DateTime?   @db.Date
+  exceptions         Exception[]
+  org                Org         @relation(fields: [org_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([org_id], map: "idx_rules_org_id")
+  @@map("rules")
+  @@schema("med2")
+}
+
+model ProjectPnlSnapshotLine {
+  snapshot_id         String   @db.Uuid
+  org_id              String   @db.Uuid
+  customer_key        String
+  customer_name       String
+  is_not_specified    Boolean  @default(false)
+  revenue_signed      Decimal  @db.Decimal
+  revenue_abs         Decimal  @db.Decimal
+  cogs_signed         Decimal  @db.Decimal
+  cogs_abs            Decimal  @db.Decimal
+  gross_profit_signed Decimal  @db.Decimal
+  gross_profit_abs    Decimal  @db.Decimal
+  created_at          DateTime @default(now()) @db.Timestamptz(6)
+
+  @@id([snapshot_id, customer_key])
+  @@index([org_id, snapshot_id], map: "idx_project_pnl_lines_org_snapshot")
+  @@map("project_pnl_snapshot_lines")
+  @@schema("med2")
+}
+
+model ProjectPnlSnapshotTotal {
+  snapshot_id                       String   @id @db.Uuid
+  org_id                            String   @db.Uuid
+  total_revenue_signed              Decimal  @db.Decimal
+  total_revenue_abs                 Decimal  @db.Decimal
+  total_cogs_signed                 Decimal  @db.Decimal
+  total_cogs_abs                    Decimal  @db.Decimal
+  total_gross_profit_signed         Decimal  @db.Decimal
+  total_gross_profit_abs            Decimal  @db.Decimal
+  not_specified_revenue_signed      Decimal  @db.Decimal
+  not_specified_revenue_abs         Decimal  @db.Decimal
+  not_specified_cogs_signed         Decimal  @db.Decimal
+  not_specified_cogs_abs            Decimal  @db.Decimal
+  not_specified_gross_profit_signed Decimal  @db.Decimal
+  not_specified_gross_profit_abs    Decimal  @db.Decimal
+  created_at                        DateTime @default(now()) @db.Timestamptz(6)
+
+  @@map("project_pnl_snapshot_totals")
+  @@schema("med2")
+}
+
+model TbLine {
+  id             String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  snapshot_id    String     @db.Uuid
+  account_number String?
+  account_name   String
+  account_type   String?
+  debit          Decimal?   @db.Decimal
+  credit         Decimal?   @db.Decimal
+  balance        Decimal    @db.Decimal
+  currency       String?
+  raw            Json?
+  created_at     DateTime   @default(now()) @db.Timestamptz(6)
+  tb_snapshot    TbSnapshot @relation(fields: [snapshot_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([account_name], map: "idx_tb_lines_account_name")
+  @@index([balance], map: "idx_tb_lines_balance")
+  @@index([snapshot_id], map: "idx_tb_lines_snapshot_id")
+  @@map("tb_lines")
+  @@schema("med2")
+}
+
+model TbSnapshot {
+  id                  String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  org_id              String      @db.Uuid
+  range_from_date     DateTime    @db.Date
+  range_to_date       DateTime    @db.Date
+  source              String      @default("manual_csv")
+  imported_by_user_id String?     @db.Uuid
+  imported_at         DateTime    @default(now()) @db.Timestamptz(6)
+  exceptions          Exception[]
+  tb_lines            TbLine[]
+  org                 Org         @relation(fields: [org_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([org_id, range_from_date, range_to_date, source], map: "unique_org_range_source")
+  @@index([imported_at(sort: Desc)], map: "idx_tb_snapshots_imported_at")
+  @@index([org_id, range_from_date, range_to_date], map: "idx_tb_snapshots_org_range")
+  @@map("tb_snapshots")
+  @@schema("med2")
+}
+
+model Explanation {
+  id        String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  orgId     String               @map("org_id")
+  periodEnd DateTime             @map("period_end") @db.Date
+  accountId String               @map("account_id")
+  ruleId    String?              @map("rule_id")
+  text      String
+  comments  ExplanationComment[]
+
+  @@unique([orgId, periodEnd, accountId, ruleId], map: "explanations_org_period_account_rule_uq")
+  @@index([ruleId])
+  @@index([orgId, periodEnd, accountId], map: "explanations_org_period_account_idx")
+  @@index([orgId, periodEnd], map: "explanations_org_period_idx")
+  @@map("explanations")
+  @@schema("med2")
+}
+
+model ExplanationComment {
+  id            String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  explanationId String      @map("explanation_id") @db.Uuid
+  text          String
+  explanation   Explanation @relation(fields: [explanationId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([explanationId])
+  @@map("explanation_comments")
+  @@schema("med2")
+}
+
+model ExceptionComment {
+  id             String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  exception_id   String    @db.Uuid
+  author_name    String?
+  author_user_id String?   @db.Uuid
+  created_at     DateTime? @default(now()) @db.Timestamptz(6)
+  org_id         String    @db.Uuid
+  user_id        String?   @db.Uuid
+  user_email     String?
+  text           String?
+  exception      Exception @relation(fields: [exception_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_exception_comments_exception")
+
+  @@index([exception_id], map: "idx_exception_comments_exception_id")
+  @@index([org_id], map: "idx_exception_comments_org_id")
+  @@map("exception_comments")
+  @@schema("med2")
+}

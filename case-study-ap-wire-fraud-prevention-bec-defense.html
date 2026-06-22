@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AP Wire Fraud Prevention (BEC Defense) Case Study | Ledger Summit</title>
+  <meta name="description" content="See how Ledger Summit deployed business email compromise (BEC) and AP wire fraud prevention controls for a $120M company after a $400K wire fraud incident.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/case-study-ap-wire-fraud-prevention-bec-defense.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AP Wire Fraud Prevention (BEC Defense) Case Study | Ledger Summit">
+  <meta property="og:description" content="See how Ledger Summit deployed business email compromise (BEC) and AP wire fraud prevention controls for a $120M company after a $400K wire fraud incident.">
+  <meta property="og:url" content="https://ledgersummit.com/case-study-ap-wire-fraud-prevention-bec-defense.html">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AP Wire Fraud Prevention (BEC Defense) Case Study | Ledger Summit">
+  <meta name="twitter:description" content="See how Ledger Summit deployed business email compromise (BEC) and AP wire fraud prevention controls for a $120M company after a $400K wire fraud incident.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css?v=20260505b">
+  <link rel="stylesheet" href="/css/subpages.css?v=20260505b">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"AP Wire Fraud Prevention (BEC Defense) Case Study | Ledger Summit","description":"See how Ledger Summit deployed business email compromise (BEC) and AP wire fraud prevention controls for a $120M company after a $400K wire fraud incident — including out-of-band verification, vendor master controls, and approval routing.","author":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"datePublished":"2026-05-05","dateModified":"2026-05-05","url":"https://ledgersummit.com/case-study-ap-wire-fraud-prevention-bec-defense.html"}]}</script>
+</head>
+<body class="ls-subpage">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a>
+    <ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/toolboxai/" onclick="closeMobileNav()">Tool Box AI</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+</div>
+
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div>
+              <span class="eyebrow">Fraud prevention case study</span>
+              <h1>AP Wire Fraud Prevention (BEC Defense) Case Study</h1>
+            </div>
+            <p class="lead">A $120M company suffered a $400K wire fraud loss to a sophisticated business email compromise (BEC) attack. Three months later, the company had layered out-of-band verification, vendor master controls, payment authorization protocols, and a documented BEC playbook — and recovered partial loss through bank fraud claim.</p>
+            <div class="hero-profile"><strong>Client profile:</strong> Composite case study based on a $120M revenue distribution company. The CFO's email was compromised; an attacker impersonated a vendor and redirected a $400K wire payment. Pre-incident, no out-of-band verification; post-incident, full BEC defense program.</div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#measured-results">See measured results</a>
+              <a class="btn btn-soft" href="/#book">Talk through your situation</a>
+            </div>
+            <div class="jump-links"><a class="jump-link" href="#company-context">Company context</a><a class="jump-link" href="#before">Before — what was actually broken</a><a class="jump-link" href="#what-we-built">What Ledger Summit implemented</a><a class="jump-link" href="#mechanics">BEC defense mechanics — the layered controls</a><a class="jump-link" href="#implementation-timeline">Implementation timeline</a><a class="jump-link" href="#measured-results">Measured results</a></div>
+          </div>
+          <aside class="hero-panel">
+            <span class="panel-label">Measured impact</span>
+            <p class="panel-copy">Business email compromise is the most common large-loss fraud in finance. Defense is a process, not a tool — and it has to be designed before the next attack.</p>
+            <div class="metric-grid">
+              <article class="metric-card"><strong>$400K loss</strong><span>Initial BEC fraud incident</span></article>
+              <article class="metric-card"><strong>$280K recovered</strong><span>Through bank fraud claim</span></article>
+              <article class="metric-card"><strong>0</strong><span>BEC incidents in 12 months post</span></article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <div class="container">
+        <div class="story-grid">
+          <article class="story-card story-wide" id="company-context">
+            <h2>Company context</h2>
+            <p>The client is a $120M revenue distribution company. The CFO's email was compromised through a phishing attack; the attacker observed payment patterns for several weeks, then impersonated a vendor (using a lookalike domain) and redirected a $400K wire payment to a fraudster-controlled account. The company discovered the fraud 11 days later when the actual vendor inquired about the unpaid invoice.</p>
+            <p>BEC (Business Email Compromise) is the most common large-loss fraud in finance per FBI IC3 statistics — billions in annual losses. The defense pattern is well-known but rarely fully implemented. We were brought in to design the program in 90 days post-incident.</p>
+            <ul><li>$120M revenue distribution company</li><li>CFO email compromised via phishing</li><li>Attacker observed payment patterns 6 weeks</li><li>Impersonated vendor with lookalike domain</li><li>$400K wire to fraudster account</li><li>Discovered 11 days later</li><li>Bank fraud claim partial recovery: $280K</li><li>Insurance claim: deductible exceeded loss</li></ul>
+          </article>
+          <article class="story-card " id="before">
+            <h2>Before — what was actually broken</h2>
+            <p>No out-of-band verification on payment changes. Vendor master changes accepted via email. No dual approval on wire payments above threshold. No BEC training. Email security baseline (no MFA on CFO email; no DMARC; no business email gateway).</p>
+            <ul><li>No out-of-band verification on payment / vendor changes</li><li>Vendor master changes via email</li><li>Wire approvals via email (no dual control)</li><li>No BEC awareness training</li><li>CFO email without MFA</li><li>No DMARC, SPF, DKIM email authentication</li><li>No business email gateway (Mimecast, Proofpoint)</li><li>No fraud detection on bank wires</li></ul>
+          </article>
+          <article class="story-card " id="what-we-built">
+            <h2>What Ledger Summit implemented</h2>
+            <p>A six-track BEC defense program: (1) email security hardening; (2) vendor master controls; (3) payment authorization protocols; (4) out-of-band verification; (5) BEC awareness training; (6) incident response playbook.</p>
+            <ul><li>Email security: MFA mandatory; DMARC, SPF, DKIM enforced; business email gateway (Mimecast) deployed</li><li>Vendor master controls: change requests in-system only (no email); dual control on bank detail changes; W-9 + voided check verification on new vendors</li><li>Payment authorization: dual control on all wires above $10K; out-of-band callback for changes above $50K (call vendor at known phone number)</li><li>Out-of-band verification protocol: documented; phone numbers stored in vendor master separate from email</li><li>BEC awareness training: quarterly mandatory training; phishing simulation; CFO and AP team primary focus</li><li>Incident response playbook: detection signal definitions, internal escalation, bank notification, FBI IC3 reporting, legal counsel engagement</li><li>Fraud monitoring: Bank positive pay enabled; large wire alerts; pattern-anomaly detection</li><li>Cyber insurance review: coverage adequacy assessment, deductible vs. expected loss analysis</li></ul>
+          </article>
+          <article class="story-card story-wide" id="mechanics">
+            <h2>BEC defense mechanics — the layered controls</h2>
+            <div class="table-wrap"><table><thead><tr><th>Layer</th><th>Control</th><th>Purpose</th></tr></thead><tbody><tr><td>Email security</td><td>MFA, DMARC, SPF, DKIM, business email gateway</td><td>Reduce attack surface</td></tr><tr><td>Awareness</td><td>Quarterly BEC training; phishing simulation</td><td>Human-firewall hardening</td></tr><tr><td>Vendor master</td><td>Dual control on bank changes; in-system change requests only</td><td>Authorize legitimate changes only</td></tr><tr><td>Wire authorization</td><td>Dual control above threshold</td><td>Multiple eyes on every wire</td></tr><tr><td>Out-of-band verification</td><td>Phone callback to known number</td><td>Defeat email impersonation</td></tr><tr><td>Anomaly monitoring</td><td>Bank fraud alerts; pattern detection</td><td>Catch attacks in progress</td></tr><tr><td>Incident response</td><td>Documented playbook; bank/FBI reporting</td><td>Maximize recovery; minimize damage</td></tr><tr><td>Insurance</td><td>Cyber crime endorsement; adequate coverage</td><td>Financial protection if fraud succeeds</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="implementation-timeline">
+            <h2>Implementation timeline</h2>
+            <ul><li><strong>Weeks 1–2:</strong> Email security hardening: MFA, DMARC, gateway deployment</li><li><strong>Weeks 3–4:</strong> Vendor master controls: dual-control on bank changes; cleanup of vendor master</li><li><strong>Weeks 5–6:</strong> Payment authorization: dual control wire policy; out-of-band verification protocol</li><li><strong>Weeks 7–8:</strong> BEC training: rollout to AP, CFO, finance, and vendor-facing teams</li><li><strong>Weeks 9–10:</strong> Incident response playbook drafted, tested, distributed</li><li><strong>Weeks 11–12:</strong> Fraud monitoring activation; cyber insurance review</li></ul>
+          </article>
+          <article class="story-card story-wide" id="measured-results">
+            <h2>Measured results</h2>
+            <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Delta</th></tr></thead><tbody><tr><td>BEC incidents post-implementation</td><td>—</td><td>0 in 12 months</td><td>—</td></tr><tr><td>Phishing simulation pass rate</td><td>~60% baseline</td><td>~95% post-training</td><td>+35 pp</td></tr><tr><td>Vendor master changes via email</td><td>Common</td><td>0</td><td>−100%</td></tr><tr><td>Wire approvals (single control)</td><td>>50%</td><td>0%</td><td>−100%</td></tr><tr><td>Out-of-band verification rate</td><td>0%</td><td>100% on changes</td><td>—</td></tr><tr><td>Mean detection time (if attack)</td><td>11 days</td><td>Hours (alerting)</td><td>—</td></tr><tr><td>Insurance coverage adequacy</td><td>Deductible exceeded loss</td><td>Coverage right-sized</td><td>—</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="alternatives">
+            <h2>Alternatives considered</h2>
+            <div class="table-wrap"><table><thead><tr><th>Option</th><th>Time</th><th>Cost band</th><th>Strengths</th><th>Weaknesses</th></tr></thead><tbody><tr><td>Big-4 forensic / advisory</td><td>3–6 months</td><td>$220K–$420K</td><td>Brand; deep methodology</td><td>Cost; over-scoped</td></tr><tr><td>Cyber consulting (Mandiant, KPMG)</td><td>3–4 months</td><td>$140K–$240K</td><td>Security depth</td><td>Less finance-process focus</td></tr><tr><td>Mimecast + internal controls</td><td>3 months</td><td>$80K–$140K (license)</td><td>Email security strong</td><td>Doesn't fix process</td></tr><tr><td>Ledger Summit + email gateway (selected)</td><td>12 weeks</td><td>$80K–$140K</td><td>Right-sized; finance-focused</td><td>License + maintenance</td></tr></tbody></table></div>
+          </article>
+          <article class="story-card story-wide" id="when-fits">
+            <h2>When this approach fits</h2>
+            <ul><li>$25M+ revenue with material vendor / wire activity</li><li>Recent BEC incident or near-miss</li><li>IPO-readiness, audit committee pressure on fraud risk</li><li>Cyber insurance renewal requiring control enhancement</li><li>PE-backed companies with sponsor diligence on fraud posture</li><li>Companies with international vendor relationships (BEC particularly common)</li></ul>
+          </article>
+          <article class="story-card story-wide" id="lessons-learned">
+            <h2>Lessons learned</h2>
+            <ul><li><strong>BEC defense is process, not tool.</strong> Email gateway alone doesn't prevent the attack; out-of-band verification does.</li><li><strong>Vendor master is the highest-leverage control.</strong> Most BEC attacks pivot to changing vendor banking; locking that down stops the attack.</li><li><strong>Quarterly training, not annual.</strong> Phishing simulation cadence drives behavior change; annual training has minimal effect.</li><li><strong>Phone callback to known number, every time.</strong> "Verified by email" is the failure mode; callback to known number defeats impersonation.</li><li><strong>Tested incident response playbook saves recovery.</strong> Bank fraud claim has tight time windows (24–48 hours); knowing the protocol matters.</li></ul>
+          </article>
+          <article class="story-card story-wide" id="faq">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-list"><details><summary><strong>What's the typical BEC fraud loss?</strong></summary><p>FBI IC3 reports billions in annual losses across thousands of incidents. Average per incident: $50K–$500K; large incidents reach $10M+.</p></details><details><summary><strong>How do attackers typically execute BEC?</strong></summary><p>Compromise an executive email; observe payment patterns; impersonate vendor or executive; request urgent payment redirection; exploit gap in controls (email-only verification).</p></details><details><summary><strong>What's the difference between BEC and traditional phishing?</strong></summary><p>BEC is targeted, often after weeks/months of reconnaissance; uses observed patterns; impersonates trusted parties. Traditional phishing is broad and opportunistic.</p></details><details><summary><strong>How does out-of-band verification work?</strong></summary><p>Call the vendor at a phone number stored in vendor master (not email signature); verify the change request verbally. Stops email-based impersonation cold.</p></details><details><summary><strong>What about cyber insurance?</strong></summary><p>Most policies require certain controls (MFA, dual approval) for coverage. Cyber crime endorsement specifically covers wire fraud. Review at renewal for adequacy.</p></details><details><summary><strong>What's positive pay?</strong></summary><p>Bank fraud control: company submits expected check / wire list; bank only pays items on the list. Catches forged checks and unauthorized wires.</p></details><details><summary><strong>How do you train AP team specifically?</strong></summary><p>Quarterly BEC training with examples; phishing simulation 4x / year; AP team has dedicated module on vendor change requests.</p></details><details><summary><strong>What about incident response if fraud occurs?</strong></summary><p>Documented playbook: notify bank within 24 hours (fraud claim window); contact FBI IC3 (cybercrime reporting); engage legal counsel; preserve evidence.</p></details><details><summary><strong>Can banks recover wires?</strong></summary><p>Sometimes — depends on whether fraudster account is still funded, jurisdiction, and timing. Notify bank within 24 hours for best chance; even then, recovery is partial in most cases.</p></details><details><summary><strong>What about international wires?</strong></summary><p>International wires harder to recover; SWIFT recall window typically 24 hours; cross-border legal action expensive. Out-of-band verification critical for international.</p></details></div>
+          </article>
+          <article class="story-card story-wide" id="related">
+            <h2>Related Ledger Summit work</h2>
+            <ul><li><a href="/services-ai-controls-framework.html">AI controls framework</a> — control posture for AP and treasury</li><li><a href="/case-study-three-way-match-ap-automation.html">Three-way-match AP</a> — companion AP control case study</li><li><a href="/case-study-treasury-cash-pooling-multi-bank-concentration.html">Treasury case study</a> — companion treasury control case study</li><li><a href="/services-fractional-controller.html">Fractional controller</a> — controller oversight of fraud risk</li><li><a href="/services-month-end-close-automation.html">Month-end close automation</a> — close discipline</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-cta">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <h2>BEC fraud is the largest loss vector in finance. How exposed are you?</h2>
+            <p>A 30-minute call walks your AP and wire process and tells you where the gaps are.</p>
+          </div>
+          <a class="btn btn-primary" href="/#book">Book a free call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a>
+        <ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/toolboxai/">Tool Box AI</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p></div>
+    </div>
+  </footer>
+  <script src="/js/shared.js" defer></script>
+</body>
+</html>
+

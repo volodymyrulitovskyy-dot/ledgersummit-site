@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Grants Budget Planning App | Ledger Summit</title>
+  <meta name="description" content="Plan grant budgets, financial tracking, and program reporting in one workspace. Free in-browser grants budgeting app from Ledger Summit.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgersummit.com/apps/grants-planning/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ledger Summit">
+  <meta property="og:title" content="Grants Budget Planning App | Ledger Summit">
+  <meta property="og:description" content="Plan grant budgets, financial tracking, and program reporting in one workspace. Free in-browser grants budgeting app from Ledger Summit.">
+  <meta property="og:url" content="https://ledgersummit.com/apps/grants-planning/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta property="og:image:alt" content="Ledger Summit — app">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grants Budget Planning App | Ledger Summit">
+  <meta name="twitter:description" content="Plan grant budgets, financial tracking, and program reporting in one workspace. Free in-browser grants budgeting app from Ledger Summit.">
+  <meta name="twitter:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Structured data: SoftwareApplication + BreadcrumbList -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Grants Budget Planning App","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://ledgersummit.com/apps/grants-planning/","description":"Plan grant budgets, financial tracking, and program reporting in one workspace. Free in-browser grants budgeting app from Ledger Summit.","publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ledgersummit.com/"},{"@type":"ListItem","position":2,"name":"Apps","item":"https://ledgersummit.com/apps/"},{"@type":"ListItem","position":3,"name":"Grants Budget Planning App","item":"https://ledgersummit.com/apps/grants-planning/"}]}]}</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind (compiled) and custom app CSS -->
+  <link rel="stylesheet" href="./css/tailwind.css">
+  <link rel="stylesheet" href="./css/app.css">
+<style>.sr-only-h1{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
+</head>
+<body>
+  <h1 class="sr-only-h1">Grants Budget Planning App</h1>
+  <!-- Top navigation -->
+  <header class="nav">
+    <nav class="nav-container">
+      <div>Grants Budget App</div>
+      <div>
+        <a href="./index.html"        class="nav-link">Sign in</a>
+        <a href="./index.html" class="nav-link">Select</a>
+        <a href="./index.html"      class="nav-link">Setup</a>
+        <a href="./index.html" class="nav-link">Summary</a>
+        <a href="./index.html"     class="nav-link">Financial</a>
+        <a href="./index.html"      class="nav-link">Budget</a>
+        <a href="./index.html"     class="nav-link">Uploadd</a>
+        <!-- Exclude <a href="./index.html"     class="nav-link">Comparison</a> -->
+        <a href="./index.html"    class="nav-link">Settings</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="wrap py-4">
+    <div id="app" class="card">
+      <!-- Your JS app renders here -->
+    </div>
+  </main>
+
+  <!-- SheetJS so XLSX is available globally -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Chart.js for Summary dashboard -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+  <!-- Global Chart.js font sizing -->
+  <script>
+    if (window.Chart) {
+      Chart.defaults.font.size = 16;
+
+      if (Chart.defaults.plugins && Chart.defaults.plugins.legend) {
+        Chart.defaults.plugins.legend.labels = Chart.defaults.plugins.legend.labels || {};
+        Chart.defaults.plugins.legend.labels.font = { size: 16 };
+      }
+
+      if (Chart.defaults.plugins && Chart.defaults.plugins.tooltip) {
+        Chart.defaults.plugins.tooltip.bodyFont = { size: 16 };
+        Chart.defaults.plugins.tooltip.titleFont = { size: 16 };
+      }
+
+      if (Chart.defaults.plugins && Chart.defaults.plugins.datalabels) {
+        Chart.defaults.plugins.datalabels.font = { size: 16 };
+      }
+    }
+  </script>
+
+  <!-- Load your ES module app -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

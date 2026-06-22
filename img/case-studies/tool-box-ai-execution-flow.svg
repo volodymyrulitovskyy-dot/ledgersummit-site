@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI execution flow diagram</title>
+  <desc id="desc">A Visio-style diagram showing a finance request moving through intake, AI assistance, policy checks, approvals, posting, and monitoring.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef3fb"/>
+    </linearGradient>
+    <linearGradient id="stage" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f9fe"/>
+    </linearGradient>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#5b79a4"/>
+    </marker>
+    <style>
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #14365d; }
+      .subtitle { font: 500 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4f6784; }
+      .h { font: 700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17385f; }
+      .b { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #445b78; }
+      .s { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; fill: #6282a9; }
+      .box { fill: url(#stage); stroke: #d6e3f1; stroke-width: 1.5; rx: 18; }
+      .line { stroke: #5b79a4; stroke-width: 2.5; fill: none; marker-end: url(#arrow2); }
+      .line-soft { stroke: #8ca2be; stroke-width: 1.7; fill: none; marker-end: url(#arrow2); stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" fill="url(#bg2)"/>
+  <text x="60" y="58" class="title">Execution Flow Inside Tool Box AI</text>
+  <text x="60" y="84" class="subtitle">A request becomes a controlled finance event, then a posted and traceable accounting outcome.</text>
+
+  <rect x="60" y="140" width="150" height="108" class="box"/>
+  <text x="84" y="170" class="s">STEP 1</text>
+  <text x="84" y="198" class="h">Intake</text>
+  <text x="84" y="221" class="b">Form, email, vendor portal, Slack, Teams, or upload.</text>
+
+  <rect x="252" y="140" width="170" height="108" class="box"/>
+  <text x="276" y="170" class="s">STEP 2</text>
+  <text x="276" y="198" class="h">AI Pre-Work</text>
+  <text x="276" y="221" class="b">OCR, duplicate checks, classification, confidence scoring.</text>
+
+  <rect x="464" y="140" width="190" height="108" class="box"/>
+  <text x="488" y="170" class="s">STEP 3</text>
+  <text x="488" y="198" class="h">Policy &amp; Context</text>
+  <text x="488" y="221" class="b">Tenant, role, budget, entity, project, and workflow rules applied.</text>
+
+  <rect x="696" y="140" width="182" height="108" class="box"/>
+  <text x="720" y="170" class="s">STEP 4</text>
+  <text x="720" y="198" class="h">Approval Path</text>
+  <text x="720" y="221" class="b">Routing, delegation, SLA timers, comments, and exceptions.</text>
+
+  <rect x="920" y="140" width="220" height="108" class="box"/>
+  <text x="944" y="170" class="s">STEP 5</text>
+  <text x="944" y="198" class="h">Post or Sync</text>
+  <text x="944" y="221" class="b">ERP or payment action executed through normalized adapters.</text>
+
+  <path d="M210 194 L252 194" class="line"/>
+  <path d="M422 194 L464 194" class="line"/>
+  <path d="M654 194 L696 194" class="line"/>
+  <path d="M878 194 L920 194" class="line"/>
+
+  <rect x="60" y="324" width="518" height="164" class="box"/>
+  <text x="84" y="352" class="s">CONTROL CHECKS HAPPEN THROUGHOUT</text>
+  <text x="84" y="382" class="h">Auth, tenant isolation, idempotency, rate limits, SoD, validation, audit</text>
+  <text x="84" y="410" class="b">These controls are not a final review step. They wrap the request from the first touch through the final posting response.</text>
+  <text x="84" y="438" class="b">That is why Tool Box AI is meant to reduce spreadsheet cleanup and late discovery: invalid work is routed or blocked earlier.</text>
+
+  <rect x="620" y="324" width="520" height="164" class="box"/>
+  <text x="644" y="352" class="s">NORMALIZED EXECUTION OUTPUTS</text>
+  <text x="644" y="382" class="h">Requisition, PO, bill, payment, invoice, journal, project cost, audit event</text>
+  <text x="644" y="410" class="b">The same operating pattern supports multiple workflow families without rewriting the accounting logic for every ERP or payment system.</text>
+  <text x="644" y="438" class="b">Every output keeps lineage back to source records, approval state, and workflow status.</text>
+
+  <path d="M330 248 L330 324" class="line-soft"/>
+  <path d="M1030 248 L1030 324" class="line-soft"/>
+
+  <rect x="60" y="554" width="256" height="124" class="box"/>
+  <text x="84" y="582" class="s">FEEDBACK LOOP</text>
+  <text x="84" y="610" class="h">Exceptions</text>
+  <text x="84" y="633" class="b">Mismatch, missing mapping, low confidence, retry, approval hold.</text>
+
+  <rect x="350" y="554" width="256" height="124" class="box"/>
+  <text x="374" y="582" class="s">FEEDBACK LOOP</text>
+  <text x="374" y="610" class="h">Monitoring</text>
+  <text x="374" y="633" class="b">Sync status, queue health, stale items, operational dashboards.</text>
+
+  <rect x="640" y="554" width="240" height="124" class="box"/>
+  <text x="664" y="582" class="s">FEEDBACK LOOP</text>
+  <text x="664" y="610" class="h">Analytics</text>
+  <text x="664" y="633" class="b">Cycle time, touchless rate, aging, discount capture, DSO, match rate.</text>
+
+  <rect x="914" y="554" width="226" height="124" class="box"/>
+  <text x="938" y="582" class="s">FEEDBACK LOOP</text>
+  <text x="938" y="610" class="h">Continuous Learning</text>
+  <text x="938" y="633" class="b">Correction history improves routing, coding, and exception prioritization.</text>
+
+  <path d="M1030 488 L1030 554" class="line"/>
+  <path d="M760 488 L760 554" class="line-soft"/>
+  <path d="M478 488 L478 554" class="line-soft"/>
+  <path d="M188 554 C188 498, 224 454, 302 454" class="line-soft"/>
+  <path d="M188 554 C188 454, 188 194, 252 194" class="line-soft"/>
+</svg>

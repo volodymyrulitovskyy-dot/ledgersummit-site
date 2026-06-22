@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intercompany Elimination Checker | Ledger Summit</title>
+  <meta name="description"
+    content="Check intercompany transactions for proper elimination in your browser. Upload a CSV to find unmatched or unbalanced intercompany entries.">
+  <link rel="canonical" href="https://ledgersummit.com/tools/intercompany-elimination-checker/">
+  <meta property="og:title" content="Intercompany Elimination Checker | Ledger Summit">
+  <meta property="og:description"
+    content="Browser-based intercompany elimination checker for consolidation teams. Upload a CSV export, map columns, and find unmatched or unbalanced intercompany.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgersummit.com/tools/intercompany-elimination-checker/">
+  <meta property="og:image"
+    content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Intercompany Elimination Checker | Ledger Summit">
+  <meta name="twitter:description"
+    content="Check intercompany transactions for proper elimination in your browser. Find unmatched or unbalanced IC entries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=20260311">
+  <link rel="stylesheet" href="/css/pages.css?v=20260311">
+  <link rel="stylesheet" href="/css/tool-pages.css?v=20260419b">
+  <link rel="stylesheet" href="/css/intercompany-elimination-checker.css?v=20260311">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ledger Summit Intercompany Elimination Checker",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "isAccessibleForFree": true,
+    "description": "Browser-based intercompany elimination checker for controllers, consolidation teams, and accountants. Upload a CSV to find unmatched or unbalanced intercompany entries.",
+    "url": "https://ledgersummit.com/tools/intercompany-elimination-checker/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ledger Summit",
+      "url": "https://ledgersummit.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an intercompany elimination checker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An intercompany elimination checker reviews IC transaction detail to verify that every intercompany entry has a matching counterparty entry that nets to zero, flagging unmatched, unbalanced, or missing-counterparty rows before consolidation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this tool upload my data to Ledger Summit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The page processes the file entirely inside your browser, so your data never leaves your machine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What file format works best with this tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CSV exports work best. The tool also accepts tab-delimited or semicolon-delimited data pasted from Excel. At minimum you need entity, counterparty, and amount columns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should use an intercompany elimination checker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Controllers, consolidation teams, accounting managers, and auditors who need to verify that intercompany transactions eliminate properly before producing consolidated financials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Ledger Summit build a custom intercompany elimination workflow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If you need automated IC matching rules, multi-currency support, approval routing, or ERP integration, Ledger Summit can build a production version around your consolidation process."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Tools",
+        "item": "https://ledgersummit.com/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Intercompany Elimination Checker",
+        "item": "https://ledgersummit.com/tools/intercompany-elimination-checker/"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="tool-page ls-theme-coral">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+          alt="Ledger Summit logo" width="36" height="36" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  </div>
+
+  <main id="main">
+    <section class="ls-tool-hero">
+      <div class="container">
+        <div class="ls-tool-hero-grid">
+          <div class="ls-tool-hero-copy reveal">
+            <span class="section-label">Consolidation</span>
+            <h1>Intercompany elimination checker for faster consolidation review.</h1>
+            <p>Upload a CSV of intercompany transactions and instantly find unmatched entries, unbalanced entity pairs,
+              and missing counterparty records. The tool groups transactions by IC pair, checks that each pair nets to
+              zero, and flags every exception before you start elimination journals.</p>
+            <div class="ls-tool-answer-strip">
+              <strong>Direct answer</strong>
+              <span>An intercompany elimination checker reviews IC transactions to verify that every entry has a matching
+                counterparty entry that nets to zero, flagging unmatched, unbalanced, or missing-counterparty rows
+                before consolidation.</span>
+            </div>
+            <div class="ls-tool-hero-actions">
+              <a href="#tool" class="btn-primary btn-glow">Open the checker</a>
+              <a href="/book-a-call/" class="btn-secondary">Need a custom version?</a>
+            </div>
+            <div class="ls-tool-hero-pills" aria-label="Key proof points">
+              <span class="ls-tool-hero-pill"><i></i>Browser-only processing</span>
+              <span class="ls-tool-hero-pill"><i></i>CSV or pasted Excel data</span>
+              <span class="ls-tool-hero-pill"><i></i>Built for consolidation teams</span>
+            </div>
+          </div>
+
+          <aside class="ls-tool-hero-panel reveal-right" aria-label="What the tool checks">
+            <span class="ls-tool-panel-badge"><i></i>Elimination-focused</span>
+            <div class="ls-tool-panel-head">
+              <h2>What gets flagged</h2>
+              <p>Designed to surface the IC entries that will cause out-of-balance eliminations during consolidation.</p>
+            </div>
+            <div class="ls-tool-preview-list">
+              <div class="ls-tool-preview-item">
+                <strong>Unbalanced IC pairs</strong>
+                <span>Entity pairs whose transactions do not net to zero.</span>
+              </div>
+              <div class="ls-tool-preview-item">
+                <strong>Unmatched entries</strong>
+                <span>Transactions recorded by one entity with no offsetting entry from the counterparty.</span>
+              </div>
+              <div class="ls-tool-preview-item">
+                <strong>Missing counterparties</strong>
+                <span>Entities referenced as counterparties that have no transactions of their own.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="ls-tool-section" id="tool">
+      <div class="container">
+        <div class="ls-tool-shell" id="ice-app">
+          <div class="ice-lab-grid ls-tool-layout-stack"><section class="ice-panel">
+              <div class="ice-panel-title">
+                <h3>1. Load your IC export</h3>
+                <span>CSV or paste</span>
+              </div>
+
+              <label class="ice-dropzone">
+                <input id="ice-file" type="file" accept=".csv,.txt,.tsv"
+                  aria-label="Upload an intercompany transaction export">
+                <strong>Upload an intercompany transaction CSV</strong>
+                <span>Best results come from exports that include entity, counterparty, account, and either a signed
+                  amount or debit and credit columns.</span>
+              </label>
+
+              <div class="ice-split"><span>or</span></div>
+
+              <div class="ice-paste-wrap">
+                <textarea id="ice-paste"
+                  placeholder="Paste CSV or tab-delimited IC transaction rows from Excel here."></textarea>
+              </div>
+
+              <div class="ice-action-row">
+                <button type="button" class="ice-btn ice-btn-primary" id="ice-paste-button">Use pasted data</button>
+                <button type="button" class="ice-btn ice-btn-secondary" id="ice-sample">Try sample data</button>
+                <button type="button" class="ice-btn ice-btn-tertiary" id="ice-reset">Reset</button>
+              </div>
+
+              <div id="ice-status" class="ice-status muted" role="status" aria-live="polite"></div>
+
+              <div id="ice-setup-meta" class="ice-setup-meta" aria-live="polite"></div>
+
+              <div class="ice-panel-title" style="margin-top:1.25rem;">
+                <h3>2. Review the column mapping</h3>
+                <span>Auto-mapped</span>
+              </div>
+
+              <div id="ice-mapping-grid" class="ice-mapping-grid"></div>
+
+              <div class="ice-action-row">
+                <button type="button" class="ice-btn ice-btn-primary" id="ice-analyze">Check eliminations</button>
+                <button type="button" class="ice-btn ice-btn-secondary" id="ice-export" disabled>Export
+                  exceptions</button>
+              </div>
+            </section><div class="ls-tool-head ls-tool-head-inline">
+            <div>
+              <span class="section-label">Live Tool</span>
+              <h2>Intercompany elimination review in the browser</h2>
+              <p>Upload a file, confirm the column mapping, and review the elimination exceptions before you scroll into
+                the guide below.</p>
+            </div>
+            
+          </div><section class="ice-panel">
+              <div class="ice-empty-state" id="ice-empty">
+                <h3>What this intercompany elimination checker is built to solve</h3>
+                <p>Consolidation teams need to know which IC pairs will not eliminate cleanly before they start building
+                  elimination journals. This tool answers that question from a single exported file.</p>
+                <div class="ice-empty-list">
+                  <div class="ice-empty-item">
+                    <strong>Unbalanced IC pairs that break elimination</strong>
+                    <span>See which entity pairs have a net difference that needs to be resolved before close.</span>
+                  </div>
+                  <div class="ice-empty-item">
+                    <strong>Unmatched entries with no counterparty offset</strong>
+                    <span>One entity recorded the transaction but the other side is missing from the export.</span>
+                  </div>
+                  <div class="ice-empty-item">
+                    <strong>Missing counterparties that do not appear in the data</strong>
+                    <span>Entities named as counterparties but with zero transactions of their own in the file.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ice-results" id="ice-results" hidden>
+                <div class="ice-summary-grid" id="ice-summary-grid"></div>
+
+                <article class="ice-result-card">
+                  <div class="ice-card-head">
+                    <div>
+                      <h3>IC pair summary</h3>
+                      <p>Each entity-counterparty pair with net balance and elimination status.</p>
+                    </div>
+                  </div>
+                  <div id="ice-pair-table"></div>
+                </article>
+
+                <article class="ice-result-card">
+                  <div class="ice-card-head">
+                    <div>
+                      <h3>Exception detail</h3>
+                      <p>Individual transactions that contribute to unbalanced or unmatched IC pairs.</p>
+                    </div>
+                  </div>
+                  <div id="ice-exception-table"></div>
+                </article>
+
+                <article class="ice-result-card">
+                  <div class="ice-card-head">
+                    <div>
+                      <h3>Entity overview</h3>
+                      <p>High-level view of each entity's IC activity and exception count.</p>
+                    </div>
+                  </div>
+                  <div class="ice-pair-grid" id="ice-entity-grid"></div>
+                </article>
+              </div>
+            </section></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ls-tool-feature-band">
+      <div class="container">
+        <div class="ls-tool-feature-grid">
+          <article class="ls-tool-feature-card reveal">
+            <div class="ls-tool-feature-icon">01</div>
+            <strong>Map any IC export format</strong>
+            <p>Use signed amounts or separate debit and credit columns. No rigid template required.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            <div class="ls-tool-feature-icon">02</div>
+            <strong>Pair-level elimination check</strong>
+            <p>Group transactions by entity-counterparty pair and verify each pair nets to zero before consolidation.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            <div class="ls-tool-feature-icon">03</div>
+            <strong>Actionable exception list</strong>
+            <p>Every flagged transaction shows the pair, the net difference, and the reason it was flagged.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            <div class="ls-tool-feature-icon">04</div>
+            <strong>Export the exception file</strong>
+            <p>Download flagged rows and route them into journal prep, reviewer follow-up, or audit workpapers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section ls-tool-guide-section" id="guide">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Guide Below The Tool</span>
+          <h2>How to use an intercompany elimination checker well</h2>
+          <p>Direct definitions, concrete steps, and practical follow-up guidance for consolidation teams.</p>
+        </div>
+
+        <div class="ls-tool-answer-grid">
+          <article class="ls-tool-answer-card reveal">
+            <strong>What it is</strong>
+            <p>An intercompany elimination checker reviews IC transaction detail to verify that every entry has a
+              matching counterparty entry that nets to zero, flagging exceptions before consolidation.</p>
+          </article>
+          <article class="ls-tool-answer-card reveal">
+            <strong>Who it is for</strong>
+            <p>Controllers, consolidation teams, accounting managers, and auditors who need to verify IC elimination
+              completeness before producing consolidated financials.</p>
+          </article>
+          <article class="ls-tool-answer-card reveal">
+            <strong>What file works best</strong>
+            <p>A CSV export with entity, counterparty, account, description, and either a signed amount or debit and
+              credit columns. The more detail you include, the stronger the exception review becomes.</p>
+          </article>
+        </div>
+
+        <div class="ls-tool-guide-copy">
+          <span class="section-label">Workflow</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Four practical steps</h2>
+          <p>Use the checker as a pre-elimination triage layer. The goal is to surface the pairs that need attention
+            before you build elimination journals.</p>
+        </div>
+
+        <div class="ls-tool-steps-grid">
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">1</div>
+            <strong>Export IC transaction detail</strong>
+            <p>Pull the intercompany transaction report from your ERP or consolidation system with entity, counterparty,
+              account, and amount fields.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">2</div>
+            <strong>Map the important columns</strong>
+            <p>At minimum, map entity, counterparty, and amount or debit and credit. Add account and description for
+              richer exception context.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">3</div>
+            <strong>Review the flagged pairs</strong>
+            <p>Start with the largest net differences and unmatched entries because they create the biggest consolidation
+              risk.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">4</div>
+            <strong>Export and resolve</strong>
+            <p>Download exception rows and route them into journal entry prep, counterparty coordination, or audit
+              support.</p>
+          </article>
+        </div>
+
+        <div class="ls-tool-guide-copy">
+          <span class="section-label">Elimination Checklist</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">What consolidation teams check first
+          </h2>
+          <p>These checks reflect the most common intercompany elimination pain points during consolidation close.</p>
+        </div>
+
+        <div class="ls-tool-checklist-grid">
+          <article class="ls-tool-check-card reveal">
+            <strong>Pair-level net balance</strong>
+            <p>Each entity-counterparty pair should net to zero. A nonzero balance means the pair will not eliminate
+              cleanly.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>One-sided entries</strong>
+            <p>If one entity recorded a transaction but the counterparty has no offsetting entry, the elimination will be
+              incomplete.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Missing counterparties</strong>
+            <p>Entities named as counterparties but absent from the data usually signal a gap in the IC reconciliation
+              process.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Account-level mismatches</strong>
+            <p>The same IC flow may hit different accounts in each entity, creating mapping confusion during
+              elimination.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Timing differences</strong>
+            <p>IC transactions recorded in different periods by each entity create temporary imbalances that need
+              tracking.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Currency and FX adjustments</strong>
+            <p>Multi-currency IC entries may balance in local currency but create differences after translation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section ls-tool-faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Intercompany elimination checker questions, answered directly</h2>
+          <p>Written in short, answer-engine-friendly form so searchers can get a clear answer without digging through
+            filler.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is an intercompany elimination checker?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>An intercompany elimination checker reviews IC transaction detail to verify that every intercompany
+                entry has a matching counterparty entry that nets to zero. It flags unmatched entries, unbalanced pairs,
+                and missing counterparties before consolidation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Does this tool send my file to Ledger Summit?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>No. The page processes the file entirely in your browser. That makes it useful for a first-pass
+                elimination review when you are not ready to move raw IC data into a third-party platform.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What columns should I include in the export?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>At minimum, include entity, counterparty, and either a signed amount or separate debit and credit
+                columns. Adding account, description, and date fields makes the exception review more actionable.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Who should use this tool?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Controllers, consolidation teams, accounting managers, and auditors who need to verify that
+                intercompany transactions eliminate properly before producing consolidated financials.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can Ledger Summit build a custom IC elimination
+              workflow?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. If you need automated IC matching rules, multi-currency handling, approval routing, or ERP
+                connectivity, Ledger Summit can build a production version around your consolidation process.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ls-tool-cta">
+      <div class="container">
+        <div class="ls-tool-cta-card reveal">
+          <span class="section-label ls-tool-cta-label">Next Step</span>
+          <h2>Want this connected to your ERP, approval flow, and elimination rules?</h2>
+          <p>Use the free checker for first-pass elimination review. If you want a branded internal tool with your own
+            matching rules, multi-currency support, and workflow, Ledger Summit can build the production version around
+            your actual consolidation process.</p>
+          <a href="/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+          <div class="ls-tool-inline-links">
+            <a href="/tools/">All tools</a>
+            <a href="/services/ai-accounting-tools/">Custom AI accounting tools</a>
+            <a href="/book-a-call/">Book a call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand">
+          <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+            alt="Ledger Summit" width="30" height="30" decoding="async">
+          <span>Ledger Summit</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/book-a-call/">Book a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="/js/shared.js?v=20260320"></script>
+  <script src="/js/intercompany-elimination-checker.js"></script>
+<script>window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };</script><script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI P2P lifecycle diagram</title>
+  <desc id="desc">A Visio-style diagram showing the end-to-end procure-to-pay lifecycle inside Tool Box AI from requisition through reconciliation and reporting.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6faff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#5a7aa6"/>
+    </marker>
+    <style>
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #14365d; }
+      .subtitle { font: 500 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4f6784; }
+      .h { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17385f; }
+      .b { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #445b78; }
+      .s { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; fill: #6282a9; }
+      .center { text-anchor: middle; }
+      .box { fill: url(#panel); stroke: #d6e3f1; stroke-width: 1.5; rx: 20; }
+      .pill { fill: #edf4fb; stroke: #d6e3f1; stroke-width: 1; rx: 18; }
+      .line { stroke: #5a7aa6; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #8ca2be; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" fill="url(#bg)"/>
+  <text x="60" y="58" class="title">End-to-End Procure-to-Pay Inside Tool Box AI</text>
+  <text x="60" y="84" class="subtitle">The same governed path carries a request from intake through approval, posting, payment, and reconciliation.</text>
+
+  <rect x="60" y="132" width="1080" height="160" class="box"/>
+  <text x="84" y="162" class="s">FRONT-END REQUEST AND APPROVAL FLOW</text>
+  <rect x="86" y="186" width="182" height="70" class="pill"/>
+  <text x="177" y="214" class="h center">1. Requisition Intake</text>
+  <text x="177" y="234" class="b center">Form, email, mobile, Slack, Teams</text>
+  <rect x="302" y="186" width="182" height="70" class="pill"/>
+  <text x="393" y="214" class="h center">2. Policy Review</text>
+  <text x="393" y="234" class="b center">Budget, vendor, amount, dimension checks</text>
+  <rect x="518" y="186" width="182" height="70" class="pill"/>
+  <text x="609" y="214" class="h center">3. Approval Path</text>
+  <text x="609" y="234" class="b center">Routing, delegation, escalation, comments</text>
+  <rect x="734" y="186" width="182" height="70" class="pill"/>
+  <text x="825" y="214" class="h center">4. PO and Receipt</text>
+  <text x="825" y="234" class="b center">PO issue, revisions, receipts, commitments</text>
+  <rect x="950" y="186" width="164" height="70" class="pill"/>
+  <text x="1032" y="214" class="h center">5. Invoice Intake</text>
+  <text x="1032" y="234" class="b center">OCR, duplicate checks, vendor match</text>
+
+  <path d="M268 220 L302 220" class="line"/>
+  <path d="M484 220 L518 220" class="line"/>
+  <path d="M700 220 L734 220" class="line"/>
+  <path d="M916 220 L950 220" class="line"/>
+
+  <rect x="60" y="336" width="1080" height="170" class="box"/>
+  <text x="84" y="366" class="s">ACCOUNTING AND PAYMENT EXECUTION</text>
+  <rect x="86" y="392" width="196" height="74" class="pill"/>
+  <text x="184" y="420" class="h center">6. Match and Code</text>
+  <text x="184" y="440" class="b center">2-way or 3-way match, split coding</text>
+  <rect x="314" y="392" width="196" height="74" class="pill"/>
+  <text x="412" y="420" class="h center">7. Invoice Approval</text>
+  <text x="412" y="440" class="b center">AP review, holds, release, audit proof</text>
+  <rect x="542" y="392" width="196" height="74" class="pill"/>
+  <text x="640" y="420" class="h center">8. Bill and Payment Run</text>
+  <text x="640" y="440" class="b center">ACH, wire, check, card, remittance</text>
+  <rect x="770" y="392" width="196" height="74" class="pill"/>
+  <text x="868" y="420" class="h center">9. ERP Posting</text>
+  <text x="868" y="440" class="b center">Bill, payment, journal, status sync</text>
+  <rect x="998" y="392" width="116" height="74" class="pill"/>
+  <text x="1056" y="420" class="h center">10. Reconcile</text>
+  <text x="1056" y="440" class="b center">Bank and AP close support</text>
+
+  <path d="M184 256 L184 336" class="line-soft"/>
+  <path d="M1032 256 L1032 336" class="line-soft"/>
+  <path d="M282 429 L314 429" class="line"/>
+  <path d="M510 429 L542 429" class="line"/>
+  <path d="M738 429 L770 429" class="line"/>
+  <path d="M966 429 L998 429" class="line"/>
+
+  <rect x="60" y="556" width="520" height="190" class="box"/>
+  <text x="84" y="586" class="s">CONTROLS AND EXCEPTIONS</text>
+  <text x="84" y="618" class="h">Every step keeps policy, audit, and retry control</text>
+  <text x="84" y="646" class="b">Role-based permissions, segregation-of-duties rules, duplicate prevention,</text>
+  <text x="84" y="664" class="b">approval evidence, and exception routing stay active from the initial</text>
+  <text x="84" y="682" class="b">request through payment and reconciliation.</text>
+  <rect x="84" y="702" width="200" height="28" class="pill"/>
+  <text x="184" y="721" class="b center">Exception queue for mismatches and holds</text>
+
+  <rect x="620" y="556" width="520" height="190" class="box"/>
+  <text x="644" y="586" class="s">FINANCE OUTCOMES</text>
+  <text x="644" y="618" class="h">Controlled AP execution instead of after-the-fact cleanup</text>
+  <text x="644" y="646" class="b">Tool Box AI turns requisitions, approvals, invoices, bills, payments,</text>
+  <text x="644" y="664" class="b">and reconciliations into one traceable operating chain with cleaner</text>
+  <text x="644" y="682" class="b">period-close support, clearer accountability, and faster issue discovery.</text>
+
+  <path d="M600 466 L600 556" class="line"/>
+  <path d="M1030 466 L1030 556" class="line-soft"/>
+</svg>

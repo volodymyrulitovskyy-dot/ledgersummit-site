@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart of Accounts Builder | Ledger Summit</title>
+  <meta name="description" content="Build a structured chart of accounts in your browser. Add accounts by type, assign numbers, and export a clean COA ready for ERP import.">
+  <link rel="canonical" href="https://ledgersummit.com/tools/chart-of-accounts-builder/">
+  <meta property="og:title" content="Chart of Accounts Builder | Ledger Summit">
+  <meta property="og:description" content="Build a structured chart of accounts in your browser. Add accounts by type, assign numbers, and export a clean COA ready for ERP import.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgersummit.com/tools/chart-of-accounts-builder/">
+  <meta property="og:image" content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chart of Accounts Builder | Ledger Summit">
+  <meta name="twitter:description" content="Build a structured chart of accounts in your browser. Add accounts by type, assign numbers, and export a clean COA ready for ERP import.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=20260311">
+  <link rel="stylesheet" href="/css/pages.css?v=20260311">
+  <link rel="stylesheet" href="/css/tool-pages.css?v=20260419b">
+  <link rel="stylesheet" href="/css/chart-of-accounts-builder.css?v=20260311">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ledger Summit Chart of Accounts Builder","applicationCategory":"BusinessApplication","operatingSystem":"Web Browser","isAccessibleForFree":true,"description":"Build a structured chart of accounts in your browser. Add accounts by type, assign numbers, and export a clean COA ready for ERP import.","url":"https://ledgersummit.com/tools/chart-of-accounts-builder/","publisher":{"@type":"Organization","name":"Ledger Summit","url":"https://ledgersummit.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a chart of accounts?","acceptedAnswer":{"@type":"Answer","text":"A chart of accounts is the master list of every account in a general ledger, organized by type (asset, liability, equity, revenue, COGS, expense) and assigned a unique number so transactions post to the correct category."}},{"@type":"Question","name":"Why does account numbering matter?","acceptedAnswer":{"@type":"Answer","text":"Consistent numbering makes it easier to group accounts in financial statements, identify gaps, and migrate the COA into an ERP or accounting system without manual remapping."}},{"@type":"Question","name":"Can I import the exported CSV into QuickBooks or another ERP?","acceptedAnswer":{"@type":"Answer","text":"Yes. The CSV follows a standard format with account number, name, type, and detail type columns that most accounting systems accept during chart of accounts import."}},{"@type":"Question","name":"Does this tool send my data to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The entire tool runs in your browser. Nothing is uploaded or stored externally."}},{"@type":"Question","name":"Can Ledger Summit build a custom chart of accounts workflow for our organization?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you need multi-entity COA management, account mapping rules, or ERP integration, Ledger Summit can build a production version around your process."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://ledgersummit.com/tools/"},{"@type":"ListItem","position":2,"name":"Chart of Accounts Builder","item":"https://ledgersummit.com/tools/chart-of-accounts-builder/"}]}</script>
+</head>
+<body class="tool-page ls-theme-navy">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation"><div class="nav-inner"><a href="/" class="nav-logo"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit logo" width="36" height="36" decoding="async"><span>Ledger Summit</span></a><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></nav><div class="mobile-nav" id="mobileNav" aria-hidden="true"><a href="/services/" onclick="closeMobileNav()">Services</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/blog/" onclick="closeMobileNav()">Blog</a><a href="/about/" onclick="closeMobileNav()">About</a><a href="/contact/" onclick="closeMobileNav()">Contact</a><a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a></div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="ls-tool-hero">
+      <div class="container">
+        <div class="ls-tool-hero-grid">
+          <div class="ls-tool-hero-copy reveal">
+            <span class="section-label">General Ledger</span>
+            <h1>Chart of accounts builder for cleaner ERP setup.</h1>
+            <p>Build a structured chart of accounts directly in your browser. Add accounts by type, assign numbers, load a starter template, validate the structure, and export a clean CSV ready for ERP import.</p>
+            <div class="ls-tool-answer-strip">
+              <strong>Direct answer</strong>
+              <span>A chart of accounts builder helps you create, organize, and export the master account list your general ledger needs before you configure an ERP or accounting system.</span>
+            </div>
+            <div class="ls-tool-hero-actions">
+              <a href="#tool" class="btn-primary btn-glow">Open the builder</a>
+              <a href="/book-a-call/" class="btn-secondary">Need a custom version?</a>
+            </div>
+            <div class="ls-tool-hero-pills">
+              <span class="ls-tool-hero-pill"><i></i>Browser-only processing</span>
+              <span class="ls-tool-hero-pill"><i></i>Export-ready CSV</span>
+              <span class="ls-tool-hero-pill"><i></i>Built for ERP setup</span>
+            </div>
+          </div>
+          <aside class="ls-tool-hero-panel reveal-right">
+            <span class="ls-tool-panel-badge"><i></i>Setup-first</span>
+            <div class="ls-tool-panel-head">
+              <h2>Why a structured COA matters before go-live</h2>
+              <p>A clean chart of accounts is the foundation of every financial statement, report, and audit trail. Getting it right before ERP import saves rework later.</p>
+            </div>
+            <div class="ls-tool-preview-metrics">
+              <div class="ls-tool-preview-card"><strong>1</strong><span>Add accounts by type with proper numbering.</span></div>
+              <div class="ls-tool-preview-card"><strong>2</strong><span>Load a starter template for common small-business accounts.</span></div>
+              <div class="ls-tool-preview-card"><strong>3</strong><span>Validate structure: duplicates, gaps, and missing fields.</span></div>
+              <div class="ls-tool-preview-card"><strong>4</strong><span>Export a CSV ready for ERP or accounting system import.</span></div>
+            </div>
+            <div class="ls-tool-preview-list">
+              <div class="ls-tool-preview-item"><strong>Inconsistent numbering across entities</strong><span>Standardize account numbers before migration to avoid downstream mapping issues.</span></div>
+              <div class="ls-tool-preview-item"><strong>Missing account types during setup</strong><span>See coverage across all six account types before configuring the system.</span></div>
+              <div class="ls-tool-preview-item"><strong>Manual spreadsheet COAs with no validation</strong><span>Catch duplicates, gaps, and missing types before the import file is built.</span></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="ls-tool-section" id="tool">
+      <div class="container">
+        <div class="ls-tool-shell" id="cab-app">
+          <!-- Add Account Form -->
+          <div class="cab-panel">
+            <div class="cab-panel-title">
+              <h3>Add an account</h3>
+              <span>Entry form</span>
+            </div>
+            <div class="cab-form-grid" id="cab-form">
+              <label>Number<input type="text" id="cab-acct-number" placeholder="1000" maxlength="10"></label>
+              <label>Account name<input type="text" id="cab-acct-name" placeholder="Cash"></label>
+              <label>Account type
+                <select id="cab-acct-type">
+                  <option value="">Select type...</option>
+                  <option value="Asset">Asset</option>
+                  <option value="Liability">Liability</option>
+                  <option value="Equity">Equity</option>
+                  <option value="Revenue">Revenue</option>
+                  <option value="COGS">COGS</option>
+                  <option value="Expense">Expense</option>
+                </select>
+              </label>
+              <label>Detail type<input type="text" id="cab-detail-type" placeholder="Bank"></label>
+            </div>
+            <div class="cab-action-row">
+              <button type="button" class="cab-btn cab-btn-primary" id="cab-add-btn">Add account</button>
+              <button type="button" class="cab-btn cab-btn-secondary" id="cab-template-btn">Load starter template</button>
+              <button type="button" class="cab-btn cab-btn-secondary" id="cab-export-btn" disabled>Export CSV</button>
+              <button type="button" class="cab-btn cab-btn-tertiary" id="cab-reset-btn">Reset</button>
+            </div>
+            <div class="cab-status" id="cab-status" role="status" aria-live="polite">Add accounts manually or load the starter template to begin.</div>
+          </div>
+
+          <div class="ls-tool-head ls-tool-head-inline">
+            <div>
+              <span class="section-label">Live Tool</span>
+              <h2>Chart of accounts builder in the browser</h2>
+              <p>Add accounts manually or load the starter template. The tool validates the structure and exports a clean CSV when you are ready.</p>
+            </div>
+            
+          </div>
+
+          <!-- Summary Cards -->
+          <div class="cab-summary-grid" id="cab-summary" style="display:none;"></div>
+
+          <!-- Validation -->
+          <div class="cab-validation" id="cab-validation"></div>
+
+          <!-- Account List Table -->
+          <div class="cab-panel">
+            <div class="cab-panel-title">
+              <h3>Account list</h3>
+              <span id="cab-count">0 accounts</span>
+            </div>
+            <div class="cab-table-wrap" id="cab-table-wrap">
+              <div class="cab-empty-table" id="cab-empty">No accounts yet. Add one above or load the starter template.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Band -->
+    <section class="ls-tool-feature-band">
+      <div class="container">
+        <div class="ls-tool-feature-grid">
+          <article class="ls-tool-feature-card reveal">
+            <strong>Build from scratch or start from a template</strong>
+            <p>Add individual accounts or load 20 standard small-business accounts and customize from there.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            <strong>Organized by account type</strong>
+            <p>The account list groups entries by type so you can see coverage across assets, liabilities, equity, revenue, COGS, and expenses at a glance.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            <strong>Validation before export</strong>
+            <p>Catch duplicate account numbers, missing types, and numbering gaps before the COA leaves the browser.</p>
+          </article>
+          <article class="ls-tool-feature-card reveal">
+            <strong>Export a clean CSV</strong>
+            <p>Download the chart of accounts in a standard format that most ERPs and accounting systems accept on import.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide -->
+    <section class="page-section ls-tool-guide-section" id="guide">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Guide Below The Tool</span>
+          <h2>How to build a chart of accounts well</h2>
+          <p>This section is written for searchers, answer engines, and busy finance teams: direct definitions, practical steps, and concrete follow-up guidance.</p>
+        </div>
+
+        <div class="ls-tool-answer-grid">
+          <article class="ls-tool-answer-card reveal">
+            <strong>What it is</strong>
+            <p>A chart of accounts is the master list of every account in a general ledger, organized by type and assigned a unique number so transactions post to the correct category.</p>
+          </article>
+          <article class="ls-tool-answer-card reveal">
+            <strong>Who it is for</strong>
+            <p>Controllers, accountants, ERP implementation teams, bookkeepers, and startup finance leads who need a clean COA before system configuration begins.</p>
+          </article>
+          <article class="ls-tool-answer-card reveal">
+            <strong>What matters most</strong>
+            <p>Consistent numbering, complete type coverage, meaningful detail types, and a structure that scales as the business grows.</p>
+          </article>
+        </div>
+
+        <div class="ls-tool-guide-copy">
+          <span class="section-label">Workflow</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Four practical steps</h2>
+          <p>Use this builder as a planning layer. The goal is to move from a blank COA to an import-ready file before you configure the ERP.</p>
+        </div>
+
+        <div class="ls-tool-steps-grid">
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">1</div>
+            <strong>Start with the template or add accounts one at a time.</strong>
+            <p>The starter template includes 20 accounts that cover most small-business needs. Customize from there.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">2</div>
+            <strong>Assign consistent account numbers.</strong>
+            <p>Use ranges like 1000s for assets, 2000s for liabilities, 3000s for equity, 4000s for revenue, 5000s for COGS, and 6000+ for expenses.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">3</div>
+            <strong>Review the validation summary.</strong>
+            <p>Fix duplicate numbers, fill in missing types, and evaluate gap warnings before you finalize the structure.</p>
+          </article>
+          <article class="ls-tool-step-card reveal">
+            <div class="ls-tool-step-number">4</div>
+            <strong>Export the CSV and import into your system.</strong>
+            <p>Download the file and use it for ERP setup, migration mapping, or audit documentation.</p>
+          </article>
+        </div>
+
+        <div class="ls-tool-guide-copy">
+          <span class="section-label">Review Checklist</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">What reviewers usually validate first</h2>
+          <p>These checks come from the pain points teams mention most often: messy migrations, inconsistent numbering, missing account types, and COAs that do not scale.</p>
+        </div>
+
+        <div class="ls-tool-checklist-grid">
+          <article class="ls-tool-check-card reveal">
+            <strong>Account number consistency</strong>
+            <p>Numbers should follow a logical pattern by type so financial statements group correctly without manual overrides.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Type coverage</strong>
+            <p>Every COA should include at least one account for each of the six account types to support a complete trial balance.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Detail type clarity</strong>
+            <p>Detail types like Bank, Accounts Receivable, or Depreciation help the ERP apply default behavior during transaction entry.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Duplicate numbers</strong>
+            <p>Two accounts with the same number will cause import errors or misposted transactions in most systems.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Numbering gaps</strong>
+            <p>Large gaps in a number range are not always a problem, but they can signal missing sub-accounts or an incomplete migration.</p>
+          </article>
+          <article class="ls-tool-check-card reveal">
+            <strong>Scalability</strong>
+            <p>Leave room in each range for future accounts. A COA that is packed tight at launch creates rework within the first year.</p>
+          </article>
+        </div>
+
+        <div class="ls-tool-guide-copy">
+          <span class="section-label">Why This Page Exists</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Built to close the gap between a blank spreadsheet and a configured ERP</h2>
+          <p>Most search results either define the chart of accounts or sell a platform. This page solves the immediate job first: build the COA structure, validate it, and export a file you can use right now.</p>
+        </div>
+
+        <div class="ls-tool-gap-grid">
+          <article class="ls-tool-gap-card reveal">
+            <strong>Builder first</strong>
+            <p>The functional tool stays on top so users can solve the immediate problem before reading a guide.</p>
+          </article>
+          <article class="ls-tool-gap-card reveal">
+            <strong>Validation included</strong>
+            <p>Duplicate checks, type coverage, and gap warnings catch structural issues before the file reaches the ERP.</p>
+          </article>
+          <article class="ls-tool-gap-card reveal">
+            <strong>Useful before a custom build</strong>
+            <p>Ledger Summit can build richer COA management tooling later, but this page delivers value now.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="page-section ls-tool-faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Chart of accounts builder questions, answered directly</h2>
+          <p>Written in short form so searchers can get a clear answer without digging through generic product copy.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is a chart of accounts?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>A chart of accounts is the master list of every account in a general ledger, organized by type (asset, liability, equity, revenue, COGS, expense) and assigned a unique number so transactions post to the correct category.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Why does account numbering matter?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Consistent numbering makes it easier to group accounts in financial statements, identify gaps, and migrate the COA into an ERP or accounting system without manual remapping.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can I import the exported CSV into QuickBooks or another ERP?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. The CSV follows a standard format with account number, name, type, and detail type columns that most accounting systems accept during chart of accounts import.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Does this tool send my data to a server?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>No. The entire tool runs in your browser. No data is uploaded or stored externally.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can Ledger Summit build a custom chart of accounts workflow?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. If you need multi-entity COA management, account mapping rules, or ERP integration, Ledger Summit can build a production version around your process.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ls-tool-cta">
+      <div class="container">
+        <div class="ls-tool-cta-card reveal">
+          <span class="section-label ls-tool-cta-label">Next Step</span>
+          <h2>Need multi-entity COA management or ERP integration?</h2>
+          <p>Use the free builder for initial COA planning. If you need account mapping rules, multi-entity support, or direct ERP integration, Ledger Summit can build the production version around your process.</p>
+          <a href="/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+          <div class="ls-tool-inline-links">
+            <a href="/tools/">All tools</a>
+            <a href="/services/ai-accounting-tools/">Custom AI accounting tools</a>
+            <a href="/book-a-call/">Book a call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-inner"><a href="/" class="footer-brand"><img src="https://ledgersummit.com/img/ledger-summit-mark.svg" alt="Ledger Summit" width="30" height="30" decoding="async"><span>Ledger Summit</span></a><ul class="footer-links"><li><a href="/services/">Services</a></li><li><a href="/tools/">Tools</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/book-a-call/">Book a Call</a></li></ul></div><div class="footer-bottom"><p>&copy; 2026 Ledger Summit. AI-powered accounting and finance automation.</p></div></div></footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="/js/shared.js?v=20260320"></script>
+  <script src="/js/chart-of-accounts-builder.js"></script>
+<script>window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };</script><script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+</html>

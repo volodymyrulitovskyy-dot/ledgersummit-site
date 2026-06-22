@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">QBO to Ramp reconciliation control loop</title>
+  <desc id="desc">Diagram showing how bill data, attachments, purchase orders, and reconciliation controls flow from QBO into Ramp.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E244D"/>
+      <stop offset="1" stop-color="#173C7A"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#08162f" flood-opacity="0.34"/>
+    </filter>
+    <style>
+      .title { font: 800 40px/1.1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .sub { font: 600 18px/1.5 Inter, Arial, sans-serif; fill: #D7E5FF; }
+      .boxTitle { font: 800 21px/1.25 Inter, Arial, sans-serif; fill: #16305E; }
+      .body { font: 600 15px/1.55 Inter, Arial, sans-serif; fill: #425A7D; }
+      .mini { font: 700 14px/1.4 Inter, Arial, sans-serif; fill: #4A6288; }
+      .flow { stroke: rgba(255,255,255,0.78); stroke-width: 4.5; stroke-linecap: round; }
+      .loop { stroke: #94D8FF; stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 10 10; }
+    </style>
+  </defs>
+  <rect width="1400" height="860" rx="34" fill="url(#bg)"/>
+  <text x="70" y="88" class="title">Document fidelity and tie-out control loop</text>
+  <text x="70" y="124" class="sub">The migration did not stop at copying bill amounts. Every bill carried its image, PO context, and source trace into the Ramp review flow.</text>
+  <g filter="url(#shadow)">
+    <rect x="70" y="188" width="280" height="170" rx="28" fill="#FFFFFF"/>
+    <text x="96" y="226" class="boxTitle">QBO source set</text>
+    <text x="96" y="258" class="body">- Bill header and vendor</text>
+    <text x="96" y="282" class="body">- Bill lines and coding</text>
+    <text x="96" y="306" class="body">- Linked purchase orders</text>
+    <text x="96" y="330" class="body">- Attachable image files</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="395" y="188" width="280" height="170" rx="28" fill="#FFFFFF"/>
+    <text x="421" y="226" class="boxTitle">Migration toolchain</text>
+    <text x="421" y="258" class="body">- Bill package builder</text>
+    <text x="421" y="282" class="body">- Attachment relay</text>
+    <text x="421" y="306" class="body">- PO line compiler</text>
+    <text x="421" y="330" class="body">- Duplicate / retry controls</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="720" y="188" width="280" height="170" rx="28" fill="#FFFFFF"/>
+    <text x="746" y="226" class="boxTitle">Ramp bill object</text>
+    <text x="746" y="258" class="body">- Bill in approver-ready state</text>
+    <text x="746" y="282" class="body">- Image visible at review time</text>
+    <text x="746" y="306" class="body">- PO detail preserved</text>
+    <text x="746" y="330" class="body">- Payment and approval routing ready</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1045" y="188" width="280" height="170" rx="28" fill="#FFFFFF"/>
+    <text x="1071" y="226" class="boxTitle">Finance sign-off</text>
+    <text x="1071" y="258" class="body">- AP aging tied out</text>
+    <text x="1071" y="282" class="body">- Vendor totals matched</text>
+    <text x="1071" y="306" class="body">- Due buckets matched</text>
+    <text x="1071" y="330" class="body">- Exceptions logged and cleared</text>
+  </g>
+  <path d="M350 273H395M675 273H720M1000 273H1045" class="flow"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="468" width="1100" height="246" rx="32" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.18)"/>
+    <text x="186" y="514" class="title" style="font-size:28px">What made the move work in less than a week</text>
+    <text x="186" y="556" class="sub">1. We built tested tooling first, then automation.</text>
+    <text x="186" y="588" class="sub">2. We treated images and PO context as part of the bill, not as optional extras.</text>
+    <text x="186" y="620" class="sub">3. We tied Ramp back to QBO at the AP aging level before anyone called the project done.</text>
+    <text x="186" y="652" class="sub">4. We handed finance a controlled operating state, not a half-finished import.</text>
+  </g>
+  <path d="M1184 360C1184 420 1184 462 1100 462H300C216 462 216 420 216 360" class="loop"/>
+  <path d="M216 360V394" class="loop"/>
+  <path d="M1184 360V394" class="loop"/>
+</svg>

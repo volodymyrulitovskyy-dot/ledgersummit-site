@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GL Detail Analyzer &amp; Journal Entry Review Tool | Ledger Summit</title>
+  <meta name="description"
+    content="Analyze general ledger detail and journal entry exports in your browser. Surface duplicates, unusual amounts, generic memos, weekend postings, unbalanced.">
+  <link rel="canonical" href="https://ledgersummit.com/tools/gl-detail-analyzer/">
+  <meta property="og:title" content="GL Detail Analyzer &amp; Journal Entry Review Tool | Ledger Summit">
+  <meta property="og:description"
+    content="Browser-based GL detail analysis for accounting teams. Upload a CSV export, map columns, flag anomalies, and export a prioritized review file.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgersummit.com/tools/gl-detail-analyzer/">
+  <meta property="og:image"
+    content="https://ledgersummit.com/img/ledger-summit-mark.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GL Detail Analyzer &amp; Journal Entry Review Tool | Ledger Summit">
+  <meta name="twitter:description"
+    content="General ledger detail analysis for controllers, accounting managers, and close teams.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/shared.css?v=20260311">
+  <link rel="stylesheet" href="/css/pages.css?v=20260311">
+  <link rel="stylesheet" href="/css/gl-detail-analyzer.css?v=20260311">
+  <link rel="stylesheet" href="/css/tool-pages.css?v=20260419b">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ledger Summit GL Detail Analyzer",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "isAccessibleForFree": true,
+    "description": "Browser-based GL detail analyzer and journal entry review tool for controllers, accountants, and close teams.",
+    "url": "https://ledgersummit.com/tools/gl-detail-analyzer/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ledger Summit",
+      "url": "https://ledgersummit.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a GL detail analyzer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A GL detail analyzer reviews exported general ledger lines and journal entries to surface duplicates, unusual amounts, generic descriptions, weekend postings, unbalanced journals, and high-risk accounts that deserve investigation first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the Ledger Summit GL Detail Analyzer upload my data to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This page processes the file inside your browser so you can triage a ledger export before sharing anything with a vendor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which file format works best?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CSV exports work best. The tool also handles tab-delimited data pasted directly from Excel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should use this journal entry review tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Controllers, accounting managers, close teams, auditors, and finance operators who need a faster way to review exported ledger detail before close, audit, or flux review."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Tools",
+        "item": "https://ledgersummit.com/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GL Detail Analyzer",
+        "item": "https://ledgersummit.com/tools/gl-detail-analyzer/"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="tool-page ls-theme-blue">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav nav-dark" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+          alt="Ledger Summit logo" width="36" height="36" decoding="async">
+        <span>Ledger Summit</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/tools/" onclick="closeMobileNav()">Tools</a>
+    <a href="/blog/" onclick="closeMobileNav()">Blog</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact</a>
+    <a href="/book-a-call/" class="btn-primary" onclick="closeMobileNav()">Book a free call</a>
+  </div>
+
+  <main id="main">
+    <section class="glda-hero ls-tool-hero">
+      <div class="container">
+        <div class="glda-hero-grid ls-tool-hero-grid">
+          <div class="glda-hero-copy ls-tool-hero-copy reveal">
+            <span class="section-label">GL Analysis Tool</span>
+            <h1>GL detail analyzer for faster journal entry review.</h1>
+            <p>The Ledger Summit GL Detail Analyzer helps accounting teams triage exported ledger detail before close,
+              audit, flux analysis, or cleanup. Upload a CSV export, map your columns, and surface the rows that need
+              human attention first.</p>
+            <div class="glda-answer-strip ls-tool-answer-strip">
+              <strong>Direct answer</strong>
+              <span>A GL detail analyzer reviews exported ledger lines and journal entries to flag duplicates, unusual
+                amounts, generic memos, weekend postings, and unbalanced journals so reviewers can investigate the
+                highest-risk items first.</span>
+            </div>
+            <div class="glda-hero-actions ls-tool-hero-actions">
+              <a href="#analyzer" class="btn-primary btn-glow">Open the analyzer</a>
+              <a href="/book-a-call/" class="btn-secondary">Need a custom version?</a>
+            </div>
+            <div class="glda-hero-pills ls-tool-hero-pills" aria-label="Key proof points">
+              <span class="glda-hero-pill ls-tool-hero-pill"><i></i>Browser-only processing</span>
+              <span class="glda-hero-pill ls-tool-hero-pill"><i></i>CSV or pasted Excel data</span>
+              <span class="glda-hero-pill ls-tool-hero-pill"><i></i>Built for U.S. close teams</span>
+            </div>
+          </div>
+
+          <aside class="glda-hero-panel ls-tool-hero-panel reveal-right" aria-label="What the tool catches">
+            <span class="glda-panel-badge ls-tool-panel-badge"><i></i>Reviewer-first</span>
+            <div class="glda-panel-head ls-tool-panel-head">
+              <h2>What gets prioritized</h2>
+              <p>Designed around the real intent behind GL review: find what is risky, explain why it surfaced, and
+                leave with a clean follow-up file.</p>
+            </div>
+            <div class="glda-preview-metrics ls-tool-preview-metrics">
+              <div class="glda-preview-card ls-tool-preview-card">
+                <strong>1</strong>
+                <span>Auto-map common ERP export columns in a few clicks.</span>
+              </div>
+              <div class="glda-preview-card ls-tool-preview-card">
+                <strong>2</strong>
+                <span>Rank anomalies instead of leaving you in a raw ledger dump.</span>
+              </div>
+              <div class="glda-preview-card ls-tool-preview-card">
+                <strong>3</strong>
+                <span>Expose account hot spots and journal balance issues.</span>
+              </div>
+              <div class="glda-preview-card ls-tool-preview-card">
+                <strong>4</strong>
+                <span>Export flagged rows for reviewer follow-up and audit prep.</span>
+              </div>
+            </div>
+            <div class="glda-preview-list ls-tool-preview-list">
+              <div class="glda-preview-item ls-tool-preview-item">
+                <strong>Duplicate entry risk</strong>
+                <span>same date, account, amount, memo</span>
+              </div>
+              <div class="glda-preview-item ls-tool-preview-item">
+                <strong>Round-dollar journals</strong>
+                <span>fast way to isolate manual accruals</span>
+              </div>
+              <div class="glda-preview-item ls-tool-preview-item">
+                <strong>Generic descriptions</strong>
+                <span>"misc", "adjustment", blank memos</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="glda-tool-section ls-tool-section" id="analyzer">
+      <div class="container">
+        <div class="glda-tool-shell ls-tool-shell" id="glda-app">
+          <div class="glda-lab-grid ls-tool-layout-stack"><section class="glda-panel">
+              <div class="glda-panel-title">
+                <h3>1. Load your export</h3>
+                <span>CSV or paste</span>
+              </div>
+
+              <label class="glda-dropzone">
+                <input id="glda-file" type="file" accept=".csv,.txt,.tsv" aria-label="Upload a ledger export">
+                <strong>Upload a general ledger CSV or journal detail export</strong>
+                <span>Best results come from ERP exports that include posting date, account, description, and either a
+                  signed amount or debit and credit columns.</span>
+              </label>
+
+              <div class="glda-split"><span>or</span></div>
+
+              <div class="glda-paste-wrap">
+                <textarea id="glda-paste"
+                  placeholder="Paste CSV or tab-delimited rows copied from Excel here."></textarea>
+              </div>
+
+              <div class="glda-action-row">
+                <button type="button" class="glda-btn glda-btn-primary" id="glda-paste-button">Use pasted data</button>
+                <button type="button" class="glda-btn glda-btn-secondary" id="glda-sample">Try sample ledger</button>
+                <button type="button" class="glda-btn glda-btn-tertiary" id="glda-reset">Reset</button>
+              </div>
+
+              <div id="glda-status" class="glda-status muted" role="status" aria-live="polite"></div>
+
+              <div id="glda-setup-meta" class="glda-setup-meta" aria-live="polite"></div>
+
+              <div class="glda-panel-title" style="margin-top:1.25rem;">
+                <h3>2. Review the auto-mapped columns</h3>
+                <span>Flexible mapping</span>
+              </div>
+
+              <div id="glda-mapping-grid" class="glda-mapping-grid"></div>
+
+              <div class="glda-action-row">
+                <button type="button" class="glda-btn glda-btn-primary" id="glda-analyze">Analyze ledger</button>
+                <button type="button" class="glda-btn glda-btn-secondary" id="glda-export" disabled>Export flagged
+                  rows</button>
+              </div>
+            </section><div class="glda-tool-head ls-tool-head ls-tool-head-inline">
+            <div>
+              <span class="section-label">Live Tool</span>
+              <h2>GL detail analysis in the browser</h2>
+              <p>Main features are above the fold on purpose: upload a file, map the fields, and get a prioritized
+                review list before you scroll into the how-to guide below.</p>
+            </div>
+            
+          </div><section class="glda-panel">
+              <div class="glda-empty-state" id="glda-empty">
+                <h3>What this GL detail analyzer is built to solve</h3>
+                <p>Most teams do not want another heavyweight close platform when they are in the middle of review.
+                  They want a fast answer to one question: where should I look first in this export?</p>
+                <div class="glda-empty-list">
+                  <div class="glda-empty-item">
+                    <strong>Large files that Excel stops handling well</strong>
+                    <span>Use a browser-based pass to rank the suspicious rows before deeper work begins.</span>
+                  </div>
+                  <div class="glda-empty-item">
+                    <strong>Late close reviews and last-minute journal scrutiny</strong>
+                    <span>Weekend postings, round-dollar entries, duplicates, and unbalanced journals surface quickly.</span>
+                  </div>
+                  <div class="glda-empty-item">
+                    <strong>Reviewer follow-up without platform lock-in</strong>
+                    <span>Export just the flagged lines and continue your workflow in Excel, audit workpapers, or your ERP.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glda-results" id="glda-results" hidden>
+                <div class="glda-summary-grid">
+                  <div class="glda-summary-card" data-metric="rows"></div>
+                  <div class="glda-summary-card" data-metric="flagged"></div>
+                  <div class="glda-summary-card" data-metric="accounts"></div>
+                  <div class="glda-summary-card" data-metric="net"></div>
+                </div>
+
+                <article class="glda-result-card">
+                  <div class="glda-card-head">
+                    <div>
+                      <h3>Top anomaly groups</h3>
+                      <p>These patterns explain why rows surfaced. Use them to decide which reviewer path to take
+                        first.</p>
+                    </div>
+                  </div>
+                  <div class="glda-flag-grid" id="glda-flag-grid"></div>
+                </article>
+
+                <article class="glda-result-card">
+                  <div class="glda-card-head">
+                    <div>
+                      <h3>Investigation queue</h3>
+                      <p>The highest-risk rows are sorted first, with reasons attached so the review file is already
+                        prioritized.</p>
+                    </div>
+                  </div>
+                  <div id="glda-findings-table"></div>
+                </article>
+
+                <article class="glda-result-card">
+                  <div class="glda-card-head">
+                    <div>
+                      <h3>Account hot spots</h3>
+                      <p>Use this view when you need to decide which accounts deserve manager review, flux analysis, or
+                        a deeper cleanup pass.</p>
+                    </div>
+                  </div>
+                  <div class="glda-hotspot-grid" id="glda-hotspot-grid"></div>
+                </article>
+
+                <article class="glda-result-card">
+                  <div class="glda-card-head">
+                    <div>
+                      <h3>Journal-level balance checks</h3>
+                      <p>If your export includes journal or batch IDs, this view helps you spot journals that do not net
+                        to zero.</p>
+                    </div>
+                  </div>
+                  <div class="glda-insight-grid" id="glda-insight-grid"></div>
+                </article>
+
+                <article class="glda-result-card">
+                  <div class="glda-card-head">
+                    <div>
+                      <h3>Search the reviewed rows</h3>
+                      <p>Filter by journal, account, memo, user, entity, or source to move from anomaly detection into
+                        follow-up review.</p>
+                    </div>
+                  </div>
+                  <div class="glda-search-row">
+                    <input id="glda-search" class="glda-search-input" type="search"
+                      placeholder="Search rows by account, journal, memo, user, or source">
+                  </div>
+                  <div id="glda-explorer-table"></div>
+                </article>
+              </div>
+            </section></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="glda-feature-band ls-tool-feature-band">
+      <div class="container">
+        <div class="glda-feature-grid ls-tool-feature-grid">
+          <article class="glda-feature-card ls-tool-feature-card reveal">
+            <div class="glda-feature-icon ls-tool-feature-icon">01</div>
+            <strong>Map almost any GL export</strong>
+            <p>Use signed amounts or separate debit and credit columns. No rigid template required.</p>
+          </article>
+          <article class="glda-feature-card ls-tool-feature-card reveal">
+            <div class="glda-feature-icon ls-tool-feature-icon">02</div>
+            <strong>See the review queue first</strong>
+            <p>Rows are ranked by anomaly signals so controllers and reviewers can focus on the highest-value checks.</p>
+          </article>
+          <article class="glda-feature-card ls-tool-feature-card reveal">
+            <div class="glda-feature-icon ls-tool-feature-icon">03</div>
+            <strong>Understand why each row surfaced</strong>
+            <p>Every flagged line shows the logic behind the alert, not just a vague risk label.</p>
+          </article>
+          <article class="glda-feature-card ls-tool-feature-card reveal">
+            <div class="glda-feature-icon ls-tool-feature-icon">04</div>
+            <strong>Export next-step evidence</strong>
+            <p>Download a focused reviewer file and take it straight into close review, audit prep, or cleanup.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section glda-guide-section ls-tool-guide-section" id="guide">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Guide Below The Tool</span>
+          <h2>How to use a GL detail analyzer well</h2>
+          <p>This section is built for answer engines, searchers, and busy reviewers: direct definitions, concrete
+            steps, and practical follow-up guidance.</p>
+        </div>
+
+        <div class="glda-answer-grid ls-tool-answer-grid">
+          <article class="glda-answer-card ls-tool-answer-card reveal">
+            <strong>What it is</strong>
+            <p>A GL detail analyzer reviews exported general ledger lines and journal entries to rank suspicious items
+              before close review, audit testing, or cleanup starts.</p>
+          </article>
+          <article class="glda-answer-card ls-tool-answer-card reveal">
+            <strong>Who it is for</strong>
+            <p>Controllers, accounting managers, senior accountants, internal audit, and outsourced close teams who
+              need a faster first-pass review of ledger activity.</p>
+          </article>
+          <article class="glda-answer-card ls-tool-answer-card reveal">
+            <strong>What file works best</strong>
+            <p>CSV exports with posting date, journal ID, account, description, and amount fields work best. If you
+              copy rows from Excel, tab-delimited paste also works.</p>
+          </article>
+        </div>
+
+        <div class="glda-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Workflow</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Four practical steps</h2>
+          <p>Use the analyzer as a triage layer. The goal is not to replace judgment; it is to shorten the time from
+            "raw export" to "investigation-ready review list."</p>
+        </div>
+
+        <div class="glda-steps-grid ls-tool-steps-grid">
+          <article class="glda-step-card ls-tool-step-card reveal">
+            <div class="glda-step-number ls-tool-step-number">1</div>
+            <strong>Export ledger detail</strong>
+            <p>Pull the period-specific GL detail or journal entry report from your ERP with as many descriptive fields
+              as available.</p>
+          </article>
+          <article class="glda-step-card ls-tool-step-card reveal">
+            <div class="glda-step-number ls-tool-step-number">2</div>
+            <strong>Map the important columns</strong>
+            <p>At minimum, map account plus amount or debit and credit. Add date and journal ID to unlock stronger
+              anomaly checks.</p>
+          </article>
+          <article class="glda-step-card ls-tool-step-card reveal">
+            <div class="glda-step-number ls-tool-step-number">3</div>
+            <strong>Review the surfaced rows</strong>
+            <p>Start with duplicates, unbalanced journals, unusual amounts, and generic descriptions because they can
+              create the fastest cleanup wins.</p>
+          </article>
+          <article class="glda-step-card ls-tool-step-card reveal">
+            <div class="glda-step-number ls-tool-step-number">4</div>
+            <strong>Export the follow-up file</strong>
+            <p>Download flagged rows and route them into manager review, flux commentary, supporting-doc requests, or
+              audit workpapers.</p>
+          </article>
+        </div>
+
+        <div class="glda-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Investigation Checklist</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">What reviewers usually investigate first</h2>
+          <p>These checks come from the pain points teams mention most often: late close pressure, large exports,
+            generic memos, duplicated activity, and journals that are hard to explain quickly.</p>
+        </div>
+
+        <div class="glda-checklist-grid ls-tool-checklist-grid">
+          <article class="glda-check-card ls-tool-check-card reveal">
+            <strong>Duplicate rows</strong>
+            <p>Same date, account, amount, and description often signals import errors, reposts, or manual cleanup that
+              happened twice.</p>
+          </article>
+          <article class="glda-check-card ls-tool-check-card reveal">
+            <strong>Large unusual amounts</strong>
+            <p>Compare a line to the normal movement pattern of that account. Large outliers deserve support fast.</p>
+          </article>
+          <article class="glda-check-card ls-tool-check-card reveal">
+            <strong>Generic or blank memos</strong>
+            <p>If the description does not explain the business reason, the reviewer usually has to do more digging.</p>
+          </article>
+          <article class="glda-check-card ls-tool-check-card reveal">
+            <strong>Weekend and manual postings</strong>
+            <p>These are not automatically wrong, but they often deserve a second look during close and audit review.</p>
+          </article>
+          <article class="glda-check-card ls-tool-check-card reveal">
+            <strong>Round-dollar journals</strong>
+            <p>Helpful for isolating accruals, reclasses, true-ups, and spreadsheet-driven entries that carry higher
+              reviewer attention.</p>
+          </article>
+          <article class="glda-check-card ls-tool-check-card reveal">
+            <strong>Unbalanced journals</strong>
+            <p>If the mapped journal ID groups do not net to zero, the export or the journal itself deserves immediate
+              follow-up.</p>
+          </article>
+        </div>
+
+        <div class="glda-guide-copy ls-tool-guide-copy">
+          <span class="section-label">Why This Page Exists</span>
+          <h2 style="font-size:var(--h2);line-height:1.12;margin-bottom:1rem;">Built to close the gap between raw exports and enterprise platforms</h2>
+          <p>Many GL review tools on the market focus on demos, platform rollouts, ERP integrations, or larger close
+            suites. This page solves a narrower but urgent job: give the reviewer a useful answer right now.</p>
+        </div>
+
+        <div class="glda-gap-grid ls-tool-gap-grid">
+          <article class="glda-gap-card ls-tool-gap-card reveal">
+            <strong>Immediate triage instead of implementation</strong>
+            <p>Use the tool as soon as you have a CSV. No onboarding sequence required.</p>
+            <ul>
+              <li>Upload or paste a real export.</li>
+              <li>Map columns in the browser.</li>
+              <li>Get a ranked review queue immediately.</li>
+            </ul>
+          </article>
+          <article class="glda-gap-card ls-tool-gap-card reveal">
+            <strong>Explainable flags instead of black-box scoring</strong>
+            <p>Reviewers need rationale they can defend during close, audit, or manager review.</p>
+            <ul>
+              <li>Each surfaced row lists the triggering patterns.</li>
+              <li>Hot spots summarize why an account needs attention.</li>
+              <li>Journal-level balance checks help reviewers move faster.</li>
+            </ul>
+          </article>
+          <article class="glda-gap-card ls-tool-gap-card reveal">
+            <strong>Useful even before a custom build</strong>
+            <p>Ledger Summit builds custom accounting tools, but this page delivers value before you ever book a call.</p>
+            <ul>
+              <li>Browser-based privacy for initial triage.</li>
+              <li>Exportable flagged rows for next steps.</li>
+              <li>Clear path to a custom reviewer workflow if needed.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section glda-faq ls-tool-faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>GL detail analyzer questions, answered directly</h2>
+          <p>Written in short, answer-engine-friendly form so searchers can get a clear answer without digging through
+            sales copy.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is a GL detail analyzer?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>A GL detail analyzer reviews exported general ledger lines and journal entries to flag duplicates,
+                unusual amounts, generic descriptions, weekend postings, unbalanced journals, and other rows that
+                deserve review before close or audit work continues.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is the difference between GL analysis and journal
+              entry testing?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>GL analysis looks across the ledger detail by account and movement pattern. Journal entry testing looks
+                at journal-level behavior such as balancing, manual entries, timing, and supporting detail. This page
+                supports both by combining row-level and journal-level checks.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Does this tool send my file to Ledger Summit?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>No. The page processes the file in your browser. That makes it useful for a first-pass review when you
+                are not ready to move raw data into a third-party platform.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Which columns should I include in the export?<span
+                class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Best practice is posting date, journal ID or batch, account number, account name, description or memo,
+                and either a signed amount or separate debit and credit columns. Source, user, and entity fields make
+                the review even stronger.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can Ledger Summit build a custom journal entry review
+              workflow for our ERP?<span class="faq-toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. If you want recurring reviewer logic, ERP connectivity, approval routing, supporting-document
+                checks, or account-specific scoring, Ledger Summit can turn this concept into a custom internal tool for
+                your close process.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="glda-cta ls-tool-cta">
+      <div class="container">
+        <div class="glda-cta-card ls-tool-cta-card reveal">
+          <span class="section-label ls-tool-cta-label">Next Step</span>
+          <h2>Want this connected to your ERP, approval flow, and audit trail?</h2>
+          <p>Use the free analyzer for first-pass review. If you want a branded internal tool with your own rules,
+            scoring, and workflow, Ledger Summit can build the production version around your actual close process.</p>
+          <a href="/book-a-call/" class="btn-primary btn-glow">Book a free call</a>
+          <div class="glda-inline-links ls-tool-inline-links">
+            <a href="/tools/">More tools</a>
+            <a href="/services/ai-accounting-tools/">Custom AI accounting tools</a>
+            <a href="/blog/accounting-close/">Month-end close case study</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand">
+          <img src="https://ledgersummit.com/img/ledger-summit-mark.svg"
+            alt="Ledger Summit" width="30" height="30" decoding="async">
+          <span>Ledger Summit</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/book-a-call/">Book a Call</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@LedgerSummit" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ledgersummit/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ledger Summit. AI-powered accounting &amp; finance automation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="/js/shared.js?v=20260320"></script>
+  <script src="/js/gl-detail-analyzer.js"></script>
+  <script>
+    window.SEMCHAT_CONFIG = { botId: "6c91b8cb-cf36-4a4d-b871-12fc160cbf94" };
+  </script>
+  <script src="https://app.sem.chat/widget-v2.js?v=13" async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI platform case study thumbnail</title>
+  <desc id="desc">A clean cover image for a case study about building the Tool Box AI finance operations platform.</desc>
+  <defs>
+    <linearGradient id="bg" x1="40" y1="30" x2="1140" y2="645" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B214E"/>
+      <stop offset="0.52" stop-color="#18438B"/>
+      <stop offset="1" stop-color="#1A5A94"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(230 170) rotate(18) scale(430 280)">
+      <stop stop-color="#6FB9FF" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#6FB9FF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.2em; fill: #C9DEFF; }
+      .kicker { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #8FD5FF; }
+      .headline { font: 900 62px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .body { font: 600 27px/1.45 Inter, Arial, sans-serif; fill: #DCE8FF; }
+      .chip { font: 800 21px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .panelTitle { font: 800 18px/1.2 Inter, Arial, sans-serif; fill: #DCEAFF; }
+      .panelText { font: 700 22px/1.2 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .panelLabel { font: 700 14px/1.2 Inter, Arial, sans-serif; fill: #A7C8FF; letter-spacing: 0.08em; }
+      .panelMini { font: 600 15px/1.35 Inter, Arial, sans-serif; fill: #D5E6FF; }
+      .grid { stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+      .card { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.20); }
+      .accent { fill: rgba(116, 201, 255, 0.18); stroke: rgba(116, 201, 255, 0.36); }
+      .outcome { fill: rgba(186,246,193,0.15); stroke: rgba(186,246,193,0.28); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glowA)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <g opacity="0.45">
+    <path d="M0 96H1200M0 192H1200M0 288H1200M0 384H1200M0 480H1200M0 576H1200" class="grid"/>
+    <path d="M114 0V675M228 0V675M342 0V675M456 0V675M570 0V675M684 0V675M798 0V675M912 0V675M1026 0V675M1140 0V675" class="grid"/>
+  </g>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="kicker">PLATFORM CASE STUDY</text>
+  <text x="72" y="232" class="headline">How Ledger Summit</text>
+  <text x="72" y="298" class="headline">Built Tool Box AI</text>
+  <text x="72" y="384" class="body">One operating layer for approvals, reconciliations, project</text>
+  <text x="72" y="422" class="body">finance, AI routing, controls, and shared finance UX.</text>
+
+  <g>
+    <rect x="72" y="500" width="220" height="54" rx="27" class="accent"/>
+    <text x="182" y="534" class="chip">4 workflows</text>
+    <rect x="308" y="500" width="220" height="54" rx="27" class="accent"/>
+    <text x="418" y="534" class="chip">15 layers</text>
+  </g>
+
+  <g>
+    <rect x="694" y="104" width="424" height="456" rx="32" class="card"/>
+    <text x="738" y="146" class="panelLabel">PLATFORM MODULES</text>
+
+    <rect x="738" y="188" width="150" height="110" rx="24" class="card"/>
+    <text x="770" y="230" class="panelTitle">Approvals</text>
+    <text x="770" y="256" class="panelMini">policy, routing,</text>
+    <text x="770" y="276" class="panelMini">and escalation</text>
+
+    <rect x="924" y="188" width="150" height="110" rx="24" class="card"/>
+    <text x="956" y="230" class="panelTitle">Reconciliation</text>
+    <text x="956" y="256" class="panelMini">source checks and</text>
+    <text x="956" y="276" class="panelMini">ledger tie-out</text>
+
+    <rect x="738" y="326" width="150" height="110" rx="24" class="card"/>
+    <text x="770" y="368" class="panelTitle">Projects</text>
+    <text x="770" y="394" class="panelMini">cost flow, EAC,</text>
+    <text x="770" y="414" class="panelMini">and planning</text>
+
+    <rect x="924" y="326" width="150" height="110" rx="24" class="card"/>
+    <text x="956" y="368" class="panelTitle">Payroll</text>
+    <text x="956" y="394" class="panelMini">allocations, time,</text>
+    <text x="956" y="414" class="panelMini">and reporting</text>
+
+    <rect x="738" y="466" width="336" height="60" rx="20" class="outcome"/>
+    <text x="770" y="500" class="panelTitle">Shared AI and middleware layer across every module</text>
+  </g>
+</svg>

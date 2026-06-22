@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Vlad Ulitovskiy</title>
+  <desc id="desc">Illustrated portrait placeholder for Vlad Ulitovskiy.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1628"/>
+      <stop offset="1" stop-color="#06a77d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#dffcf4" stop-opacity=".84"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="160" fill="url(#bg)"/>
+  <circle cx="160" cy="122" r="58" fill="#dffcf4"/>
+  <path d="M82 274c10-61 48-94 78-94s68 33 78 94" fill="url(#card)"/>
+  <circle cx="126" cy="116" r="10" fill="#0a1628"/>
+  <circle cx="194" cy="116" r="10" fill="#0a1628"/>
+  <path d="M132 154c18 15 39 15 56 0" fill="none" stroke="#0a1628" stroke-width="10" stroke-linecap="round"/>
+  <text x="160" y="257" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="800" fill="#0a5f4c">VU</text>
+</svg>

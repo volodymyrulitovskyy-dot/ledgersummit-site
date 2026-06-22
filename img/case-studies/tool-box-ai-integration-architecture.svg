@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Tool Box AI integration architecture diagram</title>
+  <desc id="desc">A Visio-style diagram showing how Tool Box AI connects intake channels, finance workflows, ERP adapters, payment adapters, and monitoring outputs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6faff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#5a7aa6"/>
+    </marker>
+    <style>
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #14365d; }
+      .subtitle { font: 500 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4f6784; }
+      .h { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17385f; }
+      .b { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #445b78; }
+      .s { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; fill: #6282a9; }
+      .center { text-anchor: middle; }
+      .box { fill: url(#panel); stroke: #d6e3f1; stroke-width: 1.5; rx: 20; }
+      .pill { fill: #edf4fb; stroke: #d6e3f1; stroke-width: 1; rx: 16; }
+      .line { stroke: #5a7aa6; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #8ca2be; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <text x="60" y="58" class="title">How Tool Box AI Connects To ERP and Payment Systems</text>
+  <text x="60" y="84" class="subtitle">One translation layer sits between finance workflows and the systems that actually post transactions or move money.</text>
+
+  <rect x="60" y="128" width="260" height="170" class="box"/>
+  <text x="84" y="158" class="s">INTAKE AND COMMUNICATION</text>
+  <rect x="84" y="178" width="212" height="36" class="pill"/>
+  <text x="190" y="201" class="b center">Email, forms, vendor portal</text>
+  <rect x="84" y="222" width="212" height="36" class="pill"/>
+  <text x="190" y="245" class="b center">Slack, Teams, mobile capture</text>
+  <rect x="84" y="266" width="212" height="36" class="pill"/>
+  <text x="190" y="289" class="b center">OCR, uploads, API intake</text>
+
+  <rect x="360" y="128" width="480" height="220" class="box"/>
+  <text x="384" y="158" class="s">TOOL BOX AI OPERATING LAYER</text>
+  <text x="600" y="194" class="h center">Workflow Engine + Control Layer + Audit Layer</text>
+  <text x="600" y="220" class="b center">Approvals, exception routing, document handling, security,</text>
+  <text x="600" y="238" class="b center">traceability, and finance workflow logic live here.</text>
+  <rect x="392" y="266" width="196" height="56" class="pill"/>
+  <text x="490" y="299" class="h center">Accounting Translation Layer</text>
+  <rect x="612" y="266" width="196" height="56" class="pill"/>
+  <text x="710" y="299" class="h center">Payment Translation Layer</text>
+
+  <rect x="880" y="128" width="260" height="260" class="box"/>
+  <text x="904" y="158" class="s">SYSTEMS OF RECORD AND EXECUTION</text>
+  <rect x="904" y="180" width="212" height="36" class="pill"/>
+  <text x="1010" y="203" class="b center">NetSuite and ERP posting</text>
+  <rect x="904" y="224" width="212" height="36" class="pill"/>
+  <text x="1010" y="247" class="b center">Xero and QBO posting</text>
+  <rect x="904" y="268" width="212" height="36" class="pill"/>
+  <text x="1010" y="291" class="b center">Bill.com payment execution</text>
+  <rect x="904" y="312" width="212" height="36" class="pill"/>
+  <text x="1010" y="335" class="b center">Ramp cards, bills, reimbursements</text>
+  <rect x="904" y="356" width="212" height="36" class="pill"/>
+  <text x="1010" y="379" class="b center">Status sync, callbacks, webhooks</text>
+
+  <path d="M320 214 L360 214" class="line"/>
+  <path d="M840 214 L880 214" class="line"/>
+  <path d="M588 294 L904 294" class="line-soft"/>
+  <path d="M808 294 L880 338" class="line"/>
+
+  <rect x="120" y="456" width="960" height="216" class="box"/>
+  <text x="144" y="486" class="s">WHAT THE INTEGRATION DESIGN ACHIEVES</text>
+  <rect x="150" y="518" width="220" height="118" class="pill"/>
+  <text x="260" y="548" class="h center">One Workflow Model</text>
+  <text x="260" y="570" class="b center">Finance teams follow one process even</text>
+  <text x="260" y="588" class="b center">when different customers use different ERPs</text>
+
+  <rect x="392" y="518" width="220" height="118" class="pill"/>
+  <text x="502" y="548" class="h center">Cleaner Posting Logic</text>
+  <text x="502" y="570" class="b center">ERP-specific rules are translated in one place</text>
+  <text x="502" y="588" class="b center">instead of being scattered across the workflow</text>
+
+  <rect x="634" y="518" width="220" height="118" class="pill"/>
+  <text x="744" y="548" class="h center">Traceable Sync Status</text>
+  <text x="744" y="570" class="b center">Approvals, posting responses, and errors stay</text>
+  <text x="744" y="588" class="b center">visible inside the finance operating layer</text>
+
+  <rect x="876" y="518" width="174" height="118" class="pill"/>
+  <text x="963" y="548" class="h center">Less Rework</text>
+  <text x="963" y="570" class="b center">Teams do not need separate</text>
+  <text x="963" y="588" class="b center">manual processes by system</text>
+
+  <path d="M600 348 L600 456" class="line"/>
+</svg>

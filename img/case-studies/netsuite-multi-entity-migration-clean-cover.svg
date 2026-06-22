@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">NetSuite multi-entity migration clean cover</title>
+  <desc id="desc">Minimal cover image for a NetSuite multi-entity migration case study.</desc>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="36" x2="1140" y2="639" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1F49"/>
+      <stop offset="0.56" stop-color="#153D84"/>
+      <stop offset="1" stop-color="#1E6AA8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(950 200) rotate(140) scale(430 300)">
+      <stop stop-color="#88C7FF" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#88C7FF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.18em; fill: #D9E7FF; }
+      .tag { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #8FD4FF; }
+      .headline { font: 900 70px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .sub { font: 600 28px/1.45 Inter, Arial, sans-serif; fill: #D8E6FF; }
+      .chip { font: 800 22px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .cardTitle { font: 800 16px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #B6D2FF; }
+      .cardBody { font: 700 34px/1.2 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .cardMini { font: 600 18px/1.4 Inter, Arial, sans-serif; fill: #DCE7FF; }
+      .chipBox { fill: rgba(116,201,255,0.16); stroke: rgba(116,201,255,0.34); }
+      .panel { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.18); }
+    </style>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glow)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="tag">NETSUITE MIGRATION</text>
+  <text x="72" y="244" class="headline">Multi-Entity</text>
+  <text x="72" y="320" class="headline">Migration</text>
+  <text x="72" y="394" class="sub">Five legal entities, four countries, and four years</text>
+  <text x="72" y="432" class="sub">of history moved into one NetSuite in three weeks.</text>
+
+  <rect x="72" y="510" width="160" height="54" rx="27" class="chipBox"/>
+  <text x="152" y="544" class="chip">5 entities</text>
+  <rect x="248" y="510" width="172" height="54" rx="27" class="chipBox"/>
+  <text x="334" y="544" class="chip">4 countries</text>
+  <rect x="436" y="510" width="144" height="54" rx="27" class="chipBox"/>
+  <text x="508" y="544" class="chip">3 weeks</text>
+
+  <rect x="734" y="148" width="344" height="360" rx="34" class="panel"/>
+  <text x="778" y="204" class="cardTitle">END STATE</text>
+  <text x="778" y="270" class="cardBody">One</text>
+  <text x="778" y="316" class="cardBody">NetSuite</text>
+  <text x="778" y="388" class="cardMini">Preserved history.</text>
+  <text x="778" y="420" class="cardMini">Clean entity structure.</text>
+  <text x="778" y="452" class="cardMini">Working intercompany logic.</text>
+</svg>

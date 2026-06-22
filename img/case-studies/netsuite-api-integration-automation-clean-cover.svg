@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">NetSuite API integration clean cover</title>
+  <desc id="desc">Minimal cover image for a NetSuite API integration and automation case study.</desc>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="36" x2="1140" y2="639" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091D47"/>
+      <stop offset="0.56" stop-color="#14397D"/>
+      <stop offset="1" stop-color="#216BA5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 190) rotate(138) scale(440 300)">
+      <stop stop-color="#8FD6FF" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#8FD6FF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.18em; fill: #D9E7FF; }
+      .tag { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #8FD4FF; }
+      .headline { font: 900 62px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .sub { font: 600 28px/1.45 Inter, Arial, sans-serif; fill: #D8E6FF; }
+      .chip { font: 800 22px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .cardTitle { font: 800 16px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #B6D2FF; }
+      .cardBody { font: 700 30px/1.25 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .cardMini { font: 600 18px/1.4 Inter, Arial, sans-serif; fill: #DCE7FF; }
+      .chipBox { fill: rgba(116,201,255,0.16); stroke: rgba(116,201,255,0.34); }
+      .panel { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.18); }
+    </style>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glow)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="tag">NETSUITE AUTOMATION</text>
+  <text x="72" y="226" class="headline">API Integrations</text>
+  <text x="72" y="294" class="headline">&amp; Ledger-Native</text>
+  <text x="72" y="362" class="headline">Schedules</text>
+  <text x="72" y="430" class="sub">Project, AP, payroll, and timesheets connected into</text>
+  <text x="72" y="468" class="sub">one controlled NetSuite workflow.</text>
+
+  <rect x="72" y="532" width="118" height="50" rx="25" class="chipBox"/>
+  <text x="131" y="563" class="chip">AP</text>
+  <rect x="204" y="532" width="156" height="50" rx="25" class="chipBox"/>
+  <text x="282" y="563" class="chip">payroll</text>
+  <rect x="374" y="532" width="170" height="50" rx="25" class="chipBox"/>
+  <text x="459" y="563" class="chip">timesheets</text>
+  <rect x="558" y="532" width="170" height="50" rx="25" class="chipBox"/>
+  <text x="643" y="563" class="chip">schedules</text>
+
+  <rect x="746" y="154" width="332" height="348" rx="34" class="panel"/>
+  <text x="790" y="210" class="cardTitle">RESULT</text>
+  <text x="790" y="272" class="cardBody">One ledger</text>
+  <text x="790" y="318" class="cardBody">layer</text>
+  <text x="790" y="392" class="cardMini">Less Excel.</text>
+  <text x="790" y="424" class="cardMini">Stronger control.</text>
+  <text x="790" y="456" class="cardMini">Close-ready schedules.</text>
+</svg>

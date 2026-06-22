@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">QBO to Ramp bill migration case study thumbnail</title>
+  <desc id="desc">A clean cover image for a case study about moving 3,000 plus bills from QBO to Ramp in less than a week.</desc>
+  <defs>
+    <linearGradient id="bg" x1="40" y1="30" x2="1140" y2="645" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1F49"/>
+      <stop offset="0.52" stop-color="#143A82"/>
+      <stop offset="1" stop-color="#184C88"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 180) rotate(18) scale(420 260)">
+      <stop stop-color="#70B8FF" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#70B8FF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .eyebrow { font: 700 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.2em; fill: #C9DEFF; }
+      .kicker { font: 800 22px/1.2 Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #8FD5FF; }
+      .headline { font: 900 64px/1 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .body { font: 600 27px/1.45 Inter, Arial, sans-serif; fill: #DCE8FF; }
+      .chip { font: 800 21px/1 Inter, Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; }
+      .panelTitle { font: 800 18px/1.2 Inter, Arial, sans-serif; fill: #DCEAFF; }
+      .panelText { font: 700 22px/1.2 Inter, Arial, sans-serif; fill: #FFFFFF; }
+      .panelLabel { font: 700 14px/1.2 Inter, Arial, sans-serif; fill: #A7C8FF; letter-spacing: 0.08em; }
+      .panelMini { font: 600 15px/1.35 Inter, Arial, sans-serif; fill: #D5E6FF; }
+      .grid { stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+      .card { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.20); }
+      .flow { stroke: rgba(255,255,255,0.82); stroke-width: 4; stroke-linecap: round; }
+      .accent { fill: rgba(116, 201, 255, 0.18); stroke: rgba(116, 201, 255, 0.36); }
+      .outcome { fill: rgba(186,246,193,0.15); stroke: rgba(186,246,193,0.28); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="34" fill="url(#glowA)"/>
+  <rect x="18" y="18" width="1164" height="639" rx="28" stroke="rgba(255,255,255,0.14)"/>
+
+  <g opacity="0.45">
+    <path d="M0 96H1200M0 192H1200M0 288H1200M0 384H1200M0 480H1200M0 576H1200" class="grid"/>
+    <path d="M114 0V675M228 0V675M342 0V675M456 0V675M570 0V675M684 0V675M798 0V675M912 0V675M1026 0V675M1140 0V675" class="grid"/>
+  </g>
+
+  <text x="72" y="92" class="eyebrow">LEDGER SUMMIT CASE STUDY</text>
+  <text x="72" y="136" class="kicker">AP MIGRATION</text>
+  <text x="72" y="244" class="headline">QBO to Ramp</text>
+  <text x="72" y="316" class="headline">Bill Migration</text>
+  <text x="72" y="392" class="body">3,000 plus bills moved with images, PO detail, approvals,</text>
+  <text x="72" y="430" class="body">and a fully tied out AP aging before handoff.</text>
+
+  <g>
+    <rect x="72" y="496" width="178" height="54" rx="27" class="accent"/>
+    <text x="161" y="530" class="chip">3,000+ bills</text>
+    <rect x="266" y="496" width="144" height="54" rx="27" class="accent"/>
+    <text x="338" y="530" class="chip">6 days</text>
+    <rect x="426" y="496" width="186" height="54" rx="27" class="accent"/>
+    <text x="519" y="530" class="chip">aging tied out</text>
+  </g>
+
+  <g>
+    <rect x="688" y="112" width="430" height="436" rx="32" class="card"/>
+    <text x="732" y="154" class="panelLabel">MIGRATION FLOW</text>
+
+    <rect x="728" y="214" width="104" height="82" rx="22" class="card"/>
+    <text x="758" y="252" class="panelTitle">QBO</text>
+    <text x="758" y="278" class="panelMini">source bills</text>
+
+    <rect x="852" y="214" width="104" height="82" rx="22" class="card"/>
+    <text x="882" y="252" class="panelTitle">API</text>
+    <text x="882" y="278" class="panelMini">mapped move</text>
+
+    <rect x="976" y="214" width="104" height="82" rx="22" class="card"/>
+    <text x="1006" y="252" class="panelTitle">Ramp</text>
+    <text x="1006" y="278" class="panelMini">ready target</text>
+
+    <path d="M832 255H852M956 255H976" class="flow"/>
+
+    <rect x="728" y="344" width="352" height="68" rx="22" class="outcome"/>
+    <text x="760" y="374" class="panelTitle">What moved cleanly</text>
+    <text x="760" y="398" class="panelMini">Invoice images, PO detail, vendor context, and approvals.</text>
+
+    <rect x="728" y="438" width="352" height="68" rx="22" class="outcome"/>
+    <text x="760" y="468" class="panelTitle">What finished first</text>
+    <text x="760" y="492" class="panelMini">AP aging tie-out completed before the final business handoff.</text>
+  </g>
+</svg>
